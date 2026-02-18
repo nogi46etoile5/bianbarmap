@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レズビアン向けバーマップ一覧サイト</title>
+    <style>
+        /* 全体レイアウト */
+        body { 
+            background-color: #0a1428; color: #ffffff; 
+            font-family: sans-serif; display: flex; flex-direction: column; 
+            align-items: center; padding: 0 0 80px 0; margin: 0; 
+        }
+
+        /* ヘッダー */
+        .site-header { text-align: center; padding: 40px 20px; width: 100%; }
+        .site-header h1 { 
+            font-size: 1.8rem; font-weight: bold; 
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; 
+        }
+        .site-subtitle { font-size: 0.9rem; color: #8892b0; margin-top: 10px; }
+
+        /* 初めての方へ（付き添い説明） */
+        .guide-intro {
+            width: 90%; max-width: 600px; 
+            background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2);
+            border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center;
+        }
+        .guide-intro h2 { font-size: 1.1rem; color: #00ffcc; margin-top: 0; }
+        .guide-intro p { font-size: 0.85rem; color: #ccd6f6; line-height: 1.6; }
+        .plan-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 15px 0; }
+        .plan-mini-card { background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; gap: 5px; }
+        .plan-mini-card strong { font-size: 0.85rem; color: #ffffff; }
+        .plan-mini-card span { font-size: 0.7rem; color: #8892b0; }
+
+        /* フィルターエリア */
+        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
+        .area-filter, .tag-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        
+        /* エリアボタン（虹色デザインを維持） */
+        .area-btn, .tag-btn { background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 8px 16px; border-radius: 30px; cursor: pointer; transition: 0.3s; font-size: 0.8rem; }
+        .tag-btn { border-radius: 4px; }
+
+        /* 地域タグ（エリアボタン）の虹色アクティブ状態 */
+        .area-btn.active { 
+            border: 1px solid transparent; 
+            background-image: linear-gradient(#1a2a4a, #1a2a4a), linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff); 
+            background-origin: border-box; 
+            background-clip: content-box, border-box; 
+        }
+
+        /* 絞り込みタグのアクティブ状態 */
+        .tag-btn.active { border-color: #ffffff; background: #3a4a6a; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
+
+        /* ショップカード */
+        #shop-container { width: 90%; max-width: 500px; }
+        .shop-card { background: #162440; border-radius: 12px; overflow: hidden; border: 1px solid #2a3a5a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 25px; display: none; }
+        .shop-card.show { display: block; }
+        .card-main { display: flex; padding: 15px; gap: 15px; border-top: 4px solid; border-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff) 1; }
+        .icon-image { width: 110px; height: 110px; border-radius: 8px; object-fit: cover; background: #222; }
+        .info-container { flex: 1; }
+        .shop-name { font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }
+        .shop-name a { color: #ffffff; text-decoration: none; }
+        .shop-name a:hover { text-decoration: underline; color: #00ffcc; }
+        .tag-type { font-size: 0.7rem; background: #ffffff; color: #0a1428; padding: 2px 8px; border-radius: 20px; font-weight: bold; vertical-align: middle; margin-left: 5px; }
+        .details { font-size: 0.85rem; color: #ccd6f6; margin-top: 8px; line-height: 1.6; }
+        .feature-tags { color: #ffffff; font-size: 0.75rem; margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+        .feature-tags span { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; }
+
+        /* アクションボタン */
+        .action-buttons { display: grid; grid-template-columns: 1fr 1fr; }
+        .btn { padding: 15px; text-align: center; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
+        .btn-note { color: #ffffff; background: #233554; }
+        .btn-guide { color: #0a1428; background: #00ffcc; }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <h1>レズビアン向けバーマップ一覧サイト</h1>
+    <p class="site-subtitle">全国のビアンバーをレポ付きで探せるマップ（随時更新中）</p>
+</header>
+
+<section class="guide-intro">
+    <h2>🤝 初めてのバー巡りをサポートします</h2>
+    <p>「二丁目に行ってみたいけど、一人で入る勇気がない…」そんな方のための付き添いサービスです。</p>
+    <div class="plan-summary">
+        <div class="plan-mini-card"><strong>🛡️ ガード枠</strong><span>1軒おごりで隣でガード</span></div>
+        <div class="plan-mini-card"><strong>🔍 マッチング</strong><span>2時間で合う店を案内</span></div>
+        <div class="plan-mini-card"><strong>🌙 見守り役</strong><span>20時〜5時までサポート</span></div>
+    </div>
+    <p style="font-size: 0.75rem; opacity: 0.7;">※詳細は「付き添い依頼」ボタンからXをご確認ください。</p>
+</section>
+
+<div class="filter-section">
+    <div class="area-filter">
+        <button class="area-btn" onclick="filterArea('東日本', this)">東日本</button>
+        <button class="area-btn" onclick="filterArea('東京', this)">東京</button>
+        <button class="area-btn" onclick="filterArea('名古屋', this)">名古屋</button>
+        <button class="area-btn" onclick="filterArea('大阪', this)">大阪</button>
+        <button class="area-btn" onclick="filterArea('西日本', this)">西日本</button>
+    </div>
+
+    <div class="tag-filter">
+        <button class="tag-btn" onclick="filterTag('カラオケ', this)">#カラオケ</button>
+        <button class="tag-btn" onclick="filterTag('喫煙可', this)">#喫煙可</button>
+        <button class="tag-btn" onclick="filterTag('初心者向け', this)">#初心者向け</button>
+        <button class="tag-btn" onclick="filterTag('初心者多め', this)">#初心者多め</button>
+        <button class="tag-btn" onclick="filterTag('年齢層高め', this)">#年齢層高め</button>
+        <button class="tag-btn" onclick="filterTag('穏やか', this)">#穏やか</button>
+        <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#盛り上がる</button>
+        <button class="tag-btn" onclick="filterTag('お通し有', this)">#お通し有</button>
+        <button class="tag-btn" onclick="filterTag('フード有', this)">#フード有</button>
+        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)">#変わったリキュール有</button>
+        <button class="tag-btn" onclick="filterTag('イベント多い', this)">#イベント多い</button>
+        <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)">#ボトルキープ有</button>
+        <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)">#持ち込み食べ物可</button>
+    </div>
+    <div style="text-align: center;">
+        <button class="area-btn" style="background: #333; font-size: 0.7rem; border: none;" onclick="resetFilters()">選択解除</button>
+    </div>
+</div>
+
+<div id="shop-container"></div>
+
+<script src="data.js"></script>
+
+<script>
+    // 状態管理：エリアも複数選べるように配列に変更
+    let activeFilters = { areas: [], tags: [] };
+    
+    function displayShops() {
+        const container = document.getElementById('shop-container');
+        container.innerHTML = ""; 
+    
+        shopDetails.forEach(shop => {
+            const card = document.createElement('div');
+            card.className = 'shop-card';
+            card.dataset.area = shop.area;
+            card.dataset.tags = JSON.stringify(shop.tags || []);
+    
+            const iconContent = shop.icon === "instagram" 
+                ? `<div class="icon-image" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 10px; line-height: 1.2; font-weight: bold;">
+                     <span style="font-size:24px; margin-bottom:5px;">📸</span>
+                     Instagramのみ<br>アイコン表示なし
+                   </div>`
+                : `<img src="${shop.icon}" class="icon-image" onerror="this.src='https://via.placeholder.com/110?text=No+Image'">`;
+    
+            card.innerHTML = `
+                <div class="card-main">
+                    <div class="icon-container">
+                        <a href="${shop.snsUrl}" target="_blank">${iconContent}</a>
+                    </div>
+                    <div class="info-container">
+                        <div class="shop-name">
+                            <a href="${shop.snsUrl}" target="_blank">${shop.name} 🔗</a>
+                            <span class="tag-type">${shop.type}</span>
+                        </div>
+                        <div class="details">
+                            🆔 ${shop.xId}<br>
+                            ⏰ ${shop.time} / 休：${shop.holiday}<br>
+                            📍 ${shop.address}
+                        </div>
+                        <div class="feature-tags">${(shop.tags || []).map(t => `<span>#${t}</span>`).join('')}</div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <a href="${shop.note}" class="btn btn-note" target="_blank">📝 noteレポ</a>
+                    <a href="https://x.com/412357siki" class="btn btn-guide">🤝 付き添い依頼</a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+        updateVisibility();
+    }
+    
+    function updateVisibility() {
+        const cards = document.querySelectorAll('.shop-card');
+        cards.forEach(card => {
+            const shopArea = card.dataset.area;
+            const shopTags = JSON.parse(card.dataset.tags);
+            
+            // エリア判定：未選択なら全表示、選択中ならそのエリア
+            const areaMatch = activeFilters.areas.length === 0 || activeFilters.areas.includes(shopArea);
+            
+            // タグ判定：選んだタグがすべて含まれているか
+            const tagsMatch = activeFilters.tags.every(t => shopTags.includes(t));
+            
+            card.classList.toggle('show', areaMatch && tagsMatch);
+        });
+    }
+    
+    // エリアボタン：虹色を維持してON/OFF
+    function filterArea(area, btn) {
+        const index = activeFilters.areas.indexOf(area);
+        if (index > -1) {
+            activeFilters.areas.splice(index, 1);
+            btn.classList.remove('active');
+        } else {
+            activeFilters.areas.push(area);
+            btn.classList.add('active');
+        }
+        updateVisibility();
+    }
+    
+    // タグボタン：ON/OFF
+    function filterTag(tag, btn) {
+        const index = activeFilters.tags.indexOf(tag);
+        if (index > -1) {
+            activeFilters.tags.splice(index, 1);
+            btn.classList.remove('active');
+        } else {
+            activeFilters.tags.push(tag);
+            btn.classList.add('active');
+        }
+        updateVisibility();
+    }
+
+    // 全解除
+    function resetFilters() {
+        activeFilters = { areas: [], tags: [] };
+        document.querySelectorAll('.area-btn, .tag-btn').forEach(b => b.classList.remove('active'));
+        updateVisibility();
+    }
+    
+    displayShops();
+</script>
+</body>
+</html>
