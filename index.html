@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レズビアン向けバーマップ一覧サイト</title>
+    <title>レズビアンバーマップ一覧</title>
+    <meta name="description" content="新宿二丁目や東京都内を中心に、全国のレズビアンバー（ビアンバー）をレポ付きで探せる一覧マップです。初心者の方への付き添いサービスも実施中。">
+    <meta name="keywords" content="レズビアンバー,ビアンバー,新宿二丁目,東京 レズビアンバー,LGBTQ,マップ">
+
     <style>
         /* --- 基本設定 --- */
         body { background-color: #0a1428; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
@@ -28,6 +31,15 @@
 
         .tip-btn { display: block; background: #00ffcc; color: #0a1428; padding: 12px; width: 90%; max-width: 600px; border-radius: 30px; text-decoration: none; font-weight: bold; text-align: center; font-size: 0.9rem; margin-bottom: 15px; }
 
+        /* Q&Aセクション */
+        .qa-section { width: 90%; max-width: 600px; margin-bottom: 20px; }
+        .qa-item { background: rgba(255,255,255,0.05); border: 1px solid #2a3a5a; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+        .qa-question { width: 100%; background: none; border: none; padding: 12px 15px; text-align: left; color: #ff8c00; font-weight: bold; font-size: 0.85rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .qa-question::after { content: "▼"; font-size: 0.7rem; transition: 0.3s; }
+        .qa-question.active::after { transform: rotate(180deg); }
+        .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.2); }
+        .qa-answer-inner { padding: 12px 15px; font-size: 0.8rem; color: #ccd6f6; line-height: 1.5; }
+
         /* トップに戻るボタン */
         #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         #back-to-top.show { opacity: 1; pointer-events: auto; }
@@ -43,7 +55,7 @@
         /* フィルター */
         .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
         .area-filter, .tag-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 15px; }
-        .tag-notice { font-size: 0.75rem; color: #00ffcc; margin-bottom: 15px; text-align: center; width: 100%; display: block; }
+        .tag-notice { font-size: 0.75rem; color: #ff8c00; margin-bottom: 15px; text-align: center; width: 100%; display: block; font-weight: bold; }
         .area-btn, .tag-btn { background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 6px 14px; border-radius: 30px; cursor: pointer; font-size: 0.75rem; }
         .tag-btn { border-radius: 4px; }
         .area-btn.active, .tag-btn.active { border-color: #00ffcc; background: #3a4a6a; }
@@ -85,11 +97,11 @@
         .aff-comment { display: block; font-style: italic; color: #ccd6f6; margin-bottom: 5px; }
 
         /* フッター */
-        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 40px; }
+        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; }
         .footer-notice ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
         .footer-notice li { margin-bottom: 8px; line-height: 1.4; }
         
-        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; }
+        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; }
         .portfolio-card { flex: 1; background: #1a2a4a; padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; font-size: 0.75rem; text-align: center; border: 1px solid #3a4a6a; }
     </style>
 </head>
@@ -104,10 +116,10 @@
 
 <header class="site-header">
     <h1>
-        <span class="lang-jp">レズビアン向けバーマップ一覧サイト</span>
+        <span class="lang-jp">レズビアンバーマップ一覧</span>
         <span class="lang-en">Lesbian Bar Map JP</span>
     </h1>
-    <span class="site-subtitle lang-jp">全国のビアンバーをレポ付きnoteで探せるマップ（随時更新中）</span>
+    <span class="site-subtitle lang-jp">新宿二丁目や全国のビアンバーをレポ付きで探せるマップ（随時更新中）</span>
     <span class="site-subtitle lang-en">Nationwide lesbian bar map with report notes (updating)</span>
 </header>
 
@@ -120,12 +132,58 @@
     <div class="guide-notes">
         ⚠️ <strong><span class="lang-jp">注意事項</span><span class="lang-en">Notes</span></strong>：<br>
         <span class="lang-jp">・20歳未満不可 / 待ち合わせは公共の場厳守 / 恋愛・性的サポートなし</span><span class="lang-en-block lang-en">- No minors under 20 / Public meeting only / No dating or sexual support</span>
+        <span class="lang-jp">・<strong>友達作り・コミュニティ探しのお手伝いは積極的に協力します！</strong></span><span class="lang-en-block lang-en">- We actively help you make friends and find your community!</span>
         <span class="lang-jp">・許可のない撮影不可 / <strong>案内人の交通費・飲食代は依頼主負担</strong> となります</span><span class="lang-en-block lang-en">- No filming / Client covers guide's travel and drink expenses</span>
         <span class="lang-jp">・付き添い依頼は <strong>X（@412357siki）のDM</strong> までお願いいたします。</span><span class="lang-en-block lang-en">- For requests, contact <strong>X (@412357siki) DM</strong>.</span>
     </div>
 </section>
 
 <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" class="tip-btn">☕ <span class="lang-jp">愁（しゅう）にチップを送る (note)</span><span class="lang-en">Send a tip to Syu (note)</span></a>
+
+<section class="qa-section">
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)">
+            <span class="lang-jp">Q1. 料金相場や「チャージ」について</span>
+            <span class="lang-en">Q1. About costs and "Cover Charge"</span>
+        </button>
+        <div class="qa-answer">
+            <div class="qa-answer-inner">
+                <span class="lang-jp">
+                    チャージ（席料）と1ドリンクで<strong>合計2,000円以内（お釣りが出る程度）</strong>が一般的です。
+                    ドリンクは1杯900円〜の設定が多く、明朗会計な店がほとんどなのでご安心ください。
+                </span>
+                <span class="lang-en">
+                    Usually <strong>under 2,000 JPY</strong> for cover charge + one drink. 
+                    Most drinks start around 900 JPY.
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q2. トランスジェンダーの入店について</span><span class="lang-en">Q2. For transgender guests</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">レズビアンバーは基準が様々。まずは「MIXバー」が確実。</span><span class="lang-en">Policies vary. "MIX bars" are more accommodating.</span></div></div>
+    </div>
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q3. ひとりでも入れますか？</span><span class="lang-en">Q3. Can I go alone?</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">もちろんです！一人客の方が多い店もたくさんあります。</span><span class="lang-en">Yes! Many customers visit alone.</span></div></div>
+    </div>
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q4. 服装に決まりはありますか？</span><span class="lang-en">Q4. Is there a dress code?</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">自由です！清潔感があれば仕事帰りでも大丈夫です。</span><span class="lang-en">No specific code. Neat casual is fine.</span></div></div>
+    </div>
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q5. 英語対応や男性の入店は？</span><span class="lang-en">Q5. English & Male entry</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">「英語対応」タグや「MIXバー」は柔軟。</span><span class="lang-en">"English OK" bars are flexible.</span></div></div>
+    </div>
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q6. 予約は必要ですか？</span><span class="lang-en">Q6. Do I need a reservation?</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">ほとんど不要ですが、イベント時はSNSを確認。</span><span class="lang-en">Usually not, check SNS for events.</span></div></div>
+    </div>
+    <div class="qa-item">
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q7. 付き添いサービスはどう頼めばいい？</span><span class="lang-en">Q7. How to book?</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">X（@412357siki）のDMへお送りください。</span><span class="lang-en">Please DM via X (@412357siki).</span></div></div>
+    </div>
+</section>
 
 <div class="legend-section">
     <div class="legend-box">
@@ -143,8 +201,8 @@
 
 <div class="filter-section">
     <div class="tag-notice">
-        <span class="lang-jp">📢 ※案内人がまだ行っていないお店のタグは付けられていません。</span>
-        <span class="lang-en">📢 Tags are only added to shops the guide has visited.</span>
+        <span class="lang-jp">📢 ※案内人がまだ行っていないお店のタグは完璧には付けられていません。</span>
+        <span class="lang-en">📢 Tags for bars the guide hasn't visited are not perfectly set.</span>
     </div>
 
     <div class="area-filter">
@@ -168,12 +226,14 @@
         <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#<span class="lang-jp">盛り上がる</span><span class="lang-en">Lively</span></button>
         <button class="tag-btn" onclick="filterTag('お通し有', this)">#<span class="lang-jp">お通し有</span><span class="lang-en">Appetizer</span></button>
         <button class="tag-btn" onclick="filterTag('フード有', this)">#<span class="lang-jp">フード有</span><span class="lang-en">Food</span></button>
-        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)">#<span class="lang-jp">珍しい酒</span><span class="lang-en">Unique Drinks</span></button>
+        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)">#<span class="lang-jp">変わったリキュール有</span><span class="lang-en">Unique Drinks</span></button>
         <button class="tag-btn" onclick="filterTag('イベント多い', this)">#<span class="lang-jp">イベント</span><span class="lang-en">Events</span></button>
         <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)">#<span class="lang-jp">ボトルキープ</span><span class="lang-en">Bottle Keep</span></button>
         <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)">#<span class="lang-jp">持込食OK</span><span class="lang-en">BYO Food</span></button>
     </div>
 </div>
+
+<div id="shop-container"></div>
 
 <section class="aff-section">
     <div class="aff-title">
@@ -187,7 +247,7 @@
                 <span class="lang-en">"My student-yuri fav!"</span>
             </span>
             <div style="margin-top:10px;">
-                <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 <span class="lang-jp">気になってる人が男じゃなかった</span><span class="lang-en">The Guy She Was Interested in Wasn't a Guy at All</span></a>
+                <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 <span class="lang-jp">気になってる人が男じゃなかった</span><span class="lang-en">The Guy She Was Interested in...</span></a>
             </div>
         </div>
         <div class="aff-card">
@@ -196,16 +256,16 @@
                 <span class="lang-en">"Best office-yuri!"</span>
             </span>
             <div style="margin-top:10px;">
-                <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 <span class="lang-jp">姉の親友、私の恋人。</span><span class="lang-en">My Sister's Best Friend, My Lover</span></a>
+                <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 <span class="lang-jp">姉の親友、私の恋人。</span><span class="lang-en">My Sister's Best Friend...</span></a>
             </div>
         </div>
         <div class="aff-card">
             <span class="aff-comment">
                 <span class="lang-jp">「こんなノンケどこにいるんですか？」</span>
-                <span class="lang-en">"Intense adult yuri"</span>
+                <span class="lang-en">"An intense story of raw desire."</span>
             </span>
             <div style="margin-top:10px;">
-                <a href="https://hb.afl.rakuten.co.jp/ichiba/512feefc.b2c4a38d.512feefd.1aac3dab/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15917927%2F&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="color:#00ffcc; font-weight:bold; text-decoration:none; word-wrap:break-word;">✒️ <span class="lang-jp">生のみ生のままで [ 綿矢 りさ ]</span><span class="lang-en">Nama no mi, Nama no mama de [Risa Wataya]</span></a>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/512feefc.b2c4a38d.512feefd.1aac3dab/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15917927%2F&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImBidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="color:#00ffcc; font-weight:bold; text-decoration:none; word-wrap:break-word;">✒️ <span class="lang-jp">生のみ生のままで [ 綿矢 りさ ]</span><span class="lang-en">Raw, Just as It Is [Risa Wataya]</span></a>
             </div>
         </div>
         <div class="aff-card">
@@ -219,8 +279,6 @@
         </div>
     </div>
 </section>
-
-<div id="shop-container"></div>
 
 <footer class="footer-notice">
     <strong><span class="lang-jp">免責事項</span><span class="lang-en">Disclaimer</span></strong>
@@ -247,6 +305,7 @@
 
 <script src="data.js"></script>
 <script>
+    // 修正箇所：tagMapのキーを「変わったリキュール有」に変更
     const tagMap = {
         "外国人多い": "Global", "ノーチャージ": "No Cover", "英語対応": "English", "カラオケ": "Karaoke",
         "喫煙可": "Smoking", "初心者向け": "Beginner", "初心者多め": "Newbies", "年齢層高め": "Mature",
@@ -259,6 +318,16 @@
         document.getElementById('btn-jp').classList.toggle('active', lang === 'jp');
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         displayShops(); 
+    }
+
+    function toggleQA(btn) {
+        btn.classList.toggle('active');
+        const answer = btn.nextElementSibling;
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
     }
 
     window.onscroll = function() {
@@ -297,8 +366,12 @@
             card.dataset.area = shop.area;
             card.dataset.tags = JSON.stringify(shop.tags || []);
             
-            const dName = isEn ? shop.name_en : shop.name_jp;
-            const dAddress = isEn ? shop.address_en : shop.address_jp;
+            const dName = isEn ? (shop.name_en || shop.name_jp) : shop.name_jp;
+            const dAddress = isEn ? (shop.address_en || shop.address_jp) : shop.address_jp;
+            
+            // 説明文の取得（description_jp / description_en）
+            const dDesc = isEn ? (shop.description_en || shop.description_jp) : shop.description_jp;
+            
             const dTags = (shop.tags || []).map(t => `<span>#${isEn ? (tagMap[t] || t) : t}</span>`).join('');
 
             const iconContent = shop.icon === "instagram" 
@@ -306,16 +379,19 @@
                 : `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:8px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">`;
 
             card.innerHTML = `
-                <div style="padding:15px; display:flex; gap:15px;">
-                    <a href="${shop.snsUrl}" target="_blank">${iconContent}</a>
-                    <div style="flex:1;">
-                        <div class="shop-name">
-                            <a href="${shop.snsUrl}" target="_blank">${dName} 🔗</a>
-                            <span class="tag-badge ${sClass}">${sLabel}</span>
+                <div style="padding:15px;">
+                    <div style="display:flex; gap:15px; margin-bottom:10px;">
+                        <a href="${shop.snsUrl}" target="_blank">${iconContent}</a>
+                        <div style="flex:1;">
+                            <div class="shop-name">
+                                <a href="${shop.snsUrl}" target="_blank">${dName} 🔗</a>
+                                <span class="tag-badge ${sClass}">${sLabel}</span>
+                            </div>
+                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${dAddress}</div>
+                            <div class="feature-tags">${dTags}</div>
                         </div>
-                        <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${dAddress}</div>
-                        <div class="feature-tags">${dTags}</div>
                     </div>
+                    ${dDesc ? `<div style="font-size:0.75rem; color:#ccd6f6; line-height:1.5; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">${dDesc}</div>` : ""}
                 </div>
                 <div class="action-buttons">
                     <a href="${shop.note}" class="btn btn-note" target="_blank">📝 note</a>
