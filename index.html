@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>レズビアンバーマップ一覧</title>
-    <meta name="description" content="新宿二丁目や東京都内を中心に、全国のレズビアンバー（ビアンバー）をレポ付きで探せる一覧マップです。初心者の方への付き添いサービスも実施中。">
-    <meta name="keywords" content="レズビアンバー,ビアンバー,新宿二丁目,東京 レズビアンバー,LGBTQ,マップ">
-
+    <meta name="description" content="新宿二丁目や東京都内を中心に, 全国のレズビアンバー（ビアンバー）をレポ付きで探せる一覧マップです。初心者の方への付き添いサービスも実施中。">
     <style>
         /* --- 基本設定 --- */
         body { background-color: #0a1428; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
@@ -14,24 +12,22 @@
         .lang-btn { background: #1a2a4a; border: 1px solid #3a4a6a; color: #8892b0; cursor: pointer; border-radius: 4px; padding: 5px 12px; font-size: 0.75rem; }
         .lang-btn.active { border-color: #00ffcc; color: #00ffcc; }
         
-        /* 言語出し分け制御 */
         .lang-en, .lang-en-block { display: none !important; }
         body.en-mode .lang-jp { display: none !important; }
         body.en-mode .lang-en { display: inline !important; }
         body.en-mode .lang-en-block { display: block !important; }
 
-        /* ヘッダー */
         .site-header { text-align: center; padding: 40px 20px; width: 100%; }
         .site-header h1 { font-size: 1.8rem; font-weight: bold; background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
         .site-subtitle { font-size: 0.85rem; color: #ccd6f6; margin-top: 10px; display: block; }
 
-        /* ガイドセクション */
         .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; }
         .guide-notes { font-size: 0.75rem; color: #ff4d4d; text-align: left; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-top: 15px; line-height: 1.6; border: 1px solid rgba(255, 77, 77, 0.3); }
 
-        .tip-btn { display: block; background: #00ffcc; color: #0a1428; padding: 12px; width: 90%; max-width: 600px; border-radius: 30px; text-decoration: none; font-weight: bold; text-align: center; font-size: 0.9rem; margin-bottom: 15px; }
+        .form-btn { display: block; background: #00ffcc; color: #0a1428; padding: 12px; width: 90%; max-width: 600px; border-radius: 30px; text-decoration: none; font-weight: bold; text-align: center; font-size: 0.9rem; margin-bottom: 15px; }
+        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; }
+        .tip-btn { display: block; background: #233554; color: #ffffff; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 30px; border: 1px solid #3a4a6a; }
 
-        /* Q&Aセクション */
         .qa-section { width: 90%; max-width: 600px; margin-bottom: 20px; }
         .qa-item { background: rgba(255,255,255,0.05); border: 1px solid #2a3a5a; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
         .qa-question { width: 100%; background: none; border: none; padding: 12px 15px; text-align: left; color: #ff8c00; font-weight: bold; font-size: 0.85rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
@@ -40,11 +36,6 @@
         .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.2); }
         .qa-answer-inner { padding: 12px 15px; font-size: 0.8rem; color: #ccd6f6; line-height: 1.5; }
 
-        /* トップに戻るボタン */
-        #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
-        #back-to-top.show { opacity: 1; pointer-events: auto; }
-
-        /* 系列解説 */
         .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .legend-box { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; border: 1px solid #2a3a5a; font-size: 0.7rem; }
         .legend-title { font-weight: bold; margin-bottom: 5px; color: #00ffcc; }
@@ -52,15 +43,11 @@
         .dot-l { width: 4px; height: 12px; }
         .dot-r { width: 10px; height: 10px; border-radius: 2px; }
 
-        /* フィルター */
         .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
         .area-filter, .tag-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 15px; }
-        .tag-notice { font-size: 0.75rem; color: #ff8c00; margin-bottom: 15px; text-align: center; width: 100%; display: block; font-weight: bold; }
         .area-btn, .tag-btn { background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 6px 14px; border-radius: 30px; cursor: pointer; font-size: 0.75rem; }
-        .tag-btn { border-radius: 4px; }
         .area-btn.active, .tag-btn.active { border-color: #00ffcc; background: #3a4a6a; }
 
-        /* ショップカード */
         #shop-container { width: 90%; max-width: 500px; }
         .shop-card { background: #162440; border-radius: 12px; overflow: hidden; border: 1px solid #2a3a5a; margin-bottom: 25px; display: none; position: relative; padding-left: 14px; border-right: 10px solid #2a3a5a; }
         .shop-card.show { display: block; }
@@ -75,12 +62,6 @@
         .border-r-mix { border-right-color: #4bc0c0 !important; }
 
         .shop-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
-        .shop-name a { color: #ffffff !important; text-decoration: none; }
-        .tag-badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: 5px; }
-        .bg-h { background: #00ff00; color: #000; } .bg-a { background: #ff8c00; }
-        .bg-bl { background: #0000ff; } .bg-bg { background: #ff0000; }
-        .bg-gf { background: #ffd700; color: #000; } .bg-fune { background: #00ffff; color: #000; }
-
         .feature-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.7rem; color: #8892b0; }
         .feature-tags span { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; }
 
@@ -89,20 +70,21 @@
         .btn-note { color: #ffffff; background: #233554; }
         .btn-guide { color: #0a1428; background: #00ffcc; }
 
-        /* アフィリエイト */
         .aff-section { width: 90%; max-width: 600px; margin: 30px 0; border-top: 1px solid #2a3a5a; padding-top: 20px; }
         .aff-title { font-size: 1rem; font-weight: bold; color: #00ffcc; margin-bottom: 15px; text-align: center; }
         .aff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .aff-card { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-size: 0.75rem; border: 1px solid #333; }
         .aff-comment { display: block; font-style: italic; color: #ccd6f6; margin-bottom: 5px; }
 
-        /* フッター */
         .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; }
         .footer-notice ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
         .footer-notice li { margin-bottom: 8px; line-height: 1.4; }
         
         .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; }
         .portfolio-card { flex: 1; background: #1a2a4a; padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; font-size: 0.75rem; text-align: center; border: 1px solid #3a4a6a; }
+
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        #back-to-top.show { opacity: 1; pointer-events: auto; }
     </style>
 </head>
 <body>
@@ -113,12 +95,8 @@
     <button id="btn-jp" class="lang-btn active" onclick="setLang('jp')">日本語</button>
     <button id="btn-en" class="lang-btn" onclick="setLang('en')">English</button>
 </div>
-
 <header class="site-header">
-    <h1>
-        <span class="lang-jp">レズビアンバーマップ一覧</span>
-        <span class="lang-en">Lesbian Bar Map JP</span>
-    </h1>
+    <h1><span class="lang-jp">レズビアンバーマップ一覧</span><span class="lang-en">Lesbian Bar Map JP</span></h1>
     <span class="site-subtitle lang-jp">新宿二丁目や全国のビアンバーをレポ付きで探せるマップ（随時更新中）</span>
     <span class="site-subtitle lang-en">Nationwide lesbian bar map with report notes (updating)</span>
 </header>
@@ -127,6 +105,7 @@
     <h2>🤝 <span class="lang-jp">初めてのバー巡りをサポートします</span><span class="lang-en">Support for your first bar visit</span></h2>
     <p><span class="lang-jp">「二丁目に行ってみたいけど、一人で入る勇気がない…」そんな方のための付き添いサービスです。</span>
        <span class="lang-en">"I want to go to Ni-chome, but I'm not brave enough to go alone..." This service is for you.</span></p>
+    
     <div style="margin: 10px 0;"><a href="guide.html" style="color:#00ffcc; font-size:0.85rem; text-decoration:none; font-weight:bold;">>>> <span class="lang-jp">付き添いプラン詳細はこちら</span><span class="lang-en">Details & Booking</span></a></div>
     
     <div class="guide-notes">
@@ -134,30 +113,18 @@
         <span class="lang-jp">・20歳未満不可 / 待ち合わせは公共の場厳守 / 恋愛・性的サポートなし</span><span class="lang-en-block lang-en">- No minors under 20 / Public meeting only / No dating or sexual support</span>
         <span class="lang-jp">・<strong>友達作り・コミュニティ探しのお手伝いは積極的に協力します！</strong></span><span class="lang-en-block lang-en">- We actively help you make friends and find your community!</span>
         <span class="lang-jp">・許可のない撮影不可 / <strong>案内人の交通費・飲食代は依頼主負担</strong> となります</span><span class="lang-en-block lang-en">- No filming / Client covers guide's travel and drink expenses</span>
-        <span class="lang-jp">・付き添い依頼は <strong>X（@412357siki）のDM</strong> までお願いいたします。</span><span class="lang-en-block lang-en">- For requests, contact <strong>X (@412357siki) DM</strong>.</span>
+        <span class="lang-jp">・その他のお問い合わせは <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X（@412357siki）のDM</a></strong> まで。</span><span class="lang-en-block lang-en">- For other inquiries, contact <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X (@412357siki) DM</a></strong>.</span>
     </div>
 </section>
 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=sf_link" target="_blank" class="form-btn">📩 <span class="lang-jp">付き添い申し込み（Googleフォーム）</span><span class="lang-en">Booking Accompaniment (Form)</span></a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">✨ <span class="lang-jp">スポンサー・掲載依頼（Googleフォーム）</span><span class="lang-en">Sponsors & Listing Requests</span></a>
 <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" class="tip-btn">☕ <span class="lang-jp">愁（しゅう）にチップを送る (note)</span><span class="lang-en">Send a tip to Syu (note)</span></a>
 
 <section class="qa-section">
     <div class="qa-item">
-        <button class="qa-question" onclick="toggleQA(this)">
-            <span class="lang-jp">Q1. 料金相場や「チャージ」について</span>
-            <span class="lang-en">Q1. About costs and "Cover Charge"</span>
-        </button>
-        <div class="qa-answer">
-            <div class="qa-answer-inner">
-                <span class="lang-jp">
-                    チャージ（席料）と1ドリンクで<strong>合計2,000円以内（お釣りが出る程度）</strong>が一般的です。
-                    ドリンクは1杯900円〜の設定が多く、明朗会計な店がほとんどなのでご安心ください。
-                </span>
-                <span class="lang-en">
-                    Usually <strong>under 2,000 JPY</strong> for cover charge + one drink. 
-                    Most drinks start around 900 JPY.
-                </span>
-            </div>
-        </div>
+        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q1. 料金相場や「チャージ」について</span><span class="lang-en">Q1. About costs and "Cover Charge"</span></button>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">チャージと1ドリンクで<strong>合計2,000円以内</strong>が一般的です。ドリンクは1杯900円〜の設定が多く、明朗会計な店がほとんどなのでご安心ください。</span><span class="lang-en">Usually <strong>under 2,000 JPY</strong> for cover charge + one drink. Most drinks start around 900 JPY.</span></div></div>
     </div>
     <div class="qa-item">
         <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q2. トランスジェンダーの入店について</span><span class="lang-en">Q2. For transgender guests</span></button>
@@ -181,30 +148,25 @@
     </div>
     <div class="qa-item">
         <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q7. 付き添いサービスはどう頼めばいい？</span><span class="lang-en">Q7. How to book?</span></button>
-        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">X（@412357siki）のDMへお送りください。</span><span class="lang-en">Please DM via X (@412357siki).</span></div></div>
+        <div class="qa-answer"><div class="qa-answer-inner"><span class="lang-jp">上部の「付き添い申し込み」ボタンからお送りください。</span><span class="lang-en">Please use the "Booking Accompaniment" form button above.</span></div></div>
     </div>
 </section>
 
 <div class="legend-section">
     <div class="legend-box">
         <div class="legend-title"><span class="lang-jp">左線：系列</span><span class="lang-en">Left: Series</span></div>
-        <div class="legend-item"><div class="dot-l" style="background:#00ff00;"></div><span><span class="lang-jp">H系列</span><span class="lang-en">H Series</span> / <span class="lang-jp">A系列</span><span class="lang-en">A Series</span> <div class="dot-l" style="background:#ff8c00; display:inline-block; margin-left:5px;"></div></span></div>
-        <div class="legend-item"><div class="dot-l" style="background:#ffd700;"></div><span>GF系 / <span class="lang-jp">船系</span><span class="lang-en">Fune</span> <div class="dot-l" style="background:#00ffff; display:inline-block; margin-left:5px;"></div></span></div>
+        <div class="legend-item"><div class="dot-l" style="background:#00ff00;"></div><span>H系 / A系 <div class="dot-l" style="background:#ff8c00; display:inline-block; margin-left:5px;"></div></span></div>
+        <div class="legend-item"><div class="dot-l" style="background:#ffd700;"></div><span>GF系 / 船系 <div class="dot-l" style="background:#00ffff; display:inline-block; margin-left:5px;"></div></span></div>
         <div class="legend-item"><div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #0000ff 50%);"></div><span>B系(L) / B系(G) <div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #ff0000 50%); display:inline-block; margin-left:5px;"></div></span></div>
     </div>
     <div class="legend-box">
         <div class="legend-title"><span class="lang-jp">右線：種別</span><span class="lang-en">Right: Type</span></div>
-        <div class="legend-item"><div class="dot-r" style="background:#ff69b4;"></div><span><span class="lang-jp">ビアン専用</span><span class="lang-en">Lesbian Only</span></span></div>
-        <div class="legend-item"><div class="dot-r" style="background:#4bc0c0;"></div><span><span class="lang-jp">MIXバー</span><span class="lang-en">MIX Bar</span></span></div>
+        <div class="legend-item"><div class="dot-r" style="background:#ff69b4;"></div><span>ビアン専用</span></div>
+        <div class="legend-item"><div class="dot-r" style="background:#4bc0c0;"></div><span>MIXバー</span></div>
     </div>
 </div>
 
 <div class="filter-section">
-    <div class="tag-notice">
-        <span class="lang-jp">📢 ※案内人がまだ行っていないお店のタグは完璧には付けられていません。</span>
-        <span class="lang-en">📢 Tags for bars the guide hasn't visited are not perfectly set.</span>
-    </div>
-
     <div class="area-filter">
         <button class="area-btn" onclick="filterArea('東日本', this)"><span class="lang-jp">東日本</span><span class="lang-en">East JP</span></button>
         <button class="area-btn" onclick="filterArea('東京', this)"><span class="lang-jp">東京</span><span class="lang-en">Tokyo</span></button>
@@ -214,68 +176,45 @@
     </div>
 
     <div class="tag-filter">
-        <button class="tag-btn" onclick="filterTag('外国人多い', this)">#<span class="lang-jp">外国人多い</span><span class="lang-en">Global</span></button>
-        <button class="tag-btn" onclick="filterTag('ノーチャージ', this)">#<span class="lang-jp">ノーチャージ</span><span class="lang-en">No Cover</span></button>
-        <button class="tag-btn" onclick="filterTag('英語対応', this)">#<span class="lang-jp">英語対応</span><span class="lang-en">English</span></button>
-        <button class="tag-btn" onclick="filterTag('カラオケ', this)">#<span class="lang-jp">カラオケ</span><span class="lang-en">Karaoke</span></button>
-        <button class="tag-btn" onclick="filterTag('喫煙可', this)">#<span class="lang-jp">喫煙可</span><span class="lang-en">Smoking</span></button>
-        <button class="tag-btn" onclick="filterTag('初心者向け', this)">#<span class="lang-jp">初心者向け</span><span class="lang-en">Beginner</span></button>
-        <button class="tag-btn" onclick="filterTag('初心者多め', this)">#<span class="lang-jp">初心者多め</span><span class="lang-en">Newbies</span></button>
-        <button class="tag-btn" onclick="filterTag('年齢層高め', this)">#<span class="lang-jp">年齢層高め</span><span class="lang-en">Mature</span></button>
-        <button class="tag-btn" onclick="filterTag('穏やか', this)">#<span class="lang-jp">穏やか</span><span class="lang-en">Calm</span></button>
-        <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#<span class="lang-jp">盛り上がる</span><span class="lang-en">Lively</span></button>
-        <button class="tag-btn" onclick="filterTag('お通し有', this)">#<span class="lang-jp">お通し有</span><span class="lang-en">Appetizer</span></button>
-        <button class="tag-btn" onclick="filterTag('フード有', this)">#<span class="lang-jp">フード有</span><span class="lang-en">Food</span></button>
-        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)">#<span class="lang-jp">変わったリキュール有</span><span class="lang-en">Unique Drinks</span></button>
-        <button class="tag-btn" onclick="filterTag('イベント多い', this)">#<span class="lang-jp">イベント</span><span class="lang-en">Events</span></button>
-        <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)">#<span class="lang-jp">ボトルキープ</span><span class="lang-en">Bottle Keep</span></button>
-        <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)">#<span class="lang-jp">持込食OK</span><span class="lang-en">BYO Food</span></button>
+        <button class="tag-btn" onclick="filterTag('外国人多い', this)"><span class="lang-jp">#外国人多い</span><span class="lang-en">#Global</span></button>
+        <button class="tag-btn" onclick="filterTag('ノーチャージ', this)"><span class="lang-jp">#ノーチャージ</span><span class="lang-en">#NoCharge</span></button>
+        <button class="tag-btn" onclick="filterTag('英語対応', this)"><span class="lang-jp">#英語対応</span><span class="lang-en">#English</span></button>
+        <button class="tag-btn" onclick="filterTag('カラオケ', this)"><span class="lang-jp">#カラオケ</span><span class="lang-en">#Karaoke</span></button>
+        <button class="tag-btn" onclick="filterTag('喫煙可', this)"><span class="lang-jp">#喫煙可</span><span class="lang-en">#Smoking</span></button>
+        <button class="tag-btn" onclick="filterTag('初心者向け', this)"><span class="lang-jp">#初心者向け</span><span class="lang-en">#Beginner</span></button>
+        <button class="tag-btn" onclick="filterTag('初心者多め', this)"><span class="lang-jp">#初心者多め</span><span class="lang-en">#Newbies</span></button>
+        <button class="tag-btn" onclick="filterTag('年齢層高め', this)"><span class="lang-jp">#年齢層高め</span><span class="lang-en">#Mature</span></button>
+        <button class="tag-btn" onclick="filterTag('穏やか', this)"><span class="lang-jp">#穏やか</span><span class="lang-en">#Calm</span></button>
+        <button class="tag-btn" onclick="filterTag('盛り上がる', this)"><span class="lang-jp">#盛り上がる</span><span class="lang-en">#Lively</span></button>
+        <button class="tag-btn" onclick="filterTag('お通し有', this)"><span class="lang-jp">#お通し有</span><span class="lang-en">#Appetizer</span></button>
+        <button class="tag-btn" onclick="filterTag('フード有', this)"><span class="lang-jp">#フード有</span><span class="lang-en">#Food</span></button>
+        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)"><span class="lang-jp">#変わったリキュール有</span><span class="lang-en">#UniqueDrink</span></button>
+        <button class="tag-btn" onclick="filterTag('イベント多い', this)"><span class="lang-jp">#イベント多い</span><span class="lang-en">#Events</span></button>
+        <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)"><span class="lang-jp">#ボトルキープ有</span><span class="lang-en">#BottleKeep</span></button>
+        <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)"><span class="lang-jp">#持ち込み食べ物可</span><span class="lang-en">#BYOFood</span></button>
     </div>
 </div>
 
 <div id="shop-container"></div>
 
 <section class="aff-section">
-    <div class="aff-title">
-        <span class="lang-jp">✨ 作成者おすすめの百合コンテンツ</span>
-        <span class="lang-en">✨ Recommended Yuri Content</span>
-    </div>
+    <div class="aff-title"><span class="lang-jp">✨ 作成者おすすめの百合コンテンツ</span><span class="lang-en">✨ Recommended Yuri Content</span></div>
     <div class="aff-grid">
         <div class="aff-card">
-            <span class="aff-comment">
-                <span class="lang-jp">「学生百合でこれが好き！」</span>
-                <span class="lang-en">"My student-yuri fav!"</span>
-            </span>
-            <div style="margin-top:10px;">
-                <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 <span class="lang-jp">気になってる人が男じゃなかった</span><span class="lang-en">The Guy She Was Interested in...</span></a>
-            </div>
+            <span class="aff-comment"><span class="lang-jp">「学生百合でこれが好き！」</span><span class="lang-en">"My student-yuri fav!"</span></span>
+            <div style="margin-top:10px;"><a href="https://amzn.to/4rXhcGH" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 気になってる人が男じゃなかった</a></div>
         </div>
         <div class="aff-card">
-            <span class="aff-comment">
-                <span class="lang-jp">「社会人百合でこれが好き！」</span>
-                <span class="lang-en">"Best office-yuri!"</span>
-            </span>
-            <div style="margin-top:10px;">
-                <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 <span class="lang-jp">姉の親友、私の恋人。</span><span class="lang-en">My Sister's Best Friend...</span></a>
-            </div>
+            <span class="aff-comment"><span class="lang-jp">「社会人百合でこれが好き！」</span><span class="lang-en">"Best office-yuri!"</span></span>
+            <div style="margin-top:10px;"><a href="https://amzn.to/4rtRQjS" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 姉の親友、私の恋人。</a></div>
         </div>
         <div class="aff-card">
-            <span class="aff-comment">
-                <span class="lang-jp">「こんなノンケどこにいるんですか？」</span>
-                <span class="lang-en">"An intense story of raw desire."</span>
-            </span>
-            <div style="margin-top:10px;">
-                <a href="https://hb.afl.rakuten.co.jp/ichiba/512feefc.b2c4a38d.512feefd.1aac3dab/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15917927%2F&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImBidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="color:#00ffcc; font-weight:bold; text-decoration:none; word-wrap:break-word;">✒️ <span class="lang-jp">生のみ生のままで [ 綿矢 りさ ]</span><span class="lang-en">Raw, Just as It Is [Risa Wataya]</span></a>
-            </div>
+            <span class="aff-comment"><span class="lang-jp">「こんなノンケどこにいるんですか？」</span><span class="lang-en">"An intense story of raw desire."</span></span>
+            <div style="margin-top:10px;"><a href="RAKUTEN_URL" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">✒️ 生のみ生のままで [ 綿矢 りさ ]</a></div>
         </div>
         <div class="aff-card">
-            <span class="aff-comment">
-                <span class="lang-jp">「作画が神がかってます」</span>
-                <span class="lang-en">"Stunning art style!"</span>
-            </span>
-            <div style="margin-top:10px;">
-                <a href="https://amzn.to/4rwUC8a" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">🎬 <span class="lang-jp">やがて君になる</span><span class="lang-en">Bloom Into You</span></a>
-            </div>
+            <span class="aff-comment"><span class="lang-jp">「作画が神がかってます」</span><span class="lang-en">"Stunning art style!"</span></span>
+            <div style="margin-top:10px;"><a href="https://amzn.to/4rwUC8a" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">🎬 やがて君になる</a></div>
         </div>
     </div>
 </section>
@@ -283,18 +222,9 @@
 <footer class="footer-notice">
     <strong><span class="lang-jp">免責事項</span><span class="lang-en">Disclaimer</span></strong>
     <ul>
-        <li>
-            <span class="lang-jp">・掲載情報は案内人の実体験や調査時点のものです。最新情報は各店舗のSNS等でご確認ください。</span>
-            <span class="lang-en-block lang-en">- Information is based on the guide's personal experience and research at the time of publication. Please check each store's SNS for the latest information.</span>
-        </li>
-        <li>
-            <span class="lang-jp">・情報の誤りや削除依頼はX（@412357siki）のDMまでお願いいたします。</span>
-            <span class="lang-en-block lang-en">- For error corrections or removal requests, please contact via X (@412357siki) DM.</span>
-        </li>
-        <li>
-            <span class="lang-jp">・当サイトの利用により生じたトラブルについては責任を負いかねます。</span>
-            <span class="lang-en-block lang-en">- We are not responsible for any trouble arising from the use of this site.</span>
-        </li>
+        <li><span class="lang-jp">・掲載情報は案内人の実体験や調査時点のものです。最新情報は各店舗のSNS等でご確認ください。</span><span class="lang-en-block lang-en">- Information is based on experience and research. Check SNS for latest.</span></li>
+        <li><span class="lang-jp">・情報の誤りや削除依頼はX（@412357siki）のDMまでお願いいたします。</span><span class="lang-en-block lang-en">- For corrections or removal, contact via X (@412357siki) DM.</span></li>
+        <li><span class="lang-jp">・当サイトの利用により生じたトラブルについては責任を負いかねます。</span><span class="lang-en-block lang-en">- We are not responsible for any trouble arising from the use of this site.</span></li>
     </ul>
 </footer>
 
@@ -305,12 +235,23 @@
 
 <script src="data.js"></script>
 <script>
-    // 修正箇所：tagMapのキーを「変わったリキュール有」に変更
     const tagMap = {
-        "外国人多い": "Global", "ノーチャージ": "No Cover", "英語対応": "English", "カラオケ": "Karaoke",
-        "喫煙可": "Smoking", "初心者向け": "Beginner", "初心者多め": "Newbies", "年齢層高め": "Mature",
-        "穏やか": "Calm", "盛り上がる": "Lively", "お通し有": "Appetizer", "フード有": "Food",
-        "変わったリキュール有": "Unique Drinks", "イベント多い": "Events", "ボトルキープ有": "Bottle Keep", "持ち込み食べ物可": "BYO Food"
+        '外国人多い': { jp: '外国人多い', en: 'Global' },
+        'ノーチャージ': { jp: 'ノーチャージ', en: 'NoCharge' },
+        '英語対応': { jp: '英語対応', en: 'English' },
+        'カラオケ': { jp: 'カラオケ', en: 'Karaoke' },
+        '喫煙可': { jp: '喫煙可', en: 'Smoking' },
+        '初心者向け': { jp: '初心者向け', en: 'Beginner' },
+        '初心者多め': { jp: '初心者多め', en: 'Newbies' },
+        '年齢層高め': { jp: '年齢層高め', en: 'Mature' },
+        '穏やか': { jp: '穏やか', en: 'Calm' },
+        '盛り上がる': { jp: '盛り上がる', en: 'Lively' },
+        'お通し有': { jp: 'お通し有', en: 'Appetizer' },
+        'フード有': { jp: 'フード有', en: 'Food' },
+        '変わったリキュール有': { jp: '変わったリキュール有', en: 'UniqueDrink' },
+        'イベント多い': { jp: 'イベント多い', en: 'Events' },
+        'ボトルキープ有': { jp: 'ボトルキープ有', en: 'BottleKeep' },
+        '持ち込み食べ物可': { jp: '持ち込み食べ物可', en: 'BYOFood' }
     };
 
     function setLang(lang) {
@@ -319,26 +260,15 @@
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         displayShops(); 
     }
-
     function toggleQA(btn) {
         btn.classList.toggle('active');
-        const answer = btn.nextElementSibling;
-        if (answer.style.maxHeight) {
-            answer.style.maxHeight = null;
-        } else {
-            answer.style.maxHeight = answer.scrollHeight + "px";
-        }
+        const ans = btn.nextElementSibling;
+        ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
     }
-
     window.onscroll = function() {
-        const topBtn = document.getElementById('back-to-top');
-        if (topBtn) {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                topBtn.classList.add('show');
-            } else {
-                topBtn.classList.remove('show');
-            }
-        }
+        const btn = document.getElementById('back-to-top');
+        if (document.documentElement.scrollTop > 300) btn.classList.add('show');
+        else btn.classList.remove('show');
     };
 
     function displayShops() {
@@ -349,53 +279,45 @@
 
         shopDetails.forEach(shop => {
             const card = document.createElement('div');
-            card.className = 'shop-card';
-            
-            let sClass = ""; let sLabel = shop.seriesMark || "";
-            if (shop.series === "H系列") { card.classList.add('border-l-h'); sClass = "bg-h"; sLabel = isEn ? "H Series" : "H系列"; }
-            else if (shop.series === "A系列") { card.classList.add('border-l-a'); sClass = "bg-a"; sLabel = isEn ? "A Series" : "A系列"; }
+            card.className = 'shop-card show';
+            if (shop.series === "H系列") card.classList.add('border-l-h');
+            else if (shop.series === "A系列") card.classList.add('border-l-a');
             else if (shop.series === "B系列") {
-                if (shop.seriesMark.includes("(L)")) { card.classList.add('border-l-b-l'); sClass = "bg-bl"; }
-                else { card.classList.add('border-l-b-g'); sClass = "bg-bg"; }
-                sLabel = shop.seriesMark;
-            } else if (shop.series === "GF系") { card.classList.add('border-l-gf'); sClass = "bg-gf"; sLabel = "GF"; }
-            else if (shop.series === "船系") { card.classList.add('border-l-fune'); sClass = "bg-fune"; sLabel = isEn ? "Fune" : "船系"; }
-            
+                if (shop.seriesMark && shop.seriesMark.includes("(L)")) card.classList.add('border-l-b-l');
+                else card.classList.add('border-l-b-g');
+            } else if (shop.series === "GF系") card.classList.add('border-l-gf');
+            else if (shop.series === "船系") card.classList.add('border-l-fune');
             if (shop.type === "ビアン") card.classList.add('border-r-bian'); else card.classList.add('border-r-mix');
 
             card.dataset.area = shop.area;
             card.dataset.tags = JSON.stringify(shop.tags || []);
             
             const dName = isEn ? (shop.name_en || shop.name_jp) : shop.name_jp;
-            const dAddress = isEn ? (shop.address_en || shop.address_jp) : shop.address_jp;
-            
-            // 説明文の取得（description_jp / description_en）
             const dDesc = isEn ? (shop.description_en || shop.description_jp) : shop.description_jp;
-            
-            const dTags = (shop.tags || []).map(t => `<span>#${isEn ? (tagMap[t] || t) : t}</span>`).join('');
+            const dTags = (shop.tags || []).map(t => {
+                const label = tagMap[t] ? (isEn ? tagMap[t].en : tagMap[t].jp) : t;
+                return `<span>#${label}</span>`;
+            }).join('');
 
-            const iconContent = shop.icon === "instagram" 
-                ? `<div style="width:100px; height:100px; border-radius:8px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 9px; font-weight: bold;"><span style="font-size:20px; margin-bottom:2px;">📸</span>Instagram</div>`
-                : `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:8px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">`;
+            const iconContent = (shop.icon === "instagram" || !shop.icon || shop.icon === "") 
+                ? `<div style="width:100px; height:100px; border-radius:8px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">📸</span>Instagram</div>`
+                : `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:8px; object-fit:cover; flex-shrink: 0;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">`;
 
             card.innerHTML = `
                 <div style="padding:15px;">
                     <div style="display:flex; gap:15px; margin-bottom:10px;">
-                        <a href="${shop.snsUrl}" target="_blank">${iconContent}</a>
+                        ${iconContent}
                         <div style="flex:1;">
-                            <div class="shop-name">
-                                <a href="${shop.snsUrl}" target="_blank">${dName} 🔗</a>
-                                <span class="tag-badge ${sClass}">${sLabel}</span>
-                            </div>
-                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${dAddress}</div>
+                            <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a></div>
+                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${isEn ? shop.address_en : shop.address_jp}</div>
                             <div class="feature-tags">${dTags}</div>
                         </div>
                     </div>
                     ${dDesc ? `<div style="font-size:0.75rem; color:#ccd6f6; line-height:1.5; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">${dDesc}</div>` : ""}
                 </div>
                 <div class="action-buttons">
-                    <a href="${shop.note}" class="btn btn-note" target="_blank">📝 note</a>
-                    <a href="https://x.com/412357siki" class="btn btn-guide" target="_blank">🤝 <span class="lang-jp">依頼</span><span class="lang-en">DM</span></a>
+                    <a href="${isEn ? (shop.medium || shop.note) : shop.note}" class="btn btn-note" target="_blank">📝 ${isEn ? 'Medium' : 'note'}</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=sf_link" class="btn btn-guide" target="_blank">🤝 ${isEn ? 'Booking' : '付き添い依頼'}</a>
                 </div>`;
             container.appendChild(card);
         });
@@ -420,7 +342,6 @@
         i > -1 ? activeFilters.tags.splice(i, 1) : activeFilters.tags.push(tag);
         btn.classList.toggle('active'); updateVisibility();
     }
-    
     document.addEventListener('DOMContentLoaded', displayShops);
 </script>
 </body>
