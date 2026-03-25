@@ -6,17 +6,17 @@ const shopDetails = [
         description_en: "It looks like a semi-basement but it's actually the 1st floor! If you get lost, look for the 'Giron-sen' sign. A MIX bar where most customers are lesbians, attracting a wide range of age groups."
     },
     { 
-        name_jp: "八(はち)", name_en: "Bar Hachi", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@hachi_omusubi_8", snsUrl: "https://x.com/hachi_omusubi_8", time: "20:00〜25:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-15-13第二中江ビルB1", address_en: "B1, Dai-ni Nakae Bldg, 2-15-13 Shinjuku, Tokyo", tags: ["喫煙可", "初心者向け", "初心者多め", "変わったリキュール有", "穏やか", "イベント多い", "フード有", "盛り上がる"], icon: "https://unavatar.io/twitter/hachi_omusubi_8", note: "#", medium: "#",
+        name_jp: "八(はち)", name_en: "Bar Hachi", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@hachi_omusubi_8", snsUrl: "https://x.com/hachi_omusubi_8", time: "20:00〜25:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-15-13第二中江ビルB1", address_en: "B1, Dai-ni Nakae Bldg, 2-15-13 Shinjuku, Tokyo", tags: ["喫煙可", "初心者向け", "初心者多め", "変わったリキュール有", "穏やか", "イベント多い", "フード有", "盛り上がる"], icon: "https://unavatar.io/twitter/hachi_omusubi_8", note: "https://note.com/412357siki/n/n1936bc1a82c9", medium: "#",
         description_jp: "地下一階にあるおむすびがコンセプトのレズビアンバー。オーナーの知り合いならたまに男性がいることも。珍しいリキュールや炭酸サーバーがあるお店です。",
         description_en: "A lesbian bar on B1F with an 'Onigiri' (rice ball) concept. You might occasionally see male acquaintances of the owner. They feature rare liqueurs and a soda carbonator."
     },
     { 
-        name_jp: "はっちゃけ", name_en: "Hacchake", series: "H系列", seriesMark: "H", type: "MIX", area: "東京", xId: "@hacchake_nicho", snsUrl: "https://x.com/hacchake_nicho", time: "18:00〜24:00", holiday: "日曜,月曜,火曜", address_jp: "東京都新宿区新宿2丁目-14-11フタミビル101-A", address_en: "101-A, Futami Bldg, 2-14-11 Shinjuku, Tokyo", tags: ["初心者向け", "穏やか", "お通し有", "フード有"], icon: "https://unavatar.io/twitter/hacchake_nicho", note: "#", medium: "#",
+        name_jp: "はっちゃけ", name_en: "Hacchake", series: "H系列", seriesMark: "H", type: "MIX", area: "東京", xId: "@hacchake_nicho", snsUrl: "https://x.com/hacchake_nicho", time: "18:00〜24:00", holiday: "日曜,月曜,火曜", address_jp: "東京都新宿区新宿2丁目-14-11フタミビル101-A", address_en: "101-A, Futami Bldg, 2-14-11 Shinjuku, Tokyo", tags: ["初心者向け", "穏やか", "お通し有", "フード有"], icon: "https://unavatar.io/twitter/hacchake_nicho", note: "https://note.com/412357siki/n/nae96d6d9d1b4", medium: "#",
         description_jp: "H系列でご飯メインのお店。二丁目横丁の一番奥にあり、おつまみからしっかりした食事まで充実。一軒目にピッタリです！",
         description_en: "An H-series spot focused on food, located at the very back of Nichome Yokocho. From snacks to full meals, it's the perfect first stop for the night!"
     },
     { 
-        name_jp: "PUZZLE", name_en: "Bar PUZZLE", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@BarPUZZLE1", snsUrl: "https://x.com/BarPUZZLE1", time: "20:00〜26:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-13-14jビルディング1F", address_en: "1F, J-Building, 2-13-14 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "穏やか", "変わったリキュール有", "持ち込み食べ物可", "イベント多い"], icon: "https://unavatar.io/twitter/BarPUZZLE1", note: "#", medium: "#",
+        name_jp: "PUZZLE", name_en: "Bar PUZZLE", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@BarPUZZLE1", snsUrl: "https://x.com/BarPUZZLE1", time: "20:00〜26:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-13-14jビルディング1F", address_en: "1F, J-Building, 2-13-14 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "穏やか", "変わったリキュール有", "持ち込み食べ物可", "イベント多い"], icon: "https://unavatar.io/twitter/BarPUZZLE1", note: "https://note.com/412357siki/n/nbbdc3f99c53c", medium: "＃",
         description_jp: "曜日ごとにスタッフが決まっている珍しいシステムのレズビアンバー。変わったリキュールやイベントも多い。居酒屋『よしだ海岸』の先にあります。",
         description_en: "A lesbian bar with a unique system where the staff is fixed by the day of the week. Lots of rare liqueurs and events. Located just past the Izakaya 'Yoshida Kaigan'."
     },
@@ -25,7 +25,12 @@ const shopDetails = [
         description_jp: "住所は一丁目だけど雰囲気は二丁目！新築ビルに入ったH系列の店舗で、カラオケもダーツも楽しめるお店です。",
         description_en: "The address is in Ic-chome, but it has a total Ni-chome vibe! A new H-series branch in a modern building, featuring both karaoke and darts."
     },
-
+    { 
+        name_jp: "LBAR T", name_en: "LBAR T", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@lbart0314", snsUrl: "https://x.com/lbart0314", time: "18:30〜24:00", holiday: "月曜", address_jp: "東京都台東区上野2-4-3-103", address_en: "103, 2-4-3,Ueno, Taito-ku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け",  "穏やか",  "イベント多い"], icon: "https://unavatar.io/twitter/lbart0314", note: "#", medium: "＃",
+        description_jp: "未訪問、現在調査中訪問次第載せます。",
+        description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+   
+    },
     // A系列 (A)
     { 
         name_jp: "agit", name_en: "agit", series: "A系列", seriesMark: "A", type: "ビアン", area: "東京", xId: "@agit_staff", snsUrl: "https://x.com/agit_staff", time: "19:00〜25:00,19:00～27:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2-15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["穏やか","年齢層高め","変わったリキュール有",], icon: "https://unavatar.io/twitter/agit_staff", note: "#", medium: "#",
@@ -244,6 +249,11 @@ const shopDetails = [
         name_jp: "渋谷501", name_en: "shibuya501", type: "ビアン", area: "東京", xId: "@shibuya501", snsUrl: "https://x.com/shibuya501", time: "18:00〜24:00,19:00~24:00", holiday: "不定休", address_jp: "東京都渋谷区宇田川町41-31 ユニデン渋谷ビル 5階", address_en: "5F Uniden Shibuya Bldg, 41-31 Udagawacho, Shibuya-ku, Tokyo", tags: ["初心者向け", "穏やか", "イベント多い"], icon: "https://unavatar.io/twitter/shibuya501", note: "#", medium: "#",
         description_jp: "未訪問、現在調査中訪問次第載せます。オフ会が多い店",
         description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
+    { 
+        name_jp: "bar belle GINZA", name_en: "Bar Belle", type: "MIX", area: "東京", xId: "@barbellessGINZA", snsUrl: "https://x.com/barbellessGINZA", time: "20:00〜4:00", holiday: "土曜、日曜", address_jp: "東京都中央区銀座6-8-6　木の実ビル2階", address_en: "2F,　kinomiBldg, 6-8-6 Chuo-ku, Tokyo", tags: [  "穏やか"], icon: "https://unavatar.io/twitter/barbellessGINZA", note: "#", medium: "#",
+         description_jp: "未訪問、現在調査中訪問次第載せます。",
+       description_en: "Coming soon! (I haven't visited yet, but planning to!)."
     },
     { 
         name_jp: "酒と肴やぶれ", name_en: "Yabure", type: "ビアン", area: "西日本", xId: "@yabure1911", snsUrl: "https://x.com/yabure1911", time: "17:00〜23:00,17:00~24:00", holiday: "不定休", address_jp: "福岡県福岡市中央区今泉1-23-4 REMIX天神2F", address_en: "2F REMIX Tenjin, 1-23-4 Imaizumi, Chuo-ku, Fukuoka-shi, Fukuoka", tags: ["初心者向け", "穏やか", "フード有"], icon: "https://unavatar.io/twitter/yabure1911", note: "#", medium: "#",
