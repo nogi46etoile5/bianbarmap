@@ -1,4 +1,20 @@
 const shopDetails = [
+     // A系列 (A)
+    { 
+        name_jp: "agit", name_en: "agit", series: "A系列", seriesMark: "A", type: "ビアン", area: "東京", xId: "@agit_staff", snsUrl: "https://x.com/agit_staff", time: "19:00〜25:00,19:00～27:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2-15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["穏やか","年齢層高め","変わったリキュール有",], icon: "https://unavatar.io/twitter/agit_staff", note: "#", medium: "#",
+        description_jp: "2026年に改修され入り口も一新した老舗。スナックのような落ち着いた雰囲気が魅力。ハブ酒やプロテインも楽しめます！",
+        description_en: "An established bar with a renovated entrance as of 2026. Enjoy a cozy 'Snack' bar atmosphere. They even serve Habu-shu (snake liquor) and protein shakes!"
+    },
+    { 
+        name_jp: "anchor rainbow port tokyo", name_en: "anchor", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@anchor_staff", snsUrl: "https://x.com/anchor_staff", time: "12:00〜25:00,12:00～5:00", holiday: "火曜,水曜", address_jp: "東京都新宿区新宿2丁目-12-15山原ハイツ2F", address_en: "2F, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["初心者向け","初心者多め","フード有",], icon: "https://unavatar.io/twitter/anchor_staff", note: "#", medium: "#",
+        description_jp: "二丁目では珍しく昼から開いているカフェバー。百合漫画を堪能するならここ一択！完全キャッシュレス決済のお店です。",
+        description_en: "A rare Ni-chome cafe-bar open from the daytime. The absolute best spot to enjoy Yuri manga! Please note they are a cashless-only establishment."
+    },
+    { 
+        name_jp: "艶櫻", name_en: "Adezakura", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@adezakura_staff", snsUrl: "https://x.com/adezakura_staff", time: "21:00〜5:00,21:00～6:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目 15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["初心者向け", "初心者多め", "イベント多い", "外国人多い","ノーチャージ","英語対応","変わったリキュール有"], icon: "https://unavatar.io/twitter/adezakura_staff", note: "#", medium: "#",
+        description_jp: "DJブースもあるショットバー。ビアンバーでスミノフアイスを置いているのはここだけかも？",
+        description_en: "A shot bar featuring a DJ booth. It might be the only lesbian-friendly bar in the area that serves Smirnoff Ice."
+    },
     // H系列 (H)
     { 
         name_jp: "一(はじめ)", name_en: "Bar Hajime", series: "H系列", seriesMark: "H", type: "MIX", area: "東京", xId: "@barhajime", snsUrl: "https://x.com/barhajime", time: "19:00～26:00,20:00〜4:00", holiday: "日曜,火曜", address_jp: "東京都新宿区新宿2丁目-12-14-1A", address_en: "1A, 2-12-14 Shinjuku, Shinjuku-ku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "年齢層高め", "変わったリキュール有", "穏やか", "ボトルキープ有", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/barhajime", note: "https://note.com/412357siki/n/n214e5c8e1d02", medium: "#",
@@ -31,23 +47,7 @@ const shopDetails = [
         description_en: "Coming soon! (I haven't visited yet, but planning to!)."
    
     },
-    // A系列 (A)
-    { 
-        name_jp: "agit", name_en: "agit", series: "A系列", seriesMark: "A", type: "ビアン", area: "東京", xId: "@agit_staff", snsUrl: "https://x.com/agit_staff", time: "19:00〜25:00,19:00～27:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2-15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["穏やか","年齢層高め","変わったリキュール有",], icon: "https://unavatar.io/twitter/agit_staff", note: "#", medium: "#",
-        description_jp: "2026年に改修され入り口も一新した老舗。スナックのような落ち着いた雰囲気が魅力。ハブ酒やプロテインも楽しめます！",
-        description_en: "An established bar with a renovated entrance as of 2026. Enjoy a cozy 'Snack' bar atmosphere. They even serve Habu-shu (snake liquor) and protein shakes!"
-    },
-    { 
-        name_jp: "anchor rainbow port tokyo", name_en: "anchor", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@anchor_staff", snsUrl: "https://x.com/anchor_staff", time: "12:00〜25:00,12:00～5:00", holiday: "火曜,水曜", address_jp: "東京都新宿区新宿2丁目-12-15山原ハイツ2F", address_en: "2F, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["初心者向け","初心者多め","フード有",], icon: "https://unavatar.io/twitter/anchor_staff", note: "#", medium: "#",
-        description_jp: "二丁目では珍しく昼から開いているカフェバー。百合漫画を堪能するならここ一択！完全キャッシュレス決済のお店です。",
-        description_en: "A rare Ni-chome cafe-bar open from the daytime. The absolute best spot to enjoy Yuri manga! Please note they are a cashless-only establishment."
-    },
-    { 
-        name_jp: "艶櫻", name_en: "Adezakura", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@adezakura_staff", snsUrl: "https://x.com/adezakura_staff", time: "21:00〜5:00,21:00～6:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目 15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["初心者向け", "初心者多め", "イベント多い", "外国人多い","ノーチャージ","英語対応","変わったリキュール有"], icon: "https://unavatar.io/twitter/adezakura_staff", note: "#", medium: "#",
-        description_jp: "DJブースもあるショットバー。ビアンバーでスミノフアイスを置いているのはここだけかも？",
-        description_en: "A shot bar featuring a DJ booth. It might be the only lesbian-friendly bar in the area that serves Smirnoff Ice."
-    },
-
+ 
     // B系列 - Lグループ (B(L))
     { 
         name_jp: "LITTLE MONKEY", name_en: "LITTLE MONKEY", series: "B系列", seriesMark: "B(L)", type: "ビアン", area: "東京", xId: "@little_monkey80", snsUrl: "https://x.com/little_monkey80", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-14-7赤川ビル1階", address_en: "1F, Akagawa Bldg, 2-14-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "盛り上がる", "イベント多い", "持ち込み食べ物可", "穏やか"], icon: "https://unavatar.io/twitter/little_monkey80", note: "#", medium: "#",
