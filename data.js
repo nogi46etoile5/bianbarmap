@@ -1,21 +1,33 @@
 const shopDetails = [
-     // A系列 (A)
     { 
-        name_jp: "agit", name_en: "agit", series: "A系列", seriesMark: "A", type: "ビアン", area: "東京", xId: "@agit_staff", snsUrl: "https://x.com/agit_staff", time: "19:00〜25:00,19:00～27:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2-15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["穏やか","年齢層高め","変わったリキュール有",], icon: "https://unavatar.io/twitter/agit_staff", note: "#", medium: "#",
-        description_jp: "2026年に改修され入り口も一新した老舗。スナックのような落ち着いた雰囲気が魅力。ハブ酒やプロテインも楽しめます！",
-        description_en: "An established bar with a renovated entrance as of 2026. Enjoy a cozy 'Snack' bar atmosphere. They even serve Habu-shu (snake liquor) and protein shakes!"
-    },
-    { 
-        name_jp: "anchor rainbow port tokyo", name_en: "anchor", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@anchor_staff", snsUrl: "https://x.com/anchor_staff", time: "12:00〜25:00,12:00～5:00", holiday: "火曜,水曜", address_jp: "東京都新宿区新宿2丁目-12-15山原ハイツ2F", address_en: "2F, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["初心者向け","初心者多め","フード有",], icon: "https://unavatar.io/twitter/anchor_staff", note: "#", medium: "#",
-        description_jp: "二丁目では珍しく昼から開いているカフェバー。百合漫画を堪能するならここ一択！完全キャッシュレス決済のお店です。",
-        description_en: "A rare Ni-chome cafe-bar open from the daytime. The absolute best spot to enjoy Yuri manga! Please note they are a cashless-only establishment."
-    },
-    { 
-        name_jp: "艶櫻", name_en: "Adezakura", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@adezakura_staff", snsUrl: "https://x.com/adezakura_staff", time: "21:00〜5:00,21:00～6:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目 15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["初心者向け", "初心者多め", "イベント多い", "外国人多い","ノーチャージ","英語対応","変わったリキュール有"], icon: "https://unavatar.io/twitter/adezakura_staff", note: "#", medium: "#",
-        description_jp: "DJブースもあるショットバー。ビアンバーでスミノフアイスを置いているのはここだけかも？",
-        description_en: "A shot bar featuring a DJ booth. It might be the only lesbian-friendly bar in the area that serves Smirnoff Ice."
-    },
-    // H系列 (H)
+        name_jp: "Bar LEGO", name_en: "Bar LEGO", type: "ビアン", area: "東日本", xId: "websiteのみ", snsUrl: "http://r.goope.jp/bar-lego/", time: "19:00〜27:00", holiday: "日曜", address_jp: "北海道札幌市中央区南5条西6丁目9番地第５桂和ビル４F", address_en: "4F, Dai-5 Keiwa Bldg, 5-6 Minami 5-jo Nishi, Chuo-ku, Sapporo, Hokkaido", tags: [, "穏やか", "フード有"], icon: "website", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+  },
+  { 
+    name_jp: "bar Orb", name_en: "bar Orb", type: "ビアン", area: "東日本", xId: "@kaeOrb", snsUrl: "https://x.com/kaeOrb", time: "18:00〜last", holiday: "日曜", address_jp: "北海道札幌市中央区南5条西２丁目8番 社交会館4階", address_en: "4F Shako Kaikan, 8, Minami 5-jo Nishi 2-chome, Chuo-ku, Sapporo, Hokkaido", tags: ["初心者向け", "穏やか", ], icon: "https://unavatar.io/twitter/kaeOrb", note: "#", medium: "#",
+ description_jp: "未訪問、現在調査中訪問次第載せます。",
+ description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+},
+   // A系列 (A)
+   { 
+    name_jp: "agit", name_en: "agit", series: "A系列", seriesMark: "A", type: "ビアン", area: "東京", xId: "@agit_staff", snsUrl: "https://x.com/agit_staff", time: "19:00〜25:00,19:00～27:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2-15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["穏やか","年齢層高め","変わったリキュール有",], icon: "https://unavatar.io/twitter/agit_staff", note: "#", medium: "#",
+    description_jp: "2026年に改修され入り口も一新した老舗。スナックのような落ち着いた雰囲気が魅力。ハブ酒やプロテインも楽しめます！",
+    description_en: "An established bar with a renovated entrance as of 2026. Enjoy a cozy 'Snack' bar atmosphere. They even serve Habu-shu (snake liquor) and protein shakes!"
+},
+{ 
+    name_jp: "anchor rainbow port tokyo", name_en: "anchor", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@anchor_staff", snsUrl: "https://x.com/anchor_staff", time: "15:00〜18:00,18:00～23:00", holiday: "火曜,水曜", address_jp: "東京都新宿区新宿2丁目-12-15山原ハイツ2F", address_en: "2F, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["初心者向け","初心者多め","フード有",], icon: "https://unavatar.io/twitter/anchor_staff", note: "#", medium: "#",
+    description_jp: "二丁目では珍しく昼から開いているカフェバー。百合漫画を堪能するならここ一択！完全キャッシュレス決済のお店です。",
+    description_en: "A rare Ni-chome cafe-bar open from the daytime. The absolute best spot to enjoy Yuri manga! Please note they are a cashless-only establishment."
+},
+{ 
+    name_jp: "ADEZAKURA", name_en: "ADEZAKURA", series: "A系列", seriesMark: "A", type: "MIX", area: "東京", xId: "@adezakura_bar", snsUrl: "https://x.com/adezakura_bar", time: "21:00〜5:00,21:00～6:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目 15-11-1F", address_en: "1F, 2-15-11 Shinjuku, Tokyo", tags: ["初心者向け", "初心者多め", "イベント多い", "外国人多い","ノーチャージ","英語対応","変わったリキュール有"], icon: "https://unavatar.io/twitter/adezakura_bar", note: "#", medium: "#",
+    description_jp: "DJブースもあるショットバー。ビアンバーでスミノフアイスを置いているのはここだけかも？",
+    description_en: "A shot bar featuring a DJ booth. It might be the only lesbian-friendly bar in the area that serves Smirnoff Ice."
+},
+
+
+// H系列 (H)
     { 
         name_jp: "一(はじめ)", name_en: "Bar Hajime", series: "H系列", seriesMark: "H", type: "MIX", area: "東京", xId: "@barhajime", snsUrl: "https://x.com/barhajime", time: "19:00～26:00,20:00〜4:00", holiday: "日曜,火曜", address_jp: "東京都新宿区新宿2丁目-12-14-1A", address_en: "1A, 2-12-14 Shinjuku, Shinjuku-ku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "年齢層高め", "変わったリキュール有", "穏やか", "ボトルキープ有", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/barhajime", note: "https://note.com/412357siki/n/n214e5c8e1d02", medium: "#",
         description_jp: "半地下のように見えてこれが一階！迷ったらギロンセンを目指せ、ほぼレズビアンがいるMIXバー。年齢層幅広く会える所です。",
@@ -50,12 +62,12 @@ const shopDetails = [
  
     // B系列 - Lグループ (B(L))
     { 
-        name_jp: "LITTLE MONKEY", name_en: "LITTLE MONKEY", series: "B系列", seriesMark: "B(L)", type: "ビアン", area: "東京", xId: "@little_monkey80", snsUrl: "https://x.com/little_monkey80", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-14-7赤川ビル1階", address_en: "1F, Akagawa Bldg, 2-14-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "盛り上がる", "イベント多い", "持ち込み食べ物可", "穏やか"], icon: "https://unavatar.io/twitter/little_monkey80", note: "#", medium: "#",
+        name_jp: "LITTLE MONKEY", name_en: "LITTLE MONKEY", series: "B系列", seriesMark: "B(L)", type: "ビアン", area: "東京", xId: "@little_monkey80", snsUrl: "https://x.com/little_monkey80", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-14-7赤川ビル1階", address_en: "1F, Akagawa Bldg, 2-14-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "盛り上がる", "イベント多い", "持ち込み食べ物可", "穏やか"], icon: "https://unavatar.io/twitter/little_monkey80", note: "https://note.com/412357siki/n/n1ebd3a93e1a6", medium: "#",
         description_jp: "L系列の1号店で、お猿の看板が目印。料金体系をSNSで公開している親切なお店。若い層に人気です！",
         description_en: "The first L-series shop, marked by a monkey sign. A very welcoming bar that posts its prices on social media. Very popular with the younger crowd."
     },
     { 
-        name_jp: "LAUGH", name_en: "LAUGH", series: "B系列", seriesMark: "B(L)", type: "ビアン", area: "東京", xId: "@BARLAUGH07", snsUrl: "https://x.com/BARLAUGH07", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗2F", address_en: "2F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "イベント多い", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BARLAUGH07", note: "#", medium: "#",
+        name_jp: "LAUGH", name_en: "LAUGH", series: "B系列", seriesMark: "B(L)", type: "ビアン", area: "東京", xId: "@BARLAUGH07", snsUrl: "https://x.com/BARLAUGH07", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗2F", address_en: "2F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "イベント多い", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BARLAUGH07", note: "https://note.com/412357siki/n/n5d840ad50af8", medium: "#",
         description_jp: "グルークファーストの2階。犬の歯のロゴが目印！若い子が多く、2面の窓が開放的なお店です。階段の登りづらさも体験してみて！",
         description_en: "Located above Gluck First, featuring a dog-tooth logo. Popular with young people, the bar has two large windows. Give the uniquely steep stairs a try!"
     },
@@ -67,7 +79,7 @@ const shopDetails = [
 
     // B系列 - Gグループ (B(G))
     { 
-        name_jp: "グルークファースト", name_en: "Gluck First", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜8:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗1階", address_en: "1F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "イベント多い", "持ち込み食べ物可", "ボトルキープ有", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "#", medium: "#",
+        name_jp: "グルークファースト", name_en: "Gluck First", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜8:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗1階", address_en: "1F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "イベント多い", "持ち込み食べ物可", "ボトルキープ有", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n139c68435217", medium: "#",
         description_jp: "大きな駐車場前で朝（昼？）まで営業中。黒を基調とした内装で夜の雰囲気たっぷり。紙タバコは外で吸うスタイルです。",
         description_en: "Located in front of the large parking lot and open until morning (sometimes noon!). Features a sleek black interior. Cigarette smoking is allowed outside."
     },
@@ -82,7 +94,7 @@ const shopDetails = [
         description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
     },
     { 
-        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty__mixbar", time: "20:00〜27:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "#", medium: "#",
+        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty__mixbar", time: "20:00〜4:00,20:00～5:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "#", medium: "#",
         description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
         description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
     },
@@ -136,12 +148,12 @@ const shopDetails = [
         description_en: "An established bar on 'Yuri Alley.' Look for the blue sign. A calm space on the 2nd floor where you can look out over the street."
     },
     { 
-        name_jp: "あじゃら", name_en: "Ajara", type: "MIX", area: "東京", xId: "@ajara_chibar", snsUrl: "https://x.com/ajara_chibar", time: "18:00〜25:00", holiday: "日曜", address_jp: "東京都新宿区新宿2丁目 15-8", address_en: "2-15-8 Shinjuku, Tokyo", tags: ["初心者向け", "穏やか", "変わったリキュール有", "フード有", "年齢層高め", "喫煙可"], icon: "https://unavatar.io/twitter/ajara_chibar", note: "#", medium: "#",
+        name_jp: "あじゃら", name_en: "Ajara", type: "MIX", area: "東京", xId: "@ajara_chibar", snsUrl: "https://x.com/ajara_chibar", time: "18:00〜25:00", holiday: "日曜", address_jp: "東京都新宿区新宿2丁目 15-8", address_en: "2-15-8 Shinjuku, Tokyo", tags: ["初心者向け", "穏やか", "変わったリキュール有", "フード有", "年齢層高め", "喫煙可"], icon: "https://unavatar.io/twitter/ajara_chibar", note: "https://note.com/412357siki/n/n638a289f5213", medium: "#",
         description_jp: "百合の小道の曇りガラスのお店。自家製サングリアや洋風おつまみが豊富。間借り営業なども行っています。",
         description_en: "A bar with frosted glass windows on Yuri Alley. Offers homemade sangria and various Western-style snacks. They also host guest kitchen events."
     },
     { 
-        name_jp: "SUPERMODEL", name_en: "SUPERMODEL", type: "MIX", area: "東京", xId: "@supermodel0412", snsUrl: "https://x.com/supermodel0412", time: "20:00〜27:00,20:00~29:00", holiday: "火曜", address_jp: "東京都新宿区新宿2丁目-15-8中村建物ビル1階", address_en: "1F, Nakamura Bldg, 2-15-8 Shinjuku, Tokyo", tags: ["カラオケ", "初心者多め", "喫煙可", "変わったリキュール有", "盛り上がる"], icon: "https://unavatar.io/twitter/supermodel0412", note: "#", medium: "#",
+        name_jp: "SUPERMODEL", name_en: "SUPERMODEL", type: "MIX", area: "東京", xId: "@supermodel0412", snsUrl: "https://x.com/supermodel0412", time: "20:00〜27:00,20:00~29:00", holiday: "火曜", address_jp: "東京都新宿区新宿2丁目-15-8中村建物ビル1階", address_en: "1F, Nakamura Bldg, 2-15-8 Shinjuku, Tokyo", tags: ["カラオケ", "初心者多め", "喫煙可", "変わったリキュール有", "盛り上がる"], icon: "https://unavatar.io/twitter/supermodel0412", note: "https://note.com/412357siki/n/n895b8b685fa1", medium: "#",
         description_jp: "百合の小道にあり、外国人も多い賑やかなお店。ゲイバーのようなノリでカラオケを楽しめます！",
         description_en: "A lively spot on Yuri Alley that attracts many international guests. Enjoy karaoke with an upbeat atmosphere similar to a gay bar!"
     },
@@ -251,7 +263,7 @@ const shopDetails = [
         description_en: "Coming soon! (I haven't visited yet, but planning to!)."
     },
     { 
-        name_jp: "bar belle GINZA", name_en: "Bar Belle", type: "MIX", area: "東京", xId: "@barbellessGINZA", snsUrl: "https://x.com/barbellessGINZA", time: "20:00〜4:00", holiday: "土曜、日曜", address_jp: "東京都中央区銀座6-8-6　木の実ビル2階", address_en: "2F,　kinomiBldg, 6-8-6 Chuo-ku, Tokyo", tags: [  "穏やか"], icon: "https://unavatar.io/twitter/barbellessGINZA", note: "#", medium: "#",
+        name_jp: "bar belle GINZA", name_en: "Bar Belle", type: "MIX", area: "東京", xId: "@barbelleGINZA", snsUrl: "https://x.com/barbelleGINZA", time: "20:00〜4:00", holiday: "土曜、日曜", address_jp: "東京都中央区銀座6-8-6　木の実ビル2階", address_en: "2F,　kinomiBldg, 6-8-6 Chuo-ku, Tokyo", tags: [  "穏やか"], icon: "https://unavatar.io/twitter/barbelleGINZA", note: "#", medium: "#",
          description_jp: "未訪問、現在調査中訪問次第載せます。",
        description_en: "Coming soon! (I haven't visited yet, but planning to!)."
     },
