@@ -100,6 +100,20 @@
     cursor: default;
     pointer-events: none;
 }
+/* 追記するコード */
+a {
+    text-decoration: none !important;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent; /* スマホでタップした時のハイライトを消す */
+}
+
+/* 枠線が残る場合の念押し */
+.action-buttons a:focus,
+.action-buttons a:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
         .aff-section { width: 90%; max-width: 600px; margin: 30px 0; border-top: 1px solid #2a3a5a; padding-top: 20px; }
         .aff-title { font-size: 1rem; font-weight: bold; color: #00ffcc; margin-bottom: 15px; text-align: center; }
         .aff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
