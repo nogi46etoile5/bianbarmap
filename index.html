@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レズビアンバーマップ一覧</title>
-    <meta name="description" content="新宿二丁目や東京都内を中心に, 全国のレズビアンバー（ビアンバー）をレポ付きで探せる一覧マップです。初心者の方への付き添いサービスも実施中。">
+    <title>レズビアン・MIXバー攻略マップ｜全国のビアンバー体験レポ</title>
+    <meta name="description" content="【新宿二丁目ほか】初めてでも「詰まない」お店選びと立ち回りガイド（随時更新）">
     <style>
         /* --- 基本設定 --- */
         body { background-color: #0a1428; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
@@ -65,11 +65,41 @@
         .feature-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.7rem; color: #8892b0; }
         .feature-tags span { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; }
 
-        .action-buttons { display: grid; grid-template-columns: 1fr 1fr; }
-        .btn { padding: 12px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
-        .btn-note { color: #ffffff; background: #233554; }
-        .btn-guide { color: #0a1428; background: #00ffcc; }
+        
+        
+.action-buttons { 
+    display: flex; 
+    gap: 0; 
+}
 
+/* ボタン共通設定 */
+.btn { 
+    flex: 1; /* 左右で均等に幅を取る */
+    padding: 12px; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    font-weight: bold; 
+    border: none;
+    cursor: pointer;
+}
+
+/* 各ボタンのデザイン */
+.btn-note { color: #ffffff; background: #233554; }
+.btn-medium { color: #ffffff; background: #1a1a1a; border-left: 1px solid #333; }
+
+/* 準備中ボタン（押せない状態） */
+.btn-disabled {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    background: #333;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: default;
+    pointer-events: none;
+}
         .aff-section { width: 90%; max-width: 600px; margin: 30px 0; border-top: 1px solid #2a3a5a; padding-top: 20px; }
         .aff-title { font-size: 1rem; font-weight: bold; color: #00ffcc; margin-bottom: 15px; text-align: center; }
         .aff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -96,16 +126,47 @@
     <button id="btn-en" class="lang-btn" onclick="setLang('en')">English</button>
 </div>
 <header class="site-header">
-    <h1><span class="lang-jp">レズビアンバーマップ一覧</span><span class="lang-en">Lesbian Bar Map JP</span></h1>
-    <span class="site-subtitle lang-jp">新宿二丁目や全国のビアンバーをレポ付きで探せるマップ（随時更新中）</span>
-    <span class="site-subtitle lang-en">Nationwide lesbian bar map with report notes (updating)</span>
+   <h1>
+        <span class="lang-jp">レズビアン・MIXバー攻略マップ｜全国のビアンバー体験レポ</span>
+        <span class="lang-en">Lesbian & Mix Bar Guide: Nationwide Experience Reports & Tips</span>
+    </h1>
+    
+    <span class="site-subtitle lang-jp">【新宿二丁目ほか】初めてでも「詰まない」お店選びと立ち回りガイド（随時更新）</span>
+    <span class="site-subtitle lang-en">[Shinjuku Ni-chome & Nationwide] Practical tips to avoid "isolation" at bars. (Updated regularly)</span>
+
 </header>
 
 <section class="guide-intro">
-    <h2>🤝 <span class="lang-jp">初めてのバー巡りをサポートします</span><span class="lang-en">Support for your first bar visit</span></h2>
-    <p><span class="lang-jp">「二丁目に行ってみたいけど、一人で入る勇気がない…」そんな方のための付き添いサービスです。</span>
-       <span class="lang-en">"I want to go to Ni-chome, but I'm not brave enough to go alone..." This service is for you.</span></p>
     
+        <h2>🤝 
+            <span class="lang-jp">「一人で入って詰む」をゼロにする攻略ガイド</span>
+            <span class="lang-en">The "No-Isolation" Guide: How to Navigate Bars Solo</span>
+        </h2>
+        <p>
+            <span class="lang-jp">二丁目や全国のバーに行ってみたいけれど、一人で入って会話ゼロになったらどうしよう…そんな不安を解消するための情報をまとめています。</span>
+            <span class="lang-en">Want to explore bars solo but worried about walking into silence? Here is the intel you need to navigate them confidently.</span>
+        </p>
+    
+        <p>
+            <span class="lang-jp">管理人が実際に足を運び、リアルな空気感や立ち回りを調査。初めての入店・会話のきっかけ作りから、静かに自分時間を楽しむためのガイドまで、あなたの目的に合わせてサポートします。</span>
+            <span class="lang-en">Based on my own visits, I share verified insights on bar atmosphere and etiquette. Whether you're looking to socialize or enjoy a quiet drink, I provide the support you need to navigate the bar with confidence.</span>
+        </p>
+    
+        <div style="margin-top: 15px;">
+            <p style="margin-bottom: 10px; font-weight: bold;">
+                <span class="lang-jp">👉 初めてでどうしても不安な方はこちら</span>
+                <span class="lang-en">👉 Still nervous about your first time? I can help.</span>
+            </p>
+        
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <a href="https://note.com/412357siki/portal" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
+                <span class="lang-jp">各店舗の攻略noteを見る</span><span class="lang-en">View Store Reports</span>
+            </a>
+            <a href="guide.html" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
+                <span class="lang-jp">付き添い・ガイドを依頼する</span><span class="lang-en">Request Escort Service</span>
+            </a>
+        </div>
+
     <div style="margin: 10px 0;"><a href="guide.html" style="color:#00ffcc; font-size:0.85rem; text-decoration:none; font-weight:bold;">>>> <span class="lang-jp">付き添いプラン詳細はこちら</span><span class="lang-en">Details & Booking</span></a></div>
     
     <div class="guide-notes">
@@ -290,9 +351,11 @@
         const isEn = document.body.classList.contains('en-mode');
         container.innerHTML = ""; 
 
+        // ここからループ開始
         shopDetails.forEach(shop => {
             const card = document.createElement('div');
             card.className = 'shop-card show';
+            // ... (系列判定などのロジックはそのまま) ...
             if (shop.series === "H系列") card.classList.add('border-l-h');
             else if (shop.series === "A系列") card.classList.add('border-l-a');
             else if (shop.series === "B系列") {
@@ -316,33 +379,47 @@
                 ? `<div style="width:100px; height:100px; border-radius:8px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">📸</span>Instagram</div>`
                 : `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:8px; object-fit:cover; flex-shrink: 0;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">`;
 
-   
-   const websiteContent = `<div style="width:100px; height:100px; border-radius:8px; background: #1a2a4a; border: 1px solid #3a4a6a; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #00ffcc; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">🌐</span>WEB SITE</div>`;
+            const websiteContent = `<div style="width:100px; height:100px; border-radius:8px; background: #1a2a4a; border: 1px solid #3a4a6a; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #00ffcc; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">🌐</span>WEB SITE</div>`;
             const finalDisplayIcon = (shop.icon === "website") ? websiteContent : iconContent;
 
             card.innerHTML = `
-    <div style="padding:15px;">
-        <div style="display:flex; gap:15px; margin-bottom:10px;">
-            ${finalDisplayIcon}
-            <div style="flex:1;">
-                <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a></div>
-                <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${isEn ? shop.address_en : shop.address_jp}</div>
-                <div style="font-size:0.75rem; color:#ccd6f6; margin-top:2px;">🕒 ${shop.time || '---'}</div>
-                <div style="font-size:0.75rem; color:#ccd6f6;">🗓️ ${isEn ? 'Closed: ' : '定休日: '}${shop.holiday || '---'}</div>
-                <div class="feature-tags">${dTags}</div>
-            </div>
-        </div>
-        ${dDesc ? `<div style="font-size:0.75rem; color:#ccd6f6; line-height:1.5; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">${dDesc}</div>` : ""}
-    </div>
-    <div class="action-buttons">
-        <a href="${isEn ? (shop.medium || shop.note) : shop.note}" class="btn btn-note" target="_blank">📝 ${isEn ? 'Medium' : 'note'}</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=sf_link" class="btn btn-guide" target="_blank">🤝 ${isEn ? 'Booking' : '付き添い依頼'}</a>
-    </div>`;
-       
-            container.appendChild(card);
-        });
-        updateVisibility();
+                <div style="padding:15px;">
+                    <div style="display:flex; gap:15px; margin-bottom:10px;">
+                        ${finalDisplayIcon}
+                        <div style="flex:1;">
+                            <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a></div>
+                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${isEn ? shop.address_en : shop.address_jp}</div>
+                            <div style="font-size:0.75rem; color:#ccd6f6; margin-top:2px;">🕒 ${shop.time || '---'}</div>
+                            <div style="font-size:0.75rem; color:#ccd6f6;">🗓️ ${isEn ? 'Closed: ' : '定休日: '}${shop.holiday || '---'}</div>
+                            <div class="feature-tags">${dTags}</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.75rem; color:#ccd6f6; line-height:1.5; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
+                        ${(shop.lastCheck && shop.checkLevel !== 'ongoing') ? `
+                            <div style="margin-bottom: 8px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2);">
+                                <span style="color: #00ffcc; font-weight: bold;">${shop.checkLevel === 'thorough' ? (isEn ? '✅ Thoroughly Investigated' : '✅ 徹底調査済') : (isEn ? '💡 First Visit' : '💡 初回訪問済')}</span>
+                                <span style="color: #ccd6f6; margin-left: 5px;">(${shop.lastCheck.replace('-', '/')})</span>
+                            </div>
+                        ` : ""}
+                        ${dDesc || (isEn ? "Currently investigating details." : "現在、詳細な情報を調査中です。")}
+                    </div>
+                  <div class="action-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
+    ${(shop.note && shop.note !== '#') ? 
+        `<a href="${shop.note}" class="btn btn-note" target="_blank">📝 note</a>` : 
+        `<span class="btn btn-disabled">📝 準備中</span>`
     }
+    
+    ${(shop.medium && shop.medium !== '#') ? 
+        `<a href="${shop.medium}" class="btn btn-medium" target="_blank">📖 Medium</a>` : 
+        `<span class="btn btn-disabled">📖 Soon</span>`
+    }
+                </div>
+            `;
+            container.appendChild(card);
+        }); // 
+        updateVisibility();
+    } // 
+  
 
 
     let activeFilters = { areas: [], tags: [] };
