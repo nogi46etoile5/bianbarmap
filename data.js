@@ -101,7 +101,7 @@ const shopDetails = [
         description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
     },
     { 
-        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty__mixbar", time: "20:00〜4:00,20:00～5:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "#", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty__mixbar", time: "20:00〜4:00,20:00～5:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
         description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
         description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
     },
@@ -205,7 +205,7 @@ const shopDetails = [
         description_en: "An established bar on B1F of the GF building. Features a large counter and booths, plus karaoke, Wi-Fi, and a solid food menu."
     },
     { 
-        name_jp: "villain", name_en: "villain", type: "MIX", area: "東京", xId: "@bar_villains", snsUrl: "https://x.com/bar_villains", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-16セントフォービル901", address_en: "901, St. Four Bldg, 2-12-16 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "穏やか", "初心者向け", "フード有", "盛り上がる", "持ち込み食べ物可", "ボトルキープ有","イベント多い"], icon: "https://unavatar.io/twitter/bar_villains", note: "#", medium: "#",lastCheck: "2025", checkLevel: "thorough",
+        name_jp: "villain", name_en: "villain", type: "MIX", area: "東京", xId: "@bar_villains", snsUrl: "https://x.com/bar_villains", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-16セントフォービル901", address_en: "901, St. Four Bldg, 2-12-16 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "穏やか", "初心者向け", "フード有", "盛り上がる", "持ち込み食べ物可", "ボトルキープ有","イベント多い"], icon: "https://unavatar.io/twitter/bar_villains", note: "https://note.com/412357siki/n/n38c28960b68b", medium: "#",lastCheck: "2025", checkLevel: "thorough",
         description_jp: "二丁目の中心にあるビルの9階。ダーツやカラオケが楽しめ、ソファ席でゆったり朝まで過ごせるMIXバーです。",
         description_en: "Located on the 9th floor in the heart of Ni-chome. A MIX bar with darts and karaoke where you can relax on sofas until morning."
     },
