@@ -101,7 +101,7 @@ const shopDetails = [
         description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
     },
     { 
-        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty__mixbar", time: "20:00〜4:00,20:00～5:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty___mixbar/", time: "20:00〜4:00,20:00～5:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
         description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
         description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
     },
@@ -226,8 +226,8 @@ const shopDetails = [
     },
     { 
         name_jp: "Lily and", name_en: "Lily and", type: "MIX", area: "東京", xId: "@lilyand2mixbar", snsUrl: "https://x.com/lilyand2mixbar", time: "18:00〜23:00,20:00~26:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目 12-15山原ハイツ401", address_en: "401, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["カラオケ","喫煙可","変わったリキュール有","フード有",], icon: "https://unavatar.io/twitter/lilyand2mixbar", note: "#", medium: "#",lastCheck: "2026-01",checkLevel: "first",
-        description_jp: "レズビアンのお客さんも多いMIXバー。果実酒が豊富で、仲通りから少し入ったエレベーターから上がれます。",
-        description_en: "A MIX bar popular with lesbian customers. Offers a wide variety of fruit liqueurs. The elevator entrance is just off Naka-dori."
+        description_jp: "※Xアカウント凍結中のため最新情報は要確認。レズビアンのお客さんも多いMIXバー。果実酒が豊富で、仲通りから少し入ったエレベーターから上がれます。",
+        description_en: "※X account currently frozen; please verify latest info.A MIX bar popular with lesbian customers. Offers a wide variety of fruit liqueurs. The elevator entrance is just off Naka-dori."
     },
     { 
         name_jp: "bar belle by あじゃり", name_en: "Bar Belle", type: "ビアン", area: "東京", xId: "@barbelless", snsUrl: "https://x.com/barbelless", time: "21:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-15-14パンチョスタワー4F", address_en: "4F, Panchos Tower, 2-15-14 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "フード有", "イベント多い", "穏やか"], icon: "https://unavatar.io/twitter/barbelless", note: "#", medium: "#",lastCheck: "2025",checkLevel: "first",

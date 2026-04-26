@@ -173,7 +173,7 @@ a {
             </p>
         
         <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <a href="https://note.com/412357siki/n/n771b0098a2e3" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
+            <a href="https://note.com/412357siki/portal" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
                 <span class="lang-jp">各店舗の攻略noteを見る</span><span class="lang-en">View Store Reports</span>
             </a>
             <a href="guide.html" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
@@ -194,8 +194,16 @@ a {
 
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=sf_link" target="_blank" class="form-btn">📩 <span class="lang-jp">付き添い申し込み（Googleフォーム）</span><span class="lang-en">Booking Accompaniment (Form)</span></a>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">✨ <span class="lang-jp">スポンサー・掲載依頼（Googleフォーム）</span><span class="lang-en">Sponsors & Listing Requests</span></a>
-<a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" class="tip-btn">☕ <span class="lang-jp">愁（しゅう）にチップを送る (note)</span><span class="lang-en">Send a tip to Syu (note)</span></a>
-
+<div style="margin: 20px 0; text-align: center;">
+    <a href="https://buymeacoffee.com/syu_412357" target="_blank" 
+       style="display: block; padding: 15px; background: #00ffcc; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
+        ☕ Support My Research
+    </a>
+    <p style="font-size: 0.75rem; color: #ccd6f6; margin-top: 8px; padding: 0 10px;">
+        <span class="lang-jp">レズビアン向けバー調査の継続を応援する（自腹調査のため、ご支援いただけると助かります！）</span>
+        <span class="lang-en" style="display:none;">Keeping the data fresh takes a lot of legwork. Your support helps!</span>
+    </p>
+</div>
 <section class="qa-section">
     <div class="qa-item">
         <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q1. 料金相場や「チャージ」について</span><span class="lang-en">Q1. About costs and "Cover Charge"</span></button>
@@ -254,6 +262,9 @@ a {
     </div>
 </section>
 
+<div id="shop-container">
+    <div id="ad-area"></div> </div>
+
 <div class="filter-section">
     <div class="area-filter">
         <button class="area-btn" onclick="filterArea('東日本', this)"><span class="lang-jp">東日本</span><span class="lang-en">East JP</span></button>
@@ -285,27 +296,6 @@ a {
 
 <div id="shop-container"></div>
 
-<section class="aff-section">
-    <div class="aff-title"><span class="lang-jp">✨ 作成者おすすめの百合コンテンツ</span><span class="lang-en">✨ Recommended Yuri Content</span></div>
-    <div class="aff-grid">
-        <div class="aff-card">
-            <span class="aff-comment"><span class="lang-jp">「学生百合でこれが好き！」</span><span class="lang-en">"My student-yuri fav!"</span></span>
-            <div style="margin-top:10px;"><a href="https://amzn.to/4rXhcGH" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 気になってる人が男じゃなかった</a></div>
-        </div>
-        <div class="aff-card">
-            <span class="aff-comment"><span class="lang-jp">「社会人百合でこれが好き！」</span><span class="lang-en">"Best office-yuri!"</span></span>
-            <div style="margin-top:10px;"><a href="https://amzn.to/4rtRQjS" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">📖 姉の親友、私の恋人。</a></div>
-        </div>
-        <div class="aff-card">
-            <span class="aff-comment"><span class="lang-jp">「こんなノンケどこにいるんですか？」</span><span class="lang-en">"An intense story of raw desire."</span></span>
-            <div style="margin-top:10px;"><a href="https://amzn.to/4aSVdLu" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">✒️ 生のみ生のままで [ 綿矢 りさ ]</a></div>
-        </div>
-        <div class="aff-card">
-            <span class="aff-comment"><span class="lang-jp">「作画が神がかってます」</span><span class="lang-en">"Stunning art style!"</span></span>
-            <div style="margin-top:10px;"><a href="https://amzn.to/4rwUC8a" target="_blank" style="color:#00ffcc; font-weight:bold; text-decoration:none;">🎬 やがて君になる</a></div>
-        </div>
-    </div>
-</section>
 
 <footer class="footer-notice">
     <strong><span class="lang-jp">免責事項</span><span class="lang-en">Disclaimer</span></strong>
@@ -358,15 +348,59 @@ a {
         if (document.documentElement.scrollTop > 300) btn.classList.add('show');
         else btn.classList.remove('show');
     };
-
+ 
     function displayShops() {
-        const container = document.getElementById('shop-container');
-        if (!container || typeof shopDetails === 'undefined') return;
-        const isEn = document.body.classList.contains('en-mode');
-        container.innerHTML = ""; 
+    const container = document.getElementById('shop-container');
+    if (!container || typeof shopDetails === 'undefined') return;
+    const isEn = document.body.classList.contains('en-mode');
+    container.innerHTML = ""; 
 
-        // ここからループ開始
-        shopDetails.forEach(shop => {
+    // 1. 【二日酔い対策】のHTML
+    const hangoverHtml = `
+        <div style="width: 90%; max-width: 500px; margin: 0 auto 20px auto; padding: 15px; background: rgba(0, 255, 204, 0.05); border: 1px dashed #00ffcc; border-radius: 8px; text-align: center;">
+            <div style="color: #00ffcc; font-weight: bold; margin-bottom: 10px;">${isEn ? "🍺 Hangover Care" : "🍺 翌朝のための準備"}</div>
+            <div style="font-size: 0.75rem; color: #ccd6f6;">${isEn ? "Take it before drinking!" : "飲み過ぎる前に。先手で飲んでおくと安心。"}</div>
+            <a href="https://a.r10.to/h5Ltbt" target="_blank" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">${isEn ? "Shugo Densetsu" : "酒豪伝説"}</a>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0;">
+            <div style="font-size: 0.75rem; color: #ccd6f6;">${isEn ? "For quick recovery." : "二日酔いになったら。ストックにどうぞ。"}</div>
+            <a href="https://amzn.to/4d5igng" target="_blank" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">${isEn ? "Shijimi Miso Soup" : "しじみの味噌汁"}</a>
+        </div>
+    `;
+
+  // 2. 【百合コンテンツ4選（説明付き）】
+  const yuriHtml = `
+        <section class="aff-section" style="margin: 25px 0; border: 1px solid #00ffcc; padding: 20px; border-radius: 12px; background: rgba(0, 255, 204, 0.03);">
+            <div class="aff-title" style="color:#00ffcc; font-weight:bold; margin-bottom:15px;">✨ ${isEn ? "Recommended Yuri Content" : "作成者おすすめの百合コンテンツ"}</div>
+            
+            <div style="margin-bottom:15px;">
+                <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 気になってる人が男じゃなかった</a>
+                <div style="font-size:0.75rem; color:#ccd6f6;">男だと思っていた人が実は…という王道にして最高の尊さ。</div>
+            </div>
+            <div style="margin-bottom:15px;">
+                <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 姉の親友、私の恋人。</a>
+                <div style="font-size:0.75rem; color:#ccd6f6;">年上お姉さんとの禁断の距離感。じれったい関係性が好きな人へ。</div>
+            </div>
+            <div style="margin-bottom:15px;">
+                <a href="https://amzn.to/4aSVdLu" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">✒️ 生のみ生のままで</a>
+                <div style="font-size:0.75rem; color:#ccd6f6;">日常の繊細な心情描写が秀逸。静かに心を通わせる二人の物語。</div>
+            </div>
+            <div style="margin-bottom:5px;">
+                <a href="https://amzn.to/4rwUC8a" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">🎬 やがて君になる</a>
+                <div style="font-size:0.75rem; color:#ccd6f6;">「好き」という感情に向き合う、百合作品の金字塔。必読の一作。</div>
+            </div>
+        </section>
+    `;
+
+    // 最初に二日酔い対策を表示
+    container.insertAdjacentHTML('beforeend', hangoverHtml);
+
+    // 3. ループ開始
+    shopDetails.forEach((shop, index) => {
+        // 3店ごとに百合アフィを挟む
+        if (index > 0 && index % 5 === 0) {
+            container.insertAdjacentHTML('beforeend', yuriHtml);
+        }
+
             const card = document.createElement('div');
             card.className = 'shop-card show';
             // ... (系列判定などのロジックはそのまま) ...
