@@ -262,11 +262,32 @@ a {
     </div>
 </section>
 
-<div id="shop-container">
-    <div id="ad-area"></div> </div>
+<div style="width: 90%; max-width: 500px; margin: 0 auto 20px auto; padding: 15px; background: rgba(0, 255, 204, 0.05); border: 1px dashed #00ffcc; border-radius: 8px; text-align: center;">
+    <div style="color: #00ffcc; font-weight: bold; margin-bottom: 10px;">
+        <span class="lang-jp">🍺 翌朝のための準備</span>
+        <span class="lang-en">🍺 Hangover Care</span>
+    </div>
+    <div style="font-size: 0.75rem; color: #ccd6f6;">
+        <span class="lang-jp">飲み過ぎる前に。先手で飲んでおくと安心。</span>
+        <span class="lang-en">Take it before drinking!</span>
+    </div>
+    <a href="https://a.r10.to/h5Ltbt" target="_blank" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">
+        <span class="lang-jp">酒豪伝説</span>
+        <span class="lang-en">Shugo Densetsu</span>
+    </a>
+    <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0;">
+    <div style="font-size: 0.75rem; color: #ccd6f6;">
+        <span class="lang-jp">二日酔いになったら。ストックにどうぞ。</span>
+        <span class="lang-en">For quick recovery.</span>
+    </div>
+    <a href="https://amzn.to/4d5igng" target="_blank" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">
+        <span class="lang-jp">しじみの味噌汁</span>
+        <span class="lang-en">Shijimi Miso Soup</span>
+    </a>
+</div>
 
-<div class="filter-section">
-    <div class="area-filter">
+<section class="filter-section">
+    <div id="area-filter-container" class="area-filter">
         <button class="area-btn" onclick="filterArea('東日本', this)"><span class="lang-jp">東日本</span><span class="lang-en">East JP</span></button>
         <button class="area-btn" onclick="filterArea('東京', this)"><span class="lang-jp">東京</span><span class="lang-en">Tokyo</span></button>
         <button class="area-btn" onclick="filterArea('名古屋', this)"><span class="lang-jp">名古屋</span><span class="lang-en">Nagoya</span></button>
@@ -274,7 +295,7 @@ a {
         <button class="area-btn" onclick="filterArea('西日本', this)"><span class="lang-jp">西日本</span><span class="lang-en">West JP</span></button>
     </div>
 
-    <div class="tag-filter">
+    <div id="filter-container" class="tag-filter">
         <button class="tag-btn" onclick="filterTag('外国人多い', this)"><span class="lang-jp">#外国人多い</span><span class="lang-en">#Global</span></button>
         <button class="tag-btn" onclick="filterTag('ノーチャージ', this)"><span class="lang-jp">#ノーチャージ</span><span class="lang-en">#NoCharge</span></button>
         <button class="tag-btn" onclick="filterTag('英語対応', this)"><span class="lang-jp">#英語対応</span><span class="lang-en">#English</span></button>
@@ -292,8 +313,8 @@ a {
         <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)"><span class="lang-jp">#ボトルキープ有</span><span class="lang-en">#BottleKeep</span></button>
         <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)"><span class="lang-jp">#持ち込み食べ物可</span><span class="lang-en">#BYOFood</span></button>
     </div>
-</div>
-
+</section>
+<!-- 4. お店リスト表示エリア -->
 <div id="shop-container"></div>
 
 
@@ -313,6 +334,7 @@ a {
 
 <script src="data.js"></script>
 <script>
+    // タグの日本語・英語マップ
     const tagMap = {
         '外国人多い': { jp: '外国人多い', en: 'Global' },
         'ノーチャージ': { jp: 'ノーチャージ', en: 'NoCharge' },
@@ -332,78 +354,107 @@ a {
         '持ち込み食べ物可': { jp: '持ち込み食べ物可', en: 'BYOFood' }
     };
 
+    // 状態管理
+    let currentArea = null;
+    let currentTag = null;
+
+    // 言語切り替え[cite: 1]
     function setLang(lang) {
         document.body.classList.toggle('en-mode', lang === 'en');
         document.getElementById('btn-jp').classList.toggle('active', lang === 'jp');
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         displayShops(); 
     }
+
+    // QAアコーディオン[cite: 1]
     function toggleQA(btn) {
         btn.classList.toggle('active');
         const ans = btn.nextElementSibling;
         ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
     }
+
+    // トップへ戻るボタン[cite: 1]
     window.onscroll = function() {
         const btn = document.getElementById('back-to-top');
         if (document.documentElement.scrollTop > 300) btn.classList.add('show');
         else btn.classList.remove('show');
     };
- 
-    function displayShops() {
-    const container = document.getElementById('shop-container');
-    if (!container || typeof shopDetails === 'undefined') return;
-    const isEn = document.body.classList.contains('en-mode');
-    container.innerHTML = ""; 
 
-    // 1. 【二日酔い対策】のHTML
-    const hangoverHtml = `
-        <div style="width: 90%; max-width: 500px; margin: 0 auto 20px auto; padding: 15px; background: rgba(0, 255, 204, 0.05); border: 1px dashed #00ffcc; border-radius: 8px; text-align: center;">
-            <div style="color: #00ffcc; font-weight: bold; margin-bottom: 10px;">${isEn ? "🍺 Hangover Care" : "🍺 翌朝のための準備"}</div>
-            <div style="font-size: 0.75rem; color: #ccd6f6;">${isEn ? "Take it before drinking!" : "飲み過ぎる前に。先手で飲んでおくと安心。"}</div>
-            <a href="https://a.r10.to/h5Ltbt" target="_blank" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">${isEn ? "Shugo Densetsu" : "酒豪伝説"}</a>
-            <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0;">
-            <div style="font-size: 0.75rem; color: #ccd6f6;">${isEn ? "For quick recovery." : "二日酔いになったら。ストックにどうぞ。"}</div>
-            <a href="https://amzn.to/4d5igng" target="_blank" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">${isEn ? "Shijimi Miso Soup" : "しじみの味噌汁"}</a>
-        </div>
-    `;
-
-  // 2. 【百合コンテンツ4選（説明付き）】
-  const yuriHtml = `
-        <section class="aff-section" style="margin: 25px 0; border: 1px solid #00ffcc; padding: 20px; border-radius: 12px; background: rgba(0, 255, 204, 0.03);">
-            <div class="aff-title" style="color:#00ffcc; font-weight:bold; margin-bottom:15px;">✨ ${isEn ? "Recommended Yuri Content" : "作成者おすすめの百合コンテンツ"}</div>
-            
-            <div style="margin-bottom:15px;">
-                <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 気になってる人が男じゃなかった</a>
-                <div style="font-size:0.75rem; color:#ccd6f6;">男だと思っていた人が実は…という王道にして最高の尊さ。</div>
-            </div>
-            <div style="margin-bottom:15px;">
-                <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 姉の親友、私の恋人。</a>
-                <div style="font-size:0.75rem; color:#ccd6f6;">年上お姉さんとの禁断の距離感。じれったい関係性が好きな人へ。</div>
-            </div>
-            <div style="margin-bottom:15px;">
-                <a href="https://amzn.to/4aSVdLu" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">✒️ 生のみ生のままで</a>
-                <div style="font-size:0.75rem; color:#ccd6f6;">日常の繊細な心情描写が秀逸。静かに心を通わせる二人の物語。</div>
-            </div>
-            <div style="margin-bottom:5px;">
-                <a href="https://amzn.to/4rwUC8a" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">🎬 やがて君になる</a>
-                <div style="font-size:0.75rem; color:#ccd6f6;">「好き」という感情に向き合う、百合作品の金字塔。必読の一作。</div>
-            </div>
-        </section>
-    `;
-
-    // 最初に二日酔い対策を表示
-    container.insertAdjacentHTML('beforeend', hangoverHtml);
-
-    // 3. ループ開始
-    shopDetails.forEach((shop, index) => {
-        // 3店ごとに百合アフィを挟む
-        if (index > 0 && index % 5 === 0) {
-            container.insertAdjacentHTML('beforeend', yuriHtml);
+    // 絞り込み実行
+    function filterArea(area, btn) {
+        const btns = document.querySelectorAll('.area-btn');
+        if (currentArea === area) {
+            currentArea = null;
+            btn.classList.remove('active');
+        } else {
+            currentArea = area;
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
         }
+        displayShops(); // フィルタリング後に再描画
+    }
+
+    function filterTag(tag, btn) {
+        const btns = document.querySelectorAll('.tag-btn');
+        if (currentTag === tag) {
+            currentTag = null;
+            btn.classList.remove('active');
+        } else {
+            currentTag = tag;
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        displayShops(); // フィルタリング後に再描画
+    }
+ 
+    // メインの表示関数
+    function displayShops() {
+        const container = document.getElementById('shop-container');
+        if (!container || typeof shopDetails === 'undefined') return;
+        const isEn = document.body.classList.contains('en-mode');
+        
+        container.innerHTML = ""; 
+
+        // 百合アフィリエイト・テンプレート（維持・日英対応）[cite: 1]
+        const yuriHtml = `
+            <section class="aff-section" style="margin: 25px 0; border: 1px solid #00ffcc; padding: 20px; border-radius: 12px; background: rgba(0, 255, 204, 0.03);">
+                <div class="aff-title" style="color:#00ffcc; font-weight:bold; margin-bottom:15px;">✨ ${isEn ? "Recommended Yuri Content" : "作成者おすすめの百合コンテンツ"}</div>
+                <div style="margin-bottom:15px;">
+                    <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 ${isEn ? "The Guy She Was Interested in Wasn't a Guy" : "気になってる人が男じゃなかった"}</a>
+                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "Pure love and music story." : "男だと思っていた人が実は…という王道にして最高の尊さ。"}</div>
+                </div>
+                <div style="margin-bottom:15px;">
+                    <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 ${isEn ? "My Sister's Best Friend, My Lover" : "姉の親友、私の恋人。"}</a>
+                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "A forbidden distance with an older girl." : "年上お姉さんとの禁断の距離感。じれったい関係性が好きな人へ。"}</div>
+                </div>
+                <div style="margin-bottom:15px;">
+                    <a href="https://amzn.to/4aSVdLu" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">✒️ ${isEn ? "Nama no Mi, Nama no Mama de" : "生のみ生のままで"}</a>
+                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "Exquisite psychological descriptions." : "日常の繊細な心情描写が秀逸。静かに心を通わせる二人の物語。"}</div>
+                </div>
+                <div style="margin-bottom:5px;">
+                    <a href="https://amzn.to/4rwUC8a" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">🎬 ${isEn ? "Bloom Into You" : "やがて君になる"}</a>
+                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "The pinnacle of Yuri works." : "「好き」という感情に向き合う、百合作品の金字塔。必読の一作。"}</div>
+                </div>
+            </section>
+        `;
+
+        // 【今回の修正の核心】表示する対象のみを抽出してループさせる
+        const filteredShops = shopDetails.filter(shop => {
+            const areaMatch = !currentArea || shop.area === currentArea;
+            const tagMatch = !currentTag || (shop.tags || []).includes(currentTag);
+            return areaMatch && tagMatch;
+        });
+
+        filteredShops.forEach((shop, index) => {
+            // 表示されている店舗の中で5件ごとにアフィを挿入
+            if (index > 0 && index % 5 === 0) {
+                container.insertAdjacentHTML('beforeend', yuriHtml);
+            }
 
             const card = document.createElement('div');
             card.className = 'shop-card show';
-            // ... (系列判定などのロジックはそのまま) ...
+            
+            // 左線・右線のデザイン判定（維持）[cite: 1]
             if (shop.series === "H系列") card.classList.add('border-l-h');
             else if (shop.series === "A系列") card.classList.add('border-l-a');
             else if (shop.series === "B系列") {
@@ -411,84 +462,69 @@ a {
                 else card.classList.add('border-l-b-g');
             } else if (shop.series === "GF系") card.classList.add('border-l-gf');
             else if (shop.series === "船系") card.classList.add('border-l-fune');
-            if (shop.type === "ビアン") card.classList.add('border-r-bian'); else card.classList.add('border-r-mix');
-
-            card.dataset.area = shop.area;
-            card.dataset.tags = JSON.stringify(shop.tags || []);
             
+            if (shop.type === "ビアン") card.classList.add('border-r-bian'); 
+            else card.classList.add('border-r-mix');
+
+            // データ定義[cite: 1]
             const dName = isEn ? (shop.name_en || shop.name_jp) : shop.name_jp;
             const dDesc = isEn ? (shop.description_en || shop.description_jp) : shop.description_jp;
+            const dAddress = isEn ? (shop.address_en || shop.address_jp) : shop.address_jp;
+            const dHoliday = isEn ? (shop.holiday_en || shop.holiday) : (shop.holiday || '---');
+            const dTime = shop.time || '---';
             const dTags = (shop.tags || []).map(t => {
                 const label = tagMap[t] ? (isEn ? tagMap[t].en : tagMap[t].jp) : t;
                 return `<span>#${label}</span>`;
             }).join('');
 
-            const iconContent = (shop.icon === "instagram" || !shop.icon || shop.icon === "") 
-                ? `<div style="width:100px; height:100px; border-radius:8px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">📸</span>Instagram</div>`
+            // アイコン表示ロジック[cite: 1]
+            const instagramGradient = "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)";
+            const iconContent = (shop.icon === "instagram" || !shop.icon) 
+                ? `<div style="width:100px; height:100px; border-radius:8px; background: ${instagramGradient}; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">📸</span>Instagram</div>`
                 : `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:8px; object-fit:cover; flex-shrink: 0;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">`;
 
             const websiteContent = `<div style="width:100px; height:100px; border-radius:8px; background: #1a2a4a; border: 1px solid #3a4a6a; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #00ffcc; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">🌐</span>WEB SITE</div>`;
             const finalDisplayIcon = (shop.icon === "website") ? websiteContent : iconContent;
 
+            // 徹底調査済 / 訪問済タグ（維持）[cite: 1]
+            const checkLabel = (shop.lastCheck && shop.checkLevel !== 'ongoing') ? `
+                <div style="margin-bottom: 8px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2);">
+                    <span style="color: #00ffcc; font-weight: bold;">${shop.checkLevel === 'thorough' ? (isEn ? '✅ Investigated' : '✅ 徹底調査済') : (isEn ? '💡 Visited' : '💡 初回訪問済')}</span>
+                    <span style="color: #ccd6f6; margin-left: 5px;">(${shop.lastCheck.replace('-', '/')})</span>
+                </div>
+            ` : "";
+
+            // カードHTML出力
             card.innerHTML = `
                 <div style="padding:15px;">
                     <div style="display:flex; gap:15px; margin-bottom:10px;">
                         ${finalDisplayIcon}
                         <div style="flex:1;">
                             <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a></div>
-                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${isEn ? shop.address_en : shop.address_jp}</div>
-                            <div style="font-size:0.75rem; color:#ccd6f6; margin-top:2px;">🕒 ${shop.time || '---'}</div>
-                            <div style="font-size:0.75rem; color:#ccd6f6;">🗓️ ${isEn ? 'Closed: ' : '定休日: '}${shop.holiday || '---'}</div>
+                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${dAddress}</div>
+                            <div style="font-size:0.75rem; color:#ccd6f6; margin-top:2px;">🕒 ${dTime}</div>
+                            <div style="font-size:0.75rem; color:#ccd6f6;">🗓️ ${isEn ? 'Closed: ' : '定休日: '}${dHoliday}</div>
                             <div class="feature-tags">${dTags}</div>
                         </div>
                     </div>
                     <div style="font-size:0.75rem; color:#ccd6f6; line-height:1.5; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
-                        ${(shop.lastCheck && shop.checkLevel !== 'ongoing') ? `
-                            <div style="margin-bottom: 8px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2);">
-                                <span style="color: #00ffcc; font-weight: bold;">${shop.checkLevel === 'thorough' ? (isEn ? '✅ Thoroughly Investigated' : '✅ 徹底調査済') : (isEn ? '💡 First Visit' : '💡 初回訪問済')}</span>
-                                <span style="color: #ccd6f6; margin-left: 5px;">(${shop.lastCheck.replace('-', '/')})</span>
-                            </div>
-                        ` : ""}
-                        ${dDesc || (isEn ? "Currently investigating details." : "現在、詳細な情報を調査中です。")}
+                        ${checkLabel}
+                        ${dDesc || (isEn ? "Currently investigating." : "現在、詳細な情報を調査中です。")}
                     </div>
-                  <div class="action-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
-    ${(shop.note && shop.note !== '#') ? 
-        `<a href="${shop.note}" class="btn btn-note" target="_blank"> note</a>` : 
-        `<span class="btn btn-disabled"> 準備中</span>`
-    }
-    
-    ${(shop.medium && shop.medium !== '#') ? 
-        `<a href="${shop.medium}" class="btn btn-medium" target="_blank"> Medium</a>` : 
-        `<span class="btn btn-disabled"> Soon</span>`
-    }
+                    <div class="action-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
+                        ${(shop.note && shop.note !== '#') ? `<a href="${shop.note}" class="btn btn-note" target="_blank"> note</a>` : `<span class="btn btn-disabled">${isEn ? 'Coming Soon' : '準備中'}</span>`}
+                        ${(shop.medium && shop.medium !== '#') ? `<a href="${shop.medium}" class="btn btn-medium" target="_blank"> Medium</a>` : `<span class="btn btn-disabled"> Soon</span>`}
+                    </div>
                 </div>
             `;
             container.appendChild(card);
-        }); // 
-        updateVisibility();
-    } // 
-  
-
-
-    let activeFilters = { areas: [], tags: [] };
-    function updateVisibility() {
-        document.querySelectorAll('.shop-card').forEach(card => {
-            const areaMatch = activeFilters.areas.length === 0 || activeFilters.areas.includes(card.dataset.area);
-            const tagsMatch = activeFilters.tags.every(t => JSON.parse(card.dataset.tags).includes(t));
-            card.classList.toggle('show', areaMatch && tagsMatch);
         });
     }
-    function filterArea(area, btn) {
-        const i = activeFilters.areas.indexOf(area);
-        i > -1 ? activeFilters.areas.splice(i, 1) : activeFilters.areas.push(area);
-        btn.classList.toggle('active'); updateVisibility();
-    }
-    function filterTag(tag, btn) {
-        const i = activeFilters.tags.indexOf(tag);
-        i > -1 ? activeFilters.tags.splice(i, 1) : activeFilters.tags.push(tag);
-        btn.classList.toggle('active'); updateVisibility();
-    }
+
+    // 起動時の呼び出し
     document.addEventListener('DOMContentLoaded', displayShops);
+
+ 
 </script>
 </body>
 </html>
