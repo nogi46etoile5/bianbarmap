@@ -130,7 +130,7 @@ const shopDetails = [
 
     // その他
     { 
-        name_jp: "LAGOON", name_en: "LAGOON", type: "ビアン", area: "東京", xId: "@lagoon0410", snsUrl: "https://x.com/lagoon0410", time: "18:00〜24:00,18:00～25:00", holiday: "日曜,月曜,木曜", address_jp: "東京都新宿区新宿2丁目-18-10新千鳥街の中", address_en: "Shin-Chidorigai, 2-18-10 Shinjuku, Tokyo", tags: ["初心者向け", "初心者多め", "フード有", "お通し有", "変わったリキュール有", "穏やか", "年齢層高め"], icon: "https://unavatar.io/twitter/lagoon0410", note: "https://note.com/412357siki/n/n44f1fe5eaca6", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+        name_jp: "LAGOON", name_en: "LAGOON", type: "ビアン", area: "東京", xId: "@lagoon0410", snsUrl: "https://x.com/lagoon0410", time: "18:00〜24:00,18:00～25:00", holiday: "日曜,月曜,木曜", address_jp: "東京都新宿区新宿2丁目-18-10新千鳥街の中", address_en: "Shin-Chidorigai, 2-18-10 Shinjuku, Tokyo", tags: ["初心者向け", "初心者多め", "フード有", "お通し有", "変わったリキュール有", "穏やか", "年齢層高め"], icon: "https://unavatar.io/twitter/lagoon0410", note: "https://note.com/412357siki/n/nc035ee0d3935", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
         description_jp: "新千鳥街にある、海岸がコンセプトのまったりしたお店. ビールサーバー完備。葉っぱの看板が目印です。",
         description_en: "A chill, beach-themed bar in Shin-Chidorigai. Equipped with a beer server and marked by its distinctive leaf sign."
     },
@@ -140,12 +140,12 @@ const shopDetails = [
         description_en: "A bar with both counter and table seating in a densely packed area. It's airy with windows and offers an extensive food menu."
     },
     { 
-        name_jp: "YES", name_en: "YES", type: "ビアン", area: "東京", xId: "@BAR_YES_201", snsUrl: "https://x.com/BAR_YES_201", time: "18:00〜last", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目 18-10-201", address_en: "201, 2-18-10 Shinjuku, Tokyo", tags: ["穏やか", "年齢層高め", "変わったリキュール有", "お通し有", "ボトルキープ有", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BAR_YES_201", note: "https://note.com/412357siki/n/n9f915b56c341", medium: "#",lastCheck: "2025", checkLevel: "thorough",
+        name_jp: "YES", name_en: "YES", type: "ビアン", area: "東京", xId: "@BAR_YES_201", snsUrl: "https://x.com/BAR_YES_201", time: "18:00〜last", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目 18-10-201", address_en: "201, 2-18-10 Shinjuku, Tokyo", tags: ["穏やか", "年齢層高め", "変わったリキュール有", "お通し有", "ボトルキープ有", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BAR_YES_201", note: "https://note.com/412357siki/n/ndbc113704cf0", medium: "#",lastCheck: "2025", checkLevel: "thorough",
         description_jp: "新千鳥街の階段を登った先にあるカウンターのみのお店。営業しているかは運次第なところも魅力！？",
         description_en: "A counter-only bar up the stairs in Shin-Chidorigai. Part of its charm is that whether it's open depends on your luck!"
     },
     { 
-        name_jp: "AVANTY", name_en: "AVANTY", type: "ビアン", area: "東京", xId: "@yumineesan", snsUrl: "https://x.com/yumineesan", time: "20:00〜last", holiday: "月曜,木曜", address_jp: "東京都新宿区新宿2丁目 18-10-1階", address_en: "1F, 2-18-10 Shinjuku, Tokyo", tags: ["穏やか", "お通し有", "フード有", "ボトルキープ有", "年齢層高め", "喫煙可"], icon: "https://unavatar.io/twitter/yumineesan", note: "https://note.com/412357siki/n/n8f9da14b0fef", medium: "#",lastCheck: "2025", checkLevel: "thorough",
+        name_jp: "AVANTY", name_en: "AVANTY", type: "ビアン", area: "東京", xId: "@yumineesan", snsUrl: "https://x.com/yumineesan", time: "20:00〜last", holiday: "月曜,木曜", address_jp: "東京都新宿区新宿2丁目 18-10-1階", address_en: "1F, 2-18-10 Shinjuku, Tokyo", tags: ["穏やか", "お通し有", "フード有", "ボトルキープ有", "年齢層高め", "喫煙可"], icon: "https://unavatar.io/twitter/yumineesan", note: "https://note.com/412357siki/n/nb84172b17510", medium: "#",lastCheck: "2025", checkLevel: "thorough",
         description_jp: "赤いドアの小窓が目印のカウンターバー。日替わりの手作りお通しが絶品。SNSをチェックして行ってみて！",
         description_en: "A counter bar marked by a small window in a red door. Their daily handmade appetizers are excellent. Check their social media before you go!"
     },
@@ -160,7 +160,7 @@ const shopDetails = [
         description_en: "A bar with frosted glass windows on Yuri Alley. Offers homemade sangria and various Western-style snacks. They also host guest kitchen events."
     },
     { 
-        name_jp: "SUPERMODEL", name_en: "SUPERMODEL", type: "MIX", area: "東京", xId: "@supermodel0412", snsUrl: "https://x.com/supermodel0412", time: "20:00〜27:00,20:00~29:00", holiday: "火曜", address_jp: "東京都新宿区新宿2丁目-15-8中村建物ビル1階", address_en: "1F, Nakamura Bldg, 2-15-8 Shinjuku, Tokyo", tags: ["カラオケ", "初心者多め", "喫煙可", "変わったリキュール有", "盛り上がる"], icon: "https://unavatar.io/twitter/supermodel0412", note: "https://note.com/412357siki/n/n895b8b685fa1", medium: "#",lastCheck: "2026-03", checkLevel: "thorough",
+        name_jp: "SUPERMODEL", name_en: "SUPERMODEL", type: "MIX", area: "東京", xId: "@supermodel0412", snsUrl: "https://x.com/supermodel0412", time: "20:00〜27:00,20:00~29:00", holiday: "火曜", address_jp: "東京都新宿区新宿2丁目-15-8中村建物ビル1階", address_en: "1F, Nakamura Bldg, 2-15-8 Shinjuku, Tokyo", tags: ["カラオケ", "初心者多め", "喫煙可", "変わったリキュール有", "盛り上がる"], icon: "https://unavatar.io/twitter/supermodel0412", note: "https://note.com/412357siki/n/n9e27506c5d26", medium: "#",lastCheck: "2026-03", checkLevel: "thorough",
         description_jp: "百合の小道にあり、外国人も多い賑やかなお店。ゲイバーのようなノリでカラオケを楽しめます！",
         description_en: "A lively spot on Yuri Alley that attracts many international guests. Enjoy karaoke with an upbeat atmosphere similar to a gay bar!"
     },
