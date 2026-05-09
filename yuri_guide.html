@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>百合の庭園 | Yuri Garden 50</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f4;
+    --card-bg: #ffffff;
+    --accent-gold: #c4a052;
+    --accent-rose: #8e3a46;
+    --history-bg: #f2ede4;
+    --history-border: #d1c7b1;
+    --text-main: #2c2c2c;
+    --text-sub: #555555;
+    --border: #e8d5a3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { 
+    font-family: 'Noto Sans JP', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text-main); 
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* --- UI Elements --- */
+  .header-ui { 
+    position: sticky; top: 0; 
+    background: rgba(250, 247, 244, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-switcher { 
+    background: #fff; 
+    border: 1px solid var(--accent-gold); 
+    border-radius: 20px; 
+    padding: 2px; 
+    display: flex; 
+  }
+  .lang-btn { 
+    background: transparent; border: none; 
+    padding: 4px 12px; cursor: pointer; 
+    font-size: 11px; border-radius: 18px; 
+    color: var(--accent-gold); font-weight: bold; 
+  }
+  .lang-btn.active { background: var(--accent-gold); color: #fff; }
+
+  body.is-en [lang="ja"] { display: none; }
+  [lang="en"] { display: none; }
+  body.is-en [lang="en"] { display: block; }
+
+  /* --- Hero --- */
+  .hero { padding: 50px 20px; text-align: center; }
+  .hero h1 { 
+    font-family: 'Noto Serif JP', serif; 
+    font-size: 2rem; 
+    color: var(--accent-rose); 
+    margin-bottom: 15px;
+    letter-spacing: 0.1em;
+  }
+  .hero p { font-size: 0.9rem; color: var(--text-sub); }
+
+  /* --- Layout --- */
+  .section-container { max-width: 600px; margin: 0 auto; padding: 0 15px 50px; }
+
+  .expand-box { 
+    background: #fff; border: 1px solid var(--border); 
+    border-radius: 18px; margin-bottom: 30px; 
+    overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.04); 
+  }
+  
+  .history-box { background: var(--history-bg); border-color: var(--history-border); }
+
+  .box-header { padding: 30px 25px 25px; }
+  .box-header h2 { 
+    font-family: 'Noto Serif JP', serif; font-size: 1.3rem; 
+    margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--accent-rose);
+  }
+  .box-header .intro-text { 
+    font-size: 0.9rem; border-left: 4px solid var(--accent-gold); 
+    padding-left: 18px; text-align: justify; color: var(--text-main);
+  }
+
+  .expand-trigger { 
+    width: 100%; background: var(--accent-gold); color: #fff; border: none; padding: 18px; 
+    font-weight: bold; font-size: 0.95rem; display: flex; justify-content: center; align-items: center; gap: 12px; cursor: pointer;
+  }
+  .expand-trigger::after { content: '▼'; font-size: 0.7rem; transition: 0.3s; }
+  .expand-box.open .expand-trigger::after { transform: rotate(180deg); }
+
+  .expand-content { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); background: #fff; }
+  .expand-box.open .expand-content { max-height: 15000px; }
+
+  /* --- History Items --- */
+  .history-item { padding: 25px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .history-item b { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; display: block; margin-bottom: 8px; color: var(--accent-rose); }
+  .history-item p { font-size: 0.88rem; color: #4a4235; line-height: 1.8; text-align: justify; }
+
+  /* --- Work List Items --- */
+  .work-item { padding: 25px; border-bottom: 1px solid #f5f5f5; }
+  .work-header { display: flex; align-items: baseline; gap: 12px; }
+  .work-num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--accent-gold); font-weight: bold; }
+  .work-info h3 { font-size: 1.05rem; color: var(--text-main); font-weight: 700; }
+  .work-info span { font-size: 0.8rem; color: var(--accent-rose); display: block; margin-top: 2px; }
+  .work-info p { font-size: 0.9rem; color: var(--text-sub); margin-top: 12px; line-height: 1.7; text-align: justify; }
+
+  /* --- Shop Buttons Style --- */
+  .shop-links { margin-top: 15px; display: flex; gap: 10px; }
+  .btn-shop { 
+    text-decoration: none; padding: 6px 14px; border-radius: 6px; 
+    font-size: 0.75rem; font-weight: bold; text-align: center; color: white;
+  }
+  .btn-amz { background: #232f3e; }
+  .btn-rkt { background: #bf0000; }
+  .btn-disabled { background: #e0e0e0; color: #aaa; cursor: not-allowed; }
+
+  /* --- Footer UI --- */
+  .footer-nav { max-width: 600px; margin: 0 auto; padding: 0 15px 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  .nav-btn { 
+    padding: 15px 5px; border: 1.5px solid var(--accent-gold); text-decoration: none; color: var(--accent-gold); 
+    border-radius: 12px; font-weight: bold; font-size: 0.9rem; text-align: center; background: #fff;
+  }
+  footer { padding: 50px; text-align: center; font-size: 0.75rem; color: var(--text-sub); border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="header-ui">
+  <div class="lang-switcher">
+    <button id="btn-ja" class="lang-btn active" onclick="setLang('ja')">日本語</button>
+    <button id="btn-en" class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<section class="hero">
+    <h1 lang="ja">百合の庭園 50選</h1>
+    <h1 lang="en">Yuri Garden: Top 50</h1>
+    <p lang="ja">― 悠久の時を越え、魂が惹かれ合う物語の系譜 ―</p>
+    <p lang="en">— A Curated Genealogy of Souls Bound by Light and Shadow —</p>
+</section>
+
+<div class="section-container">
+  <!-- 歴史セクション -->
+  <div class="expand-box history-box">
+    <div class="box-header">
+      <h2 lang="ja">📜 百合文化の深淵なる歴史</h2>
+      <h2 lang="en">📜 Deep History of Yuri Culture</h2>
+      <div class="intro-text">
+        <span lang="ja">「百合」という言葉が指し示す領域は、時代と共に変容し続けてきました。明治・大正の文学的萌芽から、現代の多様メディアに至るまで、その変遷を辿ります。</span>
+        <span lang="en">The definition of 'Yuri' has evolved through the ages. From the literary buds of the Meiji and Taisho eras to modern multimedia, we trace the beautiful transitions of bonds between women.</span>
+      </div>
+    </div>
+    <button class="expand-trigger" onclick="toggleBox(this)">
+      <span lang="ja">歴史の物語を深く紐解く</span>
+      <span lang="en">Unveil the Stories of History</span>
+    </button>
+    <div class="expand-content">
+      <div class="history-item">
+        <b lang="ja">1. 明治・大正：エスという精神の純潔と「花」の美学</b>
+        <b lang="en">1. Meiji & Taisho: Spiritual Purity of 'S' and the Aesthetics of Flowers</b>
+        <p lang="ja">吉屋信子の『花物語』に代表される「エス（Sister）」文化。それは家父長制の重圧下にあった女学生たちが、結婚という社会規範に組み込まれる前の短い猶予期間に許された、擬似姉妹的な純愛でした。この精神的な高潔さと、儚くも美しい情操教育的な側面は、後の百合作品における根幹的な美学として今なお息づいています。</p>
+        <p lang="en">Represented by Nobuko Yoshiya's 'Hana-monogatari,' 'S' (Sister) culture was a form of pseudo-sisterly pure love allowed for schoolgirls before entering the societal norm of marriage. This spiritual integrity remains a fundamental aesthetic in later Yuri works today.</p>
+      </div>
+      <div class="history-item">
+        <b lang="ja">2. 1970年代：劇的芸術への昇華と「24年組」の衝撃</b>
+        <b lang="en">2. 1970s: Sublimation into Dramatic Art & 'Year 24 Group'</b>
+        <p lang="ja">1970年代、萩尾望都や竹宮惠子ら「24年組」が登場し、少女漫画の表現は一変します。同性への情愛は単なる友情を超え、人間の孤独、実存、そして性別を超えた魂の渇望を問う「劇的な芸術」へと昇華されました。この時期に確立された、内面の複雑な心理描写がジャンルに深い土壌を与えました。</p>
+        <p lang="en">In the 1970s, the 'Year 24 Group' revolutionized shoujo manga. They elevated love for the same sex into a 'dramatic art' that questioned human loneliness, existence, and the yearning of the soul beyond gender, providing the genre with a rich philosophical foundation.</p>
+      </div>
+      <div class="history-item">
+        <b lang="ja">3. 2000年代：様式美の確立と「聖域」の具現化</b>
+        <b lang="en">3. 2000s: Perfection of Aestheticism & the 'Sanctuary'</b>
+        <p lang="ja">『マリア様がみてる』が旋風を巻き起こし、お嬢様学校や「スール制度」といった様式美が確立されました。これにより、百合は特定の記号や文法を持つ「独自の宇宙」となり、専門誌『コミック百合姫』の創刊も相まって、ファンが安心して没入できる一つの「聖域」としての文化圏を形成しました。</p>
+        <p lang="en">'Maria-sama ga Miteru' sparked a phenomenon, perfecting Yuri as an aesthetic style characterized by the 'Soeur' system. This transformed Yuri into a 'unique universe' and a 'sanctuary' supported by specialized magazines where fans could immerse themselves.</p>
+      </div>
+      <div class="history-item">
+        <b lang="ja">4. 2010年代以降：多様性の爆発と日常への回帰</b>
+        <b lang="en">4. 2010s to Present: Explosion of Diversity & Return to Reality</b>
+        <p lang="ja">学園ものという伝統を超え、社会人のリアリティ、SF、異世界、さらにはジェンダーを問う社会派作品まで裾野が劇的に拡大。特別な誰かと生きていくという「決意」や、生活の中で育まれる「連帯」が描かれ、世界中で共感を集める多様な「愛の物語」として進化し続けています。</p>
+        <p lang="en">Yuri has expanded beyond school settings to adult realism, sci-fi, and isekai. By depicting the 'determination' to live with a special someone and 'solidarity,' it has become a diverse collection of 'stories of love' that resonate globally.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="yuri-list-container"></div>
+</div>
+
+<div class="footer-nav">
+  <a href="https://nogi46etoile5.github.io/bianbarmap/" class="nav-btn">
+    <span lang="ja">🗺️ マップ一覧へ</span><span lang="en">🗺️ View Map List</span>
+  </a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/guide.html" class="nav-btn">
+    <span lang="ja">📍 付き添いガイド</span><span lang="en">📍Escort Guide</span>
+  </a>
+</div>
+
+<footer>&copy; 2026 Cinq Étoile Yuri Guide</footer>
+<script src="yuri_data.js"></script>
+
+<script>
+    // 言語状態の管理
+    let currentLang = 'ja';
+
+    function setLang(lang) {
+        currentLang = lang;
+        if(lang === 'en') {
+            document.body.classList.add('is-en');
+        } else {
+            document.body.classList.remove('is-en');
+        }
+        // ボタンの活性化表示を切り替え
+        document.querySelectorAll('.lang-btn').forEach(b => {
+            b.classList.toggle('active', b.id === 'btn-' + lang);
+        });
+        render(); // 再描画
+    }
+
+    function render() {
+        // 表示場所を取得（IDを分かりやすいものに変更）
+        const root = document.getElementById('yuri-list-container');
+        if(!root) return;
+
+        // 【重要】yuri_data.js 内の変数名に合わせて yuri_data を使用
+        // データが存在しない場合のフォールバック
+        const listData = (typeof yuri_data !== 'undefined') ? yuri_data : [];
+
+        root.innerHTML = listData.map(category => `
+            <div class="expand-box">
+                <div class="box-header">
+                    <h2 style="font-family: 'Noto Serif JP', serif; color: var(--accent-rose);">
+                        ${currentLang === 'ja' ? category.cat : category.en_cat}
+                    </h2>
+                    <div class="intro-text">
+                        ${currentLang === 'ja' ? category.desc : category.en_desc}
+                    </div>
+                </div>
+                
+                <button class="expand-trigger" onclick="toggleBox(this)">
+                    <span>${currentLang === 'ja' ? '作品リストを見る' : 'View Work List'}</span>
+                </button>
+
+                <div class="expand-content">
+                    <div class="work-list">
+                        ${category.works.map(w => `
+                            <div class="work-item">
+                                <div class="work-header">
+                                    <span class="work-num">${String(w.n).padStart(2, '0')}</span>
+                                    <div class="work-info">
+                                        <h3>${currentLang === 'ja' ? w.t : w.en_t}</h3>
+                                        <span>${currentLang === 'ja' ? '著者' : 'Author'}: ${currentLang === 'ja' ? w.a : w.en_a}</span>
+                                        <p>${currentLang === 'ja' ? w.d : w.en_d}</p>
+                                        
+                                        <div class="shop-links">
+                                            ${w.amz 
+                                                ? `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">Amazon</a>` 
+                                                : `<span class="btn-shop btn-disabled">Amazon</span>`}
+                                            
+                                            ${w.rkt 
+                                                ? `<a href="${w.rkt}" target="_blank" rel="nofollow" class="btn-shop btn-rkt">楽天</a>` 
+                                                : `<span class="btn-shop btn-disabled">楽天</span>`}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // 読み込み完了時に実行
+    window.onload = render;
+
+    function toggleBox(btn) {
+        btn.parentElement.classList.toggle('open');
+    }
+</script>
+  
+  
+ 
+</body>
+</html>

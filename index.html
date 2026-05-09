@@ -333,7 +333,9 @@ a {
 </div>
 
 <script src="data.js"></script>
+<script src="yuri_data.js"></script>
 <script>
+
     // タグの日本語・英語マップ
     const tagMap = {
         '外国人多い': { jp: '外国人多い', en: 'Global' },
@@ -358,7 +360,6 @@ a {
     let currentArea = null;
     let currentTag = null;
 
-    // 言語切り替え[cite: 1]
     function setLang(lang) {
         document.body.classList.toggle('en-mode', lang === 'en');
         document.getElementById('btn-jp').classList.toggle('active', lang === 'jp');
@@ -366,21 +367,18 @@ a {
         displayShops(); 
     }
 
-    // QAアコーディオン[cite: 1]
     function toggleQA(btn) {
         btn.classList.toggle('active');
         const ans = btn.nextElementSibling;
         ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
     }
 
-    // トップへ戻るボタン[cite: 1]
     window.onscroll = function() {
         const btn = document.getElementById('back-to-top');
         if (document.documentElement.scrollTop > 300) btn.classList.add('show');
         else btn.classList.remove('show');
     };
 
-    // 絞り込み実行
     function filterArea(area, btn) {
         const btns = document.querySelectorAll('.area-btn');
         if (currentArea === area) {
@@ -391,140 +389,153 @@ a {
             btns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
-        displayShops(); // フィルタリング後に再描画
+        displayShops();
+    }
+function displayShops() {
+    const container = document.getElementById('shop-container');
+    if (!container || typeof shopDetails === 'undefined') return;
+    const isEn = document.body.classList.contains('en-mode');
+    container.innerHTML = ""; 
+
+    // yuri_data.js から作品リストを取得
+    let allYuriWorks = [];
+    if (typeof yuri_data !== 'undefined') {
+        allYuriWorks = yuri_data.flatMap(cat => cat.works || []);
     }
 
-    function filterTag(tag, btn) {
-        const btns = document.querySelectorAll('.tag-btn');
-        if (currentTag === tag) {
-            currentTag = null;
-            btn.classList.remove('active');
-        } else {
-            currentTag = tag;
-            btns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
-        displayShops(); // フィルタリング後に再描画
-    }
- 
-    // メインの表示関数
-    function displayShops() {
-        const container = document.getElementById('shop-container');
-        if (!container || typeof shopDetails === 'undefined') return;
-        const isEn = document.body.classList.contains('en-mode');
-        
-        container.innerHTML = ""; 
+    const filteredShops = shopDetails.filter(shop => {
+        return (!currentArea || shop.area === currentArea) && 
+               (!currentTag || (shop.tags || []).includes(currentTag));
+    });
 
-        // 百合アフィリエイト・テンプレート（維持・日英対応）[cite: 1]
-        const yuriHtml = `
-            <section class="aff-section" style="margin: 25px 0; border: 1px solid #00ffcc; padding: 20px; border-radius: 12px; background: rgba(0, 255, 204, 0.03);">
-                <div class="aff-title" style="color:#00ffcc; font-weight:bold; margin-bottom:15px;">✨ ${isEn ? "Recommended Yuri Content" : "作成者おすすめの百合コンテンツ"}</div>
-                <div style="margin-bottom:15px;">
-                    <a href="https://amzn.to/4rXhcGH" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 ${isEn ? "The Guy She Was Interested in Wasn't a Guy" : "気になってる人が男じゃなかった"}</a>
-                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "Pure love and music story." : "男だと思っていた人が実は…という王道にして最高の尊さ。"}</div>
-                </div>
-                <div style="margin-bottom:15px;">
-                    <a href="https://amzn.to/4rtRQjS" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">📖 ${isEn ? "My Sister's Best Friend, My Lover" : "姉の親友、私の恋人。"}</a>
-                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "A forbidden distance with an older girl." : "年上お姉さんとの禁断の距離感。じれったい関係性が好きな人へ。"}</div>
-                </div>
-                <div style="margin-bottom:15px;">
-                    <a href="https://amzn.to/4aSVdLu" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">✒️ ${isEn ? "Nama no Mi, Nama no Mama de" : "生のみ生のままで"}</a>
-                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "Exquisite psychological descriptions." : "日常の繊細な心情描写が秀逸。静かに心を通わせる二人の物語。"}</div>
-                </div>
-                <div style="margin-bottom:5px;">
-                    <a href="https://amzn.to/4rwUC8a" target="_blank" style="color:white; font-weight:bold; text-decoration:none;">🎬 ${isEn ? "Bloom Into You" : "やがて君になる"}</a>
-                    <div style="font-size:0.75rem; color:#ccd6f6;">${isEn ? "The pinnacle of Yuri works." : "「好き」という感情に向き合う、百合作品の金字塔。必読の一作。"}</div>
-                </div>
-            </section>
-        `;
+    filteredShops.forEach((shop, index) => {
 
-        // 【今回の修正の核心】表示する対象のみを抽出してループさせる
-        const filteredShops = shopDetails.filter(shop => {
-            const areaMatch = !currentArea || shop.area === currentArea;
-            const tagMatch = !currentTag || (shop.tags || []).includes(currentTag);
-            return areaMatch && tagMatch;
-        });
+        // --- 5件ごとにアフィリエイト枠を挿入 (中略) ---
+        if (index > 0 && index % 5 === 0 && allYuriWorks.length > 0) {
+            const shuffled = [...allYuriWorks].sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, 3);
 
-        filteredShops.forEach((shop, index) => {
-            // 表示されている店舗の中で5件ごとにアフィを挿入
-            if (index > 0 && index % 5 === 0) {
-                container.insertAdjacentHTML('beforeend', yuriHtml);
-            }
-
-            const card = document.createElement('div');
-            card.className = 'shop-card show';
+            const adHtml = `
+        <div style="margin: 20px 10px; padding: 18px; border-radius: 15px; background: linear-gradient(135deg, #fffcf5 0%, #fdf2f4 100%); border: 1px solid #eecaca; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div style="text-align: center; margin-bottom: 12px;">
+                <span style="color: #8e3a46; font-weight: bold; font-size: 0.85rem; letter-spacing: 0.05em;">🌹 ${isEn ? "Recommended Yuri" : "至高の百合：今すぐチェックしたい名作"}</span>
+            </div>
             
-            // 左線・右線のデザイン判定（維持）[cite: 1]
-            if (shop.series === "H系列") card.classList.add('border-l-h');
-            else if (shop.series === "A系列") card.classList.add('border-l-a');
-            else if (shop.series === "B系列") {
-                if (shop.seriesMark && shop.seriesMark.includes("(L)")) card.classList.add('border-l-b-l');
-                else card.classList.add('border-l-b-g');
-            } else if (shop.series === "GF系") card.classList.add('border-l-gf');
-            else if (shop.series === "船系") card.classList.add('border-l-fune');
-            
-            if (shop.type === "ビアン") card.classList.add('border-r-bian'); 
-            else card.classList.add('border-r-mix');
-
-            // データ定義[cite: 1]
-            const dName = isEn ? (shop.name_en || shop.name_jp) : shop.name_jp;
-            const dDesc = isEn ? (shop.description_en || shop.description_jp) : shop.description_jp;
-            const dAddress = isEn ? (shop.address_en || shop.address_jp) : shop.address_jp;
-            const dHoliday = isEn ? (shop.holiday_en || shop.holiday) : (shop.holiday || '---');
-            const dTime = shop.time || '---';
-            const dTags = (shop.tags || []).map(t => {
-                const label = tagMap[t] ? (isEn ? tagMap[t].en : tagMap[t].jp) : t;
-                return `<span>#${label}</span>`;
-            }).join('');
-
-            // アイコン表示ロジック[cite: 1]
-            const instagramGradient = "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)";
-            const iconContent = (shop.icon === "instagram" || !shop.icon) 
-                ? `<div style="width:100px; height:100px; border-radius:8px; background: ${instagramGradient}; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">📸</span>Instagram</div>`
-                : `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:8px; object-fit:cover; flex-shrink: 0;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">`;
-
-            const websiteContent = `<div style="width:100px; height:100px; border-radius:8px; background: #1a2a4a; border: 1px solid #3a4a6a; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #00ffcc; font-size: 9px; font-weight: bold; flex-shrink: 0;"><span style="font-size:20px; margin-bottom:2px;">🌐</span>WEB SITE</div>`;
-            const finalDisplayIcon = (shop.icon === "website") ? websiteContent : iconContent;
-
-            // 徹底調査済 / 訪問済タグ（維持）[cite: 1]
-            const checkLabel = (shop.lastCheck && shop.checkLevel !== 'ongoing') ? `
-                <div style="margin-bottom: 8px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2);">
-                    <span style="color: #00ffcc; font-weight: bold;">${shop.checkLevel === 'thorough' ? (isEn ? '✅ Investigated' : '✅ 徹底調査済') : (isEn ? '💡 Visited' : '💡 初回訪問済')}</span>
-                    <span style="color: #ccd6f6; margin-left: 5px;">(${shop.lastCheck.replace('-', '/')})</span>
-                </div>
-            ` : "";
-
-            // カードHTML出力
-            card.innerHTML = `
-                <div style="padding:15px;">
-                    <div style="display:flex; gap:15px; margin-bottom:10px;">
-                        ${finalDisplayIcon}
-                        <div style="flex:1;">
-                            <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a></div>
-                            <div style="font-size:0.75rem; color:#ccd6f6;">📍 ${dAddress}</div>
-                            <div style="font-size:0.75rem; color:#ccd6f6; margin-top:2px;">🕒 ${dTime}</div>
-                            <div style="font-size:0.75rem; color:#ccd6f6;">🗓️ ${isEn ? 'Closed: ' : '定休日: '}${dHoliday}</div>
-                            <div class="feature-tags">${dTags}</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                ${selected.map(work => `
+                    <div style="background: rgba(255,255,255,0.85); padding: 12px; border-radius: 10px; border: 1px solid rgba(142,58,70,0.15);">
+                        <div style="font-size: 0.9rem; font-weight: bold; color: #2c2c2c; margin-bottom: 8px;">
+                            ${isEn ? (work.en_t || work.t) : work.t}
+                            <span style="display:block; font-size:0.7rem; color:#8e3a46; font-weight:normal; margin-top:2px;">
+                                ${isEn ? 'Author' : '著者'}: ${isEn ? (work.en_a || work.a) : work.a}
+                            </span>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <a href="${work.amz}" target="_blank" rel="nofollow" style="flex:1; background:#232f3e; color:white; text-decoration:none; padding:10px 0; border-radius:6px; font-size:0.75rem; font-weight:bold; text-align:center;">Amazon</a>
+                            <a href="${work.rkt}" target="_blank" rel="nofollow" style="flex:1; background:#bf0000; color:white; text-decoration:none; padding:10px 0; border-radius:6px; font-size:0.75rem; font-weight:bold; text-align:center;">楽天</a>
                         </div>
                     </div>
-                    <div style="font-size:0.75rem; color:#ccd6f6; line-height:1.5; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
-                        ${checkLabel}
-                        ${dDesc || (isEn ? "Currently investigating." : "現在、詳細な情報を調査中です。")}
-                    </div>
-                    <div class="action-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
-                        ${(shop.note && shop.note !== '#') ? `<a href="${shop.note}" class="btn btn-note" target="_blank"> note</a>` : `<span class="btn btn-disabled">${isEn ? 'Coming Soon' : '準備中'}</span>`}
-                        ${(shop.medium && shop.medium !== '#') ? `<a href="${shop.medium}" class="btn btn-medium" target="_blank"> Medium</a>` : `<span class="btn btn-disabled"> Soon</span>`}
+                `).join('')}
+            </div>
+
+            <div style="text-align: center; margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(142,58,70,0.2);">
+                <a href="yuri_guide.html" style="font-size: 0.8rem; color: #8e3a46; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                    <span>${isEn ? "Deep History of Yuri & 50 Picks" : "📜 百合の歴史と厳選50選を詳しく見る"}</span>
+                    <span style="font-size: 0.6rem;">▶</span>
+                </a>
+            </div>
+        </div>
+    `;
+    container.insertAdjacentHTML('beforeend', adHtml);
+}
+       
+        // --- 店舗カードの描画 ---
+        const card = document.createElement('div');
+        card.className = 'shop-card show';
+        
+        const dName = isEn ? (shop.name_en || shop.name_jp) : shop.name_jp;
+        const dAddress = isEn ? (shop.address_en || shop.address_jp) : shop.address_jp;
+        const dDesc = isEn ? (shop.description_en || shop.description_jp) : (shop.description_jp || '調査中');
+        const dHoliday = isEn ? (shop.holiday_en || shop.holiday_jp) : shop.holiday_jp;
+
+        // 【復元】複雑なアイコン表示ロジック
+        let finalDisplayIcon = '';
+        const instagramGradient = "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)";
+        
+        if (shop.icon === "website") {
+            // WEB SITE アイコン
+            finalDisplayIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#1a2a4a; border:1px solid #3a4a6a; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00ffcc; text-align:center; flex-shrink:0;">
+                <span style="font-size:32px; margin-bottom:4px;">🌐</span>
+                <span style="font-size:10px; font-weight:bold; letter-spacing:0.05em;">WEB SITE</span>
+            </div>`;
+        } else if (shop.snsUrl && shop.snsUrl.includes('twitter.com') || shop.snsUrl && shop.snsUrl.includes('x.com')) {
+            // X (Twitter) アイコン（もし画像があればimg、なければ独自デザインにするなど元の仕様に合わせる）
+            // ここではimgタグで引っ張ってくる元の仕様を想定
+            finalDisplayIcon = `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/100?text=X'">`;
+        } else if (shop.icon === "instagram" || (!shop.icon && shop.snsUrl && shop.snsUrl.includes('instagram.com'))) {
+            // Instagram グラデーションアイコン
+            finalDisplayIcon = `<div style="width:100px; height:100px; border-radius:12px; background:${instagramGradient}; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; text-align:center; flex-shrink:0;">
+                <span style="font-size:32px; margin-bottom:4px;">📸</span>
+                <span style="font-size:10px; font-weight:bold; letter-spacing:0.05em;">Instagram</span>
+            </div>`;
+        } else {
+            // フォールバック（画像がある場合はimg、ない場合はグレーボックス）
+            finalDisplayIcon = shop.icon ? 
+                `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/100?text=Bar'">` :
+                `<div style="width:100px; height:100px; border-radius:12px; background:#333; display:flex; align-items:center; justify-content:center; color:white; font-size:32px; flex-shrink:0;">🍸</div>`;
+        }
+
+        // チェックラベル（維持）
+        const checkLabel = (shop.lastCheck && shop.checkLevel !== 'ongoing') ? `
+            <div style="margin-bottom: 10px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); display: inline-block;">
+                <span style="color: #00ffcc; font-weight: bold; font-size: 0.7rem;">${shop.checkLevel === 'thorough' ? (isEn ? '✅ Investigated' : '✅ 徹底調査済') : (isEn ? '💡 Visited' : '💡 初回訪問済')}</span>
+                <span style="color: #ccd6f6; margin-left: 5px; font-size: 0.7rem;">(${shop.lastCheck.replace('-', '/')})</span>
+            </div>
+        ` : "";
+
+        // 特徴タグ（維持）
+        const dTags = (shop.tags || []).map(t => {
+            const label = tagMap[t] ? (isEn ? tagMap[t].en : tagMap[t].jp) : t;
+            return `<span>#${label}</span>`;
+        }).join('');
+
+        card.innerHTML = `
+            <div style="padding:15px;">
+                <div style="display:flex; gap:15px; margin-bottom:12px;">
+                    ${finalDisplayIcon} <div style="flex:1;">
+                        <div class="shop-name" style="font-size:1.1rem; font-weight:bold; margin-bottom:4px;">
+                            <a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a>
+                        </div>
+                        <div style="font-size:0.7rem; color:#ccd6f6;">📍 ${dAddress}</div>
+                        <div style="font-size:0.7rem; color:#ccd6f6; margin-top:2px;">🕒 ${shop.time || '---'}</div>
+                        <div style="font-size:0.7rem; color:#ccd6f6;">🗓️ ${isEn ? 'Closed: ' : '定休日: '}${dHoliday}</div>
+                        <div class="feature-tags" style="margin-top:8px;">${dTags}</div>
                     </div>
                 </div>
-            `;
-            container.appendChild(card);
-        });
-    }
+                
+                <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
+                    ${checkLabel}
+                    <div style="font-size:0.8rem; color:#ccd6f6; line-height:1.6; text-align:justify;">
+                        ${dDesc}
+                    </div>
+                </div>
 
-    // 起動時の呼び出し
-    document.addEventListener('DOMContentLoaded', displayShops);
+                <div class="action-buttons" style="display: flex; gap: 10px; margin-top: 15px;">
+                    ${(shop.note && shop.note !== '#') ? `<a href="${shop.note}" class="btn btn-note" target="_blank" style="flex:1; text-align:center;">note</a>` : `<span class="btn btn-disabled" style="flex:1; text-align:center;"> Soon</span>`}
+                    ${(shop.medium && shop.medium !== '#') ? `<a href="${shop.medium}" class="btn btn-medium" target="_blank" style="flex:1; text-align:center;">Medium</a>` : `<span class="btn btn-disabled" style="flex:1; text-align:center;">Soon</span>`}
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+    // 起動処理
+    window.addEventListener('DOMContentLoaded', () => {
+        if (typeof shopDetails !== 'undefined') {
+            displayShops();
+        }
+    });
 
- 
 </script>
 </body>
 </html>

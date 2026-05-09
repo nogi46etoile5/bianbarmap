@@ -56,7 +56,7 @@ const shopDetails = [
         description_en: "A lesbian bar with a unique system where the staff is fixed by the day of the week. Lots of rare liqueurs and events. Located just past the Izakaya 'Yoshida Kaigan'."
     },
     { 
-        name_jp: "パズルアソビ", name_en: "PUZZLE ASOBI", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@puzzleasobi2", snsUrl: "https://x.com/puzzleasobi2", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目36-3新宿御苑136ビル6F", address_en: "6F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["カラオケ","イベント多い",], icon: "https://unavatar.io/twitter/puzzleasobi2", note: "#", medium: "#",
+        name_jp: "パズルアソビ", name_en: "PUZZLE ASOBI", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@puzzleasobi2", snsUrl: "https://x.com/puzzleasobi2", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目36-3新宿御苑136ビル6F", address_en: "6F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["カラオケ","イベント多い",], icon: "https://unavatar.io/twitter/puzzleasobi2", note: "#", medium: "#",checkLevel: "first",
         description_jp: "住所は一丁目だけど雰囲気は二丁目！新築ビルに入ったH系列の店舗で、カラオケもダーツも楽しめるお店です。",
         description_en: "The address is in Ic-chome, but it has a total Ni-chome vibe! A new H-series branch in a modern building, featuring both karaoke and darts."
     },
@@ -108,7 +108,7 @@ const shopDetails = [
 
     // 特別マークグループ
     { 
-        name_jp: "GOLD FINGER", name_en: "GOLD FINGER", series: "GF系", seriesMark: "☝️", type: "MIX", area: "東京", xId: "@GOLDFINGERTOKYO", snsUrl: "https://x.com/GOLDFINGERTOKYO", time: "17:00〜24:00,17:00~28:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目 12-11林ビル1階", address_en: "1F, Hayashi Bldg, 2-12-11 Shinjuku, Tokyo", tags: ["初心者多め","外国人多い","ノーチャージ","英語対応", "初心者向け"], icon: "https://unavatar.io/twitter/GOLDFINGERTOKYO", note: "#", medium: "#",
+        name_jp: "GOLD FINGER", name_en: "GOLD FINGER", series: "GF系", seriesMark: "☝️", type: "MIX", area: "東京", xId: "@GOLDFINGERTOKYO", snsUrl: "https://x.com/GOLDFINGERTOKYO", time: "17:00〜24:00,17:00~28:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目 12-11林ビル1階", address_en: "1F, Hayashi Bldg, 2-12-11 Shinjuku, Tokyo", tags: ["初心者多め","外国人多い","ノーチャージ","英語対応", "初心者向け"], icon: "https://unavatar.io/twitter/GOLDFINGERTOKYO", note: "#", medium: "#",checkLevel: "first",
         description_jp: "世界的に有名なショットバー。外国人の客層が多く、とにかくたくさんの人と出会いたい時にピッタリな場所です。",
         description_en: "A world-famous shot bar. Very popular with international visitors. The perfect spot if you want to meet a large number of people in one night."
     },
