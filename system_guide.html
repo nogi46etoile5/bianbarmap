@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ni-chome Bar Guide</title>
+    <style>
+        :root {
+            /* 色覚多様性に配慮し、コントラストを強めた紫とピンク */
+            --primary: #4b0082; /* 濃い紫（インディゴ寄り） */
+            --accent: #c2185b;  /* 濃いピンク */
+            --bg: #ffffff;
+            --text: #1a1a1a;
+        }
+        body {
+            font-family: sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            max-width: 600px; /* スマホで見やすい幅 */
+            margin: 0 auto;
+            padding: 15px;
+            background-color: var(--bg);
+        }
+        .lang-switch { text-align: right; margin-bottom: 15px; }
+        .btn { border: 2px solid var(--primary); padding: 6px 12px; border-radius: 20px; background: #fff; cursor: pointer; font-weight: bold; }
+        .btn.active { background: var(--primary); color: #fff; }
+        
+        header { background: var(--primary); color: #fff; padding: 30px 15px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
+        section { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
+        h2 { color: var(--primary); font-size: 1.3em; margin-bottom: 10px; display: flex; align-items: center; }
+        h2::before { content: "●"; color: var(--accent); margin-right: 8px; }
+        
+        .affiliate { border: 2px dashed var(--accent); padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0; font-size: 0.9em; }
+        .footer-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+        .nav-btn { flex: 1; min-width: 120px; background: #f0f0f0; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; color: #333; font-size: 0.8em; font-weight: bold; border: 1px solid #ddd; }
+        
+        [lang="en"] { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch">
+    <button id="btn-jp" class="btn active" onclick="setLang('jp')">日本語</button>
+    <button id="btn-en" class="btn" onclick="setLang('en')">English</button>
+</div>
+
+<header>
+    <div lang="jp"><h1>二丁目バー攻略ガイド</h1><p>〜最新ルールと現場マナー〜</p></div>
+    <div lang="en"><h1>Ni-chome Bar Guide</h1><p>~Local Rules & Etiquette~</p></div>
+</header>
+
+<section>
+    <div lang="jp">
+        <h2>1. 入店前の心得と呼び方</h2>
+        <p>ゲイバーでは「ママ・チーママ」と呼びますが、レズビアン向けバーは個人経営が多く「店長・オーナー」またはお名前で呼ぶのが一般的です。スタッフは「店子（みせこ）」と呼びます。店内は非常に狭いため、大きな荷物は避け、身軽な格好で訪れるのがマナーです。</p>
+    </div>
+    <div lang="en">
+        <h2>1. Staff & Preparation</h2>
+        <p>While gay bars use "Mama," lesbian bars typically use "Tencho" (Manager) or "Owner." Other staff are called "Miseko." Most bars are very small, so please avoid large luggage and travel light.</p>
+    </div>
+</section>
+
+<section>
+    <div lang="jp">
+        <h2>2. 料金システムと会計のタイミング</h2>
+        <p>「タイムチャージ」はほぼありません。入店時の席料（700円〜2,000円）のみです。<strong>ショットバーはその都度払い（Cash on delivery）</strong>ですが、その他のバーは退店時にまとめて支払います。声が通らない時は、指で「×（バツ）」印を作れば会計の合図になります。</p>
+    </div>
+    <div lang="en">
+        <h2>2. Pricing & Payment Timing</h2>
+        <p>No hourly rates. You only pay a one-time cover charge (¥700-¥2,000). <strong>Shot bars are pay-as-you-go</strong>, while others are pay-at-the-end. Cross your fingers to make an "X" for the bill.</p>
+    </div>
+</section>
+
+<section>
+    <div lang="jp">
+        <h2>3. 明朗会計と伝票の確認</h2>
+        <p>二丁目の多くは明朗会計ですが、不安な場合は「伝票（でんぴょう）見せてください」と言えば快く見せてくれます。お酒を飲まない方でもソフトドリンクで楽しめますが、1時間に1杯程度は注文するのが粋な遊び方です。店子さんへの「一杯どうぞ」も歓迎されます。</p>
+    </div>
+    <div lang="en">
+        <h2>3. Transparency & Ordering</h2>
+        <p>Most bars have clear pricing. Feel free to ask "Denpyo misete" (Show me the bill) if needed. Soft drinks are fine, but ordering one drink per hour is preferred. Offering a drink to staff is also a local custom.</p>
+    </div>
+</section>
+
+<div class="affiliate">
+    <div lang="jp">【PR】二丁目の「飲み」を全力で楽しむための必須アイテム<br><a href="https://item.rakuten.co.jp/finepharmacy/4987103049111/">・ヘパリーゼをチェック</a></div>
+    <div lang="en">[PR] Survival kit for a long night in Ni-chome<br><a href="https://item.rakuten.co.jp/finepharmacy/4987103049111/">Check Anti-Hangover Supplements</a></div>
+</div>
+
+<section>
+    <div lang="jp">
+        <h2>4. 店内での禁止事項</h2>
+        <p>激しいスキンシップ（キス等）や店内での睡眠は厳禁。写真撮影も原則禁止です（撮るなら必ず店と周囲の許可を得る）。飲み物の持ち込みや、店内で隠れて飲む行為は絶対NGです。シャンパン等で潰れた場合は多少多めに見てくれることもありますが、基本はマナー重視です。</p>
+    </div>
+    <div lang="en">
+        <h2>4. Prohibited Acts</h2>
+        <p>Kissing, intense contact, and sleeping are forbidden. Photography is generally prohibited—ask first. Bringing outside drinks (including drinking secretly) is a major taboo. Be careful not to drink beyond your limit.</p>
+    </div>
+</section>
+
+<section>
+    <div lang="jp">
+        <h2>5. 属性制限とカード手数料</h2>
+        <p>レズビアンバーは女性専用でFTMの方も断られる場合がありますが、MIXバーなら属性不問で楽しめます。クレジットカード払いで10%程度の手数料が上乗せされる店もありますが、これは現地の古い慣習です。トラブルを避けるため、現金の用意を強く推奨します。</p>
+    </div>
+    <div lang="en">
+        <h2>5. Entry Rules & Credit Cards</h2>
+        <p>Lesbian bars are for women; FTM individuals may be declined. MIX bars are open to everyone. Some bars charge a 10% fee for cards as a local custom, so carrying cash is highly recommended.</p>
+    </div>
+</section>
+
+<div class="footer-nav">
+    <a href="index.html" class="nav-btn">🏠 お店一覧</a>
+    <a href="yuri_guide.html" class="nav-btn">📚 百合漫画/小説</a>
+    <a href="guide.html" class="nav-btn">🤝 付き添い</a>
+</div>
+
+<script>
+function setLang(lang) {
+    document.querySelectorAll('[lang="jp"]').forEach(el => el.style.display = (lang === 'jp' ? 'block' : 'none'));
+    document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = (lang === 'en' ? 'block' : 'none'));
+    document.getElementById('btn-jp').classList.toggle('active', lang === 'jp');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
+
+</body>
+</html>
