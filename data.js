@@ -1,4 +1,27 @@
 const shopDetails = [
+ 
+        // B系列 - Gグループ (B(G))
+        { 
+            name_jp: "グルークファースト", name_en: "Gluck First", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜8:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗1階", address_en: "1F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "イベント多い", "持ち込み食べ物可", "ボトルキープ有", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n139c68435217", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+            description_jp: "大きな駐車場前で朝（昼？）まで営業中。黒を基調とした内装で夜の雰囲気たっぷり。紙タバコは外で吸うスタイルです。",
+            description_en: "Located in front of the large parking lot and open until morning (sometimes noon!). Features a sleek black interior. Cigarette smoking is allowed outside."
+        },
+        { 
+            name_jp: "グルークネクスト", name_en: "Gluck Next", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-11林ビル2階", address_en: "2F, Hayashi Bldg, 2-12-11 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "ボトルキープ有", "イベント多い", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n694f09d93410", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+            description_jp: "二丁目のビアンバー界隈では最大級の広さ。ダーツ、カラオケ、ボードゲームと遊びが充実. 天使のインテリアが並んでいます。",
+            description_en: "One of the most spacious bars in the Ni-chome lesbian scene. Fully equipped with darts, karaoke, and games. The interior is decorated with many angel figures."
+        },
+        { 
+            name_jp: "グルークゼロ", name_en: "Gluck Zero", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00,19:00~5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-15 山原ハイツB1", address_en: "B1, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "ボトルキープ有", "イベント多い", "穏やか", "盛り上がる", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n792b52e36bbc", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+            description_jp: "白基調の店内で、B系列初の仲通り沿い店舗。ボードゲームが豊富。地下なのでWi-Fiの強さをぜひ現地で試してみて！",
+            description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
+        },
+        { 
+            name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty___mixbar/", time: "20:00〜4:00,20:00～5:00", holiday: "水曜", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+            description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
+            description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
+        },
+    
     { 
         name_jp: "Bar LEGO", name_en: "Bar LEGO", type: "ビアン", area: "東日本", xId: "websiteのみ", snsUrl: "http://r.goope.jp/bar-lego/", time: "19:00〜27:00", holiday: "日曜", address_jp: "北海道札幌市中央区南5条西6丁目9番地第５桂和ビル４F", address_en: "4F, Dai-5 Keiwa Bldg, 5-6 Minami 5-jo Nishi, Chuo-ku, Sapporo, Hokkaido", tags: [, "穏やか", "フード有"], icon: "website", note: "#", medium: "#",
      description_jp: "未訪問、現在調査中訪問次第載せます。",
@@ -9,6 +32,11 @@ const shopDetails = [
  description_jp: "未訪問、現在調査中訪問次第載せます。",
  description_en: "Coming soon! (I haven't visited yet, but planning to!)."
 },
+{ 
+    name_jp: "bar 飲ノンキ喜", name_en: "bar nonki", type: "ビアン", area: "東日本", xId: "@karaokebarnonki", snsUrl: "https://x.com/karaokebarnonki", time: "20:00〜last", holiday: "火曜", address_jp: "北海道札幌市中央区南5条西5丁目21-3 ", address_en: "21-3, Minami 5-jo Nishi 5-chome, Chuo-ku, Sapporo, Hokkaido", tags: ["盛り上がる", "カラオケ", ], icon: "https://unavatar.io/twitter/karaokebarnonki", note: "#", medium: "#",
+ description_jp: "未訪問、現在調査中訪問次第載せます。",
+ description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+}, 
 { 
     name_jp: "コア(core)", name_en: "core", type: "ビアン", area: "東日本", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/core.0003", time: "20:00〜3:00", holiday: "土曜以外", address_jp: "栃木県宇都宮市本町8-9クレインビル2-c", address_en: "2-C Crane Bldg, 8-9 Honcho, Utsunomiya-shi, Tochigi", tags: [ "穏やか", ], icon: "instagram", note: "#", medium: "#",
     description_jp: "未訪問、現在調査中訪問次第載せます。",
@@ -56,7 +84,7 @@ const shopDetails = [
         description_en: "A lesbian bar with a unique system where the staff is fixed by the day of the week. Lots of rare liqueurs and events. Located just past the Izakaya 'Yoshida Kaigan'."
     },
     { 
-        name_jp: "パズルアソビ", name_en: "PUZZLE ASOBI", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@puzzleasobi2", snsUrl: "https://x.com/puzzleasobi2", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目36-3新宿御苑136ビル6F", address_en: "6F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["カラオケ","イベント多い",], icon: "https://unavatar.io/twitter/puzzleasobi2", note: "#", medium: "#",lastCheck: "2026-05",checkLevel: "first",
+        name_jp: "パズルアソビ", name_en: "PUZZLE ASOBI", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@puzzleasobi2", snsUrl: "https://x.com/puzzleasobi2", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目36-3新宿御苑136ビル6F", address_en: "6F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["カラオケ","イベント多い",], icon: "https://unavatar.io/twitter/puzzleasobi2", note: "https://note.com/412357siki/n/n6efa3fba81cc", medium: "#",lastCheck: "2026-05",checkLevel: "thorough",
         description_jp: "住所は一丁目だけど雰囲気は二丁目！新築ビルに入ったH系列の店舗で、カラオケもダーツも楽しめるお店です。",
         description_en: "The address is in Ic-chome, but it has a total Ni-chome vibe! A new H-series branch in a modern building, featuring both karaoke and darts."
     },
@@ -74,7 +102,7 @@ const shopDetails = [
         description_en: "The first L-series shop, marked by a monkey sign. A very welcoming bar that posts its prices on social media. Very popular with the younger crowd."
     },
     { 
-        name_jp: "LAUGH", name_en: "LAUGH", series: "B系列", seriesMark: "B(L)", type: "ビアン", area: "東京", xId: "@BARLAUGH07", snsUrl: "https://x.com/BARLAUGH07", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗2F", address_en: "2F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "イベント多い", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BARLAUGH07", note: "https://note.com/412357siki/n/n5d840ad50af8", medium: "#",lastCheck: "2026-02", checkLevel: "thorough",
+        name_jp: "LAUGH", name_en: "LAUGH", series: "B系列", seriesMark: "B(L)", type: "MIX", area: "東京", xId: "@BARLAUGH07", snsUrl: "https://x.com/BARLAUGH07", time: "20:00〜5:00", holiday: "月曜、火曜", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗2F", address_en: "2F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "イベント多い", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BARLAUGH07", note: "https://note.com/412357siki/n/n5d840ad50af8", medium: "#",lastCheck: "2026-02", checkLevel: "thorough",
         description_jp: "グルークファーストの2階。犬の歯のロゴが目印！若い子が多く、2面の窓が開放的なお店です。階段の登りづらさも体験してみて！",
         description_en: "Located above Gluck First, featuring a dog-tooth logo. Popular with young people, the bar has two large windows. Give the uniquely steep stairs a try!"
     },
@@ -84,27 +112,6 @@ const shopDetails = [
         description_en: "Features a cool wolf illustration. It's a vintage clothing store by day and a bar by night. You can enjoy a drink on the balcony while overlooking Shinjuku's skyline."
     },
 
-    // B系列 - Gグループ (B(G))
-    { 
-        name_jp: "グルークファースト", name_en: "Gluck First", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜8:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗1階", address_en: "1F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "イベント多い", "持ち込み食べ物可", "ボトルキープ有", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n139c68435217", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-        description_jp: "大きな駐車場前で朝（昼？）まで営業中。黒を基調とした内装で夜の雰囲気たっぷり。紙タバコは外で吸うスタイルです。",
-        description_en: "Located in front of the large parking lot and open until morning (sometimes noon!). Features a sleek black interior. Cigarette smoking is allowed outside."
-    },
-    { 
-        name_jp: "グルークネクスト", name_en: "Gluck Next", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-11林ビル2階", address_en: "2F, Hayashi Bldg, 2-12-11 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "ボトルキープ有", "イベント多い", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n694f09d93410", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-        description_jp: "二丁目のビアンバー界隈では最大級の広さ。ダーツ、カラオケ、ボードゲームと遊びが充実. 天使のインテリアが並んでいます。",
-        description_en: "One of the most spacious bars in the Ni-chome lesbian scene. Fully equipped with darts, karaoke, and games. The interior is decorated with many angel figures."
-    },
-    { 
-        name_jp: "グルークゼロ", name_en: "Gluck Zero", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00,19:00~5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-15 山原ハイツB1", address_en: "B1, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "ボトルキープ有", "イベント多い", "穏やか", "盛り上がる", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n792b52e36bbc", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-        description_jp: "白基調の店内で、B系列初の仲通り沿い店舗。ボードゲームが豊富。地下なのでWi-Fiの強さをぜひ現地で試してみて！",
-        description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
-    },
-    { 
-        name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty___mixbar/", time: "20:00〜4:00,20:00～5:00", holiday: "不定休", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-        description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
-        description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
-    },
 
     // 特別マークグループ
     { 
@@ -166,8 +173,8 @@ const shopDetails = [
     },
     { 
         name_jp: "うーたん", name_en: "U-tan", type: "ビアン", area: "東京", xId: "@3oKOFLjgPthoJF6", snsUrl: "https://x.com/3oKOFLjgPthoJF6", time: "20:00〜26:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-16-3第三宏和ビル2階", address_en: "2F, Dai-san Kowa Bldg, 2-16-3 Shinjuku, Tokyo", tags: ["カラオケ", "穏やか", "盛り上がる", "喫煙可", "お通し有"], icon: "https://unavatar.io/twitter/3oKOFLjgPthoJF6", note: "#", medium: "#",lastCheck: "2025", checkLevel: "thorough",
-        description_jp: "コインロッカーがあるビルの2階。常連さんが多めですが、アットホームで盛り上がれるレズビアンバーです。",
-        description_en: "On the 2nd floor of a building with coin lockers. While it has many regulars, it's a very welcoming and fun lesbian bar."
+        description_jp: "※Xアカウント凍結中のため最新情報は要確認。コインロッカーがあるビルの2階。常連さんが多めですが、アットホームで盛り上がれるレズビアンバーです。",
+        description_en: "※X account currently frozen; please verify latest info.On the 2nd floor of a building with coin lockers. While it has many regulars, it's a very welcoming and fun lesbian bar."
     },
     { 
         name_jp: "バー絆", name_en: "Bar Kizuna", type: "ビアン", area: "東京", xId: "@kizunamio", snsUrl: "https://x.com/kizunamio", time: "19:00〜23:00", holiday: "月曜,火曜,木曜", address_jp: "東京都新宿区新宿2丁目-16-3第三宏和ビル3階", address_en: "3F, Dai-san Kowa Bldg, 2-16-3 Shinjuku, Tokyo", tags: ["年齢層高め","穏やか",], icon: "https://unavatar.io/twitter/kizunamio", note: "#", medium: "#",
@@ -226,8 +233,8 @@ const shopDetails = [
     },
     { 
         name_jp: "Lily and", name_en: "Lily and", type: "MIX", area: "東京", xId: "@lilyand2mixbar", snsUrl: "https://x.com/lilyand2mixbar", time: "18:00〜23:00,20:00~26:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目 12-15山原ハイツ401", address_en: "401, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["カラオケ","喫煙可","変わったリキュール有","フード有",], icon: "https://unavatar.io/twitter/lilyand2mixbar", note: "#", medium: "#",lastCheck: "2026-01",checkLevel: "first",
-        description_jp: "※Xアカウント凍結中のため最新情報は要確認。レズビアンのお客さんも多いMIXバー。果実酒が豊富で、仲通りから少し入ったエレベーターから上がれます。",
-        description_en: "※X account currently frozen; please verify latest info.A MIX bar popular with lesbian customers. Offers a wide variety of fruit liqueurs. The elevator entrance is just off Naka-dori."
+        description_jp: "レズビアンのお客さんも多いMIXバー。果実酒が豊富で、仲通りから少し入ったエレベーターから上がれます。",
+        description_en: "A MIX bar popular with lesbian customers. Offers a wide variety of fruit liqueurs. The elevator entrance is just off Naka-dori."
     },
     { 
         name_jp: "bar belle by あじゃり", name_en: "Bar Belle", type: "ビアン", area: "東京", xId: "@barbelless", snsUrl: "https://x.com/barbelless", time: "21:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-15-14パンチョスタワー4F", address_en: "4F, Panchos Tower, 2-15-14 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "フード有", "イベント多い", "穏やか"], icon: "https://unavatar.io/twitter/barbelless", note: "#", medium: "#",lastCheck: "2025",checkLevel: "first",
@@ -275,6 +282,11 @@ const shopDetails = [
        description_en: "Coming soon! (I haven't visited yet, but planning to!)."
     },
     { 
+        name_jp: "RANDOM", name_en: "RANDOM", type: "MIX", area: "東京", xId: "@randommachida", snsUrl: "https://x.com/randommachida", time: "19:00〜23:30", holiday: "日曜", address_jp: "東京都町田市中町1-18-2 ウッドベルビル2F", address_en:　"Wood Bell Building 2F, 1-18-2 Nakamachi, Machida-shi, Tokyo" , tags: ["喫煙可", "カラオケ", ], icon: "https://unavatar.io/twitter/randommachida", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    }, 
+    { 
         name_jp: "酒と肴やぶれ", name_en: "Yabure", type: "ビアン", area: "西日本", xId: "@yabure1911", snsUrl: "https://x.com/yabure1911", time: "17:00〜23:00,17:00~24:00", holiday: "不定休", address_jp: "福岡県福岡市中央区今泉1-23-4 REMIX天神2F", address_en: "2F REMIX Tenjin, 1-23-4 Imaizumi, Chuo-ku, Fukuoka-shi, Fukuoka", tags: ["初心者向け", "穏やか", "フード有"], icon: "https://unavatar.io/twitter/yabure1911", note: "#", medium: "#",
         description_jp: "未訪問、現在調査中訪問次第載せます。",
         description_en: "Coming soon! (I haven't visited yet, but planning to!)."
@@ -288,6 +300,11 @@ const shopDetails = [
         name_jp: "LOL101", name_en: "LOL101", type: "ビアン", area: "西日本", xId: "@barlol101", snsUrl: "https://x.com/barlol101", time: "19:00〜26:00", holiday: "不定休", address_jp: "福岡県福岡市中央区天神2-4-20 天神プラッサ地下1F", address_en: "B1F Tenjin Plassa, 2-4-20 Tenjin, Chuo-ku, Fukuoka-shi, Fukuoka", tags: ["初心者向け", "穏やか", "フード有"], icon: "https://unavatar.io/twitter/barlol101", note: "#", medium: "#",
         description_jp: "未訪問、現在調査中訪問次第載せます。",
         description_en: "Coming soon! (I haven't visited yet, but planning to!)."
-    }
-    
+    },
+    { 
+    name_jp: "bar ajisai", name_en: "bar ajisai", type: "ビアン", area: "西日本", xId: "@bar_ajisai", snsUrl: "https://x.com/bar_ajisai", time: "17:30〜2:30", holiday: "月曜、不定休", address_jp: "香川健高松市古馬場町8-48　AKビルⅧ　2階南", address_en: "AK Bldg VIII 2F-South, 8-48 Furubaba-cho, Takamatsu-shi, Kagawa", tags: [ "穏やか", ], icon: "https://unavatar.io/twitter/bar_ajisai", note: "#", medium: "#",
+ description_jp: "未訪問、現在調査中訪問次第載せます。",
+ description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+},
+
 ];

@@ -429,6 +429,7 @@ a {
         }
         displayShops();
     }
+
     function displayShops() {
     const container = document.getElementById('shop-container');
     if (!container || typeof shopDetails === 'undefined') return;
@@ -446,7 +447,7 @@ a {
     });
 
     filteredShops.forEach((shop, index) => {
-        // --- 5件ごとにアフィリエイト枠（歴史ページへの導線付き）を挿入 ---
+        // --- 5件ごとにアフィリエイト枠を挿入 ---
         if (index > 0 && index % 5 === 0 && allYuriWorks.length > 0) {
             const shuffled = [...allYuriWorks].sort(() => 0.5 - Math.random());
             const selected = shuffled.slice(0, 3);
@@ -478,26 +479,53 @@ a {
                 </div>`;
             container.insertAdjacentHTML('beforeend', adHtml);
         }
-
-        // --- 店舗カードの描画 ---
+        // --- 店舗カードの生成とベースクラス適用 ---
         const card = document.createElement('div');
         card.className = 'shop-card show';
-        
+        card.style.position = "relative"; // B系列の極太線を綺麗に出すための土台
+        card.style.overflow = "hidden";
+
+        // --- 【右側侵食完全ガード版】左線：系列バー（15px幅） ---
+        if (shop.seriesMark === "B(G)" || shop.group === "BG" || shop.seriesMark === "B系(G)") {
+            // border-imageを使わず、左側にだけ15pxのグラデーション背景を敷き詰める（右線への侵食を100%防止）
+            card.style.borderLeft = "15px solid transparent";
+            card.style.background = "linear-gradient(to bottom, #9d00ff 50%, #ff0000 50%) no-repeat left / 15px 100%, #1a233d"; 
+        } else if (shop.seriesMark === "B(L)" || shop.group === "BL" || shop.seriesMark === "B系(L)") {
+            // border-imageを使わず、左側にだけ15pxのグラデーション背景を敷き詰める（右線への侵食を100%防止）
+            card.style.borderLeft = "15px solid transparent";
+            card.style.background = "linear-gradient(to bottom, #9d00ff 50%, #0000ff 50%) no-repeat left / 15px 100%, #1a233d"; 
+        } else if (shop.series === "H系列" || shop.series === "H系" || shop.group === "H" || shop.seriesMark === "H") {
+            card.style.borderLeft = "15px solid #00ff00"; // H系：極太緑
+        } else if (shop.series === "A系列" || shop.series === "A系" || shop.group === "A" || shop.seriesMark === "A") {
+            card.style.borderLeft = "15px solid #ff8c00"; // A系：極太オレンジ
+        } else if (shop.series === "GF系列" || shop.series === "GF系" || shop.group === "GF" || shop.seriesMark === "☝️") {
+            card.style.borderLeft = "15px solid #ffd700"; // GF系：極太ゴールド
+        } else if (shop.series === "船系列" || shop.series === "船系" || shop.group === "船" || shop.seriesMark === "🚢") {
+            card.style.borderLeft = "15px solid #00ffff"; // 船系：極太水色
+        }
+
+        // --- 右線：種別バー（15px幅） ---
+        const isLesbian = shop.type === "lesbian" || shop.type === "ビアン" || shop.type === "ビアン専用" || (shop.tags && shop.tags.includes("lesbian")) || (shop.tags && shop.tags.includes("ビアン専用"));
+        const isMix = shop.type === "mix" || shop.type === "MIX" || shop.type === "MIXバー" || shop.type === "ミックスバー" || (shop.tags && shop.tags.includes("mix")) || (shop.tags && shop.tags.includes("ミックスバー"));
+
+        if (isLesbian) {
+            card.style.borderRight = "15px solid #ff69b4"; // ビアン：極太ピンク（B系列でも独立して出ます）
+        } else if (isMix) {
+            card.style.borderRight = "15px solid #4bc0c0"; // MIX：極太ミントグリーン（B系列でも独立して出ます）
+        }
+      
+        // --- データテキスト処理 ---
         const dName = isEn ? (shop.name_en || shop.name_jp) : shop.name_jp;
         const dAddress = isEn ? (shop.address_en || shop.address_jp) : shop.address_jp;
         const dDesc = isEn ? (shop.description_en || shop.description_jp) : (shop.description_jp || '現在調査中です。');
-        
-        // 【復元】定休日：holidayプロパティをそのまま反映
         const dHoliday = isEn ? (shop.holiday_en || shop.holiday || 'TBD') : (shop.holiday || '不明');
 
-        // 【復元】チェックラベル：thorough(徹底調査済) / first(初回訪問済)
         let checkLabel = "";
         if (shop.lastCheck && shop.checkLevel !== 'ongoing') {
             const levelText = shop.checkLevel === 'thorough' 
                 ? (isEn ? '✅ Thoroughly Investigated' : '✅ 徹底調査済') 
                 : (isEn ? '💡 First Visit Completed' : '💡 初回訪問済');
             
-            // lastCheckのハイフンをスラッシュに置換（2026-04 -> 2026/04）
             const displayDate = shop.lastCheck.replace(/-/g, '/');
             
             checkLabel = `
@@ -507,14 +535,12 @@ a {
                 </div>`;
         }
 
-        // 【復元】アイコンロジック：Instagram/X(URL)/Websiteの出し分け
         let finalIcon = '';
         if (shop.icon === "website") {
             finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#1a2a4a; border:1px solid #3a4a6a; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00ffcc; flex-shrink:0;"><span style="font-size:32px;">🌐</span><span style="font-size:10px; font-weight:bold;">WEB SITE</span></div>`;
         } else if (shop.icon === "instagram" || (shop.snsUrl && shop.snsUrl.includes('instagram.com'))) {
             finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:linear-gradient(45deg, #f09433 0%, #bc1888 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; flex-shrink:0;"><span style="font-size:32px;">📸</span><span style="font-size:10px; font-weight:bold;">Instagram</span></div>`;
         } else if (shop.icon && (shop.icon.includes('http') || shop.icon.includes('.png') || shop.icon.includes('.jpg'))) {
-            // XのアイコンURLなどが直接指定されている場合
             finalIcon = `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/100?text=Shop'">`;
         } else {
             finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#333; display:flex; align-items:center; justify-content:center; color:white; font-size:32px; flex-shrink:0;">🍸</div>`;
@@ -551,8 +577,6 @@ a {
         container.appendChild(card);
     });
 }
-  
-
     // 起動処理
     window.addEventListener('DOMContentLoaded', () => {
         if (typeof shopDetails !== 'undefined') {
