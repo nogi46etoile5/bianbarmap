@@ -391,7 +391,9 @@ a {
         '変わったリキュール有': { jp: '変わったリキュール有', en: 'UniqueDrink' },
         'イベント多い': { jp: 'イベント多い', en: 'Events' },
         'ボトルキープ有': { jp: 'ボトルキープ有', en: 'BottleKeep' },
-        '持ち込み食べ物可': { jp: '持ち込み食べ物可', en: 'BYOFood' }
+        '持ち込み食べ物可': { jp: '持ち込み食べ物可', en: 'BYOFood' },
+       '間借り': { jp: '間借り営業', en: 'Shared Space' },
+　　　　'不定期オープン': { jp: '不定期（SNS確認）', en: 'Check SNS for Dates' },
     };
 
     // 状態管理
@@ -551,6 +553,8 @@ a {
             return `<span>#${label}</span>`;
         }).join('');
 
+        
+
         card.innerHTML = `
             <div style="padding:15px;">
                 <div style="display:flex; gap:15px; margin-bottom:12px;">
@@ -577,6 +581,7 @@ a {
         container.appendChild(card);
     });
 }
+
     // 起動処理
     window.addEventListener('DOMContentLoaded', () => {
         if (typeof shopDetails !== 'undefined') {
