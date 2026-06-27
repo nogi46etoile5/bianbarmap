@@ -77,7 +77,7 @@ const shopDetails = [
         description_en: "It looks like a semi-basement but it's actually the 1st floor! If you get lost, look for the 'Giron-sen' sign. A MIX bar where most customers are lesbians, attracting a wide range of age groups."
     },
     { 
-        name_jp: "八(はち)", name_en: "Bar Hachi", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@hachi_omusubi_8", snsUrl: "https://x.com/hachi_omusubi_8", time: "20:00〜25:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-15-13第二中江ビルB1", address_en: "B1, Dai-ni Nakae Bldg, 2-15-13 Shinjuku, Tokyo", tags: ["喫煙可", "初心者向け", "初心者多め", "変わったリキュール有", "穏やか", "イベント多い", "フード有", "盛り上がる"], icon: "https://unavatar.io/twitter/hachi_omusubi_8", note: "https://note.com/412357siki/n/n1936bc1a82c9", medium: "#",lastCheck: "2025", checkLevel: "thorough",
+        name_jp: "八(はち)", name_en: "Bar Hachi", series: "H系列", seriesMark: "H", type: "ビアン", area: "東京", xId: "@hachi_omusubi_8", snsUrl: "https://x.com/hachi_omusubi_8", time: "20:00〜25:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-15-13第二中江ビルB1", address_en: "B1, Dai-ni Nakae Bldg, 2-15-13 Shinjuku, Tokyo", tags: ["喫煙可", "初心者向け", "初心者多め", "変わったリキュール有", "穏やか", "イベント多い", "フード有", "カラオケ","盛り上がる"], icon: "https://unavatar.io/twitter/hachi_omusubi_8", note: "https://note.com/412357siki/n/n1936bc1a82c9", medium: "#",lastCheck: "2025", checkLevel: "thorough",
         description_jp: "地下一階にあるおむすびがコンセプトのレズビアンバー。オーナーの知り合いならたまに男性がいることも。珍しいリキュールや炭酸サーバーがあるお店です。",
         description_en: "A lesbian bar on B1F with an 'Onigiri' (rice ball) concept. You might occasionally see male acquaintances of the owner. They feature rare liqueurs and a soda carbonator."
     },
@@ -170,7 +170,7 @@ const shopDetails = [
         description_en: "A counter bar marked by a small window in a red door. Their daily handmade appetizers are excellent. Check their social media before you go!"
     },
     { 
-        name_jp: "バーファイブ5", name_en: "Bar Five5", type: "ビアン", area: "東京", xId: "@BAR_Five5", snsUrl: "https://x.com/BAR_Five5", time: "18:00〜24:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目-15-8-2F", address_en: "2F, 2-15-8 Shinjuku, Tokyo", tags: ["年齢層高め","穏やか",], icon: "https://unavatar.io/twitter/BAR_Five5", note: "#", medium: "#",
+        name_jp: "バーファイブ5", name_en: "Bar Five5", type: "ビアン", area: "東京", xId: "@BAR_Five5", snsUrl: "https://x.com/BAR_Five5", time: "18:00〜24:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目-15-8-2F", address_en: "2F, 2-15-8 Shinjuku, Tokyo", tags: ["年齢層高め","穏やか",], icon: "https://unavatar.io/twitter/BAR_Five5", note: "#", medium: "#",lastCheck: "2026/06", checkLevel: "first",
         description_jp: "通称「百合の小道」にある老舗。青い看板が目印で、2階の窓から通りを見下ろせる落ち着いた空間です。",
         description_en: "An established bar on 'Yuri Alley.' Look for the blue sign. A calm space on the 2nd floor where you can look out over the street."
     },
@@ -303,6 +303,36 @@ const shopDetails = [
      description_jp: "未訪問、現在調査中訪問次第載せます。",
      description_en: "Coming soon! (I haven't visited yet, but planning to!)."
     }, 
+    { 
+        name_jp: "NIKO POCKET", name_en: "NIKO POCKET", type: "MIX", area: "名古屋", xId: "@nikopocket", snsUrl: "https://x.com/nikopocket", time: "20:00~Last", holiday: "不定休", address_jp: "愛知県名古屋市中区栄4-13-10　名北ライオンビルB2", address_en: "Meihoku Lion Building B2, 4-13-10 Sakae, Naka-ku, Nagoya-shi, Aichi", tags: [ "穏やか","フード有","カラオケ有" ,"盛り上がる"], icon: "https://unavatar.io/twitter/nikopocket", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
+    { 
+        name_jp: "Candy Strap", name_en: "Candy Strap", type: "ビアン", area: "名古屋", xId: "@candy_strap", snsUrl: "https://x.com/candy_strap", time: "19:00~Last", holiday: "不定休", address_jp: "愛知県名古屋市中区栄5-6-4　栄能楽ビル３階", address_en: "Sakae Nōgaku Building 3F, 5-6-4 Sakae, Naka-ku, Nagoya-shi, Aichi", tags: [ "フード有" ,"穏やか"], icon: "https://unavatar.io/twitter/candy_strap", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
+    { 
+        name_jp: "warm", name_en: "warm", type: "ビアン", area: "名古屋", xId: "@T8ceRKoGfb91542", snsUrl: "https://x.com/T8ceRKoGfb91542", time: "21:00~25:30,20:00~27:00,19:00~26:00", holiday: "月曜,火曜,水曜,木曜", address_jp: "愛知県名古屋市中区栄4-6-18　パールプラザビル402号", address_en: "Pearl Plaza Building #402, 4-6-18 Sakae, Naka-ku, Nagoya-shi, Aichi", tags: [ "穏やか","変わったリキュールある"], icon: "https://unavatar.io/twitter/T8ceRKoGfb91542", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
+    { 
+        name_jp: "W", name_en: "W", type: "MIX", area: "名古屋", xId: "@Belle2221206", snsUrl: "https://x.com/belle2221206", time: "22:00~last", holiday: "日曜,祝日", address_jp: "愛知県名古屋市中区錦3-12-5常楽ビル3階", address_en:"Jōraku Building 3F, 3-12-5 Nishiki, Naka-ku, Nagoya-shi, Aichi", tags: [ "穏やか",], icon: "https://unavatar.io/twitter/belle2221206", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
+    { 
+        name_jp: "SENRI", name_en: "SENRI", type: "MIX", area: "名古屋", xId: "websiteのみ", snsUrl: "https://w-lesbian-bar.com/lesbian-bar-senri/", time: "22:00~Last", holiday: "水曜", address_jp: "名古屋市中区栄4-11-16ウォークライオンビル7F", address_en: "Walk Lion Building 7F, 4-11-16 Sakae, Naka-ku, Nagoya-shi, Aichi", tags: [ "穏やか"], icon: "website", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
+    { 
+        name_jp: "SHORTBUS", name_en: "SHORTBUS", type: "MIX", area: "名古屋", xId: "@SHORTBUS_0922", snsUrl: "https://x.com/SHORTBUS_0922", time: "19:00〜1:00", holiday: "火曜、不定休", address_jp: "愛知県名古屋市中区栄4-20-24池田パークビル5F", address_en: "Ikeda Park Building 5F, 4-20-24 Sakae, Naka-ku, Nagoya-shi, Aichi", tags: [ "穏やか", ], icon: "https://unavatar.io/twitter/SHORTBUS_0922", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    },
     { 
         name_jp: "酒と肴やぶれ", name_en: "Yabure", type: "ビアン", area: "西日本", xId: "@yabure1911", snsUrl: "https://x.com/yabure1911", time: "17:00〜23:00,17:00~24:00", holiday: "不定休", address_jp: "福岡県福岡市中央区今泉1-23-4 REMIX天神2F", address_en: "2F REMIX Tenjin, 1-23-4 Imaizumi, Chuo-ku, Fukuoka-shi, Fukuoka", tags: ["初心者向け", "穏やか", "フード有"], icon: "https://unavatar.io/twitter/yabure1911", note: "#", medium: "#",
         description_jp: "未訪問、現在調査中訪問次第載せます。",
