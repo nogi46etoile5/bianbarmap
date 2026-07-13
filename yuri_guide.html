@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>百合の庭園 | Yuri Garden 50</title>
+<title>百合の庭園 | Yuri Garden 100</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -58,7 +58,7 @@
   body.is-en [lang="en"] { display: block; }
 
   /* --- Hero --- */
-  .hero { padding: 50px 20px; text-align: center; }
+  .hero { padding: 50px 20px 20px; text-align: center; }
   .hero h1 { 
     font-family: 'Noto Serif JP', serif; 
     font-size: 2rem; 
@@ -67,6 +67,28 @@
     letter-spacing: 0.1em;
   }
   .hero p { font-size: 0.9rem; color: var(--text-sub); }
+
+  /* --- 検索・絞り込みUI --- */
+  .search-filter-container {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 0 15px;
+  }
+  .search-box {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    background: #fff;
+    outline: none;
+    color: var(--text-main);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    font-family: inherit;
+  }
+  .search-box:focus {
+    border-color: var(--accent-rose);
+  }
 
   /* --- Layout --- */
   .section-container { max-width: 600px; margin: 0 auto; padding: 0 15px 50px; }
@@ -97,7 +119,7 @@
   .expand-box.open .expand-trigger::after { transform: rotate(180deg); }
 
   .expand-content { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); background: #fff; }
-  .expand-box.open .expand-content { max-height: 15000px; }
+  .expand-box.open .expand-content { max-height: 30000px; }
 
   /* --- History Items --- */
   .history-item { padding: 25px; border-bottom: 1px solid rgba(0,0,0,0.06); }
@@ -106,21 +128,56 @@
 
   /* --- Work List Items --- */
   .work-item { padding: 25px; border-bottom: 1px solid #f5f5f5; }
+  .work-item.is-hidden { display: none !important; }
   .work-header { display: flex; align-items: baseline; gap: 12px; }
   .work-num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--accent-gold); font-weight: bold; }
+  .work-info { width: 100%; }
   .work-info h3 { font-size: 1.05rem; color: var(--text-main); font-weight: 700; }
   .work-info span { font-size: 0.8rem; color: var(--accent-rose); display: block; margin-top: 2px; }
   .work-info p { font-size: 0.9rem; color: var(--text-sub); margin-top: 12px; line-height: 1.7; text-align: justify; }
 
   /* --- Shop Buttons Style --- */
-  .shop-links { margin-top: 15px; display: flex; gap: 10px; }
+  .shop-links { margin-top: 15px; }
   .btn-shop { 
-    text-decoration: none; padding: 6px 14px; border-radius: 6px; 
+    display: inline-block; text-decoration: none; padding: 6px 14px; border-radius: 6px; 
     font-size: 0.75rem; font-weight: bold; text-align: center; color: white;
   }
   .btn-amz { background: #232f3e; }
-  .btn-rkt { background: #bf0000; }
   .btn-disabled { background: #e0e0e0; color: #aaa; cursor: not-allowed; }
+  
+  /* 海外注意書き用のスタイル */
+  .note-amz { font-size: 11px; color: #777; margin-top: 6px; display: block; line-height: 1.4; }
+
+  /* 広告枠用のスタイル */
+  .ad-section { background: #fff0f5; border: 1.5px dashed var(--accent-rose); padding: 25px; margin-bottom: 30px; border-radius: 18px; box-shadow: 0 6px 15px rgba(0,0,0,0.02); }
+  .ad-section h3 { font-family: 'Noto Serif JP', serif; font-size: 1.15rem; color: var(--accent-rose); margin-bottom: 12px; }
+  .ad-section p { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 15px; text-align: justify; }
+  .banner-place { text-align: center; padding: 10px 0; }
+
+  /* --- Back to Top Button --- */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--accent-rose);
+    color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .back-to-top.is-visible { opacity: 1; visibility: visible; }
+  .back-to-top:hover { background-color: var(--accent-gold); transform: translateY(-3px); }
 
   /* --- Footer UI --- */
   .footer-nav { max-width: 600px; margin: 0 auto; padding: 0 15px 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -141,14 +198,18 @@
 </div>
 
 <section class="hero">
-    <h1 lang="ja">百合の庭園 50選</h1>
-    <h1 lang="en">Yuri Garden: Top 50</h1>
+    <h1 lang="ja">百合の庭園 100選</h1>
+    <h1 lang="en">Yuri Garden: Top 100 Manga & Anime</h1>
     <p lang="ja">― 悠久の時を越え、魂が惹かれ合う物語の系譜 ―</p>
-    <p lang="en">— A Curated Genealogy of Souls Bound by Light and Shadow —</p>
+    <p lang="en">— A Curated Guide to Japanese Yuri, Girls' Love & Lesbian Masterpieces —</p>
 </section>
 
+<div class="search-filter-container">
+  <input type="text" id="workSearch" class="search-box" placeholder="作品名・著者名で検索..." oninput="handleSearchInput()">
+</div>
+
 <div class="section-container">
-  <!-- 歴史セクション -->
+  <!-- 歴史セクション（固定表示） -->
   <div class="expand-box history-box">
     <div class="box-header">
       <h2 lang="ja">📜 百合文化の深淵なる歴史</h2>
@@ -172,7 +233,7 @@
       <div class="history-item">
         <b lang="ja">2. 1970年代：劇的芸術への昇華と「24年組」の衝撃</b>
         <b lang="en">2. 1970s: Sublimation into Dramatic Art & 'Year 24 Group'</b>
-        <p lang="ja">1970年代、萩尾望都や竹宮惠子ら「24年組」が登場し、少女漫画の表現は一変します。同性への情愛は単なる友情を超え、人間の孤独、実存、そして性別を超えた魂の渇望を問う「劇的な芸術」へと昇華されました。この時期に確立された、内面の複雑な心理描写がジャンルに深い土壌を与えました。</p>
+        <p lang="ja">1970年代、萩尾望都や竹宮惠子ら「24年組」が登場し、少女漫画の表現は一変します。同性への情愛は単なる友情を超え、人間の孤独、実存、精度を超えた魂の渇望を問う「劇的な芸術」へと昇華されました。この時期に確立された、内面の複雑な心理描写がジャンルに深い土壌を与えました。</p>
         <p lang="en">In the 1970s, the 'Year 24 Group' revolutionized shoujo manga. They elevated love for the same sex into a 'dramatic art' that questioned human loneliness, existence, and the yearning of the soul beyond gender, providing the genre with a rich philosophical foundation.</p>
       </div>
       <div class="history-item">
@@ -184,13 +245,13 @@
       <div class="history-item">
         <b lang="ja">4. 2010年代以降：多様性の爆発と日常への回帰</b>
         <b lang="en">4. 2010s to Present: Explosion of Diversity & Return to Reality</b>
-        <p lang="ja">学園ものという伝統を超え、社会人のリアリティ、SF、異世界、さらにはジェンダーを問う社会派作品まで裾野が劇的に拡大。特別な誰かと生きていくという「決意」や、生活の中で育まれる「連帯」が描かれ、世界中で共感を集める多様な「愛の物語」として進化し続けています。</p>
+        <p lang="ja">学園ものという伝統を超え、社会人のリアリティ、SF、異世界、さらにはジェンダーを問う社会派作品まで裾野が劇的に拡大。特別な誰かと生きてしていくという「決意」や、生活の中で育まれる「連帯」が描かれ、世界中で共感を集める多様な「愛の物語」として進化し続けています。</p>
         <p lang="en">Yuri has expanded beyond school settings to adult realism, sci-fi, and isekai. By depicting the 'determination' to live with a special someone and 'solidarity,' it has become a diverse collection of 'stories of love' that resonate globally.</p>
       </div>
     </div>
   </div>
 
-  
+  <!-- ここにデータリストがレンダリングされます -->
   <div id="yuri-list-container"></div>
 </div>
 
@@ -199,94 +260,227 @@
     <span lang="ja">🗺️ マップ一覧へ</span><span lang="en">🗺️ View Map List</span>
   </a>
   <a href="https://nogi46etoile5.github.io/bianbarmap/guide.html" class="nav-btn">
-    <span lang="ja">📍 付き添いガイド</span><span lang="en">📍Escort Guide</span>
+    <span lang="ja">📍 付き添いガイド</span><span lang="en">📍 Escort Guide</span>
   </a>
 </div>
 
 <footer>&copy; 2026 Cinq Étoile Yuri Guide</footer>
+
+<button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="Back to Top">
+  <span lang="ja">▲</span><span lang="en">▲</span>
+</button>
+
 <script src="yuri_data.js"></script>
-
 <script>
-    // 言語状態の管理
-    let currentLang = 'ja';
+let currentLang = 'ja';
 
-    function setLang(lang) {
-        currentLang = lang;
-        if(lang === 'en') {
-            document.body.classList.add('is-en');
-        } else {
-            document.body.classList.remove('is-en');
-        }
-        // ボタンの活性化表示を切り替え
-        document.querySelectorAll('.lang-btn').forEach(b => {
-            b.classList.toggle('active', b.id === 'btn-' + lang);
-        });
-        render(); // 再描画
+function setLang(lang) {
+    currentLang = lang;
+    if(lang === 'en') {
+        document.body.classList.add('is-en');
+        document.getElementById('workSearch').placeholder = "Search by title or author...";
+    } else {
+        document.body.classList.remove('is-en');
+        document.getElementById('workSearch').placeholder = "作品名・著者名で検索...";
     }
+    document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.id === 'btn-' + lang);
+    });
+    render(); 
+}
 
-    function render() {
-        // 表示場所を取得（IDを分かりやすいものに変更）
-        const root = document.getElementById('yuri-list-container');
-        if(!root) return;
+function handleSearchInput() {
+    render();
+}
 
-        // 【重要】yuri_data.js 内の変数名に合わせて yuri_data を使用
-        // データが存在しない場合のフォールバック
-        const listData = (typeof yuri_data !== 'undefined') ? yuri_data : [];
+function render() {
+    const root = document.getElementById('yuri-list-container');
+    if(!root) return;
 
-        root.innerHTML = listData.map(category => `
-            <div class="expand-box">
-                <div class="box-header">
-                    <h2 style="font-family: 'Noto Serif JP', serif; color: var(--accent-rose);">
-                        ${currentLang === 'ja' ? category.cat : category.en_cat}
-                    </h2>
-                    <div class="intro-text">
-                        ${currentLang === 'ja' ? category.desc : category.en_desc}
-                    </div>
+    const listData = (typeof yuri_data !== 'undefined') ? yuri_data : [];
+    const searchQuery = document.getElementById('workSearch').value.toLowerCase().trim();
+
+    const LINK_D_ANIME   = '⏳ 現在、公式リンクの開設準備中です。まもなく公開！'; 
+    const LINK_AMAZON    = '⏳ 現在、公式リンクの開設準備中です。まもなく公開！';
+      
+    const LINK_SELFBACK  = `【A8.netに登録しよう！】<br />
+◇ 広告主数・アフィリエイトサイト数日本最大級☆<br />
+◇ 登録はもちろん無料、審査なしのアフィリエイトサービス☆<br />
+⇒<a href="https://px.a8.net/svt/ejp?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" rel="nofollow">アフィリエイトならA8.net</a>
+<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" alt="">`;
+
+    const adTitle = currentLang === 'ja' 
+        ? "🎬 <span style='font-size: 11px; background: #8e3a46; color: #fff; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-right: 6px; font-weight: bold;'>PR</span>百合アニメ＆原作をドップリ楽しむならココ！" 
+        : "🎬 <span style='font-size: 10px; background: #8e3a46; color: #fff; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-right: 6px; font-weight: bold;'>AD</span>Recommended Streaming Services for Yuri Anime & Manga";
+
+    // アコーディオンを開いた中の一番下（作品リストの底）に綺麗に収まる広告パーツ
+    const innerAdContent = `
+        <div class="ad-banner-box" style="text-align: left; line-height: 1.7; margin: 30px 0 10px 0; background: #fffcf5; padding: 20px; border-radius: 12px; border: 1px solid #e8d5a3; width: 100%; box-sizing: border-box;">
+            <div class="ad-banner-title" style="font-weight: bold; font-size: 15px; color: #333; margin-bottom: 15px;">
+                ${adTitle}
+            </div>
+            <p style="font-size: 11px; color: #888; margin-bottom: 12px; font-style: italic; border-bottom: 1px solid #f5f5f5; padding-bottom: 5px;">
+                ${currentLang === 'ja' 
+                    ? '※本セクションにはアフィリエイト広告（アマゾンアソシエイト含む）等のプロモーションが含まれています。' 
+                    : '※This section contains affiliate links and promotional content.'}
+            </p>
+            <p style="margin-bottom: 15px; font-size: 13px; color: #555;">
+                ${currentLang === 'ja' 
+                    ? '作品リストで気になったアニメのイッキ見や原作をお得に楽しむなら、以下の定番サービスが圧倒的におすすめです。ただいまリンクを順次開設しておりますので、公開まで今しばらくお待ちください！' 
+                    : 'If you want to watch the anime versions or read the original manga of the works listed here, these official Japanese services are highly recommended. Official links are being prepared sequentially!'}
+            </p>
+            <div class="banner-flex" style="display: flex; flex-direction: column; gap: 20px; background: #fff; padding: 15px; border-radius: 12px; border: 1px solid #e8d5a3;">
+              <div class="ad-item">
+                <b style="color: #8e3a46; font-size: 14px; display: block; margin-bottom: 5px;">
+                    ${currentLang === 'ja' ? '① アニメ特化＆コスパ最強「dアニメストア」' : '① Anime-Specific & Best Value: "d Anime Store"'}
+                </b>
+                <div class="real-banner" style="${LINK_D_ANIME.includes('⏳') ? 'font-size: 12px; color: #aaa; background: #f9f9f9; padding: 10px; border-radius: 4px; border: 1px dashed #ccc; text-align: center;' : ''}">
+                    ${currentLang === 'en' && LINK_D_ANIME.includes('⏳') ? '⏳ Official link coming soon!' : LINK_D_ANIME}
                 </div>
-                
-                <button class="expand-trigger" onclick="toggleBox(this)">
-                    <span>${currentLang === 'ja' ? '作品リストを見る' : 'View Work List'}</span>
-                </button>
+              </div>
+              <hr style="border: none; border-top: 1px dashed #e8d5a3;">
+              <div class="ad-item">
+                <b style="color: #8e3a46; font-size: 14px; display: block; margin-bottom: 5px;">
+                    ${currentLang === 'ja' ? '② 圧倒的な知名度＆お急ぎ便も使える「Amazonプライム・ビデオ」' : '② Most Popular & Convenient: "Amazon Prime Video (Japan)"'}
+                </b>
+                <div class="real-banner" style="${LINK_AMAZON.includes('⏳') ? 'font-size: 12px; color: #aaa; background: #f9f9f9; padding: 10px; border-radius: 4px; border: 1px dashed #ccc; text-align: center;' : ''}">
+                    ${currentLang === 'en' && LINK_AMAZON.includes('⏳') ? '⏳ Official link coming soon!' : LINK_AMAZON}
+                </div>
+                ${currentLang === 'en' ? `
+                    <span class="note-amz" style="font-size: 11px; color: #777; margin-top: 6px; display: block; line-height: 1.4;">
+                      ※Please note that these links will direct to Amazon.co.jp (Japan Store). An Amazon Japan account (and potentially a VPN depending on your location) is required to access the streaming contents or purchase Kindle versions from overseas.
+                    </span>
+                ` : ''}
+              </div>
+              <hr style="border: none; border-top: 1px dashed #e8d5a3; border-width: 2px;">
+              <div class="ad-item" style="background: #fff9fa; padding: 10px; border-radius: 8px; border: 1px solid #ffb6c1;">
+                <b style="color: #e60012; font-size: 14px; display: block; margin-bottom: 5px;">
+                    ${currentLang === 'ja' ? '💡 お得な裏技：実質無料で楽しむ方法' : '💡 Bonus Tip: How to Enjoy Practically for Free (For Japan Residents)'}
+                </b>
+                <p style="font-size: 12px; color: #555; margin-bottom: 8px;">
+                    ${currentLang === 'ja' 
+                        ? 'アフィリエイトASPの「A8.net」に無料登録して<b>セルフバック（本人申込み）</b>経由で各種サービスに申し込むと、現金キャッシュバックが発生して実質プラスになりますよ！' 
+                        : 'By registering for free on the affiliate platform "A8.net" and signing up for services via <b>"Self-Back" (Self-purchase reward)</b>, you can earn cash back rewards!'}
+                </p>
+                <div class="real-banner">
+                    ${currentLang === 'ja' ? LINK_SELFBACK : `
+                        <a href="https://px.a8.net/svt/ejp?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" rel="nofollow" style="font-size: 13px; color: #0066cc; text-decoration: underline; font-weight: bold; display: block; margin-top: 5px;">
+                          ⇒ Sign up for A8.net (Japan's Largest Affiliate Platform)
+                        </a>
+                        <span class="note-amz" style="font-size: 11px; color: #e60012; margin-top: 6px; display: block; line-height: 1.4; font-weight: bold;">
+                          ※This special reward program (Self-Back) is available only for residents of Japan.
+                        </span>
+                    `}
+                </div>
+              </div>
+            </div>
+        </div>
+    `;
 
-                <div class="expand-content">
-                    <div class="work-list">
-                        ${category.works.map(w => `
-                            <div class="work-item">
-                                <div class="work-header">
-                                    <span class="work-num">${String(w.n).padStart(2, '0')}</span>
-                                    <div class="work-info">
-                                        <h3>${currentLang === 'ja' ? w.t : w.en_t}</h3>
-                                        <span>${currentLang === 'ja' ? '著者' : 'Author'}: ${currentLang === 'ja' ? w.a : w.en_a}</span>
-                                        <p>${currentLang === 'ja' ? w.d : w.en_d}</p>
-                                        
-                                        <div class="shop-links">
-                                            ${w.amz 
-                                                ? `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">Amazon</a>` 
-                                                : `<span class="btn-shop btn-disabled">Amazon</span>`}
-                                            
-                                            ${w.rkt 
-                                                ? `<a href="${w.rkt}" target="_blank" rel="nofollow" class="btn-shop btn-rkt">楽天</a>` 
-                                                : `<span class="btn-shop btn-disabled">楽天</span>`}
-                                        </div>
-                                    </div>
+    let finalHTML = '';
+
+    listData.forEach((category) => {
+        const filteredWorks = category.works.filter(w => {
+            if (searchQuery !== '') {
+                const matchJaTitle = w.t ? w.t.toLowerCase().includes(searchQuery) : false;
+                const matchEnTitle = w.en_t ? w.en_t.toLowerCase().includes(searchQuery) : false;
+                const matchJaAuthor = w.a ? w.a.toLowerCase().includes(searchQuery) : false;
+                const matchEnAuthor = w.en_a ? w.en_a.toLowerCase().includes(searchQuery) : false;
+                
+                return matchJaTitle || matchEnTitle || matchJaAuthor || matchEnAuthor;
+            }
+            return true;
+        });
+
+        if (filteredWorks.length > 0) {
+            const isOpenClass = searchQuery !== '' ? 'open' : '';
+
+            // 1. 純粋に作品カードだけを並べたHTMLを生成する
+            let worksHTML = filteredWorks.map(w => {
+                let affiliateButtons = '';
+                if (w.amz) {
+                    const btnText = currentLang === 'ja' ? 'Amazonで見る' : 'View on Amazon (Japan)';
+                    affiliateButtons = `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">${btnText}</a>`;
+                } else {
+                    const disabledText = currentLang === 'ja' ? '取扱なし' : 'Not Available';
+                    affiliateButtons = `<span class="btn-shop btn-disabled">${disabledText}</span>`;
+                }
+
+                const noteText = currentLang === 'ja' 
+                    ? '' 
+                    : `<span class="note-amz">※This link directs to Amazon.co.jp (Japan Store). You can purchase Kindle versions or global shipping items by logging in with your Amazon Japan account.</span>`;
+
+                return `
+                    <div class="work-item">
+                        <div class="work-header">
+                            <span class="work-num">${String(w.n).padStart(2, '0')}</span>
+                            <div class="work-info">
+                                <h3>${currentLang === 'ja' ? w.t : w.en_t}</h3>
+                                <span>${currentLang === 'ja' ? '著者・制作' : 'Author/Studio'}: ${currentLang === 'ja' ? w.a : (w.en_a || w.a)}</span>
+                                <p>${currentLang === 'ja' ? w.d : (w.en_d || w.d)}</p>
+                                <div class="shop-links">
+                                    ${affiliateButtons}
+                                    ${noteText}
                                 </div>
                             </div>
-                        `).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // 💡 ここが最大のポイント：検索中でない場合のみ、作品リストの一番最後（底）に広告を「1つだけ」追加する
+            if (searchQuery === '') {
+                worksHTML += innerAdContent;
+            }
+
+            // 金のアコーディオンボックスの組み立て
+            finalHTML += `
+                <div class="expand-box ${isOpenClass}">
+                    <div class="box-header">
+                        <h2>
+                            ${currentLang === 'ja' ? category.cat : category.en_cat}
+                        </h2>
+                        <div class="intro-text">
+                            ${currentLang === 'ja' ? category.desc : category.en_desc}
+                        </div>
+                    </div>
+                    
+                    <button class="expand-trigger" onclick="toggleBox(this)">
+                        <span>${currentLang === 'ja' ? '作品リストを見る' : 'View Work List'}</span>
+                    </button>
+
+                    <div class="expand-content">
+                        <div class="work-list">
+                            ${worksHTML}
+                        </div>
                     </div>
                 </div>
-            </div>
-        `).join('');
-    }
+            `;
+        }
+    });
 
-    // 読み込み完了時に実行
-    window.onload = render;
-
-    function toggleBox(btn) {
-        btn.parentElement.classList.toggle('open');
-    }
-</script>
-  
-  
+    root.innerHTML = finalHTML;
+}
  
-</body>
-</html>
+window.onload = render;
+
+function toggleBox(btn) {
+    btn.parentElement.classList.toggle('open');
+}
+
+/* 一番上に戻るボタン */
+window.addEventListener('scroll', function() {
+    const topBtn = document.getElementById('backToTopBtn');
+    if (topBtn) {
+        if (window.scrollY > 100) {
+            topBtn.classList.add('is-visible');
+        } else {
+            topBtn.classList.remove('is-visible');
+        }
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
