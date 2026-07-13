@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>百合の庭園 | Yuri Garden 100</title>
+<title>百合漫画・GLアニメおすすめ100選 | 百合の庭園</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -198,27 +198,37 @@
 </div>
 
 <section class="hero">
-    <h1 lang="ja">百合の庭園 100選</h1>
-    <h1 lang="en">Yuri Garden: Top 100 Manga & Anime</h1>
-    <p lang="ja">― 悠久の時を越え、魂が惹かれ合う物語の系譜 ―</p>
-    <p lang="en">— A Curated Guide to Japanese Yuri, Girls' Love & Lesbian Masterpieces —</p>
+  <!-- H1に「百合漫画」「アニメ」という超重要ワードを配置 -->
+  <h1 lang="ja">百合漫画＆アニメおすすめ100選｜百合の庭園</h1>
+  <h1 lang="en">Yuri Garden: Top 100 Girls' Love Manga & Anime</h1>
+  
+  <!-- キャッチコピーに「女性同士の恋愛模様」「GL」を入れて検索エンジンに認識させる -->
+  <p lang="ja" class="hero-sub">― 女性同士の純粋な恋愛模様・感情の揺らぎを描く、傑作GL（ガールズラブ）物語の系譜 ―</p>
+  <p lang="en" class="hero-sub">— A Curated Guide to Japanese Yuri, Girls' Love & Lesbian Masterpieces —</p>
 </section>
 
+<!-- 3. 検索・フィルターエリア -->
 <div class="search-filter-container">
-  <input type="text" id="workSearch" class="search-box" placeholder="作品名・著者名で検索..." oninput="handleSearchInput()">
+<!-- 検索窓の下に「検索タグ」として重要ワードを置いておくと、さらにSEO効果とユーザーの利便性が上がります -->
+<input type="text" id="workSearch" class="search-box" placeholder="作品名・著者名で検索..." oninput="handleSearchInput()">
+<div class="search-hints" style="font-size: 11px; color: #8e3a46; margin-top: 6px; text-align: center; opacity: 0.8;">
+  <span lang="ja">💡 注目のキーワード：ガチ百合 / ライト百合 / 女性同士の絆 / GL名作</span>
+  <span lang="en">💡 Trending: Girls' Love / Yuri Manga / Female Bonds / GL Masterpieces</span>
+</div>
 </div>
 
 <div class="section-container">
-  <!-- 歴史セクション（固定表示） -->
-  <div class="expand-box history-box">
-    <div class="box-header">
-      <h2 lang="ja">📜 百合文化の深淵なる歴史</h2>
-      <h2 lang="en">📜 Deep History of Yuri Culture</h2>
-      <div class="intro-text">
-        <span lang="ja">「百合」という言葉が指し示す領域は、時代と共に変容し続けてきました。明治・大正の文学的萌芽から、現代の多様メディアに至るまで、その変遷を辿ります。</span>
-        <span lang="en">The definition of 'Yuri' has evolved through the ages. From the literary buds of the Meiji and Taisho eras to modern multimedia, we trace the beautiful transitions of bonds between women.</span>
-      </div>
+<!-- 歴史セクション（固定表示） -->
+<div class="expand-box history-box">
+  <div class="box-header">
+    <!-- 歴史パートのタイトルにも「女性同士の恋愛（エス・百合）」の文脈を少し補強 -->
+    <h2 lang="ja">📜 百合・GL文化の深淵なる歴史と変遷</h2>
+    <h2 lang="en">📜 Deep History of Yuri & Girls' Love Culture</h2>
+    <div class="intro-text">
+      <span lang="ja">「百合」や「女性同士の恋愛模様」が指し示す領域は、時代と共に変容し続けてきました。明治・大正のエス文学から現代の多様な百合漫画・メディアに至るまで、その美しい変遷を辿ります。</span>
+      <span lang="en">The definition of 'Yuri' and female-female romance has evolved through the ages. From the literary buds of the Meiji and Taisho eras to modern multimedia and GL manga, we trace the beautiful transitions of bonds between women.</span>
     </div>
+  </div>
     <button class="expand-trigger" onclick="toggleBox(this)">
       <span lang="ja">歴史の物語を深く紐解く</span>
       <span lang="en">Unveil the Stories of History</span>
