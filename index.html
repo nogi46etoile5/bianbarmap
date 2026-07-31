@@ -129,10 +129,177 @@ a {
 
         #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         #back-to-top.show { opacity: 1; pointer-events: auto; }
+
+        /* --- ハンバーガーメニュー追加スタイル --- */
+        #menu-toggle {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 44px;
+            height: 44px;
+            background: #1a2a4a;
+            border: 1px solid #00ffcc;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 2000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        #menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: #00ffcc;
+            transition: all 0.3s ease;
+        }
+        /* オープン時のアイコン変化 */
+        #menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #menu-toggle.active span:nth-child(2) { opacity: 0; }
+        #menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* 背景オーバーレイ */
+        #menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            z-index: 2001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* サイドメニュー本体 */
+        #side-menu {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100vh;
+            background: #0a1428;
+            border-right: 1px solid #3a4a6a;
+            z-index: 2002;
+            transition: left 0.3s ease;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        #side-menu.active {
+            left: 0;
+        }
+
+        .menu-header {
+            padding: 20px;
+            border-bottom: 1px solid #2a3a5a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #00ffcc;
+            font-size: 1.1rem;
+        }
+        .menu-header .close-btn {
+            background: none;
+            border: none;
+            color: #ccd6f6;
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-list li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .menu-list a {
+            display: block;
+            padding: 15px 20px;
+            color: #ffffff;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .menu-list a:hover {
+            background: rgba(0, 255, 204, 0.1);
+            color: #00ffcc;
+        }
     </style>
 </head>
 <body>
+<!-- ハンバーガーメニューボタン -->
+<button id="menu-toggle" aria-label="メニューを開く" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
+<!-- サイドバーメニュー本体 -->
+<div id="menu-overlay" onclick="toggleMenu()"></div>
+<nav id="side-menu">
+    <div class="menu-header">
+        <span class="lang-jp">メニュー</span>
+        <span class="lang-en">Menu</span>
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+    </div>
+    <ul class="menu-list">
+        <li>
+            <a href="index.html">
+                🏠 <span class="lang-jp">トップ・マップ</span><span class="lang-en">Home / Map</span>
+            </a>
+        </li>
+        <li>
+            <a href="guide.html">
+                🤝 <span class="lang-jp">付き添い・ガイド依頼</span><span class="lang-en">Escort Service</span>
+            </a>
+        </li>
+        <li>
+            <a href="system_guide.html">
+                🔰 <span class="lang-jp">初心者向けシステムガイド</span><span class="lang-en">System Guide</span>
+            </a>
+        </li>
+        <li>
+            <a href="cinema.html">
+                🎬 <span class="lang-jp">百合・映画特集</span><span class="lang-en">Sisterhood & Cinema</span>
+            </a>
+        </li>
+        <li>
+            <a href="yuri_guide.html">
+                📜 <span class="lang-jp">百合の歴史と厳選100選</span><span class="lang-en">Yuri History & 100 Picks</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">
+                🎲 <span class="lang-jp">飲み会ゲーム (Beta)</span><span class="lang-en">Party Games</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">
+                📝 <span class="lang-jp">店舗攻略note一覧</span><span class="lang-en">Store Note List</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://buymeacoffee.com/syu_412357" target="_blank">
+                ☕ <span class="lang-jp">ご支援（Buy Me a Coffee）</span><span class="lang-en">Support Me</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 <a href="#" id="back-to-top">↑</a>
 
 <div class="lang-switcher">
@@ -141,7 +308,7 @@ a {
 </div>
 <header class="site-header">
    <h1>
-        <span class="lang-jp">レズビアン・MIXバー攻略マップ｜全国のビアンバー体験レポ</span>
+        <span class="lang-jp">レズビアン・MIXバー攻略マップ｜全国のビアンバー体験レポ（愁マップ）</span>
         <span class="lang-en">Lesbian & Mix Bar Guide: Nationwide Experience Reports & Tips</span>
     </h1>
     
@@ -173,16 +340,14 @@ a {
             </p>
         
         <div style="display: flex; gap: 10px; margin-top: 20px;">
-            <a href="https://note.com/412357siki/portal" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
-                <span class="lang-jp">各店舗の攻略noteを見る</span><span class="lang-en">View Store Reports</span>
+            <a href="https://note.com/412357siki/n/n771b0098a2e3" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
+                <span class="lang-jp">各店舗の攻略note一覧を見る</span><span class="lang-en">View Store Reports</span>
             </a>
             <a href="guide.html" style="flex: 1; padding: 10px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 5px; font-weight: bold;">
                 <span class="lang-jp">付き添い・ガイドを依頼する</span><span class="lang-en">Request Escort Service</span>
             </a>
         </div>
-
-    <div style="margin: 10px 0;"><a href="guide.html" style="color:#00ffcc; font-size:0.85rem; text-decoration:none; font-weight:bold;">>>> <span class="lang-jp">付き添いプラン詳細はこちら</span><span class="lang-en">Details & Booking</span></a></div>
-    
+  
     <div class="guide-notes">
         ⚠️ <strong><span class="lang-jp">注意事項</span><span class="lang-en">Notes</span></strong>：<br>
         <span class="lang-jp">・20歳未満不可 / 待ち合わせは公共の場を厳守 / 恋愛・性的サポートなし</span><span class="lang-en-block lang-en">- No minors under 20 / Public meeting only / No dating or sexual support</span>
@@ -191,8 +356,6 @@ a {
         <span class="lang-jp">・その他のお問い合わせは <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X（@412357siki）のDM</a></strong> まで。</span><span class="lang-en-block lang-en">- For other inquiries, contact <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X (@412357siki) DM</a></strong>.</span>
     </div>
 </section>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=sf_link" target="_blank" class="form-btn">📩 <span class="lang-jp">付き添い申し込み（Googleフォーム）</span><span class="lang-en">Booking Accompaniment (Form)</span></a>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">✨ <span class="lang-jp">スポンサー・掲載依頼（Googleフォーム）</span><span class="lang-en">Sponsors & Listing Requests</span></a>
 <div style="margin: 20px 0; text-align: center;">
     <a href="https://buymeacoffee.com/syu_412357" target="_blank" 
@@ -225,15 +388,27 @@ a {
             <a href="system_guide.html#guide-5" style="color: #c2185b;">→ More about entry rules and gender identity</a></span>
         </div></div>
     </div>
-
     <div class="qa-item">
-        <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q3. ひとりでも入れますか？</span><span class="lang-en">Q3. Can I go alone?</span></button>
-        <div class="qa-answer"><div class="qa-answer-inner">
-            <span class="lang-jp">もちろんです！一人客の方が多い店もたくさんあります。</span>
-            <span class="lang-en">Yes! Many customers visit alone.</span>
-        </div></div>
+        <button class="qa-question" onclick="toggleQA(this)">
+            <span class="lang-jp">Q3. 自分のセクシャリティがまだ分からない、または模索中でも行っていいですか？</span>
+            <span class="lang-en">Q3. Can I visit even if I'm still figuring out or questioning my sexuality?</span>
+        </button>
+        <div class="qa-answer">
+            <div class="qa-answer-inner">
+                <span class="lang-jp">
+                    A. もちろん大歓迎です！ラベルに囚われず、ただ「女性同士の空間や落ち着いた雰囲気を味わいたい」という動機で扉を叩いて全く問題ありません。<br>
+                    もし実際の店舗に行く前に、まずは物語を通してその空気感に触れてみたいという方は、私たちが厳選したシスターフッドや女性同士の絆を描く映画の特集ページをぜひご覧ください。<br>
+                    <a href="cinema.html" style="color: #c2185b; font-weight: bold; text-decoration: underline;">▶ 心をほぐすシスターフッド・女性同士の映画特集を見る</a>
+                </span>
+                <span class="lang-en">
+                    A. You are more than welcome! There is no need to worry about labels. If you simply want to experience a comfortable space and atmosphere among women, you can open the door without hesitation.<br>
+                    If you'd like to get a feel for the atmosphere through stories before visiting an actual venue, please check out our curated feature on sisterhood and films depicting bonds between women.<br>
+                    <a href="cinema.html" style="color: #c2185b;">▶ View the Sisterhood & Women's Film Feature</a>
+                </span>
+            </div>
+        </div>
     </div>
-
+  
     <div class="qa-item">
         <button class="qa-question" onclick="toggleQA(this)"><span class="lang-jp">Q4. 服装に決まりはありますか？</span><span class="lang-en">Q4. Is there a dress code?</span></button>
         <div class="qa-answer"><div class="qa-answer-inner">
@@ -376,7 +551,16 @@ a {
 <script src="data.js"></script>
 <script src="yuri_data.js"></script>
 <script>
-
+// メニュー開閉用関数
+function toggleMenu() {
+        const toggleBtn = document.getElementById('menu-toggle');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('menu-overlay');
+        
+        toggleBtn.classList.toggle('active');
+        sideMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
     // タグの日本語・英語マップ
     const tagMap = {
         '外国人多い': { jp: '外国人多い', en: 'Global' },

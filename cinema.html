@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 検索エンジン・SEO最適化用タイトル（WLW・シスターフッド・映画・ドラマ等の検索クエリに対応） -->
+    <title>【WLW・シスターフッド映画】女性同士のドラマおすすめ厳選50選 | Cinema & Drama Guide</title>
+    
+    <!-- メタ記述（検索結果一覧に表示される概要文） -->
+    <meta name="description" content="女性同士の絆やロマンスを描いたWLW（Women Loving Women）・シスターフッド映画＆ドラマ厳選50選。不朽の名作から隠れた傑作まで、キャスト・監督情報付きで詳しく解説します。">
+    
+    <style>
+        :root {
+            /* 映画・ドラマの情熱を表現しつつ、大人の落ち着きをみせる赤系カラーパレット */
+            --bg-base: #fbfaf9;       /* 全体の背景：温かみのある明るいアイボリー */
+            --card-bg: #ffffff;       /* カード背景：クリアな白 */
+            --text-main: #271c19;     /* 文字色：黒に近い極濃のココアブラウン */
+            --text-muted: #6b5a55;    /* 補足文字：洗練されたアッシュブラウン */
+            --accent-warm: #a22041;   /* アクセント：深みのあるバーガンディレッド */
+            --accent-hover: #7a152e;  /* ボタンホバー時：さらに深いボルドー */
+            --border-warm: #eedfdc;   /* 境界線：ごく淡い赤みを含んだライトグレー */
+            --header-bg: #f5e6e8;     /* ヘッダー背景：透明感のあるシアーピンクベージュ */
+            --affiliate-bg: #fff5f6;  /* アフィ枠：ごく淡いローズティント */
+            --genre-bg: #f3ebe9;      /* ジャンルバッジ背景：落ち着いたアッシュベージュ */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --------------------------------------------------
+           ヘッダーエリア
+        -------------------------------------------------- */
+        header {
+            background-color: var(--header-bg);
+            color: var(--text-main);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid var(--border-warm);
+        }
+
+        /* ユーザー画面上の表示用H1（デザインと文言を完全保持） */
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+            color: var(--accent-warm);
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* 言語切り替えボタン */
+        .lang-switch-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .lang-btn {
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-warm);
+            color: var(--accent-warm);
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            font-weight: bold;
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: var(--accent-warm);
+            color: #ffffff;
+        }
+
+        /* --------------------------------------------------
+           メインレイアウト
+        -------------------------------------------------- */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* アナウンスボックス */
+        .notice-box {
+            background-color: #fffaf0;
+            border: 1px solid var(--border-warm);
+            border-left: 4px solid var(--accent-warm);
+            padding: 16px 20px;
+            margin-bottom: 35px;
+            font-size: 0.9rem;
+            border-radius: 0 6px 6px 0;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --------------------------------------------------
+           WLW & シスターフッド 解説セクション
+        -------------------------------------------------- */
+        .concept-guide {
+            background: var(--card-bg);
+            border: 1px solid var(--border-warm);
+            border-top: 4px solid var(--accent-warm);
+            border-radius: 8px;
+            padding: 28px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+        }
+
+        .concept-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--accent-warm);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-warm);
+            padding-bottom: 10px;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .concept-card {
+            background-color: var(--bg-base);
+            border: 1px solid var(--border-warm);
+            padding: 18px;
+            border-radius: 6px;
+        }
+
+        .concept-card h4 {
+            font-size: 1rem;
+            color: var(--accent-warm);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .concept-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* --------------------------------------------------
+           目次（ジャンルナビゲーション）
+        -------------------------------------------------- */
+        .toc-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 45px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .toc-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 14px;
+            color: var(--accent-warm);
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+
+        .toc-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .toc-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--genre-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 11px;
+            font-size: 0.88rem;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .toc-btn:hover {
+            background-color: var(--accent-warm);
+            color: #ffffff;
+        }
+
+        /* --------------------------------------------------
+           作品カード & ジャンルセクション
+        -------------------------------------------------- */
+        .genre-block {
+            margin-bottom: 60px;
+        }
+
+        .genre-heading {
+            font-size: 1.45rem;
+            color: var(--accent-warm);
+            border-bottom: 3px solid var(--accent-warm);
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            padding: 28px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+
+        /* 作品番号バッジ */
+        .work-number {
+            position: absolute;
+            top: -13px;
+            left: 20px;
+            background-color: var(--text-muted);
+            color: #ffffff;
+            font-weight: bold;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+        }
+
+        .work-title {
+            font-size: 1.45rem;
+            margin-bottom: 14px;
+            margin-top: 4px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-warm);
+            padding-bottom: 8px;
+            font-weight: 700;
+        }
+
+        /* キャスト・監督・基本メタ情報 */
+        .work-meta {
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            background: #fdfcfb;
+            padding: 14px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border-warm);
+        }
+
+        .meta-item {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .meta-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            color: var(--text-muted);
+            display: inline-block;
+            width: 85px;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+
+        .meta-value {
+            color: var(--text-main);
+            word-break: break-word;
+        }
+
+        /* 引用テキスト */
+        .work-quote {
+            background-color: #fdfcfb;
+            border-left: 3px solid var(--accent-warm);
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* 解説本文 */
+        .work-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .note-link-container {
+            margin-top: 15px;
+            text-align: right;
+        }
+
+        .note-link {
+            color: var(--accent-warm);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+
+        .note-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* --------------------------------------------------
+           アフィリエイトブロック
+        -------------------------------------------------- */
+        .affiliate-section {
+            background-color: var(--affiliate-bg);
+            border: 2px dashed var(--accent-warm);
+            border-radius: 8px;
+            padding: 26px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .affiliate-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--accent-warm);
+            margin-bottom: 10px;
+        }
+
+        .affiliate-text {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .affiliate-link-btn {
+            display: inline-block;
+            background-color: var(--accent-warm);
+            color: #ffffff !important;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none !important;
+            box-shadow: 0 4px 10px rgba(162, 32, 65, 0.2);
+            transition: all 0.25s ease;
+        }
+
+        .affiliate-link-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(162, 32, 65, 0.3);
+        }
+
+        /* --------------------------------------------------
+           UI要素 & フッター
+        -------------------------------------------------- */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            background-color: var(--accent-warm);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 99;
+            transition: all 0.2s ease;
+        }
+
+        #backToTop:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* 言語切替制御用クラス */
+        body:not(.en-mode) .lang-en { display: none !important; }
+        body.en-mode .lang-ja { display: none !important; }
+
+        footer {
+            background-color: #f5ebe9;
+            color: var(--text-main);
+            padding: 45px 20px;
+            margin-top: 70px;
+            font-size: 0.85rem;
+            border-top: 3px solid var(--border-warm);
+        }
+
+        .footer-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .site-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-warm);
+        }
+
+        .site-nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .site-nav-links a:hover {
+            color: var(--accent-warm);
+            text-decoration: underline;
+        }
+
+        .portfolio-section {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-warm);
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: bold;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--accent-warm);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .footer-bottom-info {
+            max-width: 720px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            border-bottom: 2px solid var(--accent-warm);
+            padding-bottom: 4px;
+        }
+
+        .footer-section p {
+            font-size: 0.82rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            border-top: 1px solid var(--border-warm);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.45rem; padding-top: 20px; }
+            .toc-links { grid-template-columns: 1fr; }
+            .concept-grid { grid-template-columns: 1fr; }
+            .site-nav-links { flex-direction: column; align-items: center; gap: 12px; }
+            .portfolio-section { flex-direction: column; width: 100%; }
+            .portfolio-card { justify-content: center; }
+            .work-card { padding: 22px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 言語切り替えボタン -->
+    <div class="lang-switch-container">
+        <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">English</button>
+    </div>
+
+    <!-- ヘッダーエリア -->
+    <header>
+        <!-- 画面表示用H1（デザイン・表示文言は旧来のまま保持） -->
+        <h1 id="headerTitle">女性同士の実写映画・ドラマ厳選50選</h1>
+        <p id="headerSub">バーの夜、おうちの特等席で観たい、心に深く残る映像作品をナビゲート</p>
+    </header>
+
+    <div class="container">
+        <!-- アナウンス文 -->
+        <div class="notice-box" id="noticeBox"></div>
+
+        <!-- WLW & シスターフッド 解説セクション（目次/ジャンルタグの直上に配置） -->
+        <section class="concept-guide">
+            <div class="concept-title">
+                <span>📖</span> <span id="conceptTitle">作品を探す前のミニガイド：WLWとシスターフッド</span>
+            </div>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4><span>👩‍❤️‍👩</span> WLW (Women Loving Women)</h4>
+                    <p id="wlwDesc">レズビアン、バイセクシュアル、クィアなど、女性に惹かれる感情や女性同士のロマンチックな関係性全般を指す包括的な言葉です。</p>
+                </div>
+                <div class="concept-card">
+                    <h4><span>🤝</span> Sisterhood (シスターフッド)</h4>
+                    <p id="sisterhoodDesc">女性同士の固い連帯や絆、姉妹愛のこと。既存の枠組みにとらわれず支え合い、共に自分らしく生きる姿を描いた作品群です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ジャンル目次（ナビゲーション） -->
+        <nav class="toc-section">
+            <div class="toc-title" id="tocTitle">気分に合わせてジャンルから探す</div>
+            <div class="toc-links" id="tocLinksContainer">
+                <!-- JavaScriptにより動的生成 -->
+            </div>
+        </nav>
+
+        <!-- ジャンル別作品リスト（JavaScriptにより動的生成） -->
+        <main id="genreContainer"></main>
+    </div>
+
+    <!-- ページトップへ戻るボタン -->
+    <button id="backToTop" onclick="scrollToTop()" aria-label="Page Top">▲</button>
+
+    <!-- フッターエリア -->
+    <footer>
+        <div class="footer-container">
+            <nav class="site-nav-links">
+                <a href="index.html"><span class="lang-ja">レズビアンバー一覧ページ</span><span class="lang-en">Lesbian Bar Directory</span></a>
+                <a href="guide.html"><span class="lang-ja">付き添いガイド</span><span class="lang-en">Companion Guide</span></a>
+                <a href="yuri_guide.html"><span class="lang-ja">百合漫画・小説100選</span><span class="lang-en">100 Yuri Manga & Novels</span></a>
+            </nav>
+
+            <div class="portfolio-section">
+                <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" rel="noopener" class="portfolio-card">🐟 <span class="lang-ja">水族館巡り</span><span class="lang-en">Aquarium Archive</span></a>
+                <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" rel="noopener" class="portfolio-card">🏺 <span class="lang-ja">伝統的工芸品</span><span class="lang-en">Traditional Crafts</span></a>
+            </div>
+
+            <div class="footer-bottom-info">
+                <div class="footer-section" id="disclaimerSection"></div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Archive Guide. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 外部作品データ（cinema-data.js） -->
+    <script src="cinema-data.js"></script>
+
+    <script>
+        // --------------------------------------------------
+        // 1. アフィリエイト商品リスト（5作品ごとに交互挿入）
+        // --------------------------------------------------
+        const affiliateList = [
+            {
+                titleJa: "🎥 お部屋の壁がプライベートシアターに", titleEn: "🎥 Smart Home Projector",
+                textJa: "天井への投影も自由自在。コンパクトで高画質なスマートプロジェクターで、圧倒的なシアター体験をお部屋に。",
+                textEn: "Project perfectly onto walls or ceilings. Compact and high-definition projector for an immersive room cinema.",
+                url: "https://item.rakuten.co.jp/phi777/tyy003-1/"
+            },
+            {
+                titleJa: "🎧 周囲を気にせず極上の臨場感", titleEn: "🎧 Immersive Bone Conduction Headphones",
+                textJa: "夜遅くの大音量鑑賞も安心。耳を塞がずに周囲の気配も感じられる、快適なワイヤレス骨伝導イヤホン。",
+                textEn: "Enjoy late-night films with full volume. Comfortable open-ear bone conduction headphones.",
+                url: "https://item.rakuten.co.jp/outprize/a20/"
+            },
+            {
+                titleJa: "🥤 最後の一滴まで冷たさ・温かさをキープ", titleEn: "🥤 Insulated Tumbler",
+                textJa: "長編作品を観終えるまで、最高の飲み頃温度を保ち続ける真空断熱の結露しない保温タンブラー。",
+                textEn: "Keep your drinks at the perfect temperature until the end credits roll with an insulated tumbler.",
+                url: "https://item.rakuten.co.jp/sportsmario2/h05hp8901730002/"
+            },
+            {
+                titleJa: "☕ 夜の上映会でも安心な極上ノンカフェインコーヒー", titleEn: "☕ Premium Decaf Coffee",
+                textJa: "深いコクと豊かな香りはそのままに。心地よい眠りを妨げない絶品の本格デカフェ・ノンカフェインコーヒー。",
+                textEn: "Perfect companion for late nights. Rich flavor and aroma without caffeine-induced sleeplessness.",
+                url: "https://item.rakuten.co.jp/odekake/tw-organic-set/"
+            },
+            {
+                titleJa: "🌿 心をじんわり解きほぐすオーガニックハーブティー", titleEn: "🌿 Relaxing Organic Herbal Tea",
+                textJa: "映画の世界観を楽しみながら、身体を芯から温めて深いリラックスへと誘う厳選ハーブティーアソート。",
+                textEn: "Warm your body and soul with a selection of soothing organic herbal tea blends.",
+                url: "https://item.rakuten.co.jp/angel-baby10/tea/"
+            },
+            {
+                titleJa: "🍋 四季の恵みを感じる、華やかな季節のリキュール", titleEn: "🍋 Seasonal Botanical Liqueur",
+                textJa: "フレッシュな果実味やボタニカルな香りが炭酸水に映える、大人の映画時間にそっと寄り添う上質なリキュール。",
+                textEn: "Elevate your movie night with refreshing and premium seasonal botanical liqueurs.",
+                url: "https://item.rakuten.co.jp/yamagatamaru/115004323000/"
+            },
+            {
+                titleJa: "🍶 じっくりストーリーに浸る、季節の日本酒・焼酎", titleEn: "🍶 Premium Seasonal Sake & Shochu",
+                textJa: "その時期にしか味わえない特別な新酒や限定銘柄。じっくりと盃を傾けながら、至高の余韻に浸る一杯。",
+                textEn: "Savor the unique flavors of limited seasonal Japanese sake or premium shochu.",
+                url: "https://item.rakuten.co.jp/jouir/31203/"
+            },
+            {
+                titleJa: "🧀 おうちバー気分を高める、しょっぱい系極上おつまみ", titleEn: "🧀 Savory Gourmet Movie Snacks",
+                textJa: "少しずつゆっくりつまみたい、贅沢なスモークチーズ、トリュフナッツ、生ハムなどのこだわり厳選セット。",
+                textEn: "Indulge in premium savory snacks like smoked cheese and truffle nuts during your film.",
+                url: "https://item.rakuten.co.jp/uchinoate/23129999502/"
+            },
+            {
+                titleJa: "🍫 映画のビターな余韻を深める高級チョコレート", titleEn: "🍫 Rich Artisanal Chocolates",
+                textJa: "口溶けのなめらかさと濃厚なカカオの香り。作品のロマンチックな展開や葛藤に美しく調和する大人向けチョコ。",
+                textEn: "Savor premium dark and rich chocolates that pair beautifully with deep romantic films.",
+                url: "https://item.rakuten.co.jp/kasyou-morin/crown-choco9/"
+            },
+            {
+                titleJa: "🍨 鑑賞後の興奮をひんやり癒やす贅沢アイス", titleEn: "🍨 Premium Midnight Ice Cream",
+                textJa: "濃厚な物語を観終わったあとの贅沢なご褒美。特別な夜を締めくくる、リッチで口溶けなめらかなプレミアムアイス。",
+                textEn: "A frozen luxury after a powerful story. Silky-smooth premium ice cream to end your night.",
+                url: "https://item.rakuten.co.jp/onakaegg/10001196/"
+            }
+        ];
+
+        // --------------------------------------------------
+        // 2. ジャンル定数定義
+        // --------------------------------------------------
+        const genreMaster = [
+            { id: "masterpiece", ja: "👑 不朽の名作", en: "👑 Masterpieces" },
+            { id: "romance",     ja: "💖 ときめき",   en: "💖 Romance" },
+            { id: "bitter",      ja: "🍂 大人の葛藤", en: "🍂 Drama & Bitter" },
+            { id: "youth",       ja: "🌱 あの頃の青春", en: "🌱 Youth" },
+            { id: "true-story",  ja: "🎬 実話ベース", en: "🎬 True Stories" }
+        ];
+
+        // --------------------------------------------------
+        // 3. 多言語（日/英）UIメッセージ定義
+        // --------------------------------------------------
+        const staticText = {
+            ja: {
+                title: "女性同士の実写映画・ドラマ厳選50選",
+                sub: "バーの夜、おうちの特等席で観たい、心に深く残る映像作品をナビゲート",
+                toc: "気分に合わせてジャンルから探す",
+                conceptTitle: "作品を探す前のミニガイド：WLWとシスターフッド",
+                wlwDesc: "レズビアン、バイセクシュアル、クィアなど、女性に惹かれる感情や女性同士のロマンチックな関係性全般を指す言葉です。",
+                sisterhoodDesc: "女性同士の固い連帯や絆、感情の交流のこと。既存の枠組みにとらわれず支え合う力強い関係性を描く作品群です。",
+                notice: "<strong>【作品の視聴方法について】</strong><br>当ページでは各作品の直接のアフィリエイトリンクは掲載しておりません。配信状況が時期により変動するため、お手数ですが気になる作品がございましたら、各種VODアプリ（Netflix、Amazonプライムビデオ、U-NEXT等）の検索機能にて作品名でお調べください。",
+                discTitle: "Disclaimer / 免責事項",
+                discText: "当ページで紹介している作品の配信状況やキャスト等の情報は、掲載当時のものです。最新の配信状況は各VODサービスにてご確認ください。また、紹介しているアフィリエイト商品に関するお問い合わせは、提供元へ直接お願いいたします。",
+                btnText: "楽天市場で対象アイテムを見る ↗"
+            },
+            en: {
+                title: "50 Selected Live-Action WLW Movies & Dramas",
+                sub: "Guiding you to unforgettable visual works perfect for a cozy night after the bar.",
+                toc: "Browse by Movie Genre",
+                conceptTitle: "Mini Guide: WLW & Sisterhood",
+                wlwDesc: "An umbrella term for women who are attracted to women (Lesbian, Bisexual, Queer), celebrating romantic relationships between women.",
+                sisterhoodDesc: "Refers to the bond, solidarity, and mutual support among women, depicting powerful emotional connections overcoming societal barriers.",
+                notice: "<strong>[How to watch the titles]</strong><br>We do not provide direct affiliate links for the titles. Since availability varies over time, please search for the titles directly within your preferred streaming services (Netflix, Amazon Prime Video, etc.).",
+                discTitle: "Disclaimer",
+                discText: "Information on this page is current at the time of publication. Please check each VOD service for the latest streaming status. For inquiries regarding affiliate products, please contact the provider directly.",
+                btnText: "Check Items on Rakuten ↗"
+            }
+        };
+
+        let currentLang = 'ja';
+        let totalRenderedCount = 0;
+
+        // --------------------------------------------------
+        // 4. ナビゲーション（目次）描画
+        // --------------------------------------------------
+        function renderToc() {
+            const container = document.getElementById('tocLinksContainer');
+            container.innerHTML = '';
+            
+            genreMaster.forEach(g => {
+                const title = currentLang === 'ja' ? g.ja : g.en;
+                const link = document.createElement('a');
+                link.href = `#${g.id}`;
+                link.className = 'toc-btn';
+                link.textContent = title;
+                container.appendChild(link);
+            });
+        }
+
+        // --------------------------------------------------
+        // 5. 作品リスト＆キャスト/監督情報の描画処理
+        // --------------------------------------------------
+        function renderGenreSections() {
+            const container = document.getElementById('genreContainer');
+            container.innerHTML = '';
+            totalRenderedCount = 0;
+
+            genreMaster.forEach(g => {
+                const genreTitle = currentLang === 'ja' ? g.ja : g.en;
+                // cinema-data.js から読み込んだ作品データをフィルター
+                const filteredWorks = worksData.filter(work => work.genreId === g.id);
+
+                if (filteredWorks.length === 0) return;
+
+                const block = document.createElement('section');
+                block.className = 'genre-block';
+                block.id = g.id;
+
+                const heading = document.createElement('h2');
+                heading.className = 'genre-heading';
+                heading.textContent = genreTitle;
+                block.appendChild(heading);
+
+                const listDiv = document.createElement('div');
+                listDiv.className = 'work-list';
+
+                filteredWorks.forEach((work) => {
+                    totalRenderedCount++;
+                    
+                    const number = String(totalRenderedCount).padStart(2, '0');
+                    const title = currentLang === 'ja' ? work.titleJa : work.titleEn;
+                    
+                    // キャスト・監督・情報の言語別切り替え
+                    const cast = currentLang === 'ja' ? work.castJa : work.castEn;
+                    const dir = currentLang === 'ja' ? work.dirJa : work.dirEn;
+                    const info = currentLang === 'ja' ? work.infoJa : work.infoEn;
+                    const quote = currentLang === 'ja' ? work.quoteJa : work.quoteEn;
+                    const desc = currentLang === 'ja' ? work.descJa : work.descEn;
+
+                    let quoteHtml = quote ? `<div class="work-quote">${quote}</div>` : '';
+                    
+                    let noteBtnHtml = '';
+                    if (work.noteUrl) {
+                        noteBtnHtml = `
+                            <div class="note-link-container">
+                                <a href="${work.noteUrl}" target="_blank" rel="noopener" class="note-link">📝 noteで詳しい解説を読む ↗</a>
+                            </div>
+                        `;
+                    }
+
+                    const card = document.createElement('article');
+                    card.className = 'work-card';
+                    card.innerHTML = `
+                        <span class="work-number">No.${number}</span>
+                        <h3 class="work-title">${title}</h3>
+                        <div class="work-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Cast</span>
+                                <span class="meta-value">${cast || '-'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Director</span>
+                                <span class="meta-value">${dir || '-'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Info</span>
+                                <span class="meta-value">${info || '-'}</span>
+                            </div>
+                        </div>
+                        ${quoteHtml}
+                        <div class="work-description">${desc}</div>
+                        ${noteBtnHtml}
+                    `;
+                    listDiv.appendChild(card);
+
+                    // 5作品ごとにアフィリエイトブロックを挿入
+                    if (totalRenderedCount % 5 === 0) {
+                        const affIndex = Math.floor(totalRenderedCount / 5) - 1;
+                        if (affiliateList[affIndex]) {
+                            const affData = affiliateList[affIndex];
+                            const affTitle = currentLang === 'ja' ? affData.titleJa : affData.titleEn;
+                            const affText = currentLang === 'ja' ? affData.textJa : affData.textEn;
+                            const btnLabel = staticText[currentLang].btnText;
+
+                            const affSection = document.createElement('aside');
+                            affSection.className = 'affiliate-section';
+                            affSection.innerHTML = `
+                                <p class="affiliate-title">${affTitle}</p>
+                                <p class="affiliate-text">${affText}</p>
+                                <a href="${affData.url}" target="_blank" rel="noopener noreferrer" class="affiliate-link-btn">${btnLabel}</a>
+                            `;
+                            listDiv.appendChild(affSection);
+                        }
+                    }
+                });
+
+                block.appendChild(listDiv);
+                container.appendChild(block);
+            });
+        }
+
+        // --------------------------------------------------
+        // 6. 画面全体の再描画
+        // --------------------------------------------------
+        function renderPage() {
+            const t = staticText[currentLang];
+            document.getElementById('headerTitle').textContent = t.title;
+            document.getElementById('headerSub').textContent = t.sub;
+            document.getElementById('noticeBox').innerHTML = t.notice;
+            document.getElementById('conceptTitle').textContent = t.conceptTitle;
+            document.getElementById('wlwDesc').textContent = t.wlwDesc;
+            document.getElementById('sisterhoodDesc').textContent = t.sisterhoodDesc;
+            document.getElementById('tocTitle').textContent = t.toc;
+            
+            document.getElementById('disclaimerSection').innerHTML = `
+                <h3>${t.discTitle}</h3>
+                <p>${t.discText}</p>
+            `;
+
+            renderToc();
+            renderGenreSections();
+        }
+
+        // --------------------------------------------------
+        // 7. 言語切り替え・トップスクロール処理
+        // --------------------------------------------------
+        function toggleLanguage() {
+            currentLang = currentLang === 'ja' ? 'en' : 'ja';
+            document.body.classList.toggle('en-mode');
+            document.getElementById('langBtn').textContent = currentLang === 'ja' ? 'English' : '日本語';
+            renderPage();
+        }
+
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 初回ロード時の描画実行
+        renderPage();
+    </script>
+</body>
+</html>
