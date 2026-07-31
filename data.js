@@ -1,26 +1,10 @@
 const shopDetails = [
-     // B系列 - Gグループ (B(G))
-  { 
-    name_jp: "グルークファースト", name_en: "Gluck First", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜8:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗1階", address_en: "1F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "イベント多い", "持ち込み食べ物可", "ボトルキープ有", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n139c68435217", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-    description_jp: "大きな駐車場前で朝（昼？）まで営業中。黒を基調とした内装で夜の雰囲気たっぷり。紙タバコは外で吸うスタイルです。",
-    description_en: "Located in front of the large parking lot and open until morning (sometimes noon!). Features a sleek black interior. Cigarette smoking is allowed outside."
-},
-{ 
-    name_jp: "グルークネクスト", name_en: "Gluck Next", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-11林ビル2階", address_en: "2F, Hayashi Bldg, 2-12-11 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "ボトルキープ有", "イベント多い", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n694f09d93410", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-    description_jp: "二丁目のビアンバー界隈では最大級の広さ。ダーツ、カラオケ、ボードゲームと遊びが充実. 天使のインテリアが並んでいます。",
-    description_en: "One of the most spacious bars in the Ni-chome lesbian scene. Fully equipped with darts, karaoke, and games. The interior is decorated with many angel figures."
-},
-{ 
-    name_jp: "グルークゼロ", name_en: "Gluck Zero", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00,19:00~5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-15 山原ハイツB1", address_en: "B1, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "ボトルキープ有", "イベント多い", "穏やか", "盛り上がる", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n792b52e36bbc", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-    description_jp: "白基調の店内で、B系列初の仲通り沿い店舗。ボードゲームが豊富。地下なのでWi-Fiの強さをぜひ現地で試してみて！",
-    description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
-},
-{ 
-    name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty___mixbar/", time: "20:00〜4:00,20:00～5:00", holiday: "水曜", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
-    description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
-    description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
-},
- 
+  
+    { 
+        name_jp: "SUNNY", name_en: "SUNNY", type: "ビアン", area: "東京", xId: "@natsuyo32", snsUrl: "https://x.com/natsuyo32", time: "20:00〜5:00,19:00~5:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-15-8中村建物ビル2階", address_en: "2F, Nakamura Bldg, 2-15-8 Shinjuku, Tokyo", tags: ["年齢層高め","カラオケ",], icon: "https://unavatar.io/twitter/natsuyo32", note: "#", medium: "#",lastCheck: "2024",checkLevel: "first",
+        description_jp: "百合の小道にある老舗。落ち着いた年齢層が多く、階段を登った先で大人の社会勉強ができる場所です。",
+        description_en: "An established bar in Yuri Alley with an older crowd. Located up the stairs, it's a great place for some mature 'social education'."
+    },
  
     { 
         name_jp: "Bar LEGO", name_en: "Bar LEGO", type: "ビアン", area: "東日本", xId: "websiteのみ", snsUrl: "http://r.goope.jp/bar-lego/", time: "19:00〜27:00", holiday: "日曜", address_jp: "北海道札幌市中央区南5条西6丁目9番地第５桂和ビル４F", address_en: "4F, Dai-5 Keiwa Bldg, 5-6 Minami 5-jo Nishi, Chuo-ku, Sapporo, Hokkaido", tags: [, "穏やか", "フード有"], icon: "website", note: "#", medium: "#",
@@ -123,7 +107,27 @@ const shopDetails = [
         description_jp: "オオカミのイラストがクール。昼は古着屋、夜はバー。ベランダから新宿のビル群を眺めながら飲めるお店です。",
         description_en: "Features a cool wolf illustration. It's a vintage clothing store by day and a bar by night. You can enjoy a drink on the balcony while overlooking Shinjuku's skyline."
     },
-     
+        // B系列 - Gグループ (B(G))
+  { 
+    name_jp: "グルークファースト", name_en: "Gluck First", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜8:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-7ふぁーぶる店舗1階", address_en: "1F, 2-18-7 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "イベント多い", "持ち込み食べ物可", "ボトルキープ有", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n139c68435217", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+    description_jp: "大きな駐車場前で朝（昼？）まで営業中。黒を基調とした内装で夜の雰囲気たっぷり。紙タバコは外で吸うスタイルです。",
+    description_en: "Located in front of the large parking lot and open until morning (sometimes noon!). Features a sleek black interior. Cigarette smoking is allowed outside."
+},
+{ 
+    name_jp: "グルークネクスト", name_en: "Gluck Next", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-11林ビル2階", address_en: "2F, Hayashi Bldg, 2-12-11 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者多め", "初心者向け", "ボトルキープ有", "イベント多い", "盛り上がる", "穏やか"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n694f09d93410", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+    description_jp: "二丁目のビアンバー界隈では最大級の広さ。ダーツ、カラオケ、ボードゲームと遊びが充実. 天使のインテリアが並んでいます。",
+    description_en: "One of the most spacious bars in the Ni-chome lesbian scene. Fully equipped with darts, karaoke, and games. The interior is decorated with many angel figures."
+},
+{ 
+    name_jp: "グルークゼロ", name_en: "Gluck Zero", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "@gluck_mixbar", snsUrl: "https://x.com/gluck_mixbar", time: "20:00〜5:00,19:00~5:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-15 山原ハイツB1", address_en: "B1, Yamahara Heights, 2-12-15 Shinjuku, Tokyo", tags: ["カラオケ", "喫煙可", "初心者向け", "初心者多め", "ボトルキープ有", "イベント多い", "穏やか", "盛り上がる", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/gluck_mixbar", note: "https://note.com/412357siki/n/n792b52e36bbc", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+    description_jp: "白基調の店内で、B系列初の仲通り沿い店舗。ボードゲームが豊富。地下なのでWi-Fiの強さをぜひ現地で試してみて！",
+    description_en: "A white-themed interior and the first B-series bar along Naka-dori. Plenty of board games available. Since it's on B1F, go test the Wi-Fi strength for yourself!"
+},
+{ 
+    name_jp: "GILLTY", name_en: "GILLTY", series: "B系列", seriesMark: "B(G)", type: "MIX", area: "東京", xId: "Instagramのみ", snsUrl: "https://www.instagram.com/gillty___mixbar/", time: "20:00〜4:00,20:00～5:00", holiday: "水曜", address_jp: "東京都新宿区新宿1丁目-36-3新宿御苑136ビル1階", address_en: "1F, Shinjuku Gyoen 136 Bldg, 1-36-3 Shinjuku, Tokyo", tags: ["喫煙可", "ボトルキープ有", "穏やか", "持ち込み食べ物可", "イベント多い"], icon: "instagram", note: "https://note.com/412357siki/n/n1a2cd7f78ae0", medium: "#",lastCheck: "2026-04", checkLevel: "thorough",
+    description_jp: "昼はカフェ、夜はバー。コンセント完備のカウンター席があり、プロジェクター映像も楽しめます。完全キャッシュレス決済です。",
+    description_en: "A cafe by day and a bar by night. Features counter seats with power outlets and projected visuals. This is a cashless-only establishment."
+},
 
     // 特別マークグループ
     { 
@@ -208,11 +212,7 @@ const shopDetails = [
         description_jp: "ノーチャージで楽しめるショットバースタイルのビアンバー。有名イベント「ダイヤモンドカッター」と一緒に楽しむのも最高！",
         description_en: "A shot-bar style lesbian bar with no cover charge. Perfect to visit alongside the famous 'Diamond Cutter' party events."
     },
-    { 
-        name_jp: "SUNNY", name_en: "SUNNY", type: "ビアン", area: "東京", xId: "@natsuyo32", snsUrl: "https://x.com/natsuyo32", time: "20:00〜5:00,19:00~5:00", holiday: "日曜,月曜", address_jp: "東京都新宿区新宿2丁目-15-8中村建物ビル2階", address_en: "2F, Nakamura Bldg, 2-15-8 Shinjuku, Tokyo", tags: ["年齢層高め","カラオケ",], icon: "https://unavatar.io/twitter/natsuyo32", note: "#", medium: "#",lastCheck: "2024",checkLevel: "first",
-        description_jp: "百合の小道にある老舗。落ち着いた年齢層が多く、階段を登った先で大人の社会勉強ができる場所です。",
-        description_en: "An established bar in Yuri Alley with an older crowd. Located up the stairs, it's a great place for some mature 'social education'."
-    },
+  
     { 
         name_jp: "MIMOSA", name_en: "MIMOSA", type: "ビアン", area: "東京", xId: "@YuikaMimosa", snsUrl: "https://x.com/YuikaMimosa", time: "20:00〜23:00", holiday: "月曜,火曜", address_jp: "東京都新宿区新宿2丁目-18-10 1階", address_en: "1F, 2-18-10 Shinjuku, Tokyo", tags: ["年齢層高め","穏やか","変わったリキュール有",], icon: "https://unavatar.io/twitter/YuikaMimosa", note: "#", medium: "#",
         description_jp: "密集地帯の路地裏にひっそりと佇むお店。静かにまったり飲みたい時、変わったリキュールを楽しみたい時に最適。",
@@ -304,6 +304,11 @@ const shopDetails = [
     },
     { 
         name_jp: "RANDOM", name_en: "RANDOM", type: "MIX", area: "東京", xId: "@randommachida", snsUrl: "https://x.com/randommachida", time: "19:00〜23:30", holiday: "日曜", address_jp: "東京都町田市中町1-18-2 ウッドベルビル2F", address_en:　"Wood Bell Building 2F, 1-18-2 Nakamachi, Machida-shi, Tokyo" , tags: ["喫煙可", "カラオケ", ], icon: "https://unavatar.io/twitter/randommachida", note: "#", medium: "#",
+     description_jp: "未訪問、現在調査中訪問次第載せます。",
+     description_en: "Coming soon! (I haven't visited yet, but planning to!)."
+    }, 
+    { 
+        name_jp: "BAR REHOPE", name_en: "BAR REHOPE", type: "MIX", area: "東京", xId: "@rehope2025", snsUrl: "https://x.com/rehope2025", time: "17:00〜23:00", holiday: "水曜", address_jp: "神奈川県横浜市中区尾上町5-80神奈川中小企業センタービル地下1階", address_en:　"Kanagawa Small and Medium Enterprises Center Building B1F, 5-80 Onoe-cho, Naka-ku, Yokohama-shi, Kanagawa" , tags: [ "穏やか", ], icon: "https://unavatar.io/twitter/rehope2025", note: "#", medium: "#",
      description_jp: "未訪問、現在調査中訪問次第載せます。",
      description_en: "Coming soon! (I haven't visited yet, but planning to!)."
     }, 
