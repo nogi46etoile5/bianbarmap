@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>初めての方へ - システム・マナーガイド | Shu Map</title>
+    <title>First-Time Visitors - System & Manner Guide | Shu Map</title>
     
-    <!-- SEO Alternates (言語ごとにURLを分離したSEO最適化構造) -->
+    <!-- SEO Alternates -->
     <link rel="alternate" hreflang="ja" href="system_guide.html" />
     <link rel="alternate" hreflang="en" href="system_guide_en.html" />
     <link rel="alternate" hreflang="es" href="system_guide_es.html" />
@@ -29,7 +29,7 @@
         body { 
             background-color: var(--bg-color); 
             color: var(--text-main); 
-            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
             line-height: 1.65; 
             margin: 0; 
             padding: 0 0 100px 0; 
@@ -156,7 +156,7 @@
             overflow: hidden;
         }
 
-        /* 楽天パーツのダークモード・スマホ表示微調整 */
+        /* Rakuten Part Dark Mode / Mobile Responsive Adjustments */
         .affiliate-banner-placeholder table {
             margin: 0 auto !important;
             max-width: 100% !important;
@@ -164,7 +164,7 @@
         .affiliate-banner-placeholder div {
             max-width: 100% !important;
             box-sizing: border-box !important;
-            background-color: #1a2a4a !important; /* ダーク背景に馴染ませる */
+            background-color: #1a2a4a !important;
             border-color: var(--border-color) !important;
         }
         .affiliate-banner-placeholder a {
@@ -387,171 +387,171 @@
 </head>
 <body>
 
-<!-- ハンバーガーボタン -->
-<button id="menu-toggle" aria-label="メニューを開く" onclick="toggleMenu()">
+<!-- Hamburger Button -->
+<button id="menu-toggle" aria-label="Open menu" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
 </button>
 
-<!-- オーバーレイ -->
+<!-- Overlay -->
 <div id="menu-overlay" onclick="toggleMenu()"></div>
 
-<!-- サイドメニュー -->
+<!-- Side Menu -->
 <nav id="side-menu">
     <div class="menu-header">
-        <span>メニュー</span>
+        <span>Menu</span>
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 トップ・店舗検索</a></li>
-        <li><a href="system_guide.html">❓ 初めての方へ（システム案内）</a></li>
-        <li><a href="guide.html">🤝 初心者同行ガイド</a></li>
-        <li><a href="cinema.html">🎬 百合映画特集</a></li>
-        <li><a href="yuri_manga.html">📖 百合漫画特集</a></li>
-        <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 飲み会ミニゲーム (Beta)</a></li>
-        <li><a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">📝 note解説記事</a></li>
-        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee (応援)</a></li>
+        <li><a href="index.html">🏠 Home / Bar Search</a></li>
+        <li><a href="system_guide_en.html">❓ First-Time Guide (System & Etiquette)</a></li>
+        <li><a href="guide.html">🤝 Beginner's Companion Guide</a></li>
+        <li><a href="cinema.html">🎬 Yuri Movies Feature</a></li>
+        <li><a href="yuri_manga.html">📖 Yuri Manga Feature</a></li>
+        <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 Party Mini-Games (Beta)</a></li>
+        <li><a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">📝 note Article (Japanese)</a></li>
+        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee (Support)</a></li>
     </ul>
 </nav>
 
 <a href="#" id="back-to-top">↑</a>
 
-<!-- 言語切り替え -->
+<!-- Language Switcher -->
 <div class="lang-switcher">
-    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="言語選択">
-        🌐 <span>日本語</span> ▼
+    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="Select Language">
+        🌐 <span>English</span> ▼
     </button>
     <div id="lang-menu" class="lang-menu-content">
-        <a href="system_guide.html" class="lang-item active">🇯🇵 日本語</a>
-        <a href="system_guide_en.html" class="lang-item">🇺🇸 English</a>
-            <a href="system_guide_ko.html" class="lang-item">🇰🇷 한국어</a>
+        <a href="system_guide.html" class="lang-item">🇯🇵 日本語</a>
+        <a href="system_guide_en.html" class="lang-item active">🇺🇸 English</a>
+            <a href="system_guide_ko.html" class="lang-item">🇰🇷 한국語</a>
     </div>
 </div>
 
 <div class="container">
     <div class="header">
-        <h1>❓ 初めての方へ（システム・マナー）</h1>
-        <p>「行く前に知っておきたい」レズビアンバー・MIXバーの基本ルール</p>
+        <h1>❓ First-Time Visitors Guide (System & Etiquette)</h1>
+        <p>Basic rules and etiquette you should know before visiting Lesbian Bars and MIX Bars</p>
     </div>
 
-    <!-- 目次 -->
+    <!-- Table of Contents -->
     <div class="toc-box">
-        <span class="toc-title">📌 目次</span>
+        <span class="toc-title">📌 Table of Contents</span>
         <ul class="toc-list">
-            <li><a href="#sec-lesbian">├ レズビアンバー（ビアンバー）とは？</a></li>
-            <li><a href="#sec-mix">├ MIXバーとは？</a></li>
-            <li><a href="#sec-system">├ 会計システムの基本（キャッシュオン／後払い）</a></li>
-            <li><a href="#sec-charge">├ チャージ料金と注文ルール</a></li>
-            <li><a href="#sec-bottle">├ ボトルキープの仕組み</a></li>
-            <li><a href="#sec-terms">├ バーの基本用語＆定番のお酒</a></li>
-            <li><a href="#sec-before">├ 入店前の必須マナー・注意点</a></li>
-            <li><a href="#sec-slang">└ 二丁目カルチャー・業界用語</a></li>
+            <li><a href="#sec-lesbian">├ What is a Lesbian Bar (Bian Bar)?</a></li>
+            <li><a href="#sec-mix">├ What is a MIX Bar?</a></li>
+            <li><a href="#sec-system">├ Payment Systems (Cash on Delivery / Tab)</a></li>
+            <li><a href="#sec-charge">├ Table Cover Charge & Ordering Rules</a></li>
+            <li><a href="#sec-bottle">├ How Bottle Keep Works</a></li>
+            <li><a href="#sec-terms">├ Essential Bar Terms & Recommended Drinks</a></li>
+            <li><a href="#sec-before">├ Important Etiquette Before Entering</a></li>
+            <li><a href="#sec-slang">└ Ni-chome Culture & Local Terminology</a></li>
         </ul>
     </div>
 
-    <!-- セクション 1 -->
+    <!-- Section 1 -->
     <div class="guide-card" id="sec-lesbian">
-        <h2><span class="badge">01</span><span>レズビアンバー（ビアンバー）とは？</span></h2>
-        <p>女性（シス女性、トランス女性、クィア女性など）専用のバーです。国際的には「レズビアンバー（Lesbian Bar）」と呼ばれますが、日本国内の会話やSNSでは「ビアンバー」という略称・スラングも広く使われています。男性客の入店はお断りとなっているため、女性同士で安心して会話やお酒を楽しめる空間になっています。</p>
+        <h2><span class="badge">01</span><span>What is a Lesbian Bar (Bian Bar)?</span></h2>
+        <p>These are bars exclusively for women (cisgender women, transgender women, queer women, etc.). While internationally known as "Lesbian Bars," in local Japanese conversations and social media, they are widely referred to using the abbreviation/slang "Bian Bar." Male guests are not permitted, creating a safe space for women to enjoy conversations and drinks together.</p>
         <div class="highlight-box">
-            💡 FTM（トランス男性）の入店可否は店舗ごとに異なります。当サイトの「絞り込み検索」や各店舗の詳細ページで事前確認をおすすめします。
+            💡 Entry policies for FTM (Transgender Men) vary by establishment. We recommend checking in advance using our filter search or on individual bar detail pages.
         </div>
     </div>
 
-    <!-- セクション 2 -->
+    <!-- Section 2 -->
     <div class="guide-card" id="sec-mix">
-        <h2><span class="badge">02</span><span>MIXバーとは？</span></h2>
-        <p>性別・セクシャリティ・国籍を問わず、誰でも入店できるバーです。男性の友人やミックスのグループで訪れる際や、旅行中にも利用しやすいのが特徴です。</p>
-        <p>LGBTQ+フレンドリーでオープンな雰囲気の中でお酒を楽しみたい方に最適です。</p>
+        <h2><span class="badge">02</span><span>What is a MIX Bar?</span></h2>
+        <p>A MIX bar is an establishment open to everyone regardless of gender, sexuality, or nationality. They are ideal if you are visiting with male friends, in a mixed group, or travelling.</p>
+        <p>Perfect for those who want to enjoy drinks in an open, LGBTQ+ friendly atmosphere.</p>
     </div>
 
-    <!-- セクション 3 -->
+    <!-- Section 3 -->
     <div class="guide-card" id="sec-system">
-        <h2><span class="badge">03</span><span>会計システムの基本</span></h2>
-        <p>夜の街のバーでは、主に以下の2種類の会計方法が採用されています：</p>
+        <h2><span class="badge">03</span><span>Payment Systems</span></h2>
+        <p>Nightlife bars in Japan primarily use two payment methods:</p>
         <ul>
-            <li><strong>キャッシュオンデリバリー（キャッシュオン）：</strong> ドリンクやフードと引き換えにその都度料金を支払うシステム。使った金額が分かりやすく、飲み過ぎを防ぎやすいメリットがあります。</li>
-            <li><strong>伝票制（後払い・ツケ）：</strong> 入店して席に着き、退店時にまとめてお会計をする一般的なスタイルです。</li>
+            <li><strong>Cash on Delivery (Cash on):</strong> Paying for each drink or food item immediately as it is served. This makes tracking your budget easy and prevents overspending.</li>
+            <li><strong>Tab System (Post-payment / Check):</strong> You are seated upon entering and settle your bill all at once when leaving, similar to standard restaurants.</li>
         </ul>
     </div>
 
-    <!-- セクション 4 -->
+    <!-- Section 4 -->
     <div class="guide-card" id="sec-charge">
-        <h2><span class="badge">04</span><span>チャージ料金と注文ルール</span></h2>
-        <p>多くの店舗で入店時に「テーブルチャージ（席料）」が1,000円〜2,000円程度かかります。※居酒屋のような「お通し」は出ないことが多いです。</p>
-        <p>また、明確な滞在時間制限がない場合でも、マナーとして**「1時間に1杯程度」の追加ドリンク注文**をするのがスマートな楽しみ方です。</p>
+        <h2><span class="badge">04</span><span>Table Cover Charge & Ordering Rules</span></h2>
+        <p>Most bars charge a "Table Cover Charge" (seat fee) of around 1,000 to 2,000 JPY per person upon entry. *Note that unlike Japanese izakayas, complimentary appetizers (Otoshi) are often not served.</p>
+        <p>Even if there is no explicit time limit, ordering **at least one drink per hour** is considered polite etiquette for a smooth experience.</p>
     </div>
 
-    <!-- セクション 5 -->
+    <!-- Section 5 -->
     <div class="guide-card" id="sec-bottle">
-        <h2><span class="badge">05</span><span>ボトルキープの仕組み</span></h2>
-        <p>焼酎やウイスキーなどのボトルを1本買い、お店に保管（**多くは3ヶ月間**）してもらうシステムです。</p>
+        <h2><span class="badge">05</span><span>How Bottle Keep Works</span></h2>
+        <p>A system where you purchase a whole bottle of liquor (like shochu or whisky) which the bar stores for you (**typically held for 3 months**).</p>
         <ul>
-            <li>定期的に通う場合は、毎回ショットやグラスで頼むよりも大幅にお得になります。</li>
-            <li>2回目以降の来店時は「セット料金（氷・割り材・お通し代）」のみで飲むことができます。</li>
+            <li>If you plan to visit regularly, this is significantly cheaper than ordering individual shots or glasses each time.</li>
+            <li>On subsequent visits, you only pay the "Set Fee" (covering ice, mixers, and table charge).</li>
         </ul>
     </div>
 
-    <!-- セクション 6 -->
+    <!-- Section 6 -->
     <div class="guide-card" id="sec-terms">
-        <h2><span class="badge">06</span><span>バーの基本用語＆定番のお酒</span></h2>
+        <h2><span class="badge">06</span><span>Essential Bar Terms & Recommended Drinks</span></h2>
         <ul>
-            <li><strong>ママ／店長／オーナー：</strong> お店を切り盛りする責任者の呼称。ゲイバーでは「ママ」が主流ですが、レズビアンバーでは「店長」「オーナー」や名前で呼ばれることも多いです。</li>
-            <li><strong>店子（みせこ）：</strong> カウンターの中で接客やドリンク作りを担当するスタッフのこと。</li>
-            <li><strong>ショット：</strong> 小型グラスで一気に飲む度数の高いお酒。</li>
-            <li><strong>スタッフドリンク（キャストドリンク）：</strong> 楽しく接客してくれたスタッフにお礼や盛り上がりとしてご馳走するドリンクのこと。</li>
-            <li><strong>定番のお酒：</strong> バーで頼みやすいおすすめのドリンクや頼み方のコツについては、noteの解説記事をご覧ください。
+            <li><strong>Mama / Manager / Owner:</strong> Terms for the person running the bar. While "Mama" is standard in gay bars, lesbian bars often use "Manager" (Tencho), "Owner", or their actual name.</li>
+            <li><strong>Miseko (Staff):</strong> Staff members working behind the counter serving drinks and chatting with guests.</li>
+            <li><strong>Shot:</strong> A small glass of high-proof liquor meant to be consumed quickly.</li>
+            <li><strong>Staff Drink (Cast Drink):</strong> Buying a drink for staff members as a gesture of appreciation or to celebrate together.</li>
+            <li><strong>Popular Drinks:</strong> Check our note article for recommended drinks and tips on how to order smoothly.
                 <div class="note-link-box">
-                    👉 <a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">定番のお酒＆スマートな注文のコツ（note記事）</a>
+                    👉 <a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">Classic Drinks & Smart Ordering Tips (note article in Japanese)</a>
                 </div>
             </li>
-            <li><strong>お愛想（おあいそ）：</strong> お会計のこと。店内が騒がしい時は、両手の人差し指で「✕」印を作るのが会計のサインです。</li>
-            <li><strong>割り材（セット）：</strong> ボトルを飲む際の水、炭酸水、緑茶、ウーロン茶などのこと。</li>
+            <li><strong>O-aiso (Check/Bill):</strong> Settle the bill. In loud bars, making an "X" sign with your index fingers is the universal signal for asking for the check.</li>
+            <li><strong>Mixers (Set):</strong> Water, soda water, green tea, or oolong tea used when drinking from your kept bottle.</li>
         </ul>
     </div>
 
-    <!-- セクション 7 -->
+    <!-- Section 7 -->
     <div class="guide-card" id="sec-before">
-        <h2><span class="badge">07</span><span>入店前の必須マナー・注意点</span></h2>
+        <h2><span class="badge">07</span><span>Important Etiquette Before Entering</span></h2>
         <ul>
-            <li><strong>現金の準備：</strong> カード対応店でも、端末の不具合や手数料の都合上、現金を用意しておくと安心です。</li>
-            <li><strong>荷物はコンパクトに：</strong> 新宿二丁目のバーはコンパクトな店舗が多いため、大きなスーツケース等の持ち込みは避けましょう。</li>
-            <li><strong>撮影は必ず許可を取る：</strong> お客さんやスタッフのプライバシー保護のため、無断での店内撮影やSNS投稿は厳禁です。</li>
-            <li><strong>パーソナルスペースの尊重：</strong> 泥酔や過度な身体的接触、強引な連絡先交換などはマナー違反となります。お互いが快適に過ごせる距離感を保ちましょう。</li>
+            <li><strong>Bring Cash:</strong> Even if cards are accepted, terminal errors or fees can happen, so having Japanese Yen cash on hand is safest.</li>
+            <li><strong>Travel Light:</strong> Bars in Shinjuku Ni-chome are often small and compact. Avoid bringing large suitcases or bulky luggage into the venue.</li>
+            <li><strong>Always Ask Before Taking Photos:</strong> To protect the privacy of customers and staff, taking photos/videos inside without permission or posting them to social media is strictly prohibited.</li>
+            <li><strong>Respect Personal Space:</strong> Getting overly drunk, excessive physical touch, or forcing people to exchange contact info is bad etiquette. Maintain a comfortable personal space for everyone.</li>
         </ul>
     </div>
 
-    <!-- セクション 8 -->
+    <!-- Section 8 -->
     <div class="guide-card" id="sec-slang">
-        <h2><span class="badge">08</span><span>二丁目カルチャー・業界用語</span></h2>
-        <p>新宿二丁目やコミュニティ内でよく使われる略称や分類用語です。</p>
+        <h2><span class="badge">08</span><span>Ni-chome Culture & Local Terminology</span></h2>
+        <p>Common local terms and gender/style categories used in Shinjuku Ni-chome and the local community.</p>
         <ul>
-            <li><strong>二丁目（にちょう）／ビアン：</strong> 「新宿二丁目」の略称や、レズビアン（Lesbian）を指す日本国内の日常的な呼称。</li>
-            <li><strong>タチ／ネコ／リバ：</strong> 恋愛や関係性における役割・好みの傾向（タチ＝リードする側／ネコ＝受け身側／リバ＝どちらも OK）。</li>
-            <li><strong>フェム／中性／ボイ（ボーイッシュ）：</strong> 外見やファッションの傾向による分類。
+            <li><strong>Ni-chome (Nichou) / Bian:</strong> Abbreviation for "Shinjuku Ni-chome" and a common local term for Lesbian (Bian).</li>
+            <li><strong>Tachi / Neko / Riva:</strong> Roles/preferences in relationships (Tachi = lead/top role; Neko = receptive/bottom role; Riva = switch/either).</li>
+            <li><strong>Femme / Chusei / Boyi (Boyish):</strong> Classifications based on presentation and fashion style.
                 <ul>
-                    <li><strong>フェム：</strong> 女性らしく華やかなスタイル。</li>
-                    <li><strong>中性：</strong> 性別の境界を感じさせない、柔らかくクールなスタイル。</li>
-                    <li><strong>ボイ（ボーイッシュ）：</strong> ショートヘアやメンズライク・カジュアルなスタイル。</li>
+                    <li><strong>Femme:</strong> Feminine and stylish aesthetic.</li>
+                    <li><strong>Chusei (Androgynous/Neutral):</strong> Soft, cool style that blurs gender lines.</li>
+                    <li><strong>Boyi (Boyish):</strong> Short hair, tomboyish, or casual masculine style.</li>
                 </ul>
             </li>
         </ul>
         <div class="highlight-box">
-            🌏 <strong>海外から来られる方へ：</strong><br>
-            日本のコミュニティにおける「ボイ」「中性」は、欧米の「Butch」や「Androgynous」とは異なり、ハードな男装というよりは日本のストリートファッションやサブカルチャーに影響を受けた、ソフトでスマートなニュートラルスタイルを指すことが多いです。
+            🌏 <strong>Note for International Guests:</strong><br>
+            In Japanese culture, "Boyi" and "Chusei" differ somewhat from Western terms like "Butch" or "Androgynous." They generally refer to a soft, smart, and neutral street fashion style influenced by Japanese subculture rather than a strict masculine presentation.
         </div>
     </div>
 
-    <!-- アフィリエイト・おすすめ商品枠（単一商品用） -->
+    <!-- Affiliate / Recommended Product Section -->
     <div class="affiliate-card">
-        <h3>🍸 家飲み・ギフトにおすすめのお酒</h3>
-        <p>宅飲みやちょっとしたプレゼントにぴったりな厳選のお酒をご紹介します。</p>
+        <h3>🍸 Recommended Drinks for Home & Gifts</h3>
+        <p>Carefully selected spirits perfect for drinking at home or as a gift.</p>
         <div class="affiliate-notice">
-            ⚠️ 【お知らせ】<br>現在準備中のため、一時的に日本語版の商品ページを表示しております。あらかじめご了承ください。
+            ⚠️ [Notice]<br>As this section is under preparation, the product details below are currently displayed in Japanese. Thank you for your understanding.
         </div>
         <div class="affiliate-banner-placeholder">
-            <!-- 楽天アフィリエイトパーツ -->
+            <!-- Rakuten Affiliate Widget -->
             <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td>
@@ -578,19 +578,19 @@
         </div>
     </div>
 
-    <!-- 下部ナビゲーション -->
+    <!-- Bottom Navigation -->
     <div class="bottom-nav">
         <a href="index.html" class="nav-btn">
-            🏠 バー検索トップへ戻る
+            🏠 Back to Bar Search
         </a>
         <a href="guide.html" class="nav-btn">
-            🤝 「初めての二丁目同行ガイド」を見る
+            🤝 View "First-Time Companion Guide"
         </a>
         <a href="cinema.html" class="nav-btn cinema">
-            🎬 百合映画おすすめ特集ページへ
+            🎬 View Yuri Movies Feature Page
         </a>
         <a href="yuri_manga.html" class="nav-btn manga">
-            📖 百合漫画おすすめ特集ページへ
+            📖 View Yuri Manga Feature Page
         </a>
     </div>
 </div>
@@ -606,7 +606,7 @@ function toggleLangMenu() {
     document.getElementById("lang-menu").classList.toggle("show");
 }
 
-// ドロップダウン外クリックで閉じる
+// Close dropdown on outside click
 window.addEventListener('click', function(e) {
     const dropdown = document.querySelector('.lang-switcher');
     if (dropdown && !dropdown.contains(e.target)) {
@@ -614,7 +614,7 @@ window.addEventListener('click', function(e) {
     }
 });
 
-// トップへ戻るボタン
+// Back to top button
 window.addEventListener('scroll', () => {
     const backToTop = document.querySelector('#back-to-top');
     if (window.scrollY > 300) {

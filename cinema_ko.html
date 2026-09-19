@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>厳選WLW・シスターフード映画＆ドラマ50選 | 映画・ドラマガイド</title>
+    <title>엄선 WLW·시스터후드 영화 & 드라마 50선 | 영화 가이드</title>
     
-    <meta name="description" content="女性同士の恋愛（WLW）や絆を描いた厳選映画・ドラマ50選。監督・キャスト情報やストーリー解説と共に、至高の映像作品をご紹介します。">
+    <meta name="description" content="여성 간의 사랑(WLW)과 연대를 그린 엄선 영화 및 드라마 50선. 감독, 출연진 정보와 상세 해설을 포함한 작품 가이드입니다.">
     
     <style>
         :root {
@@ -28,14 +28,14 @@
         }
 
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
             background-color: var(--bg-base);
             color: var(--text-main);
             line-height: 1.75;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- 言語切替ドロップダウン --- */
+        /* --- 언어 전환 드롭다운 --- */
         .lang-switcher {
             position: fixed;
             top: 15px;
@@ -82,7 +82,7 @@
         .lang-item:hover { background-color: var(--header-bg); color: var(--accent-warm); }
         .lang-item.active { background-color: var(--accent-warm); color: #ffffff; }
 
-        /* --- ハンバーガーメニュー --- */
+        /* --- 햄버거 메뉴 --- */
         #menu-toggle {
             position: fixed;
             top: 15px;
@@ -112,7 +112,7 @@
         #menu-toggle.active span:nth-child(2) { opacity: 0; }
         #menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* 背景オーバーレイ */
+        /* 배경 오버레이 */
         #menu-overlay {
             position: fixed;
             top: 0;
@@ -131,7 +131,7 @@
             pointer-events: auto;
         }
 
-        /* サイドメニュー本体 */
+        /* 사이드 메뉴 */
         #side-menu {
             position: fixed;
             top: 0;
@@ -638,83 +638,83 @@
 </head>
 <body>
 
-    <!-- 言語切替ドロップダウン (他言語ページリンク) -->
+    <!-- 언어 전환 드롭다운 -->
     <div class="lang-switcher">
         <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="Language Selector">
-            🌐 日本語 ▼
+            🌐 한국어 ▼
         </button>
         <div id="lang-menu" class="lang-menu-content">
-            <a href="cinema.html" class="lang-item active">🇯🇵 日本語</a>
+            <a href="cinema.html" class="lang-item">🇯🇵 日本語</a>
             <a href="cinema_en.html" class="lang-item">🇺🇸 English</a>
-               <a href="cinema_ko.html" class="lang-item">🇰🇷 한국어</a>
+           <a href="cinema_ko.html" class="lang-item active">🇰🇷 한국어</a>
         </div>
     </div>
 
-    <!-- ハンバーガーボタン -->
-    <div id="menu-toggle" onclick="toggleMenu()" aria-label="ナビゲーションメニューを開閉">
+    <!-- 햄버거 메뉴 버튼 -->
+    <div id="menu-toggle" onclick="toggleMenu()" aria-label="네비게이션 메뉴 열기/닫기">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <!-- 背景オーバーレイ -->
+    <!-- 배경 오버레이 -->
     <div id="menu-overlay" onclick="toggleMenu()"></div>
 
-    <!-- サイドバーメニュー本体 -->
+    <!-- 사이드 메뉴 본체 -->
     <nav id="side-menu">
         <div class="menu-header">
-            <span>メニュー</span>
+            <span>메뉴</span>
             <button class="close-btn" onclick="toggleMenu()">&times;</button>
         </div>
         <ul class="menu-list">
-            <li><a href="index.html">🏠 トップ・マップ</a></li>
-            <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
-            <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
-            <li><a href="cinema.html">🎬 百合・映画特集</a></li>
-            <li><a href="yuri_guide.html">📜 百合の歴史と厳選100選</a></li>
-            <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 飲み会ゲーム (Beta)</a></li>
-            <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 店舗攻略note一覧</a></li>
-            <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ ご支援（Buy Me a Coffee）</a></li>
-            <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 水族館・動物園ガイド</a></li>
-            <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 伝統工芸品ガイド</a></li>
+            <li><a href="index.html">🏠 메인 / 바 맵</a></li>
+            <li><a href="guide.html">🤝 동행 및 가이드 신청</a></li>
+            <li><a href="system_guide.html">🔰 초보자 시스템 가이드</a></li>
+            <li><a href="cinema_ko.html">🎬 WLW 영화/드라마 특집</a></li>
+            <li><a href="yuri_guide.html">📜 백합의 역사 & 100선</a></li>
+            <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 파티 술자리 게임 (Beta)</a></li>
+            <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 바 탐방 리뷰 노트</a></li>
+            <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ 후원하기 (Buy Me a Coffee)</a></li>
+            <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 수족관·동물원 가이드</a></li>
+            <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 전통공예품 아카이브</a></li>
         </ul>
     </nav>
 
     <!-- Header -->
     <header>
-        <h1>厳選 WLW・シスターフード映画＆ドラマ50選</h1>
-        <p>バーの余韻に浸りながら見たい、女性同士の愛と絆を描いた名作ガイド</p>
+        <h1>엄선 WLW · 시스터후드 영화 & 드라마 50선</h1>
+        <p>바에서의 여운을 간직한 채 감상하기 좋은, 여성 간의 사랑과 연대를 그린 명작 가이드</p>
     </header>
 
     <div class="container">
         <!-- Notice Box -->
         <div class="notice-box">
-            <strong>【作品の視聴方法について】</strong><br>
-            当ページでは各映像作品への直接のアフィリエイトリンクは設置しておりません。配信状況は時期により変動するため、お持ちの動画配信サービス（Netflix、Amazonプライムビデオ等）にて作品名で検索してご視聴ください。<br><br>
-            <strong>📌 おすすめ関連商品について：</strong><br>
-            記事内でご紹介しているおすすめアイテム（プロジェクターやドリンク等）のリンクは、楽天市場等の商品ページへ移動します。
+            <strong>【작품 감상 방법 안내】</strong><br>
+            본 페이지에서는 영상 작품에 대한 직접적인 제휴(아피리에이트) 링크를 제공하지 않습니다. OTT 서비스별 스트리밍 여부는 시기에 따라 변동되므로, 이용 중이신 플랫폼(Netflix, Watcha, TVING 등)에서 작품명으로 검색하여 감상해 주시기 바랍니다.<br><br>
+            <strong>📌 추천 관련 상품 안내:</strong><br>
+            본문 내 소개된 추천 아이템(빔 프로젝터, 음료 등)의 링크를 클릭하시면 라쿠텐 등 외부 상품 페이지로 이동합니다.
         </div>
 
         <!-- WLW & Sisterhood Mini Guide -->
         <section class="concept-guide">
             <div class="concept-title">
-                <span>📖</span> <span>ミニ解説：WLWとシスターフード</span>
+                <span>📖</span> <span>미니 가이드: WLW와 시스터후드</span>
             </div>
             <div class="concept-grid">
                 <div class="concept-card">
                     <h4><span>👩‍❤️‍👩</span> WLW (Women Loving Women)</h4>
-                    <p>女性を愛する女性（レズビアン、バイセクシュアル、クィアなど）の総称。女性同士のロマンチックな関係や恋愛を描いた作品を指します。</p>
+                    <p>여성을 사랑하는 여성(레즈비언, 바이섹슈얼, 퀘어 등)을 포괄하는 용어입니다. 여성 간의 로맨틱한 관계와 친밀함을 다룬 작품을 의미합니다.</p>
                 </div>
                 <div class="concept-card">
-                    <h4><span>🤝</span> シスターフード（Sisterhood）</h4>
-                    <p>女性同士の連帯、絆、相互理解を意味します。社会の困難や理不尽に立ち向かい、支え合う強い感情的つながりを描きます。</p>
+                    <h4><span>🤝</span> 시스터후드 (Sisterhood)</h4>
+                    <p>여성 간의 연대, 우정, 감정적 유대를 뜻합니다. 사회적 고난이나 불합리함에 함께 맞서고 서로를 지지하는 끈끈한 관계를 다룹니다.</p>
                 </div>
             </div>
         </section>
 
         <!-- Table of Contents -->
         <nav class="toc-section">
-            <div class="toc-title">ジャンルから探す</div>
+            <div class="toc-title">장르별 모아보기</div>
             <div class="toc-links" id="tocLinksContainer"></div>
         </nav>
 
@@ -723,26 +723,26 @@
     </div>
 
     <!-- Back to top button -->
-    <button id="backToTop" onclick="scrollToTop()" aria-label="ページトップへ戻る">▲</button>
+    <button id="backToTop" onclick="scrollToTop()" aria-label="페이지 맨 위로 이동">▲</button>
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <nav class="site-nav-links">
-                <a href="index.html">ビアンバー検索ガイド</a>
-                <a href="guide.html">ビアンバー初心者ガイド</a>
-                <a href="yuri_guide.html">百合漫画・小説 100選</a>
+                <a href="index.html">비안 바 검색 가이드</a>
+                <a href="guide.html">비안 바 초보자 가이드</a>
+                <a href="yuri_guide.html">백합 만화·소설 100선</a>
             </nav>
 
             <div class="portfolio-section">
-                <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" rel="noopener" class="portfolio-card">🐟 水族館・動物園ガイド</a>
-                <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" rel="noopener" class="portfolio-card">🏺 伝統工芸品ガイド</a>
+                <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" rel="noopener" class="portfolio-card">🐟 수족관·동물원 가이드</a>
+                <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" rel="noopener" class="portfolio-card">🏺 전통공예품 아카이브</a>
             </div>
 
             <div class="footer-bottom-info">
                 <div class="footer-section">
-                    <h3>免責事項</h3>
-                    <p>当ページに掲載されている情報は執筆時点のものです。各VODサービスでの配信状況は最新の情報をご確認ください。紹介している商品に関するお問い合わせは各販売店舗へ直接お願いいたします。</p>
+                    <h3>면책사항</h3>
+                    <p>본 페이지에 게재된 정보는 작성 시점 기준입니다. 각 VOD 서비스의 최신 스트리밍 현황을 확인해 주시기 바랍니다. 소개된 추천 상품 관련 문의는 해당 판매처로 직접 문의해 주시기 바랍니다.</p>
                 </div>
             </div>
             
@@ -778,24 +778,24 @@
         });
 
         const genres = [
-            { id: "masterpiece", title: "👑 金字塔・不朽の名作" },
-            { id: "romance",     title: "💖 ロマンス・愛情" },
-            { id: "bitter",      title: "🍂 ドラマ・ビター" },
-            { id: "youth",       title: "🌱 青春・成長" },
-            { id: "true-story",  title: "🎬 実話・歴史" }
+            { id: "masterpiece", title: "👑 명작·불후의 클래식" },
+            { id: "romance",     title: "💖 로맨스·애정" },
+            { id: "bitter",      title: "🍂 드라마·비터" },
+            { id: "youth",       title: "🌱 청춘·성장" },
+            { id: "true-story",  title: "🎬 실화·역사" }
         ];
 
         const affiliates = [
-            { title: "🎥 スマートホームプロジェクター", text: "壁や天井が一瞬で映画館に。高画質＆コンパクトで部屋での映画鑑賞を格段に特別にするプロジェクター。", url: "https://item.rakuten.co.jp/phi777/tyy003-1/" },
-            { title: "🎧 骨伝導ヘッドホン", text: "深夜でも周囲を気にせず大迫力で鑑賞。耳を塞がず快適な着け心地の骨伝導ワイヤレスイヤホン。", url: "https://item.rakuten.co.jp/outprize/a20/" },
-            { title: "🥤 保冷・保温タンブラー", text: "映画のラストシーンまで飲み頃の温度をキープ。長時間の鑑賞のお供に最適な真空断熱タンブラー。", url: "https://item.rakuten.co.jp/sportsmario2/h05hp8901730002/" },
-            { title: "☕ オーガニック デカフェコーヒー", text: "夜遅くの映画鑑賞でも安心。カフェインレスでありながら深いコクと香りが楽しめる厳選コーヒー。", url: "https://item.rakuten.co.jp/odekake/tw-organic-set/" },
-            { title: "🌿 リラックス オーガニックハーブティー", text: "ココロとカラダをやさしくほぐす。静かな夜にじっくり味わいたいプレミアムハーブティーブレンド。", url: "https://item.rakuten.co.jp/angel-baby10/tea/" },
-            { title: "🍋 季節のボタニカルリキュール", text: "贅沢な余韻に浸るお酒。爽やかな香りと繊細な味わいが映画の気分を一層引き立てます。", url: "https://item.rakuten.co.jp/yamagatamaru/115004323000/" },
-            { title: "🍶 季節のプレミアム日本酒・焼酎", text: "厳選された旬のお酒で大人のシネマナイト。作品の世界観に深く浸りながら味わう一杯。", url: "https://item.rakuten.co.jp/jouir/31203/" },
-            { title: "🧀 極上つまみ・おつまみセット", text: "燻製チーズやトリュフナッツなど、じっくり作品と向き合う夜にぴったりな極上の贅沢おつまみ。", url: "https://item.rakuten.co.jp/uchinoate/23129999502/" },
-            { title: "🍫 濃厚クラフトチョコレート", text: "深い愛や情感を描いた映画に寄り添う、濃厚で上品な甘さのプレミアムダークチョコレート。", url: "https://item.rakuten.co.jp/kasyou-morin/crown-choco9/" },
-            { title: "🍨 ご褒美ミッドナイトアイスクリーム", text: "映画を観終わった後の贅沢なひとときに。なめらかな口溶けで余韻を彩る高級アイスクリーム。", url: "https://item.rakuten.co.jp/onakaegg/10001196/" }
+            { title: "🎥 스마트 홈 프로젝터", text: "방 안의 벽면이나 천장을 한순간에 영화관으로. 고화질 심야 감상을 위한 미니 프로젝터.", url: "https://item.rakuten.co.jp/phi777/tyy003-1/" },
+            { title: "🎧 골전도 무선 헤드폰", text: "늦은 밤에도 층간소음 걱정 없이 몰입감 있는 사운드를 즐길 수 있는 편안한 착용감의 헤드폰.", url: "https://item.rakuten.co.jp/outprize/a20/" },
+            { title: "🥤 보온·보냉 진공 텀블러", text: "영화의 엔딩 크레딧이 올라갈 때까지 가장 맛있는 음료 온도를 유지해 주는 진공 단열 텀블러.", url: "https://item.rakuten.co.jp/sportsmario2/h05hp8901730002/" },
+            { title: "☕ 유기농 디카페인 커피", text: "늦은 밤 영화 감상 중에도 부담 없이 깊은 풍미와 향을 즐길 수 있는 카페인 프리 커피.", url: "https://item.rakuten.co.jp/odekake/tw-organic-set/" },
+            { title: "🌿 리랙싱 유기농 허브티", text: "조용한 밤 마음과 몸을 따뜻하게 풀어주는 프리미엄 허브티 블렌드.", url: "https://item.rakuten.co.jp/angel-baby10/tea/" },
+            { title: "🍋 보타니컬 수제 리큐르", text: "영화의 감미로운 여운을 더해주는 상큼한 향과 섬세한 맛의 프리미엄 보타니컬 술.", url: "https://item.rakuten.co.jp/yamagatamaru/115004323000/" },
+            { title: "🍶 프리미엄 사케·쇼추 셀렉션", text: "작품의 세계관에 더 깊이 빠져들게 만드는 엄선된 정통 일본 전통주.", url: "https://item.rakuten.co.jp/jouir/31203/" },
+            { title: "🧀 최고급 안주 세트", text: "훈제 치즈와 트러플 견과류 등 시네마 나이트를 더 안락하게 만드는 고급 안주 구성.", url: "https://item.rakuten.co.jp/uchinoate/23129999502/" },
+            { title: "🍫 진한 수제 다크 초콜릿", text: "작품 속 깊은 감정과 여운을 차분하게 음미하게 해주는 럭셔리 다크 초콜릿.", url: "https://item.rakuten.co.jp/kasyou-morin/crown-choco9/" },
+            { title: "🍨 미드나잇 수제 아이스크림", text: "영화 감상을 마친 후 부드럽게 감성을 채워주는 프리미엄 딥 아이스크림.", url: "https://item.rakuten.co.jp/onakaegg/10001196/" }
         ];
 
         let totalRenderedCount = 0;
@@ -839,12 +839,12 @@
                     
                     const number = String(totalRenderedCount).padStart(2, '0');
                     
-                    const workTitle = work.titleJa || work.titleEn || '';
-                    const workCast = work.castJa || work.castEn || '-';
-                    const workDir = work.dirJa || work.dirEn || '-';
-                    const workInfo = work.infoJa || work.infoEn || '-';
-                    const workQuote = work.quoteJa || work.quoteEn || '';
-                    const workDesc = work.descJa || work.descEn || '';
+                    const workTitle = work.titleKo || work.titleJa || work.titleEn || '';
+                    const workCast = work.castKo || work.castJa || work.castEn || '-';
+                    const workDir = work.dirKo || work.dirJa || work.dirEn || '-';
+                    const workInfo = work.infoKo || work.infoJa || work.infoEn || '-';
+                    const workQuote = work.quoteKo || work.quoteJa || work.quoteEn || '';
+                    const workDesc = work.descKo || work.descJa || work.descEn || '';
 
                     let quoteHtml = workQuote ? `<div class="work-quote">${workQuote}</div>` : '';
                     
@@ -852,7 +852,7 @@
                     if (work.noteUrl) {
                         noteBtnHtml = `
                             <div class="note-link-container">
-                                <a href="${work.noteUrl}" target="_blank" rel="noopener" class="note-link">📝 noteで詳細レビューを読む ↗</a>
+                                <a href="${work.noteUrl}" target="_blank" rel="noopener" class="note-link">📝 note에서 상세 리뷰 읽기 ↗</a>
                             </div>
                         `;
                     }
@@ -864,15 +864,15 @@
                         <h3 class="work-title">${workTitle}</h3>
                         <div class="work-meta">
                             <div class="meta-item">
-                                <span class="meta-label">出演</span>
+                                <span class="meta-label">출연</span>
                                 <span class="meta-value">${workCast}</span>
                             </div>
                             <div class="meta-item">
-                                <span class="meta-label">監督</span>
+                                <span class="meta-label">감독</span>
                                 <span class="meta-value">${workDir}</span>
                             </div>
                             <div class="meta-item">
-                                <span class="meta-label">作品情報</span>
+                                <span class="meta-label">작품 정보</span>
                                 <span class="meta-value">${workInfo}</span>
                             </div>
                         </div>
@@ -892,8 +892,8 @@
                             affSection.innerHTML = `
                                 <p class="affiliate-title">${affData.title}</p>
                                 <p class="affiliate-text">${affData.text}</p>
-                                <p class="affiliate-note">※商品ページ（楽天市場等）へ移動します</p>
-                                <a href="${affData.url}" target="_blank" rel="noopener noreferrer" class="affiliate-link-btn">ショップで詳細を見る ↗</a>
+                                <p class="affiliate-note">※외부 상품 페이지(라쿠텐 등)로 이동합니다</p>
+                                <a href="${affData.url}" target="_blank" rel="noopener noreferrer" class="affiliate-link-btn">상품 상세 보기 ↗</a>
                             `;
                             listDiv.appendChild(affSection);
                         }

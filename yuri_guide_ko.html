@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>百合漫画・GLアニメおすすめ100選 | 百合の庭園</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- Meta Keywords & Description for SEO / Search Discovery -->
+<meta name="keywords" content="백합, GL, WLW, Sapphic, Girls Love, 백합 만화 추천, 백합 애니 추천, 백합 웹툰, GL 추천, Yuri Recommendations">
+<meta name="description" content="엄선된 백합 & GL (WLW / Sapphic) 명작 만화, 애니메이션, 라이트노벨 100선. 테마별 추천 작품과 역사적 background를 확인해보세요.">
+<title>백합 & GL (WLW) 명작 100선 | 백합 / Sapphic 추천 가이드 | Yuri Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #faf7f4;
@@ -20,7 +23,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { 
-    font-family: 'Noto Sans JP', sans-serif; 
+    font-family: 'Noto Sans KR', sans-serif; 
     background-color: var(--bg); 
     color: var(--text-main); 
     line-height: 1.8;
@@ -109,16 +112,16 @@
   /* --- Hero --- */
   .hero { padding: 40px 15px 15px; text-align: center; }
   .hero h1 { 
-    font-family: 'Noto Serif JP', serif; 
-    font-size: 1.6rem; 
+    font-family: 'Noto Serif KR', serif; 
+    font-size: 1.5rem; 
     color: var(--accent-rose); 
     margin-bottom: 12px;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
     line-height: 1.4;
   }
-  .hero p { font-size: 0.85rem; color: var(--text-sub); }
+  .hero p { font-size: 0.85rem; color: var(--text-sub); word-break: keep-all; }
 
-  /* --- 検索・絞り込みUI --- */
+  /* --- Search UI --- */
   .search-filter-container {
     max-width: 600px;
     margin: 0 auto 20px;
@@ -151,12 +154,12 @@
 
   .box-header { padding: 20px 18px 18px; }
   .box-header h2 { 
-    font-family: 'Noto Serif JP', serif; font-size: 1.15rem; 
+    font-family: 'Noto Serif KR', serif; font-size: 1.15rem; 
     margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--accent-rose);
   }
   .box-header .intro-text { 
     font-size: 0.85rem; border-left: 3px solid var(--accent-gold); 
-    padding-left: 14px; text-align: justify; color: var(--text-main);
+    padding-left: 14px; text-align: justify; color: var(--text-main); word-break: keep-all;
   }
 
   .expand-trigger { 
@@ -171,8 +174,8 @@
 
   /* --- History Items --- */
   .history-item { padding: 18px; border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .history-item b { font-family: 'Noto Serif JP', serif; font-size: 1rem; display: block; margin-bottom: 6px; color: var(--accent-rose); }
-  .history-item p { font-size: 0.85rem; color: #4a4235; line-height: 1.7; text-align: justify; }
+  .history-item b { font-family: 'Noto Serif KR', serif; font-size: 1rem; display: block; margin-bottom: 6px; color: var(--accent-rose); }
+  .history-item p { font-size: 0.85rem; color: #4a4235; line-height: 1.7; text-align: justify; word-break: keep-all; }
 
   /* --- Work List Items --- */
   .work-item { padding: 18px; border-bottom: 1px solid #f5f5f5; }
@@ -181,7 +184,7 @@
   .work-info { width: 100%; }
   .work-info h3 { font-size: 0.98rem; color: var(--text-main); font-weight: 700; }
   .work-info span { font-size: 0.78rem; color: var(--accent-rose); display: block; margin-top: 2px; }
-  .work-info p { font-size: 0.85rem; color: var(--text-sub); margin-top: 10px; line-height: 1.65; text-align: justify; }
+  .work-info p { font-size: 0.85rem; color: var(--text-sub); margin-top: 10px; line-height: 1.65; text-align: justify; word-break: keep-all; }
 
   /* --- Shop Buttons Style --- */
   .shop-links { margin-top: 12px; }
@@ -214,7 +217,7 @@
   }
   footer { padding: 35px 20px; text-align: center; font-size: 0.75rem; color: var(--text-sub); border-top: 1px solid var(--border); }
 
-  /* --- ハンバーガーボタン --- */
+  /* --- Hamburger Menu Button --- */
   #menu-toggle {
     position: fixed;
     top: 8px;
@@ -247,7 +250,7 @@
   #menu-toggle.active span:nth-child(2) { opacity: 0; }
   #menu-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-  /* --- 背景オーバーレイ --- */
+  /* --- Menu Overlay --- */
   #menu-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: rgba(44, 44, 44, 0.4); backdrop-filter: blur(3px);
@@ -255,7 +258,7 @@
   }
   #menu-overlay.active { opacity: 1; pointer-events: auto; }
 
-  /* --- サイドメニュー本体 --- */
+  /* --- Side Menu --- */
   #side-menu {
     position: fixed; top: 0; left: -260px; width: 260px; height: 100vh;
     background: #fff; border-right: 1px solid var(--border); z-index: 2002;
@@ -268,7 +271,7 @@
     padding: 16px 18px; border-bottom: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: center;
     font-weight: bold; color: var(--accent-rose); font-size: 1rem;
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Noto Serif KR', serif;
   }
   .menu-header .close-btn {
     background: none; border: none; color: var(--text-sub); font-size: 1.6rem; cursor: pointer; line-height: 1;
@@ -284,103 +287,104 @@
 </head>
 <body>
 
-<!-- ハンバーガーメニューボタン -->
+<!-- Hamburger Button -->
 <button id="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
 </button>
 
-<!-- サイドバーメニュー本体 -->
+<!-- Side Menu -->
 <div id="menu-overlay" onclick="toggleMenu()"></div>
 <nav id="side-menu">
   <div class="menu-header">
-      <span>メニュー</span>
+      <span>메뉴 (Menu)</span>
       <button class="close-btn" onclick="toggleMenu()">&times;</button>
   </div>
   <ul class="menu-list">
-      <li><a href="index.html">🏠 トップ・マップ</a></li>
-      <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
-      <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
-      <li><a href="cinema.html">🎬 百合・映画特集</a></li>
-      <li><a href="yuri_guide.html">📜 百合の歴史と厳選100選</a></li>
-      <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 飲み会ゲーム (Beta)</a></li>
-      <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 店舗攻略note一覧</a></li>
-      <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ ご支援（Buy Me a Coffee）</a></li>
-      <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 水族館・動物園ガイド</a></li>
-      <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 伝統工芸品ガイド</a></li>
+      <li><a href="index.html">🏠 홈 / 맵 목록</a></li>
+      <li><a href="guide.html">🤝 에스코트 & 가이드 신청</a></li>
+      <li><a href="system_guide.html">🔰 초보자 시스템 가이드</a></li>
+      <li><a href="cinema.html">🎬 퀴어/백합 영화 특집</a></li>
+      <li><a href="yuri_guide_ko.html">📜 백합 역사 & 명작 100선</a></li>
+      <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 술자리 파티 게임 (Beta)</a></li>
+      <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 매장 이용 전략 노트</a></li>
+      <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee</a></li>
+      <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 수족관 & 동물원 가이드</a></li>
+      <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 일본 전통공예 가이드</a></li>
   </ul>
 </nav>
 
-<!-- ヘッダーUI / 地球儀マーク言語切り替えドロップダウン -->
+<!-- Header UI / Language Dropdown with Globe Icon -->
 <div class="header-ui">
   <div class="lang-dropdown-wrapper" id="langDropdown">
     <button class="lang-select-btn" onclick="toggleLangDropdown()">
-      🌐 <span>日本語</span>
+      🌐 <span>한국어</span>
     </button>
     <ul class="lang-dropdown-menu">
-      <li><a href="yuri_guide.html" class="active">日本語</a></li>
+      <li><a href="yuri_guide.html">日本語</a></li>
       <li><a href="yuri_guide_en.html">English</a></li>
-      <li><a href="yuri_guide_ko.html">한국어</a></li>
+      <li><a href="yuri_guide_ko.html" class="active">한국어</a></li>
     </ul>
   </div>
 </div>
 
 <section class="hero">
-  <h1>百合漫画＆アニメおすすめ100選｜百合の庭園</h1>
-  <p class="hero-sub">― 女性同士の純粋な恋愛模様・感情の揺らぎを描く、傑作GL（ガールズラブ）物語の系譜 ―</p>
+  <h1>백합 & GL (WLW) 추천 명작 100선 | Yuri Garden</h1>
+  <p class="hero-sub">― 서정적인 감성과 여성 간의 깊은 유대, 엄선된 GL 서사 가이드 ―</p>
 </section>
 
 <div class="search-filter-container">
-  <input type="text" id="workSearch" class="search-box" placeholder="作品名・著者名で検索..." oninput="handleSearchInput()">
+  <!-- WLW / Sapphic 및 백합 관련 검색어 호환 -->
+  <input type="text" id="workSearch" class="search-box" placeholder="제목, 작가, 키워드 검색 (예: WLW, Sapphic, 백합, GL)..." oninput="handleSearchInput()">
   <div class="search-hints" style="font-size: 11px; color: #8e3a46; margin-top: 6px; text-align: center; opacity: 0.8;">
-    💡 注目のキーワード：ガチ百合 / ライト百合 / 女性同士の絆 / GL名作
+    💡 인기 키워드: WLW / Sapphic / 백합 / GL 명작 / 로맨스
   </div>
 </div>
 
 <div class="section-container">
-  <!-- 歴史セクション -->
+  <!-- History Section -->
   <div class="expand-box history-box">
     <div class="box-header">
-      <h2>📜 百合・GL文化の深淵なる歴史と変遷</h2>
+      <h2>📜 백합(Yuri) 및 WLW 문화의 역사와 변천사</h2>
       <div class="intro-text">
-        「百合」や「女性同士の恋愛模様」が指し示す領域は、時代と共に変容し続けてきました。明治・大正のエス文学から現代の多様な百合漫画・メディアに至るまで、その美しい変遷を辿ります。
+        일본 문학 및 서브컬처에서 발전해 온 백합(Yuri) 장르의 흐름을 다룹니다. 메이지 시대의 '에스(S) 문화'부터 현대의 글로벌 WLW 미디어로 진화하기까지의 역사적 맥락을 확인해보세요.
       </div>
     </div>
     <button class="expand-trigger" onclick="toggleBox(this)">
-      歴史の物語を深く紐解く
+      백합과 WLW의 역사 열람하기
     </button>
     <div class="expand-content">
       <div class="history-item">
-        <b>1. 明治・大正：エスという精神の純潔と「花」の美学</b>
-        <p>吉屋信子の『花物語』に代表される「エス（Sister）」文化。それは家父長制の重圧下にあった女学生たちが、結婚という社会規範に組み込まれる前の短い猶予期間に許された、擬似姉妹的な純愛でした。この精神的な高潔さと、儚くも美しい情操教育的な側面は、後の百合作品における根幹的な美学として今なお息づいています。</p>
+        <b>1. 메이지·타이쇼 시대: 영혼의 순수함과 '클래스 S' 미학</b>
+        <p>요시야 노부코의 《꽃 이야기(花物語)》로 대표되는 '클래스 S' 문화는 가부장제 속 여학생들에게 한시적으로 허용되었던 의자매적 애정 관계였습니다. 이 미학은 현대 백합 서사 속 정신적 고결함과 아련함의 원형이 되었습니다.</p>
       </div>
       <div class="history-item">
-        <b>2. 1970年代：劇的芸術への昇華と「24年組」の衝撃</b>
-        <p>1970年代、萩尾望都や竹宮惠子ら「24年組」が登場し、少女漫画の表現は一変します。同性への情愛は単なる友情を超え、人間の孤独、実存、精度を超えた魂の渇望を問う「劇的な芸術」へと昇華されました。この時期に確立された、内面の複雑な心理描写がジャンルに深い土壌を与えました。</p>
+        <b>2. 1970년대: 극적 예술성과 '24년조'의 충격</b>
+        <p>1970년대 하기오 모토, 타케미야 케이코 등 '24년조' 순정만화가들의 등장으로 여성 간의 감정선은 단순한 우정을 넘어 인간의 고독과 존재론을 탐구하는 서사적 예술로 진화했습니다.</p>
       </div>
       <div class="history-item">
-        <b>3. 2000年代：様式美の確立と「聖域」の具現化</b>
-        <p>『マリア様がみてる』が旋風を巻き起こし、お嬢様学校や「スール制度」といった様式美が確立されました。これにより、百合は特定の記号や文法を持つ「独自の宇宙」となり、専門誌『コミック百合姫』の創刊も相まって、ファンが安心して没入できる一つの「聖域」としての文化圏を形成しました。</p>
+        <b>3. 2000년대: 미형 장르의 정립과 '성역'의 탄생</b>
+        <p>《마리아님이 보고 계셔》의 히트로 미션스쿨과 '쇠르(Sœur)' 시스템이 장르적 정체성으로 자리 잡았으며, 전문 잡지 《코믹 유리히메》의 창간과 함께 독자적인 영역을 구축했습니다.</p>
       </div>
       <div class="history-item">
-        <b>4. 2010年代以降：多様性の爆発と日常への回帰</b>
-        <p>学園ものという伝統を超え、社会人のリアリティ、SF、異世界、さらにはジェンダーを問う社会派作品まで裾野が劇的に拡大。特別な誰かと生きてしていくという「決意」や、生活の中で育まれる「連帯」が描かれ、世界中で共感を集める多様な「愛の物語」として進化し続けています。</p>
+        <b>4. 2010년대 이후: 다변화, Sapphic 로맨스 & 현대 WLW</b>
+        <p>학원물을 넘어 사회인 드라마, SF, 판타지, 연대와 사회적 메시지로 확장되며, 오늘날 백합은 전 세계 독자들에게 깊은 공감을 부르는 다양성 미디어로 발전하고 있습니다.</p>
       </div>
     </div>
   </div>
 
-  <!-- 動的レンダリング枠 -->
+  <!-- Dynamic List Container -->
   <div id="yuri-list-container"></div>
 </div>
 
 <div class="footer-nav">
-  <a href="https://nogi46etoile5.github.io/bianbarmap/" class="nav-btn">🗺️ マップ一覧へ</a>
-  <a href="https://nogi46etoile5.github.io/bianbarmap/guide.html" class="nav-btn">📍 付き添いガイド</a>
-  <a href="https://nogi46etoile5.github.io/bianbarmap/cinema.html" class="nav-btn">🎞 女性同士の映画・ドラマガイド</a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/" class="nav-btn">🗺️ 바 맵 목록으로 돌아가기</a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/guide.html" class="nav-btn">📍 에스코트 가이드</a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/cinema.html" class="nav-btn">🎞 여성 영화 & 드라마 가이드</a>
 </div>
 
-<footer>&copy; 2026 Cinq Étoile Yuri Guide</footer>
+<footer>&copy; 2026 Cinq Étoile Yuri & GL Guide</footer>
 
 <button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="Back to Top">▲</button>
 
@@ -414,40 +418,40 @@ function render() {
     const listData = (typeof yuri_data !== 'undefined') ? yuri_data : [];
     const searchQuery = document.getElementById('workSearch').value.toLowerCase().trim();
 
-    const LINK_D_ANIME   = "⏳ 現在、公式リンクの開設準備中です。まもなく公開！"; 
-    const LINK_AMAZON    = "⏳ 現在、公式リンクの開設準備中です。まもなく公開！";
+    const LINK_D_ANIME   = "⏳ 공식 링크 업데이트 예정!"; 
+    const LINK_AMAZON    = "⏳ 공식 링크 업데이트 예정!";
     const LINK_SELFBACK  = `【A8.net】<br />⇒<a href="https://px.a8.net/svt/ejp?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" rel="nofollow">A8.net Official</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" alt="">`;
 
     const innerAdContent = `
         <div class="ad-banner-box" style="text-align: left; line-height: 1.7; margin: 20px 0 10px 0; background: #fffcf5; padding: 16px; border-radius: 12px; border: 1px solid #e8d5a3; width: 100%; box-sizing: border-box;">
             <div class="ad-banner-title" style="font-weight: bold; font-size: 0.9rem; color: #333; margin-bottom: 12px;">
-                🎬 百合アニメ＆原作をドップリ楽しむならココ！
+                🎬 백합 애니메이션 및 원작 즐기기
             </div>
             <p style="font-size: 11px; color: #888; margin-bottom: 10px; font-style: italic; border-bottom: 1px solid #f5f5f5; padding-bottom: 4px;">
-                ※本セクションにはアフィリエイト広告（アマゾンアソシエイト含む）等のプロモーションが含まれています。
+                * 본 코너는 제휴 광고 링크를 포함하고 있습니다.
             </p>
             <p style="margin-bottom: 12px; font-size: 0.82rem; color: #555;">
-                作品リストで気になったアニメのイッキ見や原作をお得に楽しむなら、以下の定番サービスが圧倒的におすすめです。ただいまリンクを順次開設しておりますので、公開まで今しばらくお待ちください！
+                추천 작품의 애니메이션 감상 및 원작 구매를 위한 공식 링크가 순차적으로 업데이트될 예정입니다.
             </p>
             <div class="banner-flex" style="display: flex; flex-direction: column; gap: 14px; background: #fff; padding: 12px; border-radius: 10px; border: 1px solid #e8d5a3;">
               <div class="ad-item">
-                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">① アニメ特化＆コスパ最強「dアニメストア」</b>
+                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">① 애니 전문 스트리밍: "dアニメストア"</b>
                 <div class="real-banner" style="font-size: 11px; color: #aaa; background: #f9f9f9; padding: 8px; border-radius: 4px; border: 1px dashed #ccc; text-align: center;">
                     ${LINK_D_ANIME}
                 </div>
               </div>
               <hr style="border: none; border-top: 1px dashed #e8d5a3;">
               <div class="ad-item">
-                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">② 圧倒的な知名度＆お急ぎ便も使える「Amazonプライム・ビデオ」</b>
+                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">② 글로벌 스트리밍: "Amazon Prime Video"</b>
                 <div class="real-banner" style="font-size: 11px; color: #aaa; background: #f9f9f9; padding: 8px; border-radius: 4px; border: 1px dashed #ccc; text-align: center;">
                     ${LINK_AMAZON}
                 </div>
               </div>
               <hr style="border: none; border-top: 1px dashed #e8d5a3; border-width: 2px;">
               <div class="ad-item" style="background: #fff9fa; padding: 10px; border-radius: 8px; border: 1px solid #ffb6c1;">
-                <b style="color: #e60012; font-size: 0.85rem; display: block; margin-bottom: 4px;">💡 お得な裏技：実質無料で楽しむ方法</b>
+                <b style="color: #e60012; font-size: 0.85rem; display: block; margin-bottom: 4px;">💡 스마트 리워드 안내</b>
                 <p style="font-size: 0.8rem; color: #555; margin-bottom: 6px;">
-                    アフィリエイトASPの「A8.net」に無料登録して<b>セルフバック（本人申込み）</b>経由で各種サービスに申し込むと、現金キャッシュバックが発生して実質プラスになりますよ！
+                    "A8.net" 제휴 서비스 이용 시 캐시백 및 추가 혜택을 받으실 수 있습니다.
                 </p>
                 <div class="real-banner">${LINK_SELFBACK}</div>
               </div>
@@ -458,11 +462,20 @@ function render() {
     let finalHTML = '';
 
     listData.forEach((category) => {
+        // 한국어 카테고리 (ko_cat > cat > en_cat 순으로 フォールバック)
+        const catTitle = category.ko_cat || category.cat_ko || category.cat || category.en_cat;
+        const catDesc = category.ko_desc || category.desc_ko || category.desc || category.en_desc;
+
         const filteredWorks = category.works.filter(w => {
             if (searchQuery !== '') {
-                const matchTitle = w.t ? w.t.toLowerCase().includes(searchQuery) : false;
-                const matchAuthor = w.a ? w.a.toLowerCase().includes(searchQuery) : false;
-                return matchTitle || matchAuthor;
+                // 'wlw', 'sapphic', 'gl', '백합' 검색어 매칭
+                const isWLWTagMatch = ['wlw', 'sapphic', 'gl', 'yuri', '백합', 'lesbian'].some(tag => tag.includes(searchQuery));
+
+                const matchTitle = (w.ko_t || w.t || w.en_t) ? (w.ko_t || w.t || w.en_t).toLowerCase().includes(searchQuery) : false;
+                const matchAuthor = (w.ko_a || w.a || w.en_a) ? (w.ko_a || w.a || w.en_a).toLowerCase().includes(searchQuery) : false;
+                const matchDesc = (w.ko_d || w.d || w.en_d) ? (w.ko_d || w.d || w.en_d).toLowerCase().includes(searchQuery) : false;
+
+                return matchTitle || matchAuthor || matchDesc || isWLWTagMatch;
             }
             return true;
         });
@@ -471,18 +484,22 @@ function render() {
             const isOpenClass = searchQuery !== '' ? 'open' : '';
 
             let worksHTML = filteredWorks.map(w => {
+                const title = w.ko_t || w.t_ko || w.t || w.en_t;
+                const author = w.ko_a || w.a_ko || w.a || w.en_a;
+                const desc = w.ko_d || w.d_ko || w.d || w.en_d;
+
                 let affiliateButtons = w.amz 
-                    ? `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">Amazonで見る</a>`
-                    : `<span class="btn-shop btn-disabled">取扱なし</span>`;
+                    ? `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">Amazon에서 보기</a>`
+                    : `<span class="btn-shop btn-disabled">준비 중</span>`;
 
                 return `
                     <div class="work-item">
                         <div class="work-header">
                             <span class="work-num">${String(w.n).padStart(2, '0')}</span>
                             <div class="work-info">
-                                <h3>${w.t}</h3>
-                                <span>著者・制作: ${w.a}</span>
-                                <p>${w.d}</p>
+                                <h3>${title}</h3>
+                                <span>작가/제작: ${author}</span>
+                                <p>${desc}</p>
                                 <div class="shop-links">${affiliateButtons}</div>
                             </div>
                         </div>
@@ -497,11 +514,11 @@ function render() {
             finalHTML += `
                 <div class="expand-box ${isOpenClass}">
                     <div class="box-header">
-                        <h2>${category.cat}</h2>
-                        <div class="intro-text">${category.desc}</div>
+                        <h2>${catTitle}</h2>
+                        <div class="intro-text">${catDesc}</div>
                     </div>
                     <button class="expand-trigger" onclick="toggleBox(this)">
-                        <span>作品リストを見る</span>
+                        <span>작품 목록 보기</span>
                     </button>
                     <div class="expand-content">
                         <div class="work-list">${worksHTML}</div>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>百合漫画・GLアニメおすすめ100選 | 百合の庭園</title>
+<!-- Meta Keywords & Description for SEO / Search Discovery -->
+<meta name="keywords" content="Yuri, GL, WLW, Sapphic, Girls Love, Lesbian Manga, Lesbian Anime, Yuri Recommendation, GL Webtoon, Girls Love Recommendations">
+<meta name="description" content="Discover top 100 recommended Yuri & GL (WLW / Sapphic) manga, anime, and light novels. Explore the best Girls' Love titles categorized by themes.">
+<title>100 Recommended Yuri & GL Manga/Anime | WLW & Sapphic Recommendations | Yuri Garden</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -118,7 +121,7 @@
   }
   .hero p { font-size: 0.85rem; color: var(--text-sub); }
 
-  /* --- 検索・絞り込みUI --- */
+  /* --- Search UI --- */
   .search-filter-container {
     max-width: 600px;
     margin: 0 auto 20px;
@@ -214,7 +217,7 @@
   }
   footer { padding: 35px 20px; text-align: center; font-size: 0.75rem; color: var(--text-sub); border-top: 1px solid var(--border); }
 
-  /* --- ハンバーガーボタン --- */
+  /* --- Hamburger Menu Button --- */
   #menu-toggle {
     position: fixed;
     top: 8px;
@@ -247,7 +250,7 @@
   #menu-toggle.active span:nth-child(2) { opacity: 0; }
   #menu-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-  /* --- 背景オーバーレイ --- */
+  /* --- Menu Overlay --- */
   #menu-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: rgba(44, 44, 44, 0.4); backdrop-filter: blur(3px);
@@ -255,7 +258,7 @@
   }
   #menu-overlay.active { opacity: 1; pointer-events: auto; }
 
-  /* --- サイドメニュー本体 --- */
+  /* --- Side Menu --- */
   #side-menu {
     position: fixed; top: 0; left: -260px; width: 260px; height: 100vh;
     background: #fff; border-right: 1px solid var(--border); z-index: 2002;
@@ -284,103 +287,104 @@
 </head>
 <body>
 
-<!-- ハンバーガーメニューボタン -->
+<!-- Hamburger Button -->
 <button id="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
 </button>
 
-<!-- サイドバーメニュー本体 -->
+<!-- Side Menu -->
 <div id="menu-overlay" onclick="toggleMenu()"></div>
 <nav id="side-menu">
   <div class="menu-header">
-      <span>メニュー</span>
+      <span>Menu</span>
       <button class="close-btn" onclick="toggleMenu()">&times;</button>
   </div>
   <ul class="menu-list">
-      <li><a href="index.html">🏠 トップ・マップ</a></li>
-      <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
-      <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
-      <li><a href="cinema.html">🎬 百合・映画特集</a></li>
-      <li><a href="yuri_guide.html">📜 百合の歴史と厳選100選</a></li>
-      <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 飲み会ゲーム (Beta)</a></li>
-      <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 店舗攻略note一覧</a></li>
-      <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ ご支援（Buy Me a Coffee）</a></li>
-      <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 水族館・動物園ガイド</a></li>
-      <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 伝統工芸品ガイド</a></li>
+      <li><a href="index.html">🏠 Home / Map</a></li>
+      <li><a href="guide.html">🤝 Escort & Guide Request</a></li>
+      <li><a href="system_guide.html">🔰 Beginner's System Guide</a></li>
+      <li><a href="cinema.html">🎬 Yuri Cinema Feature</a></li>
+      <li><a href="yuri_guide_en.html">📜 History & 100 Selections</a></li>
+      <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 Party Games (Beta)</a></li>
+      <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 Store Strategy Notes</a></li>
+      <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee</a></li>
+      <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 Aquarium & Zoo Guide</a></li>
+      <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 Traditional Crafts Guide</a></li>
   </ul>
 </nav>
 
-<!-- ヘッダーUI / 地球儀マーク言語切り替えドロップダウン -->
+<!-- Header UI / Language Dropdown with Globe Icon -->
 <div class="header-ui">
   <div class="lang-dropdown-wrapper" id="langDropdown">
     <button class="lang-select-btn" onclick="toggleLangDropdown()">
-      🌐 <span>日本語</span>
+      🌐 <span>English</span>
     </button>
     <ul class="lang-dropdown-menu">
-      <li><a href="yuri_guide.html" class="active">日本語</a></li>
-      <li><a href="yuri_guide_en.html">English</a></li>
+      <li><a href="yuri_guide.html">日本語</a></li>
+      <li><a href="yuri_guide_en.html" class="active">English</a></li>
       <li><a href="yuri_guide_ko.html">한국어</a></li>
     </ul>
   </div>
 </div>
 
 <section class="hero">
-  <h1>百合漫画＆アニメおすすめ100選｜百合の庭園</h1>
-  <p class="hero-sub">― 女性同士の純粋な恋愛模様・感情の揺らぎを描く、傑作GL（ガールズラブ）物語の系譜 ―</p>
+  <h1>100 Recommended Yuri & GL (WLW) Manga/Anime | Yuri Garden</h1>
+  <p class="hero-sub">― A curated selection of sapphic masterpieces, GL romances, and female-centered emotional bonds ―</p>
 </section>
 
 <div class="search-filter-container">
-  <input type="text" id="workSearch" class="search-box" placeholder="作品名・著者名で検索..." oninput="handleSearchInput()">
+  <!-- WLW / Sapphic などのヒット率が高いキーワードをプレースホルダーへ追加 -->
+  <input type="text" id="workSearch" class="search-box" placeholder="Search by title, author, or tag (e.g. WLW, Sapphic, GL)..." oninput="handleSearchInput()">
   <div class="search-hints" style="font-size: 11px; color: #8e3a46; margin-top: 6px; text-align: center; opacity: 0.8;">
-    💡 注目のキーワード：ガチ百合 / ライト百合 / 女性同士の絆 / GL名作
+    💡 Popular Keywords: WLW / Sapphic / Girls' Love / GL Masterpieces / Romance
   </div>
 </div>
 
 <div class="section-container">
-  <!-- 歴史セクション -->
+  <!-- History Section -->
   <div class="expand-box history-box">
     <div class="box-header">
-      <h2>📜 百合・GL文化の深淵なる歴史と変遷</h2>
+      <h2>📜 The History & Cultural Evolution of Yuri, GL, and WLW Fiction</h2>
       <div class="intro-text">
-        「百合」や「女性同士の恋愛模様」が指し示す領域は、時代と共に変容し続けてきました。明治・大正のエス文学から現代の多様な百合漫画・メディアに至るまで、その美しい変遷を辿ります。
+        The genre of Yuri and sapphic fiction has evolved significantly through Japanese literary history. Explore its journey from Meiji-era "Class S" culture to modern global GL and WLW media.
       </div>
     </div>
     <button class="expand-trigger" onclick="toggleBox(this)">
-      歴史の物語を深く紐解く
+      Unveil the History of Yuri & WLW
     </button>
     <div class="expand-content">
       <div class="history-item">
-        <b>1. 明治・大正：エスという精神の純潔と「花」の美学</b>
-        <p>吉屋信子の『花物語』に代表される「エス（Sister）」文化。それは家父長制の重圧下にあった女学生たちが、結婚という社会規範に組み込まれる前の短い猶予期間に許された、擬似姉妹的な純愛でした。この精神的な高潔さと、儚くも美しい情操教育的な側面は、後の百合作品における根幹的な美学として今なお息づいています。</p>
+        <b>1. Meiji & Taisho: Spiritual Purity and the Aesthetic of "Class S"</b>
+        <p>Represented by Nobuko Yoshiya's "Hana Monogatari" (Flower Stories), the "Class S" culture was a realm of pure, pseudo-sisterly affection permitted to schoolgirls under patriarchal pressures before marriage. Its spiritual nobility and fleeting beauty remain a core aesthetic in modern Yuri and WLW fiction.</p>
       </div>
       <div class="history-item">
-        <b>2. 1970年代：劇的芸術への昇華と「24年組」の衝撃</b>
-        <p>1970年代、萩尾望都や竹宮惠子ら「24年組」が登場し、少女漫画の表現は一変します。同性への情愛は単なる友情を超え、人間の孤独、実存、精度を超えた魂の渇望を問う「劇的な芸術」へと昇華されました。この時期に確立された、内面の複雑な心理描写がジャンルに深い土壌を与えました。</p>
+        <b>2. 1970s: Dramatic Art and the Impact of the "Year 24 Group"</b>
+        <p>In the 1970s, the emergence of the "Year 24 Group" (including Moto Hagio and Keiko Takemiya) revolutionized shojo manga. Romantic feelings between women evolved beyond friendship into dramatic art that questioned human solitude, existence, and spiritual longing.</p>
       </div>
       <div class="history-item">
-        <b>3. 2000年代：様式美の確立と「聖域」の具現化</b>
-        <p>『マリア様がみてる』が旋風を巻き起こし、お嬢様学校や「スール制度」といった様式美が確立されました。これにより、百合は特定の記号や文法を持つ「独自の宇宙」となり、専門誌『コミック百合姫』の創刊も相まって、ファンが安心して没入できる一つの「聖域」としての文化圏を形成しました。</p>
+        <b>3. 2000s: Stylistic Beauty and the "Sanctuary"</b>
+        <p>"Maria Watches Over Us" established iconic tropes like all-girls academies and the "soeur" system. Yuri became its own specialized domain, fostering a dedicated sanctuary with the launch of magazines like Comic Yuri Hime.</p>
       </div>
       <div class="history-item">
-        <b>4. 2010年代以降：多様性の爆発と日常への回帰</b>
-        <p>学園ものという伝統を超え、社会人のリアリティ、SF、異世界、さらにはジェンダーを問う社会派作品まで裾野が劇的に拡大。特別な誰かと生きてしていくという「決意」や、生活の中で育まれる「連帯」が描かれ、世界中で共感を集める多様な「愛の物語」として進化し続けています。</p>
+        <b>4. 2010s & Beyond: Explosion of Diversity, Sapphic Romance & Modern WLW</b>
+        <p>Expanding beyond school settings into adult workplace drama, sci-fi, fantasy, and social issues, Yuri has evolved into globally resonant stories of mutual solidarity, sapphic romance, and personal commitment.</p>
       </div>
     </div>
   </div>
 
-  <!-- 動的レンダリング枠 -->
+  <!-- Dynamic List Container -->
   <div id="yuri-list-container"></div>
 </div>
 
 <div class="footer-nav">
-  <a href="https://nogi46etoile5.github.io/bianbarmap/" class="nav-btn">🗺️ マップ一覧へ</a>
-  <a href="https://nogi46etoile5.github.io/bianbarmap/guide.html" class="nav-btn">📍 付き添いガイド</a>
-  <a href="https://nogi46etoile5.github.io/bianbarmap/cinema.html" class="nav-btn">🎞 女性同士の映画・ドラマガイド</a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/" class="nav-btn">🗺️ Back to Map List</a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/guide.html" class="nav-btn">📍 Escort Guide</a>
+  <a href="https://nogi46etoile5.github.io/bianbarmap/cinema.html" class="nav-btn">🎞 Women's Cinema & Drama Guide</a>
 </div>
 
-<footer>&copy; 2026 Cinq Étoile Yuri Guide</footer>
+<footer>&copy; 2026 Cinq Étoile Yuri & GL Guide</footer>
 
 <button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="Back to Top">▲</button>
 
@@ -414,40 +418,40 @@ function render() {
     const listData = (typeof yuri_data !== 'undefined') ? yuri_data : [];
     const searchQuery = document.getElementById('workSearch').value.toLowerCase().trim();
 
-    const LINK_D_ANIME   = "⏳ 現在、公式リンクの開設準備中です。まもなく公開！"; 
-    const LINK_AMAZON    = "⏳ 現在、公式リンクの開設準備中です。まもなく公開！";
+    const LINK_D_ANIME   = "⏳ Official link coming soon!"; 
+    const LINK_AMAZON    = "⏳ Official link coming soon!";
     const LINK_SELFBACK  = `【A8.net】<br />⇒<a href="https://px.a8.net/svt/ejp?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" rel="nofollow">A8.net Official</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3Z9IXH+7EQ7SI+0K+10FXXU" alt="">`;
 
     const innerAdContent = `
         <div class="ad-banner-box" style="text-align: left; line-height: 1.7; margin: 20px 0 10px 0; background: #fffcf5; padding: 16px; border-radius: 12px; border: 1px solid #e8d5a3; width: 100%; box-sizing: border-box;">
             <div class="ad-banner-title" style="font-weight: bold; font-size: 0.9rem; color: #333; margin-bottom: 12px;">
-                🎬 百合アニメ＆原作をドップリ楽しむならココ！
+                🎬 Dive into Yuri Anime & WLW Originals Here!
             </div>
             <p style="font-size: 11px; color: #888; margin-bottom: 10px; font-style: italic; border-bottom: 1px solid #f5f5f5; padding-bottom: 4px;">
-                ※本セクションにはアフィリエイト広告（アマゾンアソシエイト含む）等のプロモーションが含まれています。
+                * This section contains affiliate advertising links.
             </p>
             <p style="margin-bottom: 12px; font-size: 0.82rem; color: #555;">
-                作品リストで気になったアニメのイッキ見や原作をお得に楽しむなら、以下の定番サービスが圧倒的におすすめです。ただいまリンクを順次開設しておりますので、公開まで今しばらくお待ちください！
+                To binge-watch anime or read original GL manga from our recommendations, check back soon as official links are currently being updated!
             </p>
             <div class="banner-flex" style="display: flex; flex-direction: column; gap: 14px; background: #fff; padding: 12px; border-radius: 10px; border: 1px solid #e8d5a3;">
               <div class="ad-item">
-                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">① アニメ特化＆コスパ最強「dアニメストア」</b>
+                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">① Ultimate Anime Streaming: "d Anime Store"</b>
                 <div class="real-banner" style="font-size: 11px; color: #aaa; background: #f9f9f9; padding: 8px; border-radius: 4px; border: 1px dashed #ccc; text-align: center;">
                     ${LINK_D_ANIME}
                 </div>
               </div>
               <hr style="border: none; border-top: 1px dashed #e8d5a3;">
               <div class="ad-item">
-                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">② 圧倒的な知名度＆お急ぎ便も使える「Amazonプライム・ビデオ」</b>
+                <b style="color: #8e3a46; font-size: 0.85rem; display: block; margin-bottom: 4px;">② Fast Streaming & Delivery: "Amazon Prime Video"</b>
                 <div class="real-banner" style="font-size: 11px; color: #aaa; background: #f9f9f9; padding: 8px; border-radius: 4px; border: 1px dashed #ccc; text-align: center;">
                     ${LINK_AMAZON}
                 </div>
               </div>
               <hr style="border: none; border-top: 1px dashed #e8d5a3; border-width: 2px;">
               <div class="ad-item" style="background: #fff9fa; padding: 10px; border-radius: 8px; border: 1px solid #ffb6c1;">
-                <b style="color: #e60012; font-size: 0.85rem; display: block; margin-bottom: 4px;">💡 お得な裏技：実質無料で楽しむ方法</b>
+                <b style="color: #e60012; font-size: 0.85rem; display: block; margin-bottom: 4px;">💡 Smart Tip: Earn Cashback Rewards</b>
                 <p style="font-size: 0.8rem; color: #555; margin-bottom: 6px;">
-                    アフィリエイトASPの「A8.net」に無料登録して<b>セルフバック（本人申込み）</b>経由で各種サービスに申し込むと、現金キャッシュバックが発生して実質プラスになりますよ！
+                    By signing up for affiliate programs like "A8.net" and applying via self-referrals, you can earn cashback rewards on subscriptions!
                 </p>
                 <div class="real-banner">${LINK_SELFBACK}</div>
               </div>
@@ -458,11 +462,22 @@ function render() {
     let finalHTML = '';
 
     listData.forEach((category) => {
+        // 多言語対応構造（en_cat, ko_cat などのフォールバック処理）
+        const catTitle = category.en_cat || category.cat_en || category.cat;
+        const catDesc = category.en_desc || category.desc_en || category.desc;
+
         const filteredWorks = category.works.filter(w => {
             if (searchQuery !== '') {
-                const matchTitle = w.t ? w.t.toLowerCase().includes(searchQuery) : false;
-                const matchAuthor = w.a ? w.a.toLowerCase().includes(searchQuery) : false;
-                return matchTitle || matchAuthor;
+                // 'wlw', 'sapphic', 'gl', 'lesbian' などの代表的語句の検索用ハック（一致でヒットさせる）
+                const isWLWTagMatch = ['wlw', 'sapphic', 'gl', 'yuri', 'lesbian'].some(tag => tag.includes(searchQuery));
+
+                const matchJaTitle = w.t ? w.t.toLowerCase().includes(searchQuery) : false;
+                const matchEnTitle = (w.en_t || w.t_en) ? (w.en_t || w.t_en).toLowerCase().includes(searchQuery) : false;
+                const matchJaAuthor = w.a ? w.a.toLowerCase().includes(searchQuery) : false;
+                const matchEnAuthor = (w.en_a || w.a_en) ? (w.en_a || w.a_en).toLowerCase().includes(searchQuery) : false;
+                const matchEnDesc = (w.en_d || w.d_en || w.d) ? (w.en_d || w.d_en || w.d).toLowerCase().includes(searchQuery) : false;
+
+                return matchJaTitle || matchEnTitle || matchJaAuthor || matchEnAuthor || matchEnDesc || isWLWTagMatch;
             }
             return true;
         });
@@ -471,18 +486,22 @@ function render() {
             const isOpenClass = searchQuery !== '' ? 'open' : '';
 
             let worksHTML = filteredWorks.map(w => {
+                const title = w.en_t || w.t_en || w.t;
+                const author = w.en_a || w.a_en || w.a;
+                const desc = w.en_d || w.d_en || w.d;
+
                 let affiliateButtons = w.amz 
-                    ? `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">Amazonで見る</a>`
-                    : `<span class="btn-shop btn-disabled">取扱なし</span>`;
+                    ? `<a href="${w.amz}" target="_blank" rel="nofollow" class="btn-shop btn-amz">View on Amazon</a>`
+                    : `<span class="btn-shop btn-disabled">Unavailable</span>`;
 
                 return `
                     <div class="work-item">
                         <div class="work-header">
                             <span class="work-num">${String(w.n).padStart(2, '0')}</span>
                             <div class="work-info">
-                                <h3>${w.t}</h3>
-                                <span>著者・制作: ${w.a}</span>
-                                <p>${w.d}</p>
+                                <h3>${title}</h3>
+                                <span>Author/Studio: ${author}</span>
+                                <p>${desc}</p>
                                 <div class="shop-links">${affiliateButtons}</div>
                             </div>
                         </div>
@@ -497,11 +516,11 @@ function render() {
             finalHTML += `
                 <div class="expand-box ${isOpenClass}">
                     <div class="box-header">
-                        <h2>${category.cat}</h2>
-                        <div class="intro-text">${category.desc}</div>
+                        <h2>${catTitle}</h2>
+                        <div class="intro-text">${catDesc}</div>
                     </div>
                     <button class="expand-trigger" onclick="toggleBox(this)">
-                        <span>作品リストを見る</span>
+                        <span>View Works List</span>
                     </button>
                     <div class="expand-content">
                         <div class="work-list">${worksHTML}</div>
