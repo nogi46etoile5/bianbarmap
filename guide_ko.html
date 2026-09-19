@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>付き添いプラン詳細 - Lesbian Bar Map JP</title>
+    <title>동행 플랜 상세 - Lesbian Bar Map JP</title>
     
-    <!-- SEO対策：多言語ページの存在を検索エンジンに伝えるタグ -->
+    <!-- SEO: Alternate language pages -->
     <link rel="alternate" hreflang="ja" href="guide.html" />
     <link rel="alternate" hreflang="en" href="guide_en.html" />
     <link rel="alternate" hreflang="ko" href="guide_ko.html" />
     <link rel="alternate" hreflang="es" href="guide_es.html" />
 
     <style>
-        /* --- 基本設定 --- */
+        /* --- 기본 설정 --- */
         body { 
             background-color: #0a1428; 
             color: #ffffff; 
@@ -30,11 +30,11 @@
             margin-top: 60px; 
         }
 
-        /* ヘッダー */
+        /* 헤더 */
         .header { text-align: center; margin-bottom: 20px; }
         .header h1 { font-size: 1.4rem; color: #00ffcc; border-bottom: 2px solid #00ffcc; display: inline-block; padding-bottom: 5px; margin-bottom: 10px; }
         
-        /* 感情訴求セクション */
+        /* 설득/어필 섹션 */
         .appeal-section { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 25px; margin-bottom: 30px; }
         .appeal-section h2 { font-size: 1.1rem; color: #ff8c00; margin-top: 0; }
         .appeal-section p { font-size: 0.85rem; margin-bottom: 15px; }
@@ -44,21 +44,21 @@
         .check-list li::before { content: "✔️"; color: #00ffcc; }
         .stats-box { background: rgba(0, 255, 204, 0.05); border: 1px dashed #00ffcc; padding: 15px; border-radius: 10px; font-size: 0.8rem; margin-top: 20px; }
 
-        /* プランセクション */
+        /* 플랜 섹션 */
         .plan-grid { display: flex; flex-direction: column; gap: 20px; }
         .plan-card { background: rgba(255, 255, 255, 0.05); border: 1px solid #2a3a5a; border-radius: 15px; padding: 20px; position: relative; }
         .plan-card h2 { font-size: 1.1rem; color: #00ffcc; margin-top: 0; display: flex; align-items: center; gap: 8px; }
         .price-tag { font-size: 1.2rem; font-weight: bold; color: #ffffff; margin: 8px 0; }
         .plan-desc { font-size: 0.8rem; color: #ccd6f6; }
 
-        /* 交通費・ルール */
+        /* 교통비 및 규칙 */
         .info-section { background: rgba(255, 255, 255, 0.02); border: 1px solid #3a4a6a; border-radius: 12px; padding: 20px; margin-top: 20px; font-size: 0.8rem; }
         .info-title { font-weight: bold; color: #00ffcc; margin-bottom: 10px; display: block; }
         
         .warning-box { border: 1px solid #ff4d4d; background: rgba(255, 77, 77, 0.05); padding: 20px; border-radius: 15px; margin-top: 30px; font-size: 0.8rem; }
         .warning-box h2 { color: #ff4d4d; font-size: 0.95rem; margin-top: 0; }
 
-        /* ボタン */
+        /* 버튼 */
         .cta-btn { display: block; background: #00ffcc; color: #0a1428; text-decoration: none; text-align: center; padding: 15px; border-radius: 30px; font-weight: bold; margin-top: 30px; font-size: 0.9rem; }
         .sub-cta-btn { display: block; background: transparent; border: 2px solid #00ffcc; color: #00ffcc; text-decoration: none; text-align: center; padding: 12px; border-radius: 30px; font-weight: bold; margin: 20px 0 30px 0; font-size: 0.85rem; }
         .back-link { display: block; text-align: center; margin-top: 25px; color: #8892b0; text-decoration: none; font-size: 0.8rem; }
@@ -66,7 +66,7 @@
         ul { padding-left: 20px; }
         li { margin-bottom: 5px; }
 
-        /* --- 言語切り替えドロップダウン --- */
+        /* --- 언어 선택 드롭다운 --- */
         .lang-switcher {
             position: fixed;
             top: 15px;
@@ -113,7 +113,7 @@
         .lang-item:hover { background-color: rgba(0, 255, 204, 0.1); color: #00ffcc; }
         .lang-item.active { background-color: #00ffcc; color: #0a1428; }
 
-        /* --- ハンバーガーボタン --- */
+        /* --- 햄버거 메뉴 버튼 --- */
         #menu-toggle {
             position: fixed;
             top: 15px;
@@ -143,7 +143,7 @@
         #menu-toggle.active span:nth-child(2) { opacity: 0; }
         #menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* --- 背景オーバーレイ --- */
+        /* --- 메뉴 오버레이 --- */
         #menu-overlay {
             position: fixed;
             top: 0;
@@ -162,7 +162,7 @@
             pointer-events: auto;
         }
 
-        /* --- サイドメニュー本体 --- */
+        /* --- 사이드 메뉴 --- */
         #side-menu {
             position: fixed;
             top: 0;
@@ -248,195 +248,195 @@
 </head>
 <body>
 
-<!-- ハンバーガーメニューボタン -->
-<button id="menu-toggle" aria-label="メニューを開く" onclick="toggleMenu()">
+<!-- 햄버거 메뉴 버튼 -->
+<button id="menu-toggle" aria-label="메뉴 열기" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
 </button>
 
-<!-- 背景オーバーレイ -->
+<!-- 배경 오버레이 -->
 <div id="menu-overlay" onclick="toggleMenu()"></div>
 
-<!-- サイドバーメニュー本体 -->
+<!-- 사이드 메뉴 본체 -->
 <nav id="side-menu">
     <div class="menu-header">
-        <span>メニュー</span>
+        <span>메뉴</span>
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 トップ・マップ</a></li>
-        <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
-        <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
-        <li><a href="cinema.html">🎬 百合・映画特集</a></li>
-        <li><a href="yuri_guide.html">📜 百合の歴史と厳選100選</a></li>
-        <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 飲み会ゲーム (Beta)</a></li>
-        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 店舗攻略note一覧</a></li>
-        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ ご支援（Buy Me a Coffee）</a></li>
-        <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 水族館・動物園ガイド</a></li>
-        <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 伝統工芸品ガイド</a></li>
+        <li><a href="index.html">🏠 홈 / 바 지도</a></li>
+        <li><a href="guide_ko.html">🤝 바 동행·가이드 신청</a></li>
+        <li><a href="system_guide.html">🔰 초보자용 시스템 가이드</a></li>
+        <li><a href="cinema.html">🎬 백합·영화 특집</a></li>
+        <li><a href="yuri_guide.html">📜 백合 역사와 엄선 100선</a></li>
+        <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 술자리 게임 (Beta)</a></li>
+        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 매장 공략 note 목록</a></li>
+        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ 후원하기 (Buy Me a Coffee)</a></li>
+        <li><a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank">🐟 수족관·동물원 가이드</a></li>
+        <li><a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank">🏺 전통공예품 가이드</a></li>
     </ul>
 </nav>
 
 <a href="#" id="back-to-top">↑</a>
 
-<!-- 言語切り替えドロップダウン（他言語ファイルへジャンプするリンク方式） -->
+<!-- 언어 선택 드롭다운 -->
 <div class="lang-switcher">
-    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="言語を選択">
-        🌐 <span>日本語</span> ▼
+    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="언어 선택">
+        🌐 <span>한국어</span> ▼
     </button>
     <div id="lang-menu" class="lang-menu-content">
-        <a href="guide.html" class="lang-item active">🇯🇵 日本語</a>
+        <a href="guide.html" class="lang-item">🇯🇵 日本語</a>
         <a href="guide_en.html" class="lang-item">🇺🇸 English</a>
-        <a href="guide_ko.html" class="lang-item">🇰🇷 한국어</a>
-       </div>
+        <a href="guide_ko.html" class="lang-item active">🇰🇷 한국어</a>
+     </div>
 </div>
 
 <div class="container">
     <div class="header">
-        <h1>🤝 ビアンバー付き添い・案内</h1>
+        <h1>🤝 레즈비언 바 동행·안내 서비스</h1>
     </div>
 
     <div class="appeal-section">
-        <h2>新宿二丁目のレズビアンバー、<br>興味はあるけど不安ありませんか？</h2>
+        <h2>신주쿠 니쵸메의 레즈비언 바,<br>관심은 있지만 불안하신가요?</h2>
         
         <ul style="list-style: '・'; padding-left: 20px; font-size: 0.85rem; color: #ccd6f6; margin-top:15px;">
-            <li>一人で行って浮いたらどうしよう</li>
-            <li>常連ばかりで入りづらそう</li>
-            <li>誰にも話しかけられず終わりそう</li>
-            <li>店選びミスりたくない</li>
+            <li>혼자 가기엔 분위기에 겉돌까 봐 걱정된다</li>
+            <li>단골들만 있어서 들어가지 못할 것 같다</li>
+            <li>아무와도 대화하지 못하고 끝날 것 같다</li>
+            <li>나에게 맞지 않는 매장을 선택하고 싶지 않다</li>
         </ul>
         
-        <p style="margin-top:20px;">実際に行ってみると、こんなことが普通に起きます。</p>
+        <p style="margin-top:20px;">실제로 방문해 보면 이런 일들이 흔히 일어납니다.</p>
         <div class="highlight-box">
-            👉 テーブル席に座って会話ゼロで終わる<br>
-            👉 店の雰囲気が合わず気まずくなる<br>
-            👉 周りがグループばかりで詰む
+            👉 테이블석에 앉아 대화 한 마디 없이 끝남<br>
+            👉 매장 분위기가 맞지 않아 어색해짐<br>
+            👉 주변이 단체 손님뿐이라 고립됨
         </div>
 
-        <h3 style="color:#00ffcc; font-size:1rem; margin-top:25px;">✔️ その“失敗”を避けるための付き添いです</h3>
-        <p>ビアンバーを実際に回っている経験をもとに、以下のサポートを行います。</p>
+        <h3 style="color:#00ffcc; font-size:1rem; margin-top:25px;">✔️ 그런 "실패"를 방지하기 위한 동행 서비스입니다</h3>
+        <p>실제 레즈비언 바를 다수 탐방한 경험을 바탕으로 다음과 같이 지원해 드립니다.</p>
         <ul class="check-list">
-            <li>あなたに合うお店の選定</li>
-            <li>入り方や座る位置のサポート</li>
-            <li>会話のきっかけ作り</li>
-            <li>安心して楽しめる環境づくり</li>
+            <li>본인의 성향에 맞는 매장 선별</li>
+            <li>입장 및 좌석 선택 지원</li>
+            <li>대화의 물꼬를 터주는 서포트</li>
+            <li>안심하고 즐길 수 있는 환경 조성</li>
         </ul>
         <p style="font-weight:bold; color:#00ffcc; text-align:center; margin-top:15px; border:1px solid #00ffcc; padding:10px; border-radius:8px; font-size: 0.85rem;">
-            「初めてでも浮かずに楽しめる状態」を作るサポートです
+            "처음 방문해도 겉돌지 않고 즐길 수 있는 상태"를 만들어 드립니다
         </p>
 
         <div class="stats-box">
-            <strong>📊 実績・背景</strong><br>
-            ・レズビアンバー掲載サイト運営<br>
-            ・実地調査ベースで複数店舗訪問<br>
-            ・Xでバーマップ投稿が約8万閲覧
-            <span style="display:block; margin-top:5px; color:#00ffcc;">👉 情報だけでなく、実際の現場感ベースで案内します。</span>
+            <strong>📊 실적 및 배경</strong><br>
+            ・레즈비언 바 정보 사이트 운영<br>
+            ・현장 조사 기반의 다수 매장 방문 경험<br>
+            ・X(구 트위터) 바 지도 게시물 조회수 약 8만 회 달성
+            <span style="display:block; margin-top:5px; color:#00ffcc;">👉 단순 정보가 아닌, 실제 현장감을 바탕으로 안내합니다.</span>
         </div>
     </div>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=header" target="_blank" class="sub-cta-btn">
-        📋 今すぐGoogleフォームで申し込む
+        📋 Google 폼으로 신청하기
     </a>
 
     <div class="header" style="margin-top:20px;">
-        <h1 style="font-size: 1.1rem;">💡 プラン一覧</h1>
+        <h1 style="font-size: 1.1rem;">💡 플랜 안내</h1>
     </div>
 
     <div class="plan-grid">
         <div class="plan-card">
-            <h2>🛡️ ガード枠（初心者向け）</h2>
-            <div class="price-tag">3,000円 <span style="font-size:0.8rem;">(2時間)</span></div>
+            <h2>🛡️ 가드 플랜 (초보자용)</h2>
+            <div class="price-tag">3,000엔 <span style="font-size:0.8rem;">(2시간)</span></div>
             <div class="plan-desc">
-                1軒限定でお供します。隣でサポートしつつ、安心してお酒を楽しめる環境をサポートします。
+                1개 매장 한정 동행. 옆에서 편안하게 술을 즐길 수 있도록 지원해 드립니다.
             </div>
-            <p style="font-size:0.75rem; color:#00ffcc; margin-top:10px;">👉 「とりあえず一緒に入ってほしい人」向け</p>
+            <p style="font-size:0.75rem; color:#00ffcc; margin-top:10px;">👉 "우선 같이 입장해 주길 바라는 분" 추천</p>
         </div>
 
         <div class="plan-card">
-            <h2>🔍 マッチング（店選び込み）</h2>
-            <div class="price-tag">5,000円 <span style="font-size:0.8rem;">(3時間)</span></div>
+            <h2>🔍 매칭 플랜 (매장 추천 포함)</h2>
+            <div class="price-tag">5,000엔 <span style="font-size:0.8rem;">(3시간)</span></div>
             <div class="plan-desc">
-                事前ヒアリングを行い、あなたに合いそうなお店を選定・案内します。時間内なら何軒でもハシゴ可能です。
+                사전 상담을 통해 성향에 맞는 매장을 선별·안내합니다. 시간 내 여러 매장 이동(차시)도 가능합니다.
             </div>
-            <p style="font-size:0.75rem; color:#00ffcc; margin-top:10px;">👉 「どの店行けばいいか分からない人」向け</p>
+            <p style="font-size:0.75rem; color:#00ffcc; margin-top:10px;">👉 "어느 가게에 가야 할지 모르는 분" 추천</p>
         </div>
 
         <div class="plan-card">
-            <h2>🌙 見守りプラン（しっかりサポート）</h2>
-            <div class="price-tag">15,000円</div>
+            <h2>🌙 올나잇 플랜 (밀착 케어)</h2>
+            <div class="price-tag">15,000엔</div>
             <div class="plan-desc">
-                基本20:00〜翌5:00までしっかりサポート。複数店舗のハシゴも対応可能です。途中離脱もOK。
+                기본 20:00~이튿날 05:00까지 밀착 지원. 여러 매장 탐방이 가능하며, 중간 해산도 가능합니다.
             </div>
-            <p style="font-size:0.75rem; color:#00ffcc; margin-top:10px;">👉 「不安が強い・しっかり楽しみたい人」向け</p>
+            <p style="font-size:0.75rem; color:#00ffcc; margin-top:10px;">👉 "불안감이 크거나 제대로 즐기고 싶은 분" 추천</p>
         </div>
     </div>
 
     <div class="info-section">
-        <span class="info-title">🚃 交通費について</span>
+        <span class="info-title">🚃 교통비 안내</span>
         <ul>
-            <li>山手線沿線：一律 1,000円</li>
-            <li>都外・地方：要相談</li>
-            <li><strong>23時以降：安全確保のためタクシー代での計算となります。</strong></li>
+            <li>야마노테선沿線: 일률 1,000엔</li>
+            <li>도쿄 외/지방: 별도 협의</li>
+            <li><strong>23시 이후: 안전 확보를 위해 택시비로 청구됩니다.</strong></li>
         </ul>
     </div>
 
     <div class="info-section">
-        <span class="info-title">💰 お支払い・注意事項</span>
+        <span class="info-title">💰 결제 및 유의사항</span>
         <ul>
-            <li><strong>案内人の飲食代・交通費はすべて依頼主様のご負担となります。</strong></li>
-            <li>当日支払い（事前相談も可）。代金は入店前にお預かりします。</li>
-            <li>【キャンセル料】12時間前以降の直前キャンセルは全額請求となります。</li>
+            <li><strong>가이드의 식음료비 및 교통비는 전액 신청자 부담입니다.</strong></li>
+            <li>당일 결제(사전 협의 가능). 비용은 입점 전에 수령합니다.</li>
+            <li>【취소 수수료】약속 시간 12시간 전부터는 직전 취소로 간주되어 전액 청구됩니다.</li>
         </ul>
     </div>
 
     <div class="warning-box">
-        <h2>⚠️ 注意事項</h2>
+        <h2>⚠️ 주의사항</h2>
         <ul style="padding-left:15px;">
-            <li>20歳未満は付き添い不可。待ち合わせは公共の場を厳守。</li>
-            <li>恋愛・性的サービスは一切ありません。「案内人」としての同行です。</li>
-            <li>無断撮影・録音は禁止です。</li>
-            <li>トラブル防止のため、節度ある利用をお願いします。</li>
+            <li>만 20세 미만은 이용 불가합니다. 약속 장소는 공공장소로 엄수합니다.</li>
+            <li>연애 및 성적 서비스는 일절 제공하지 않으며, 순수한 "가이드" 동행입니다.</li>
+            <li>무단 촬영 및 녹음은 엄격히 금지됩니다.</li>
+            <li>트러블 방지를 위해 절제 있는 이용을 부탁드립니다.</li>
         </ul>
     </div>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=header" target="_blank" class="cta-btn">
-        🟢 申し込みフォームを開く
+        🟢 신청 폼 열기
     </a>
 
     <a href="https://x.com/412357siki" target="_blank" class="back-link" style="color: #00ffcc; text-decoration: underline; margin-top: 20px; font-weight: bold;">
-        ✉️ 不明点はXのDMでも対応可能です
+        ✉️ 궁금한 점은 X(트위터) DM으로 문의 가능합니다
     </a>
     
     <a href="index.html" class="back-link">
-        ← マップ一覧に戻る
+        ← 바 지도 목록으로 돌아가기
     </a>
 
     <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px;">
         <a href="cinema.html" style="color: #00ffcc; text-decoration: underline; font-weight: bold; background: rgba(0, 255, 204, 0.08); padding: 8px 16px; border-radius: 6px; border: 1px solid rgba(0, 255, 204, 0.3);">
-            🎞 女性同士の映画・ドラマガイド
+            🎞 여성 서사 영화·드라마 가이드
         </a>
     
         <a href="yuri_guide.html" style="color: #ffd700; text-decoration: underline; font-weight: bold; background: rgba(255, 215, 0, 0.08); padding: 8px 16px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.3);">
-            📜 百合漫画・小説100選
+            📜 백합 만화·소설 100선
         </a>
     </div>
 </div>
 
 <script>
-// サイドメニューの開閉
+// 사이드 메뉴 토글
 function toggleMenu() {
     document.getElementById('menu-toggle').classList.toggle('active');
     document.getElementById('side-menu').classList.toggle('active');
     document.getElementById('menu-overlay').classList.toggle('active');
 }
 
-// 言語メニューの表示切替
+// 언어 선택 드롭다운 토글
 function toggleLangMenu() {
     document.getElementById("lang-menu").classList.toggle("show");
 }
 
-// メニュー外クリックで閉じる処理
+// 메뉴 외부 클릭 시 닫기
 window.addEventListener('click', function(e) {
     const dropdown = document.querySelector('.lang-switcher');
     if (dropdown && !dropdown.contains(e.target)) {
@@ -444,7 +444,7 @@ window.addEventListener('click', function(e) {
     }
 });
 
-// トップへ戻るボタンの制御
+// 맨 위로 이동 버튼 제어
 window.onscroll = function() {
     const btn = document.getElementById('back-to-top');
     if (btn) {

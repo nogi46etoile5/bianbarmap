@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レズビアン・MIXバー攻略マップ｜全国のレズビアンバー体験レポ愁マップ</title>
-    <meta name="description" content="【新宿二丁目ほか】初めてでも「詰まない」お店選びと立ち回りガイド（随時更新）">
+    <title>Lesbian & MIX Bar Guide Map | Nationwide Lesbian Bar Experience Reports (SHU Map)</title>
+    <meta name="description" content="[Shinjuku Ni-chome & Beyond] A guide for first-timers to navigate and pick bars without getting stuck (Updated regularly)">
     <style>
-        /* --- 基本設定 --- */
-        body { background-color: #0a1428; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
+        /* --- Base Settings --- */
+        body { background-color: #0a1428; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
         
-        /* --- 言語切り替えドロップダウン --- */
+        /* --- Language Switcher Dropdown --- */
         .lang-switcher { position: relative; width: 90%; max-width: 600px; margin: 15px 0; display: flex; justify-content: flex-end; }
         .lang-dropdown-btn { background: #1a2a4a; border: 1px solid #00ffcc; color: #00ffcc; cursor: pointer; border-radius: 20px; padding: 6px 14px; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
         .lang-menu-content { display: none; position: absolute; right: 0; top: 110%; background-color: #1a2a4a; border: 1px solid #3a4a6a; min-width: 140px; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.5); z-index: 1001; overflow: hidden; }
@@ -17,23 +17,18 @@
         .lang-item { color: #ffffff; padding: 10px 15px; text-decoration: none; display: block; font-size: 0.8rem; font-weight: bold; transition: background 0.2s, color 0.2s; }
         .lang-item:hover { background-color: rgba(0, 255, 204, 0.1); color: #00ffcc; }
         .lang-item.active { background-color: #00ffcc; color: #0a1428; }
-        
-        .lang-en, .lang-en-block { display: none !important; }
-        body.en-mode .lang-jp { display: none !important; }
-        body.en-mode .lang-en { display: inline !important; }
-        body.en-mode .lang-en-block { display: block !important; }
 
         .site-header { text-align: center; padding: 40px 20px; width: 100%; }
         .site-header h1 { font-size: 1.8rem; font-weight: bold; background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
         .site-subtitle { font-size: 0.85rem; color: #ccd6f6; margin-top: 10px; display: block; }
 
-        .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; }
+        .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; box-sizing: border-box; }
         .guide-notes { font-size: 0.75rem; color: #ff4d4d; text-align: left; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-top: 15px; line-height: 1.6; border: 1px solid rgba(255, 77, 77, 0.3); }
 
-        /* Googleマップピン注意書き（Q&Aと色の説明の間に配置） */
+        /* Google Map Pin Notice */
         .map-top-notice { width: 90%; max-width: 600px; background: rgba(255, 183, 77, 0.1); border: 1px solid #ffb74d; border-radius: 10px; padding: 12px 16px; margin-bottom: 20px; font-size: 0.75rem; color: #ffb74d; line-height: 1.5; text-align: left; box-sizing: border-box; }
 
-        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; }
+        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; box-sizing: border-box; }
 
         .qa-section { width: 90%; max-width: 600px; margin-bottom: 20px; }
         .qa-item { background: rgba(255,255,255,0.05); border: 1px solid #2a3a5a; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
@@ -43,15 +38,15 @@
         .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.2); }
         .qa-answer-inner { padding: 12px 15px; font-size: 0.8rem; color: #ccd6f6; line-height: 1.5; }
 
-        .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; box-sizing: border-box; }
         .legend-box { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; border: 1px solid #2a3a5a; font-size: 0.7rem; }
         .legend-title { font-weight: bold; margin-bottom: 5px; color: #00ffcc; }
         .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
         .dot-l { width: 4px; height: 12px; }
         .dot-r { width: 10px; height: 10px; border-radius: 2px; }
 
-        /* 検索・フィルターエリア */
-        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
+        /* Search & Filter Area */
+        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; box-sizing: border-box; }
         .search-box-container { margin-bottom: 15px; text-align: center; }
         .search-input { width: 100%; max-width: 100%; padding: 10px 14px; border-radius: 20px; border: 1px solid #00ffcc; background: #1a2a4a; color: #fff; font-size: 0.85rem; box-sizing: border-box; outline: none; }
         .search-input::placeholder { color: #8892b0; }
@@ -64,24 +59,16 @@
         .shop-card { background: #162440; border-radius: 12px; overflow: hidden; border: 1px solid #2a3a5a; margin-bottom: 25px; display: none; position: relative; padding-left: 14px; border-right: 10px solid #2a3a5a; }
         .shop-card.show { display: block; }
         .shop-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; }
-        .border-l-h::before { background: #00ff00; } 
-        .border-l-a::before { background: #ff8c00; }
-        .border-l-gf::before { background: #ffd700; }
-        .border-l-fune::before { background: #00ffff; }
-        .border-l-b-l::before { background: linear-gradient(to bottom, #9d00ff 50%, #0000ff 50%); }
-        .border-l-b-g::before { background: linear-gradient(to bottom, #9d00ff 50%, #ff0000 50%); }
-        .border-r-bian { border-right-color: #ff69b4 !important; }
-        .border-r-mix { border-right-color: #4bc0c0 !important; }
 
         .shop-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
         .feature-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.7rem; color: #8892b0; }
         .feature-tags span { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; }
 
-        /* Googleマップリンクスタイリング */
+        /* Google Map Link Styling */
         .map-link { color: #00ffcc; text-decoration: underline; font-weight: bold; transition: opacity 0.2s; }
         .map-link:hover { opacity: 0.8; }
 
-        /* 記事プラットフォームボタン */
+        /* Article Platform Buttons */
         .action-buttons { display: flex; gap: 8px; width: 100%; margin-top: 12px; }
         .btn { flex: 1; padding: 12px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .btn-note { color: #ffffff; background: #233554; border: 1px solid #3a4a6a; }
@@ -90,17 +77,17 @@
         a { text-decoration: none !important; color: inherit; -webkit-tap-highlight-color: transparent; }
         .action-buttons a:focus, .action-buttons a:active { outline: none !important; box-shadow: none !important; }
         
-        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; }
+        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; box-sizing: border-box; }
         .footer-notice ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
         .footer-notice li { margin-bottom: 8px; line-height: 1.4; }
         
-        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; }
+        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; box-sizing: border-box; }
         .portfolio-card { flex: 1; background: #1a2a4a; padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; font-size: 0.75rem; text-align: center; border: 1px solid #3a4a6a; }
 
         #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         #back-to-top.show { opacity: 1; pointer-events: auto; }
 
-        /* ハンバーガーメニュー */
+        /* Hamburger Menu */
         #menu-toggle { position: fixed; top: 15px; left: 15px; width: 44px; height: 44px; background: #1a2a4a; border: 1px solid #00ffcc; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; z-index: 2000; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
         #menu-toggle span { display: block; width: 22px; height: 2px; background-color: #00ffcc; transition: all 0.3s ease; }
         #menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -124,173 +111,173 @@
 </head>
 <body>
 
-<!-- ハンバーガーメニューボタン -->
-<button id="menu-toggle" aria-label="メニューを開く" onclick="toggleMenu()">
+<!-- Hamburger Menu Button -->
+<button id="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
 </button>
 
-<!-- サイドバーメニュー本体 -->
+<!-- Side Menu Navigation -->
 <div id="menu-overlay" onclick="toggleMenu()"></div>
 <nav id="side-menu">
     <div class="menu-header">
-        <span>メニュー</span>
+        <span>Menu</span>
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 トップ・マップ</a></li>
-        <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
-        <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
-        <li><a href="cinema.html">🎬 百合・映画特集</a></li>
-        <li><a href="yuri_guide.html">📜 百合の歴史と厳選100選</a></li>
-        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 店舗攻略note一覧</a></li>
-        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ ご支援（Buy Me a Coffee）</a></li>
+        <li><a href="index_en.html">🏠 Home / Map</a></li>
+        <li><a href="guide_en.html">🤝 Escort & Guide Service</a></li>
+        <li><a href="system_guide_en.html">🔰 Beginner's Bar System Guide</a></li>
+        <li><a href="cinema_en.html">🎬 Yuri & Cinema Highlights</a></li>
+        <li><a href="yuri_guide_en.html">📜 History of Yuri & Top 100 Picks</a></li>
+        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 Bar Guides on note</a></li>
+        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Support Us (Buy Me a Coffee)</a></li>
     </ul>
 </nav>
 <a href="#" id="back-to-top">↑</a>
 
-<!-- 言語切り替えドロップダウン -->
+<!-- Language Switcher Dropdown -->
 <div class="lang-switcher">
     <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="Select Language">
-        🌐 <span>日本語</span> ▼
+        🌐 <span>English</span> ▼
     </button>
     <div id="lang-menu" class="lang-menu-content">
-        <a href="index.html" class="lang-item active">🇯🇵 日本語</a>
-        <a href="index_en.html" class="lang-item">🇺🇸 English</a>
+        <a href="index.html" class="lang-item">🇯🇵 日本語</a>
+        <a href="index_en.html" class="lang-item active">🇺🇸 English</a>
         <a href="index_ko.html" class="lang-item">🇰🇷 한국어</a>
-       </div>
+      </div>
 </div>
 
 <header class="site-header">
-    <h1>レズビアン・MIXバー攻略マップ｜全国のレズビアンバー体験レポ（愁マップ）</h1>
-    <span class="site-subtitle">【新宿二丁目ほか】初めてでも「詰まない」お店選びと立ち回りガイド（随時更新）</span>
+    <h1>Lesbian & MIX Bar Guide Map | SHU (愁) Map</h1>
+    <span class="site-subtitle">[Shinjuku Ni-chome & Beyond] A complete guide for first-timers to find the right bar with confidence (Updated regularly)</span>
 </header>
 
 <section class="guide-intro">
-    <h2>🤝 「一人で入って詰む」をゼロにする攻略ガイド</h2>
-    <p>二丁目や全国のバーに行ってみたいけれど、一人で入って会話ゼロになったらどうしよう…そんな不安を解消するための情報をまとめています。</p>
-    <p>管理人が実際に足を運び、リアルな空気感や立ち回りを調査。初めての入店・会話のきっかけ作りから、静かに自分時間を楽しむためのガイドまで、あなたの目的に合わせてサポートします。</p>
+    <h2>🤝 Eliminating the Fear of Walking in Alone</h2>
+    <p>Thinking about visiting Shinjuku Ni-chome or lesbian bars across Japan, but worried about sitting alone with no one to talk to? This guide is designed to solve that problem.</p>
+    <p>The creator personally visits each location to review the authentic atmosphere and local etiquette. Whether you want to break the ice easily on your first visit or find a quiet space to relax, we support your needs.</p>
 
     <div style="margin-top: 15px;">
         <div style="display: flex; gap: 10px; margin-top: 15px;">
-            <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">📝 店舗攻略note一覧</a>
-            <a href="guide.html" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">🤝 付き添い・ガイドを依頼する</a>
+            <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">📝 Bar Guide List (note)</a>
+            <a href="guide_en.html" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">🤝 Request a Local Guide</a>
         </div>
     </div>
 
     <div class="guide-notes">
-        ⚠️ <strong>注意事項</strong>：<br>
-        ・20歳未満不可 / 待ち合わせは公共の場を厳守 / 恋愛・性的サポートなし<br>
-        ・<strong>友達作り・コミュニティ探しのお手伝いは積極的に協力します！</strong><br>
-        ・許可のない撮影不可 / <strong>案内人の交通費・飲食代は依頼主負担</strong> となります<br>
-        ・その他のお問い合わせは <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X（@412357siki）のDM</a></strong> まで。
+        ⚠️ <strong>Important Rules & Notes</strong>:<br>
+        ・Must be 20+ years old / Meeting points strictly in public areas / No romantic or sexual services<br>
+        ・<strong>We actively assist with making friends and finding welcoming communities!</strong><br>
+        ・No photography without permission / <strong>Client covers guide's local travel and beverage costs</strong><br>
+        ・For inquiries, contact via <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X (Twitter) DM (@412357siki)</a></strong>.
     </div>
 </section>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">✨ スポンサー・掲載依頼（Googleフォーム）</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">✨ Sponsorship & Listing Request (Google Form)</a>
 
 <div style="margin: 20px 0; text-align: center;">
     <a href="https://buymeacoffee.com/syu_412357" target="_blank" style="display: block; padding: 15px; background: #00ffcc; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
-        ☕ 調査・運営を応援する（Buy Me a Coffee）
+        ☕ Support Our Field Research (Buy Me a Coffee)
     </a>
     <p style="font-size: 0.75rem; color: #ccd6f6; margin-top: 8px; padding: 0 10px;">
-        レズビアン向けバー調査の継続を応援する（自腹調査のため、ご支援いただけると助かります！）
+        Help support self-funded bar investigations and keep this guide active and up to date!
     </p>
 </div>
 
-<!-- Q&Aエリア -->
+<!-- FAQ / Q&A Section -->
 <section class="qa-section">
     <div class="qa-item">
-        <button class="qa-question" onclick="toggleQA(this)">❓ 初めての方へ（システム・立ち回りガイド）</button>
+        <button class="qa-question" onclick="toggleQA(this)">❓ First-Time Visitors (System & Etiquette Guide)</button>
         <div class="qa-answer"><div class="qa-answer-inner">
-            料金相場、チャージ、MIXバーの違い、入店マナーや服装など、よくある疑問をまとめて解説しています。<br>
-            <a href="system_guide.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">👉 初心者向けシステムガイドを見る</a>
+            Explaining average costs, cover charges, differences in MIX bars, dress codes, and basic etiquette.<br>
+            <a href="system_guide_en.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">👉 Read the Beginner's Bar System Guide</a>
         </div></div>
     </div>
 
     <div class="qa-item">
-        <button class="qa-question" onclick="toggleQA(this)">🤝 付き添い・ガイド依頼の使い方</button>
+        <button class="qa-question" onclick="toggleQA(this)">🤝 How to Use the Personal Escort & Guide Service</button>
         <div class="qa-answer"><div class="qa-answer-inner">
-            「一人で行くのが不安」「一緒に二丁目を回ってほしい」方向けに、案内人が現地同行・立ち回りサポートを行います。<br>
-            <a href="guide.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">👉 ガイド詳細・ご依頼の流れはこちら</a>
+            Feeling nervous going alone? A local guide will accompany you around Ni-chome to help you feel welcome.<br>
+            <a href="guide_en.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">👉 View Escort Service Details & Booking Process</a>
         </div></div>
     </div>
 </section>
 
-<!-- 【配置変更】質問（Q&A）の下、色の説明（凡例）の間に注意書きを移動 -->
+<!-- Google Maps Notice -->
 <div class="map-top-notice">
-    📍 <strong>Googleマップのピン位置に関するご注意</strong><br>
-    標準マップリンクはビルの階数や入口位置により、ピンがズレて表示される場合があります。正確なビル階数・位置情報は<a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="color:#00ffcc; text-decoration:underline;">ビアンバー一覧note（Googleマイマップ付）</a>にてご確認いただけます。
+    📍 <strong>Notice Regarding Google Maps Pins</strong><br>
+    Standard map links may slightly misalign depending on building floors or entrance locations. Precise floor numbers and detailed location info can be confirmed on our <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="color:#00ffcc; text-decoration:underline;">Lesbian Bar List Note (with Google My Maps)</a>.
 </div>
 
-<!-- 色の説明（凡例エリア） -->
+<!-- Legend Section -->
 <div class="legend-section">
     <div class="legend-box">
-        <div class="legend-title">左線：系列</div>
-        <div class="legend-item"><div class="dot-l" style="background:#00ff00;"></div><span>H系 / A系 <div class="dot-l" style="background:#ff8c00; display:inline-block; margin-left:5px;"></div></span></div>
-        <div class="legend-item"><div class="dot-l" style="background:#ffd700;"></div><span>GF系 / 船系 <div class="dot-l" style="background:#00ffff; display:inline-block; margin-left:5px;"></div></span></div>
-        <div class="legend-item"><div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #0000ff 50%);"></div><span>B系(L) / B系(G) <div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #ff0000 50%); display:inline-block; margin-left:5px;"></div></span></div>
+        <div class="legend-title">Left Bar: Group</div>
+        <div class="legend-item"><div class="dot-l" style="background:#00ff00;"></div><span>H Group / A Group <div class="dot-l" style="background:#ff8c00; display:inline-block; margin-left:5px;"></div></span></div>
+        <div class="legend-item"><div class="dot-l" style="background:#ffd700;"></div><span>GF Group / Fune Group <div class="dot-l" style="background:#00ffff; display:inline-block; margin-left:5px;"></div></span></div>
+        <div class="legend-item"><div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #0000ff 50%);"></div><span>B Group(L) / B Group(G) <div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #ff0000 50%); display:inline-block; margin-left:5px;"></div></span></div>
     </div>
     <div class="legend-box">
-        <div class="legend-title">右線：種別</div>
-        <div class="legend-item"><div class="dot-r" style="background:#ff69b4;"></div><span>ビアン専用</span></div>
-        <div class="legend-item"><div class="dot-r" style="background:#4bc0c0;"></div><span>MIXバー</span></div>
+        <div class="legend-title">Right Bar: Type</div>
+        <div class="legend-item"><div class="dot-r" style="background:#ff69b4;"></div><span>Lesbian Only</span></div>
+        <div class="legend-item"><div class="dot-r" style="background:#4bc0c0;"></div><span>MIX Bar</span></div>
     </div>
 </div>
 
-<!-- 検索・フィルターエリア -->
+<!-- Search & Filter Area -->
 <section class="filter-section">
     <div class="search-box-container">
-        <input type="text" id="search-input" class="search-input" placeholder="🔍 店名・都道府県（例: 大阪、新宿）で検索..." oninput="onSearchInput()">
+        <input type="text" id="search-input" class="search-input" placeholder="🔍 Search by bar name or area (e.g., Osaka, Shinjuku)..." oninput="onSearchInput()">
     </div>
 
     <div id="area-filter-container" class="area-filter">
-        <button class="area-btn" onclick="filterArea('東日本', this)">東日本</button>
-        <button class="area-btn" onclick="filterArea('東京', this)">東京</button>
-        <button class="area-btn" onclick="filterArea('名古屋', this)">名古屋</button>
-        <button class="area-btn" onclick="filterArea('大阪', this)">大阪</button>
-        <button class="area-btn" onclick="filterArea('西日本', this)">西日本</button>
+        <button class="area-btn" onclick="filterArea('東日本', this)">East Japan</button>
+        <button class="area-btn" onclick="filterArea('東京', this)">Tokyo</button>
+        <button class="area-btn" onclick="filterArea('名古屋', this)">Nagoya</button>
+        <button class="area-btn" onclick="filterArea('大阪', this)">Osaka</button>
+        <button class="area-btn" onclick="filterArea('西日本', this)">West Japan</button>
     </div>
 
     <div id="filter-container" class="tag-filter">
-        <button class="tag-btn" onclick="filterTag('カフェ', this)">#カフェ</button>
-        <button class="tag-btn" onclick="filterTag('外国人多い', this)">#外国人多い</button>
-        <button class="tag-btn" onclick="filterTag('ノーチャージ', this)">#ノーチャージ</button>
-        <button class="tag-btn" onclick="filterTag('英語対応', this)">#英語対応</button>
-        <button class="tag-btn" onclick="filterTag('カラオケ', this)">#カラオケ</button>
-        <button class="tag-btn" onclick="filterTag('喫煙可', this)">#喫煙可</button>
-        <button class="tag-btn" onclick="filterTag('初心者向け', this)">#初心者向け</button>
-        <button class="tag-btn" onclick="filterTag('初心者多め', this)">#初心者多め</button>
-        <button class="tag-btn" onclick="filterTag('年齢層高め', this)">#年齢層高め</button>
-        <button class="tag-btn" onclick="filterTag('穏やか', this)">#穏やか</button>
-        <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#盛り上がる</button>
-        <button class="tag-btn" onclick="filterTag('お通し有', this)">#お通し有</button>
-        <button class="tag-btn" onclick="filterTag('フード有', this)">#フード有</button>
-        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)">#変わったリキュール有</button>
-        <button class="tag-btn" onclick="filterTag('イベント多い', this)">#イベント多い</button>
-        <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)">#ボトルキープ有</button>
-        <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)">#持ち込み食べ物可</button>
-        <button class="tag-btn" onclick="filterTag('間借り', this)">#間借り営業</button>
-        <button class="tag-btn" onclick="filterTag('不定期オープン', this)">#不定期（SNS確認）</button>
+        <button class="tag-btn" onclick="filterTag('カフェ', this)">#Cafe</button>
+        <button class="tag-btn" onclick="filterTag('外国人多い', this)">#PopularWithForeigners</button>
+        <button class="tag-btn" onclick="filterTag('ノーチャージ', this)">#NoCoverCharge</button>
+        <button class="tag-btn" onclick="filterTag('英語対応', this)">#EnglishFriendly</button>
+        <button class="tag-btn" onclick="filterTag('カラオケ', this)">#Karaoke</button>
+        <button class="tag-btn" onclick="filterTag('喫煙可', this)">#SmokingAllowed</button>
+        <button class="tag-btn" onclick="filterTag('初心者向け', this)">#BeginnerFriendly</button>
+        <button class="tag-btn" onclick="filterTag('初心者多め', this)">#ManyBeginners</button>
+        <button class="tag-btn" onclick="filterTag('年齢層高め', this)">#MatureCrowd</button>
+        <button class="tag-btn" onclick="filterTag('穏やか', this)">#ChillAtmosphere</button>
+        <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#Lively</button>
+        <button class="tag-btn" onclick="filterTag('お通し有', this)">#TableSnackServed</button>
+        <button class="tag-btn" onclick="filterTag('フード有', this)">#FoodMenu</button>
+        <button class="tag-btn" onclick="filterTag('変わったリキュール有', this)">#UniqueLiquors</button>
+        <button class="tag-btn" onclick="filterTag('イベント多い', this)">#FrequentEvents</button>
+        <button class="tag-btn" onclick="filterTag('ボトルキープ有', this)">#BottleKeepAvailable</button>
+        <button class="tag-btn" onclick="filterTag('持ち込み食べ物可', this)">#FoodBYOAllowed</button>
+        <button class="tag-btn" onclick="filterTag('間借り', this)">#PopUpLocation</button>
+        <button class="tag-btn" onclick="filterTag('不定期オープン', this)">#CheckSNSForHours</button>
     </div>
 </section>
 
-<!-- お店リスト表示エリア -->
+<!-- Shop List Container -->
 <div id="shop-container"></div>
 
 <footer class="footer-notice">
-    <strong>免責事項</strong>
+    <strong>Disclaimer</strong>
     <ul>
-        <li>・掲載情報は案内人の実体験や調査時点のものです。最新情報は各店舗のSNS等でご確認ください。</li>
-        <li>・情報の誤りや削除依頼はX（@412357siki）のDMまでお願いいたします。</li>
-        <li>・当サイトの利用により生じたトラブルについては責任を負いかねます。</li>
+        <li>・Information listed is based on personal experiences and field research at the time of writing. Please check official SNS for real-time updates.</li>
+        <li>・For corrections or removal requests, please contact via X (Twitter) DM (@412357siki).</li>
+        <li>・We take no responsibility for any issues or disputes arising from the use of this website.</li>
     </ul>
 </footer>
 
 <div class="portfolio-section">
-    <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="portfolio-card">🐟 水族館巡り</a>
-    <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" class="portfolio-card">🏺 伝統的工芸品</a>
+    <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="portfolio-card">🐟 Aquarium Directory</a>
+    <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" class="portfolio-card">🏺 Traditional Crafts</a>
 </div>
 
 <script src="data.js"></script>
@@ -319,26 +306,50 @@ window.addEventListener('click', function(e) {
 });
 
 const tagMap = {
-    'カフェ': 'カフェ',
-    '外国人多い': '外国人多い',
-    'ノーチャージ': 'ノーチャージ',
-    '英語対応': '英語対応',
-    'カラオケ': 'カラオケ',
-    '喫煙可': '喫煙可',
-    '初心者向け': '初心者向け',
-    '初心者多め': '初心者多め',
-    '年齢層高め': '年齢層高め',
-    '穏やか': '穏やか',
-    '盛り上がる': '盛り上がる',
-    'お通し有': 'お通し有',
-    'フード有': 'フード有',
-    '変わったリキュール有': '変わったリキュール有',
-    'イベント多い': 'イベント多い',
-    'ボトルキープ有': 'ボトルキープ有',
-    '持ち込み食べ物可': '持ち込み食べ物可',
-    '間借り': '間借り営業',
-    '不定期オープン': '不定期（SNS確認）'
+    'カフェ': 'Cafe',
+    '外国人多い': 'PopularWithForeigners',
+    'ノーチャージ': 'NoCoverCharge',
+    '英語対応': 'EnglishFriendly',
+    'カラオケ': 'Karaoke',
+    '喫煙可': 'SmokingAllowed',
+    '初心者向け': 'BeginnerFriendly',
+    '初心者多め': 'ManyBeginners',
+    '年齢層高め': 'MatureCrowd',
+    '穏やか': 'ChillAtmosphere',
+    '盛り上がる': 'Lively',
+    'お通し有': 'TableSnackServed',
+    'フード有': 'FoodMenu',
+    '変わったリキュール有': 'UniqueLiquors',
+    'イベント多い': 'FrequentEvents',
+    'ボトルキープ有': 'BottleKeepAvailable',
+    '持ち込み食べ物可': 'FoodBYOAllowed',
+    '間借り': 'PopUpLocation',
+    '不定期オープン': 'CheckSNSForHours'
 };
+
+// 実データ表記（月曜, 火曜..., 不定休）に合わせた英語翻訳関数
+function translateHoliday(str) {
+    if (!str) return 'Open Daily';
+    
+    const dayMap = {
+        '月曜': 'Mon',
+        '火曜': 'Tue',
+        '水曜': 'Wed',
+        '木曜': 'Thu',
+        '金曜': 'Fri',
+        '土曜': 'Sat',
+        '日曜': 'Sun',
+        '不定休': 'Irregular'
+    };
+    
+    let translated = str;
+    for (const [jp, en] of Object.entries(dayMap)) {
+        translated = translated.replaceAll(jp, en);
+    }
+    
+    // 万が一「曜」単体が残るのを防止するクリーンアップ
+    return translated.replace(/曜/g, "");
+}
 
 let currentArea = null;
 let currentTag = null;
@@ -406,8 +417,8 @@ function displayShops() {
         
         let matchKeyword = true;
         if (currentSearchKeyword) {
-            const name = (shop.name_jp || "").toLowerCase();
-            const address = (shop.address_jp || "").toLowerCase();
+            const name = (shop.name_en || shop.name_jp || "").toLowerCase();
+            const address = (shop.address_en || shop.address_jp || "").toLowerCase();
             const tags = (shop.tags || []).join(" ").toLowerCase();
             matchKeyword = name.includes(currentSearchKeyword) || address.includes(currentSearchKeyword) || tags.includes(currentSearchKeyword);
         }
@@ -416,34 +427,40 @@ function displayShops() {
     });
 
     filteredShops.forEach((shop, index) => {
+        // 5件ごとに挿入される百合作品広告
         if (index > 0 && index % 5 === 0 && allYuriWorks.length > 0) {
             const shuffled = [...allYuriWorks].sort(() => 0.5 - Math.random());
             const selected = shuffled.slice(0, 3);
             const adHtml = `
                 <div style="margin: 20px 10px; padding: 18px; border-radius: 15px; background: linear-gradient(135deg, #fffcf5 0%, #fdf2f4 100%); border: 1px solid #eecaca; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                     <div style="text-align: center; margin-bottom: 12px;">
-                        <span style="color: #8e3a46; font-weight: bold; font-size: 0.85rem;">🌹 至高の百合：今すぐチェックしたい名作</span>
+                        <span style="color: #8e3a46; font-weight: bold; font-size: 0.85rem;">🌹 Featured Yuri Masterpieces</span>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
-                        ${selected.map(work => `
+                        ${selected.map(work => {
+                            const title = work.en_t || work.t_en || work.t;
+                            const author = work.en_a || work.a_en || work.a;
+                            const amazonUrl = work.amz;
+                            return `
                             <div style="background: rgba(255,255,255,0.85); padding: 12px; border-radius: 10px; border: 1px solid rgba(142,58,70,0.15);">
                                 <div style="font-size: 0.9rem; font-weight: bold; color: #2c2c2c; margin-bottom: 8px;">
-                                    ${work.t}
-                                    <span style="display:block; font-size:0.7rem; color:#8e3a46; font-weight:normal; margin-top:2px;">著者: ${work.a}</span>
+                                    ${title}
+                                    <span style="display:block; font-size:0.7rem; color:#8e3a46; font-weight:normal; margin-top:2px;">Author: ${author}</span>
                                 </div>
                                 <div style="display: flex; gap: 8px;">
-                                    <a href="${work.amz}" target="_blank" rel="nofollow" style="flex:1; background:#232f3e; color:white; text-decoration:none; padding:10px 0; border-radius:6px; font-size:0.75rem; font-weight:bold; text-align:center;">Amazon</a>
+                                    <a href="${amazonUrl}" target="_blank" rel="nofollow" style="flex:1; background:#232f3e; color:white; text-decoration:none; padding:10px 0; border-radius:6px; font-size:0.75rem; font-weight:bold; text-align:center;">Buy on Amazon</a>
                                 </div>
                             </div>
-                        `).join('')}
+                            `;
+                        }).join('')}
                     </div>
                     <div style="text-align: center; margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(142,58,70,0.2);">
-                        <a href="yuri_guide.html" style="font-size: 0.8rem; color: #8e3a46; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">
-                            <span>📜 百合の歴史と厳選100選を詳しく見る</span>
+                        <a href="yuri_guide_en.html" style="font-size: 0.8rem; color: #8e3a46; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <span>📜 Explore Yuri History & Top 100 Selections</span>
                             <span style="font-size: 0.6rem;">▶</span>
                         </a>
-                        <a href="cinema.html" style="font-size: 0.8rem; color: #3d4a6b; background: rgba(61, 74, 107, 0.06); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(61, 74, 107, 0.2); margin-top: 8px;">
-                            <span>🎬 女性同士の実写映画・ドラマ厳選50選</span>
+                        <a href="cinema_en.html" style="font-size: 0.8rem; color: #3d4a6b; background: rgba(61, 74, 107, 0.06); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(61, 74, 107, 0.2); margin-top: 8px;">
+                            <span>🎬 Top 50 Live-Action Lesbian Movies & Dramas</span>
                             <span style="font-size: 0.7rem;">▶</span>
                         </a>
                     </div>
@@ -481,18 +498,18 @@ function displayShops() {
             card.style.borderRight = "15px solid #4bc0c0";
         }
       
-        const dName = shop.name_jp;
-        const dAddress = shop.address_jp || '住所不明';
-        const dDesc = shop.description_jp || '現在調査中です。';
-        const dHoliday = shop.holiday || '不明';
+        const dName = shop.name_en || shop.name_jp;
+        const dAddress = shop.address_en || shop.address_jp || 'Address unavailable';
+        const dDesc = shop.description_en || shop.description_jp || 'Currently under research.';
+        
+        // 定休日（holiday_en優先、無ければtranslateHolidayを通す）
+        const dHoliday = shop.holiday_en ? shop.holiday_en : translateHoliday(shop.holiday);
 
-        // Googleマップリンクの生成
-        const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(dName + ' ' + dAddress)}`;
+        const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((shop.name_jp || dName) + ' ' + (shop.address_jp || dAddress))}`;
 
-        // 訪問履歴（初回訪問・徹底調査済など）の判定・表示ロジック
         let checkLabel = "";
         if (shop.lastCheck && shop.checkLevel !== 'ongoing') {
-            const levelText = shop.checkLevel === 'thorough' ? '✅ 徹底調査済' : '💡 初回訪問済';
+            const levelText = shop.checkLevel === 'thorough' ? '✅ Thoroughly Surveyed' : '💡 Visited';
             const displayDate = shop.lastCheck.replace(/-/g, '/');
             
             checkLabel = `
@@ -529,10 +546,10 @@ function displayShops() {
                             <a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a>
                         </div>
                         <div style="font-size:0.75rem; color:#ccd6f6;">
-                            <a href="${googleMapUrl}" target="_blank" class="map-link" title="Googleマップで開く">📍 ${dAddress}</a>
+                            <a href="${googleMapUrl}" target="_blank" class="map-link" title="Open in Google Maps">📍 ${dAddress}</a>
                         </div>
                         <div style="font-size:0.7rem; color:#ccd6f6; margin-top:4px;">🕒 ${shop.time || '---'}</div>
-                        <div style="font-size:0.7rem; color:#ccd6f6;">🗓️ 定休日: ${dHoliday}</div>
+                        <div style="font-size:0.7rem; color:#ccd6f6;">🗓️ Closed: ${dHoliday}</div>
                         <div class="feature-tags" style="margin-top:8px;">${dTags}</div>
                     </div>
                 </div>
@@ -541,7 +558,7 @@ function displayShops() {
                     <div style="font-size:0.8rem; color:#ccd6f6; line-height:1.6; text-align:justify;">${dDesc}</div>
                 </div>
                 <div class="action-buttons">
-                    ${showNote ? `<a href="${shop.note}" class="btn btn-note" target="_blank">📝 攻略記事を読む（note）</a>` : `<span class="btn btn-disabled">記事準備中</span>`}
+                    ${showNote ? `<a href="${shop.note}" class="btn btn-note" target="_blank">📝 Read Guide Article (note)</a>` : `<span class="btn btn-disabled">Guide Coming Soon</span>`}
                 </div>
             </div>`;
         container.appendChild(card);
