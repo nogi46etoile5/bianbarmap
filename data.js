@@ -1,11 +1,25 @@
 const shopDetails = [
 
-        {
-            name_jp: "villain", name_en: "villain", name_ko: "빌런 (villain)", type: "MIX", area: "東京", xId: "@bar_villains", snsUrl: "https://x.com/bar_villains", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-16セントフォービル901", address_en: "901, St. Four Bldg, 2-12-16 Shinjuku, Tokyo", address_ko: "도쿄도 신주쿠구 신주쿠 2초메 12-16 센트포 빌딩 901", tags: ["カラオケ", "喫煙可", "穏やか", "初心者向け", "フード有", "盛り上がる", "持ち込み食べ物可", "ボトルキープ有","イベント多い"], icon: "https://unavatar.io/twitter/bar_villains", note: "https://note.com/412357siki/n/n38c28960b68b", medium: "#", lastCheck: "2025", checkLevel: "thorough",
-            description_jp: "二丁目の中心にあるビルの9階。ダーツやカラオケが楽しめ、ソファ席でゆったり朝まで過ごせるMIXバーです。",
-            description_en: "Located on the 9th floor in the heart of Ni-chome. A MIX bar with darts and karaoke where you can relax on sofas until morning.",
-            description_ko: "신주쿠 2초메 중심부에 있는 빌딩 9층. 다트와 가라오케를 즐길 수 있으며, 소파 좌석에서 편안하게 아침まで 보낼 수 있는 MIX 바입니다."
+ 
+        { 
+            name_jp: "Gray.", name_en: "Gray.", name_ko: "그레이 (Gray.)", type: "MIX", area: "東日本", xId: "@LGBTQbar_Gray", snsUrl: "https://x.com/LGBTQbar_Gray", time: "18:00〜", holiday: "木曜", address_jp: "新潟県新潟市中央区弁天1-2-21 駅前アイエヌジービル 2階", address_en: "Ekimae ING Bldg. 2F, 1-2-21 Benten, Chuo-ku, Niigata-shi, Niigata", address_ko: "니가타현 니가타시 주오구 본텐 1-2-21 에키마에 ING 빌딩 2F", tags: [ "変わったリキュール有", "フード有", "喫煙可" ], icon: "https://unavatar.io/twitter/LGBTQbar_Gray", note: "#", medium: "#",
+            description_jp: "未訪問、現在調査中訪問次第載せます。",
+            description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+            description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
         },
+        { 
+            name_jp: "BLACK SHEEP", name_en: "BLACK SHEEP", name_ko: "블랙 십 (BLACK SHEEP)", type: "MIX", area: "東日本", xId: "@BS072421716", snsUrl: "https://x.com/BS072421716", time: "20:00〜27:00（日曜14:00〜22:00）", holiday: "月曜", address_jp: "新潟県新潟市中央区弁天3-2-19", address_en: "3-2-19 Benten, Chuo-ku, Niigata-shi, Niigata", address_ko: "니가타현 니가타시 주오구 본텐 3-2-19", tags: [ "フード有", "変わったリキュール有" ], icon: "https://unavatar.io/twitter/BS072421716", note: "#", medium: "#",
+            description_jp: "未訪問、現在調査中訪問次第載せます。",
+            description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+            description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+        },
+        { 
+            name_jp: "SKETCH スケッチ", name_en: "SKETCH", name_ko: "스케치 (SKETCH)", type: "ビアン", area: "東日本", xId: "@sketch_1104", snsUrl: "https://x.com/sketch_1104", time: "20:00〜3:00", holiday: "水曜", address_jp: "新潟県新潟市中央区弁天3-2-24", address_en: "3-2-24 Benten, Chuo-ku, Niigata-shi, Niigata", address_ko: "니가타현 니가타시 주오구 본텐 3-2-24", tags: [ "穏やか", "ボトルキープ有" ], icon: "https://unavatar.io/twitter/sketch_1104", note: "#", medium: "#",
+            description_jp: "未訪問、現在調査中訪問次第載せます。",
+            description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+            description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+        },
+
         {
             name_jp: "Bar LEGO", name_en: "Bar LEGO", name_ko: "Bar LEGO", type: "ビアン", area: "東日本", xId: "websiteのみ", snsUrl: "http://r.goope.jp/bar-lego/", time: "19:00〜27:00", holiday: "日曜", address_jp: "北海道札幌市中央区南5条西6丁目9番地第５桂和ビル４F", address_en: "4F, Dai-5 Keiwa Bldg, 5-6 Minami 5-jo Nishi, Chuo-ku, Sapporo, Hokkaido", address_ko: "훗카이도 삿포로시 주오구 미나미 5조 니시 6초메 9번지 제5 게이와 빌딩 4F", tags: ["穏やか", "フード有"], icon: "website", note: "#", medium: "#",
             description_jp: "未訪問、現在調査中訪問次第載せます。",
@@ -17,6 +31,12 @@ const shopDetails = [
             description_jp: "未訪問、現在調査中訪問次第載せます。",
             description_en: "Coming soon! (I haven't visited yet, but planning to!).",
             description_ko: "미방문,現在調査中訪問次第載せます。"
+        },
+        { 
+            name_jp: "a.B（エービー）", name_en: "a.B", name_ko: "에이비 (a.B)", type: "ビアン", area: "東日本", xId: "@aB_sendai", snsUrl: "https://x.com/aB_sendai", time: "19:00〜1:00（日曜19:00〜23:00）", holiday: "月曜", address_jp: "宮城県仙台市青葉区国分町2丁目7-2 TONEYAビル3F", address_en: "TONEYA Bldg. 3F, 2-7-2 Kokubuncho, Aoba-ku, Sendai-shi, Miyagi", address_ko: "미야기현 센다이시 아오바구 고쿠분초 2-7-2 TONEYA 빌딩 3F", tags: [ "盛り上がる", "カラオケ有",  ], icon: "https://unavatar.io/twitter/aB_sendai", note: "#", medium: "#",
+            description_jp: "未訪問、現在調査中訪問次第載せます。",
+            description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+            description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
         },
         {
             name_jp: "bar 飲ノンキ喜", name_en: "bar nonki", name_ko: "bar 飲ノンキ喜", type: "ビアン", area: "東日本", xId: "@karaokebarnonki", snsUrl: "https://x.com/karaokebarnonki", time: "20:00〜last", holiday: "火曜", address_jp: "北海道札幌市中央区南5条西5丁目21-3 ", address_en: "21-3, Minami 5-jo Nishi 5-chome, Chuo-ku, Sapporo, Hokkaido", address_ko: "훗카이도 삿포로시 주오구 미나미 5조 니시 5초메 21-3", tags: ["盛り上がる", "カラオケ"], icon: "https://unavatar.io/twitter/karaokebarnonki", note: "#", medium: "#",
@@ -291,6 +311,12 @@ const shopDetails = [
     description_en: "On the 4th floor of a unique-looking building. Features a beautiful white-themed interior with a U-shaped counter. Be brave and head to the back elevator!",
     description_ko: "독특한 외관의 빌딩 4층. 화이트톤의 깔끔한 실내에 'ㄷ'자형 바 테이블이 특징입니다. 용기를 내어 안쪽 엘리베이터로!"
 },
+{
+    name_jp: "villain", name_en: "villain", name_ko: "빌런 (villain)", type: "MIX", area: "東京", xId: "@bar_villains", snsUrl: "https://x.com/bar_villains", time: "21:00〜9:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-12-16セントフォービル901", address_en: "901, St. Four Bldg, 2-12-16 Shinjuku, Tokyo", address_ko: "도쿄도 신주쿠구 신주쿠 2초메 12-16 센트포 빌딩 901", tags: ["カラオケ", "喫煙可", "穏やか", "初心者向け", "フード有", "盛り上がる", "持ち込み食べ物可", "ボトルキープ有","イベント多い"], icon: "https://unavatar.io/twitter/bar_villains", note: "https://note.com/412357siki/n/n38c28960b68b", medium: "#", lastCheck: "2025", checkLevel: "thorough",
+    description_jp: "二丁目の中心にあるビルの9階。ダーツやカラオケが楽しめ、ソファ席でゆったり朝まで過ごせるMIXバーです。",
+    description_en: "Located on the 9th floor in the heart of Ni-chome. A MIX bar with darts and karaoke where you can relax on sofas until morning.",
+    description_ko: "신주쿠 2초메 중심부에 있는 빌딩 9층. 다트와 가라오케를 즐길 수 있으며, 소파 좌석에서 편안하게 아침まで 보낼 수 있는 MIX 바입니다."
+},
 { 
     name_jp: "BELLUS", name_en: "BELLUS", name_ko: "벨루스 (BELLUS)", type: "MIX", area: "東京", xId: "@BELLUS2023", snsUrl: "https://x.com/BELLUS2023", time: "21:00〜27:00", holiday: "不定休", address_jp: "東京都新宿区新宿2丁目-18-10", address_en: "2-18-10 Shinjuku, Tokyo", address_ko: "도쿄도 신주쿠구 신주쿠 2초메 18-10", tags: ["カラオケ", "変わったリキュール有", "穏やか", "持ち込み食べ物可"], icon: "https://unavatar.io/twitter/BELLUS2023", note: "https://note.com/preview/n8853dc3b402e?prev_access_key=d58ce14161c199e722a1d6f22c5e6c50", medium: "#",lastCheck: "2026-01", checkLevel: "thorough",
     description_jp: "駐車場前の超コンパクトなお店。カウンター数席のみの密な空間で、まったりカラオケも楽しめます。",
@@ -399,6 +425,7 @@ const shopDetails = [
     description_en: "Coming soon! (I haven't visited yet, but planning to!).",
     description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
 },
+
 { 
     name_jp: "酒と肴やぶれ", name_en: "Yabure", name_ko: "사케토 사카나 야부레 (酒と肴やぶれ)", type: "ビアン", area: "西日本", xId: "@yabure1911", snsUrl: "https://x.com/yabure1911", time: "17:00〜23:00,17:00~24:00", holiday: "不定休", address_jp: "福岡県福岡市中央区今泉1-23-4 REMIX天神2F", address_en: "2F REMIX Tenjin, 1-23-4 Imaizumi, Chuo-ku, Fukuoka-shi, Fukuoka", address_ko: "후쿠오카현 후쿠오카시 주오구 이마이즈미 1-23-4 REMIX 텐진 2F", tags: ["初心者向け", "穏やか", "フード有"], icon: "https://unavatar.io/twitter/yabure1911", note: "#", medium: "#",
     description_jp: "未訪問、現在調査中訪問次第載せます。",
@@ -434,6 +461,12 @@ const shopDetails = [
     description_jp: "未訪問、現在調査中訪問次第載せます。月一回のレズビアンバー",
     description_en: "Coming soon! (I haven't visited yet, but planning to!)This is a MIX bar that hosts a monthly Lesbian-only night. Check SNS for dates!.",
     description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다. 한 달에 한 번 열리는 레즈비언 바."
+},
+{ 
+    name_jp: "Polaris ポラリス", name_en: "Polaris", name_ko: "폴라리스 (Polaris)", type: "MIX", area: "西日本", xId: "@polaris_jem", snsUrl: "https://x.com/polaris_jem", time: "20:00〜last", holiday: "不定休", address_jp: "岡山県岡山市北区錦町3-2 YAビル 3F", address_en: "YA Bldg. 3F, 3-2 Nishikicho, Kita-ku, Okayama-shi, Okayama", address_ko: "오카야마현 오카야마시 기타구 니시키초 3-2 YA 빌딩 3F", tags: [ "カラオケ", "初心者向け", "持ち込み食べ物可" ], icon: "https://unavatar.io/twitter/polaris_jem", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
 },
 { 
     name_jp: "BAR WHITE", name_en: "BAR WHITE", name_ko: "바 화이트 (BAR WHITE)", type: "ビアン", area: "西日本", xId: "instagramのみ", snsUrl: "https://www.instagram.com/bar_white88", time: "20:00〜last", holiday: "確認中", address_jp: "熊本県熊本市中央区南坪井町2-20歩小路ﾋﾞﾙ3F(上乃裏)⁡⁡⁡", address_en: "Arukōji Building 3F, 2-20 Minamitsuboi-machi, Chūō-ku, Kumamoto-shi, Kumamoto (Kaminoura)", address_ko: "구마모토현 구마모토시 주오구 미나미쓰보이마치 2-20 아루코지 빌딩 3F (가미노우라)", tags: [ "穏やか", ], icon: "instagram", note: "#", medium: "#",
