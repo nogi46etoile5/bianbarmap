@@ -425,7 +425,156 @@ const shopDetails = [
     description_en: "Coming soon! (I haven't visited yet, but planning to!).",
     description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
 },
-
+{ 
+    name_jp: "エリア1", name_en: "Area 1", name_ko: "에리어 1 (Area 1)", type: "ビアン", area: "大阪", xId: "@seik963", snsUrl: "https://x.com/seik963", time: "要確認（X参照）", holiday: "要確認（X参照）", address_jp: "大阪府大阪市北区堂山町2-8 大扇レジャービル 2階", address_en: "Daisen Leisure Bldg. 2F, 2-8 Doyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 도야마초 2-8 다이센 레저 빌딩 2F", tags: [ "穏やか" ], icon: "https://unavatar.io/twitter/seik963", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "虹-niji-", name_en: "NIJI", name_ko: "니지 (NIJI)", type: "ビアン", area: "大阪", xId: "@njhgskw", snsUrl: "https://x.com/njhgskw", time: "18:00〜1:00", holiday: "木曜", address_jp: "大阪府大阪市北区神山町8-7 日宝サンライズタウン 5F", address_en: "Nippo Sunrise Town 5F, 8-7 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-7 닛포 선라이즈 타운 5F", tags: [ "初心者向け", "穏やか", "イベント多い" ], icon: "https://unavatar.io/twitter/njhgskw", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문する대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "檸檬", name_en: "Lemon", name_ko: "레몬 (Lemon)", type: "ビアン", area: "大阪", xId: "@cafe_barLemon", snsUrl: "https://x.com/cafe_barLemon", time: "18:00〜", holiday: "不定休（X参照）", address_jp: "大阪府大阪市中央区宗右衛門町2-30 三ツ寺ギャラクシービル1号館 6F", address_en: "Mitsudera Galaxy Bldg. Bldg 1 6F, 2-30 Soemoncho, Chuo-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 주오구 소에몬초 2-30 미츠데라 갤러시 빌딩 1호관 6F", tags: [ "穏やか", "フード有", "カフェ" ], icon: "https://unavatar.io/twitter/cafe_barLemon", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "呑ム処ムル", name_en: "Mul", name_ko: "무루 (Mul)", type: "MIX", area: "大阪", xId: "@mul_nomutokoro", snsUrl: "https://x.com/mul_nomutokoro", time: "要確認（X参照）", holiday: "不定休", address_jp: "大阪府大阪市北区神山町8-7 日宝サンライズタウンビル 4F", address_en: "Nippo Sunrise Town Bldg. 4F, 8-7 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-7 닛포 선라이즈 타운 빌딩 4F", tags: [ "フード有", "穏やか" ], icon: "https://unavatar.io/twitter/mul_nomutokoro", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "3F", name_en: "3F", name_ko: "3F (3F)", type: "ビアン", area: "大阪", xId: "@bar3F_", snsUrl: "https://x.com/bar3F_", time: "水金土 20:00〜 / 日 18:00〜", holiday: "月曜、火曜、木曜", address_jp: "大阪府大阪市北区神山町9-6 TM-17ビル 301", address_en: "TM-17 Bldg. 301, 9-6 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 9-6 TM-17 빌딩 301", tags: [ "イベント多い", "変わったリキュール有", "フード有" ], icon: "https://unavatar.io/twitter/bar3F_", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Bomb × Bomb", name_en: "Bomb x Bomb", name_ko: "봄봄 (Bomb x Bomb)", type: "ビアン", area: "大阪", xId: "@BombxBomb326", snsUrl: "https://x.com/BombxBomb326", time: "OPEN〜LAST", holiday: "不定休（X参照）", address_jp: "大阪府大阪市北区神山町8-14 日宝東阪急レジャービル 4F", address_en: "Nippo Higashi-Hankyu Leisure Bldg. 4F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 닛포 히가시한큐 레저 빌딩 4F", tags: [ "盛り上がる", "イベント多い" ], icon: "https://unavatar.io/twitter/BombxBomb326", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "bar Candle", name_en: "bar Candle", name_ko: "바 캔들 (bar Candle)", type: "ビアン", area: "大阪", xId: "@barCandle0", snsUrl: "https://x.com/barCandle0", time: "休業中", holiday: "休業中（再開時期未定）", address_jp: "大阪府大阪市北区神山町8-14 日宝東阪急レジャービル 2F", address_en: "Nippo Higashi-Hankyu Leisure Bldg. 2F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 닛포 히가시한큐 레저 빌딩 2F", tags: [ "初心者向け",  ], icon: "https://unavatar.io/twitter/barCandle0", note: "#", medium: "#",
+    description_jp: "現在休業中（再開時期未定）。最新情報はSNSをご確認ください。",
+    description_en: "Currently temporarily closed (Reopening date TBD). Please check SNS for updates.",
+    description_ko: "현재 휴업 중 (재개 시기 미정). 최신 정보は SNS를 확인해 주세요."
+},
+{ 
+    name_jp: "mixbar♡collection", name_en: "mixbar collection", name_ko: "믹스바 컬렉션 (mixbar collection)", type: "MIX", area: "大阪", xId: "@COLLECTIONbyM", snsUrl: "https://x.com/COLLECTIONbyM", time: "要確認（X参照）", holiday: "不定休", address_jp: "大阪府大阪市北区神山町9-9 りんご館 2階", address_en: "Ringo-kan 2F, 9-9 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 9-9 링고칸 2F", tags: [ "カラオケ", "イベント多い", "盛り上がる",  ], icon: "https://unavatar.io/twitter/COLLECTIONbyM", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "cafe&barアムリタ", name_en: "Amrita", name_ko: "아무르타 (Amrita)", type: "ビアン", area: "大阪", xId: "@amurta_curry", snsUrl: "https://x.com/amurta_curry", time: "18:30〜24:00", holiday: "火曜、不定休", address_jp: "大阪府大阪市北区神山町8-12 日宝フレンドビル 2階2号", address_en: "Nippo Friend Bldg. 2F No.2, 8-12 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-12 닛포 프렌드 빌딩 2F 2호", tags: [ "フード有", "カフェ", ], icon: "https://unavatar.io/twitter/amurta_curry", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Bar 来夢", name_en: "Bar Lime", name_ko: "바 라임 (Bar Lime)", type: "ビアン", area: "大阪", xId: "@BarLime_203", snsUrl: "https://x.com/BarLime_203", time: "要確認（毎日SNSで案内）", holiday: "不定休（要SNS確認）", address_jp: "大阪府大阪市北区堂山町13-4 LION堂山 401・402", address_en: "LION Doyama 401-402, 13-4 Doyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 도야마초 13-4 LION 도야마 401・402", tags: [ "変わったリキュール有", "盛り上がる","イベント多い",  ], icon: "https://unavatar.io/twitter/BarLime_203", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Dinerchanchan445", name_en: "Dinerchanchan445", name_ko: "다이너 찬찬445 (Dinerchanchan445)", type: "ビアン", area: "大阪", xId: "@Dinerchanchan", snsUrl: "https://x.com/Dinerchanchan", time: "要確認（X参照）", holiday: "不定休（要SNS確認）", address_jp: "大阪府大阪市北区神山町8-14 日宝東阪急レジャービル 1階", address_en: "Nippo Higashi-Hankyu Leisure Bldg. 1F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 닛포 히가시한큐 레저 빌딩 1F", tags: [ "穏やか", "フード有", "初心者向け" ], icon: "https://unavatar.io/twitter/Dinerchanchan", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "DINING BAR YUMMY SMILE", name_en: "DINING BAR YUMMY SMILE", name_ko: "야미 스마일 (YUMMY SMILE)", type: "ビアン", area: "大阪", xId: "@Dining_Yummy", snsUrl: "https://x.com/Dining_Yummy", time: "要確認（X参照）", holiday: "月曜、火曜", address_jp: "大阪府大阪市北区神山町8-14 3F", address_en: "3F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 3F", tags: [  "穏やか", "フード有" ], icon: "https://unavatar.io/twitter/Dining_Yummy", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문,現在調査中. 訪問次第載せます。"
+},
+{ 
+    name_jp: "Douxce", name_en: "Douxce", name_ko: "두스 (Douxce)", type: "ビアン", area: "大阪", xId: "@rin_douxce", snsUrl: "https://x.com/rin_douxce", time: "要確認（X参照）", holiday: "火曜", address_jp: "大阪府大阪市北区神山町8-15 前田ビル 2F", address_en: "Maeda Bldg. 2F, 8-15 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-15 마에다 빌딩 2F", tags: [ "穏やか", ], icon: "https://unavatar.io/twitter/rin_douxce", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Food BAR じゅんちゃん", name_en: "Food BAR Junchan", name_ko: "푸드 바 준짱 (Food BAR Junchan)", type: "MIX", area: "大阪", xId: "@FoodBARjunchan", snsUrl: "https://x.com/FoodBARjunchan", time: "19:00または20:00〜", holiday: "水曜", address_jp: "大阪府大阪市生野区鶴橋2-3-7", address_en: "2-3-7 Tsuruhashi, Ikuno-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 이쿠노구 츠루하시 2-3-7", tags: [ "フード有", "穏やか",  ], icon: "https://unavatar.io/twitter/FoodBARjunchan", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "JAKE", name_en: "JAKE", name_ko: "제이크 (JAKE)", type: "ビアン", area: "大阪", xId: "@jake_pochimura", snsUrl: "https://x.com/jake_pochimura", time: "要確認（X参照）", holiday: "要確認（X参照）", address_jp: "大阪府大阪市中央区東心斎橋2-8-21 日宝畳屋町会館 3階", address_en: "Nippo Tatamiyacho Kaikan 3F, 2-8-21 Higashishinsaibashi, Chuo-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 주오구 히가시신사이바시 2-8-21 닛포 타타미야초 회관 3F", tags: [ "穏やか", ], icon: "https://unavatar.io/twitter/jake_pochimura", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Love22", name_en: "Love22", name_ko: "러브22 (Love22)", type: "MIX", area: "大阪", xId: "@Love22Shoko", snsUrl: "https://x.com/Love22Shoko", time: "要確認（X参照）", holiday: "要確認（X参照）", address_jp: "大阪府大阪市北区堂山町16-19 イワタ会館 2F", address_en: "Iwata Kaikan 2F, 16-19 Doyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 도야마초 16-19 이와타 회관 2F", tags: [ "穏やか", "フード有",  ], icon: "https://unavatar.io/twitter/Love22Shoko", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다.",
+},    
+{ 
+    name_jp: "ORANGE", name_en: "ORANGE", name_ko: "오렌지 (ORANGE)", type: "MIX", area: "大阪", xId: "@ORANGE230111", snsUrl: "https://x.com/ORANGE230111", time: "19:00〜ラスト（変動あり）", holiday: "月曜、火曜", address_jp: "大阪府大阪市北区神山町8-14 日宝東阪急レジャービル 2F", address_en: "Nippo Higashi-Hankyu Leisure Bldg. 2F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 닛포 히가시한큐 레저 빌딩 2F", tags: [ "カフェ", "フード有", "変わったリキュール有" ], icon: "https://unavatar.io/twitter/ORANGE230111", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "poni moi", name_en: "poni moi", name_ko: "포니 모이 (poni moi)", type: "ビアン", area: "大阪", xId: "@HawaiianPonimoi", snsUrl: "https://x.com/HawaiianPonimoi", time: "要確認（X参照）", holiday: "木曜（祝日の場合は営業）", address_jp: "大阪府大阪市北区神山町8-14 日宝東阪急レジャービル B1F", address_en: "Nippo Higashi-Hankyu Leisure Bldg. B1F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 닛포 히가시한큐 레저 빌딩 B1F", tags: [ "フード有", "変わったリキュール有", "穏やか" ], icon: "https://unavatar.io/twitter/HawaiianPonimoi", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재調査中. 訪問次第載せます。"
+},
+{ 
+    name_jp: "Rainbow", name_en: "Rainbow", name_ko: "레인보우 (Rainbow)", type: "MIX", area: "大阪", xId: "@Rainbow2025129", snsUrl: "https://x.com/Rainbow2025129", time: "要確認（X参照）", holiday: "不定休（日月火ほか）", address_jp: "京都府京都市中京区木屋町", address_en: "Kiyamachi, Nakagyo-ku, Kyoto-shi, Kyoto", address_ko: "교토부 교토시 나카교구 키야마치", tags: [ "穏やか",  ], icon: "https://unavatar.io/twitter/Rainbow2025129", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "bar SALAMAT", name_en: "bar SALAMAT", name_ko: "바 살라마트 (bar SALAMAT)", type: "MIX", area: "大阪", xId: "@salamat071122", snsUrl: "https://x.com/salamat071122", time: "19:00〜26:00", holiday: "月曜、隔週火曜", address_jp: "大阪府大阪市北区神山町・堂山町周辺", address_en: "Kamiyamacho / Doyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초・도야마초 주변", tags: [ "穏やか", "フード有",], icon: "https://unavatar.io/twitter/salamat071122", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Racine", name_en: "Racine", name_ko: "라시네 (Racine)", type: "ビアン", area: "大阪", xId: "@Racine1222", snsUrl: "https://x.com/Racine1222", time: "金土日 20:00頃〜LAST", holiday: "月曜〜木曜", address_jp: "大阪府大阪市北区神山町8-14 1F", address_en: "1F, 8-14 Kamiyamacho, Kita-ku, Osaka-shi, Osaka", address_ko: "오사카부 오사카시 기타구 카미야마초 8-14 1F", tags: [ "穏やか", "初心者向け" ], icon: "https://unavatar.io/twitter/Racine1222", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "十色 -TOIRO-", name_en: "TOIRO", name_ko: "토이로 (TOIRO)", type: "ビアン", area: "大阪", xId: "@MIXcafebarTOIRO", snsUrl: "https://x.com/MIXcafebarTOIRO", time: "19:00〜24:00（たまに深夜）", holiday: "第2・第4月曜", address_jp: "兵庫県神戸市中央区中山手通1丁目22-10 象ビル 3階", address_en: "Zou Bldg. 3F, 1-22-10 Nakayamatedori, Chuo-ku, Kobe-shi, Hyogo", address_ko: "효고현 고베시 주오구 나카야마테도리 1-22-10 조 빌딩 3F", tags: [ "穏やか","カフェ", ], icon: "https://unavatar.io/twitter/MIXcafebarTOIRO", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Bar Look Me", name_en: "Bar Look Me", name_ko: "바 룩미 (Bar Look Me)", type: "ビアン", area: "大阪", xId: "@BarLookme", snsUrl: "https://x.com/BarLookme", time: "19:00〜2:00（L.O. 1:30）", holiday: "年中無休", address_jp: "京都府京都市中京区木屋町 オーシャンビル 5F", address_en: "Ocean Bldg. 5F, Kiyamachi, Nakagyo-ku, Kyoto-shi, Kyoto", address_ko: "교토부 교토시 나카교구 키야마치 오션 빌딩 5F", tags: [ "穏やか", "カラオケ" ], icon: "https://unavatar.io/twitter/BarLookme", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "Grace Lily", name_en: "Grace Lily", name_ko: "グレイス リリー (Grace Lily)", type: "ビアン", area: "大阪", xId: "@gracelily_kobe", snsUrl: "https://x.com/gracelily_kobe", time: "20:00〜", holiday: "火曜", address_jp: "兵庫県神戸市中央区中山手通1丁目16-12 東門ヴィレッジ B1F", address_en: "Higashimon Village B1F, 1-16-12 Nakayamatedori, Chuo-ku, Kobe-shi, Hyogo", address_ko: "효고현 고베시 주오구 나카야마테도리 1-16-12 히가시몬 빌리지 B1F", tags: [ "ビアンバー", "ノンアル豊富", "女性限定" ], icon: "https://unavatar.io/twitter/gracelily_kobe", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
+{ 
+    name_jp: "R'scue", name_en: "R'scue", name_ko: "레스큐 (R'scue)", type: "MIX", area: "大阪", xId: "@rinooooo27", snsUrl: "https://x.com/rinooooo27", time: "要確認（X参照）", holiday: "日曜、月曜", address_jp: "兵庫県神戸市中央区下山手通1丁目4-1 都ビル 2F", address_en: "Miyako Bldg. 2F, 1-4-1 Shimoyamatodori, Chuo-ku, Kobe-shi, Hyogo", address_ko: "효고현 고베시 주오구 시모야마토도리 1-4-1 미야코 빌딩 2F", tags: [ "穏やか" ], icon: "https://unavatar.io/twitter/rinooooo27", note: "#", medium: "#",
+    description_jp: "未訪問、現在調査中訪問次第載せます。",
+    description_en: "Coming soon! (I haven't visited yet, but planning to!).",
+    description_ko: "미방문, 현재 조사 중. 방문하는 대로 업데이트하겠습니다."
+},
 { 
     name_jp: "酒と肴やぶれ", name_en: "Yabure", name_ko: "사케토 사카나 야부레 (酒と肴やぶれ)", type: "ビアン", area: "西日本", xId: "@yabure1911", snsUrl: "https://x.com/yabure1911", time: "17:00〜23:00,17:00~24:00", holiday: "不定休", address_jp: "福岡県福岡市中央区今泉1-23-4 REMIX天神2F", address_en: "2F REMIX Tenjin, 1-23-4 Imaizumi, Chuo-ku, Fukuoka-shi, Fukuoka", address_ko: "후쿠오카현 후쿠오카시 주오구 이마이즈미 1-23-4 REMIX 텐진 2F", tags: ["初心者向け", "穏やか", "フード有"], icon: "https://unavatar.io/twitter/yabure1911", note: "#", medium: "#",
     description_jp: "未訪問、現在調査中訪問次第載せます。",
