@@ -6,7 +6,13 @@
     <title>엄선 WLW·시스터후드 영화 & 드라마 50선 | 영화 가이드</title>
     
     <meta name="description" content="여성 간의 사랑(WLW)과 연대를 그린 엄선 영화 및 드라마 50선. 감독, 출연진 정보와 상세 해설을 포함한 작품 가이드입니다.">
-    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
     <style>
         :root {
             --bg-base: #fbfaf9;
@@ -689,12 +695,13 @@
     <div class="container">
         <!-- Notice Box -->
         <div class="notice-box">
-            <strong>【작품 감상 방법 안내】</strong><br>
-            본 페이지에서는 영상 작품에 대한 직접적인 제휴(아피리에이트) 링크를 제공하지 않습니다. OTT 서비스별 스트리밍 여부는 시기에 따라 변동되므로, 이용 중이신 플랫폼(Netflix, Watcha, TVING 등)에서 작품명으로 검색하여 감상해 주시기 바랍니다.<br><br>
-            <strong>📌 추천 관련 상품 안내:</strong><br>
-            본문 내 소개된 추천 아이템(빔 프로젝터, 음료 등)의 링크를 클릭하시면 라쿠텐 등 외부 상품 페이지로 이동합니다.
-        </div>
-
+       
+           <strong>【작품 감상 및 구매 안내】</strong><br>
+        현재 한국 내 작품 구매 링크와 관련 서비스는 준비 중입니다. 작품별 링크가 표시되는 경우 일본 Amazon 상품 페이지로 연결됩니다. 상품별 구매 가능 여부와 배송 조건은 해당 페이지에서 확인해 주세요.<br><br>
+           <strong>📌 관련 서비스 안내:</strong><br>
+        한국 이용자를 위한 작품 정보 및 구매 안내 서비스를 준비하고 있습니다. NAVER 등 관련 서비스도 향후 검토할 예정입니다. 업데이트를 기다려 주세요.<br><br>
+            <strong>추천 상품 안내:</strong><br>
+        프로젝터와 음료 등 추천 상품 링크는 라쿠텐 등 일본 외부 쇼핑몰로 연결됩니다.
         <!-- WLW & Sisterhood Mini Guide -->
         <section class="concept-guide">
             <div class="concept-title">
@@ -845,6 +852,22 @@
                     const workInfo = work.infoKo || work.infoJa || work.infoEn || '-';
                     const workQuote = work.quoteKo || work.quoteJa || work.quoteEn || '';
                     const workDesc = work.descKo || work.descJa || work.descEn || '';
+                    const amzUrl = work.amz
+  ? work.amz.match(/https?:\/\/[^\s\])"]+/)?.[0]
+  : "";
+
+const amzHtml = amzUrl
+  ? `<div class="note-link-container">
+       <a href="${amzUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="note-link"
+          data-amazon-work="${workTitle}"
+          data-amazon-section="${g.title}">
+          📚 일본 Amazon에서 상품 보기 ↗
+       </a>
+     </div>`
+  : "";
 
                     let quoteHtml = workQuote ? `<div class="work-quote">${workQuote}</div>` : '';
                     
@@ -878,6 +901,7 @@
                         </div>
                         ${quoteHtml}
                         <div class="work-description">${workDesc}</div>
+                        ${amzHtml}
                         ${noteBtnHtml}
                     `;
                     listDiv.appendChild(card);
@@ -920,6 +944,66 @@
 
         renderToc();
         renderGenreSections();
+        document.addEventListener("click", (e) => {
+  const amazon = e.target.closest("a[data-amazon-work]");
+  const link = e.target.closest("a");
+  const button = e.target.closest("button");
+  const card = e.target.closest(".work-card");
+  const section = e.target.closest(".genre-block");
+
+  if (amazon) {
+    gtag("event", "click_cinema_amazon", {
+      item_name: amazon.dataset.amazonWork,
+      section_name: amazon.dataset.amazonSection,
+      link_url: amazon.href
+    });
+  } else if (link) {
+    gtag("event", "click_cinema_link", {
+      link_text: link.innerText.trim().slice(0, 100),
+      link_url: link.href,
+      page_path: location.pathname
+    });
+
+    if (link.classList.contains("toc-btn")) {
+      gtag("event", "click_cinema_section", {
+        section_name: link.innerText.trim(),
+        section_id: link.hash.slice(1)
+      });
+    }
+  } else if (button) {
+    gtag("event", "click_cinema_button", {
+      button_text: button.innerText.trim().slice(0, 100),
+      page_path: location.pathname
+    });
+  } else if (card) {
+    gtag("event", "click_cinema_work", {
+      item_name: card.querySelector(".work-title")?.innerText || "",
+      section_name:
+        section?.querySelector(".genre-heading")?.innerText || ""
+    });
+  }
+});
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting &&
+          !entry.target.dataset.trackedView) {
+        entry.target.dataset.trackedView = "1";
+
+        gtag("event", "view_cinema_section", {
+          section_name:
+            entry.target.querySelector(".genre-heading")?.innerText || "",
+          section_id: entry.target.id
+        });
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll(".genre-block").forEach(section => {
+    observer.observe(section);
+  });
+}
     </script>
 </body>
 </html>
