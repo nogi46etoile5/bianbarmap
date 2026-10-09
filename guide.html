@@ -9,8 +9,62 @@
     <link rel="alternate" hreflang="ja" href="guide.html" />
     <link rel="alternate" hreflang="en" href="guide_en.html" />
     <link rel="alternate" hreflang="ko" href="guide_ko.html" />
-    <link rel="alternate" hreflang="es" href="guide_es.html" />
 
+
+    <!-- GA4: Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BH32JQCYXR');
+    </script>
+
+    <!-- 構造化データ: 付き添いサービス -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "#webpage",
+          "name": "付き添いプラン詳細 - Lesbian Bar Map JP",
+          "description": "新宿二丁目のレズビアンバーへの付き添い、店舗選び、初心者向けの案内サービス。",
+          "inLanguage": "ja",
+          "mainEntity": {
+            "@id": "#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "#service",
+          "name": "ビアンバー付き添い・案内",
+          "serviceType": "レズビアンバーへの付き添い・店舗案内",
+          "description": "初心者向けの店舗選び、入店時のサポート、会話のきっかけ作りなどを提供する付き添いサービス。",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "ガード枠（初心者向け）",
+              "price": "3000",
+              "priceCurrency": "JPY"
+            },
+            {
+              "@type": "Offer",
+              "name": "マッチング（店選び込み）",
+              "price": "5000",
+              "priceCurrency": "JPY"
+            },
+            {
+              "@type": "Offer",
+              "name": "見守りプラン",
+              "price": "15000",
+              "priceCurrency": "JPY"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         /* --- 基本設定 --- */
         body { 
@@ -266,6 +320,8 @@
     </div>
     <ul class="menu-list">
         <li><a href="index.html">🏠 トップ・マップ</a></li>
+        <li><a href="tokyo.html">🏙️ 関東エリア一覧（東京ほか）</a></li>
+        <li><a href="osaka.html">🐙 関西エリア一覧（大阪・京都・神戸）</a></li>
         <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
         <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
         <li><a href="cinema.html">🎬 百合・映画特集</a></li>
@@ -294,11 +350,11 @@
 
 <div class="container">
     <div class="header">
-        <h1>🤝 ビアンバー付き添い・案内</h1>
+        <h1>🤝 レズビアンバー付き添い・案内</h1>
     </div>
 
     <div class="appeal-section">
-        <h2>新宿二丁目のレズビアンバー、<br>興味はあるけど不安ありませんか？</h2>
+        <h2>新宿二丁目等のレズビアンバー、<br>興味はあるけど不安ありませんか？</h2>
         
         <ul style="list-style: '・'; padding-left: 20px; font-size: 0.85rem; color: #ccd6f6; margin-top:15px;">
             <li>一人で行って浮いたらどうしよう</li>
@@ -400,6 +456,7 @@
         </ul>
     </div>
 
+
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=header" target="_blank" class="cta-btn">
         🟢 申し込みフォームを開く
     </a>
@@ -453,5 +510,21 @@ window.onscroll = function() {
     }
 };
 </script>
+<script>
+    // GoogleフォームへのクリックをGA4で計測
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a');
+  
+      if (!link) return;
+      if (!link.href.startsWith('https://docs.google.com/forms/')) return;
+      if (typeof gtag !== 'function') return;
+  
+      gtag('event', 'google_form_click', {
+        link_url: link.href,
+        link_text: link.innerText.trim(),
+        page_location: window.location.href
+      });
+    });
+  </script>
 </body>
 </html>

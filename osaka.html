@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>大阪・梅田・堂山・神山町のレズビアンバー・MIXバー一覧（京都・神戸対応）｜愁マップ</title>
+<meta name="description" content="大阪の梅田、堂山、神山町をはじめ、京都、神戸など関西圏のレズビアンバー、女性向けMIXバーを網羅したおすすめ一覧マップ。初心者向けの料金システムやアクセス、深夜営業情報を個人運営目線で徹底解説。">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@0,400;0,700;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- 構造化データ (ItemList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "大阪・梅田・堂山・神山町および京都・神戸レズビアンバー・MIXバー一覧",
+  "description": "大阪（梅田・堂山・神山町）、京都、神戸などのレズビアンバー・MIXバー情報",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "大阪・梅田・堂山・神山町エリア" },
+    { "@type": "ListItem", "position": 2, "name": "京都エリア" },
+    { "@type": "ListItem", "position": 3, "name": "神戸エリア" }
+  ]
+}
+</script>
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
+
+<style>
+  :root {
+    --bg: #0b0b10;
+    --card-bg: #14141f;
+    --accent-neon-pink: #00f0ff;
+    --accent-neon-blue: #ff2a8d;
+    --accent-neon-purple: #b000ff;
+    --text-main: #f0f0f5;
+    --text-sub: #a0a0b5;
+    --border: #2c2c45;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { 
+    font-family: 'Noto Sans JP', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text-main); 
+    line-height: 1.8;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+  }
+
+  /* --- ハンバーガーメニュー --- */
+  #menu-toggle {
+    position: fixed; top: 12px; left: 15px;
+    width: 38px; height: 38px;
+    background: var(--card-bg); border: 1px solid var(--accent-neon-blue);
+    border-radius: 50%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 4px; cursor: pointer; z-index: 2000;
+    box-shadow: 0 0 10px rgba(255, 42, 141, 0.3);
+    transition: all 0.2s ease;
+  }
+  #menu-toggle span {
+    display: block; width: 16px; height: 2px;
+    background-color: var(--accent-neon-pink); border-radius: 2px;
+    box-shadow: 0 0 5px var(--accent-neon-pink);
+    transition: all 0.3s ease;
+  }
+  #menu-toggle.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  #menu-toggle.active span:nth-child(2) { opacity: 0; }
+  #menu-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  #menu-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(11, 11, 16, 0.7); backdrop-filter: blur(5px);
+    z-index: 2001; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  #menu-overlay.active { opacity: 1; pointer-events: auto; }
+
+  #side-menu {
+    position: fixed; top: 0; left: -260px; width: 260px; height: 100vh;
+    background: var(--card-bg); border-right: 1px solid var(--border); z-index: 2002;
+    transition: left 0.3s ease; box-shadow: 5px 0 20px rgba(0, 0, 0, 0.8);
+    display: flex; flex-direction: column; overflow-y: auto;
+  }
+  #side-menu.active { left: 0; }
+
+  .menu-header {
+    padding: 16px 18px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: bold; color: var(--accent-neon-pink); font-size: 1rem;
+    font-family: 'Noto Serif JP', serif;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  }
+  .menu-header .close-btn { background: none; border: none; color: var(--text-sub); font-size: 1.6rem; cursor: pointer; line-height: 1; }
+  .menu-list { list-style: none; padding: 0; margin: 0; }
+  .menu-list li { border-bottom: 1px solid rgba(44, 44, 69, 0.5); }
+  .menu-list a {
+    display: block; padding: 12px 18px; color: var(--text-main); font-size: 0.82rem;
+    text-decoration: none; transition: background 0.2s, color 0.2s;
+  }
+  .menu-list a:hover { background: rgba(255, 42, 141, 0.05); color: var(--accent-neon-blue); }
+
+  /* --- 言語切り替えドロップダウン --- */
+  .lang-switcher {
+    position: fixed; top: 12px; right: 15px; z-index: 2000;
+  }
+  .lang-dropdown-btn {
+    background: var(--card-bg); border: 1px solid var(--accent-neon-blue);
+    border-radius: 18px; padding: 6px 14px; font-size: 0.82rem;
+    font-weight: bold; color: var(--accent-neon-blue); cursor: pointer;
+    display: flex; align-items: center; gap: 4px;
+    box-shadow: 0 0 10px rgba(255, 42, 141, 0.2);
+  }
+  .lang-menu-content {
+    position: absolute; top: calc(100% + 6px); right: 0;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    list-style: none; padding: 6px 0; min-width: 130px;
+    display: none;
+  }
+  .lang-switcher.open .lang-menu-content { display: block; }
+  .lang-menu-content a {
+    display: block; padding: 8px 16px; font-size: 0.82rem;
+    color: var(--text-main); text-decoration: none;
+  }
+  .lang-menu-content a:hover, .lang-menu-content a.active {
+    background: rgba(0, 240, 255, 0.1); color: var(--accent-neon-pink); font-weight: bold;
+  }
+
+  /* --- Hero & Intro --- */
+  .hero { padding: 50px 15px 15px; text-align: center; }
+  .hero h1 { 
+    font-family: 'Noto Serif JP', serif; 
+    font-size: 1.3rem; 
+    color: var(--accent-neon-pink); 
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  .hero p { font-size: 0.8rem; color: var(--text-sub); }
+
+  .region-intro { width: 92%; max-width: 600px; margin: 0 auto 15px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-sizing: border-box; }
+  .region-intro h2 { font-size: 0.85rem; color: var(--accent-neon-blue); margin-bottom: 6px; font-family: 'Noto Serif JP', serif; text-shadow: 0 0 8px rgba(255, 42, 141, 0.4); }
+  .region-intro p { font-size: 0.78rem; color: var(--text-sub); line-height: 1.5; text-align: justify; }
+
+  /* エリア件数カウントバッジ */
+  .pref-count-container { width: 92%; max-width: 600px; margin: 0 auto 15px; display: flex; flex-wrap: wrap; gap: 6px; box-sizing: border-box; }
+  .pref-badge { background: var(--card-bg); border: 1px solid var(--accent-neon-purple); padding: 6px 10px; border-radius: 8px; font-size: 0.72rem; color: var(--accent-neon-blue); font-weight: bold; box-shadow: 0 0 8px rgba(176, 0, 255, 0.2); cursor: pointer; transition: all 0.2s; user-select: none; }
+  .pref-badge:hover { border-color: var(--accent-neon-pink); color: var(--accent-neon-pink); }
+  .pref-badge.active { background: var(--accent-neon-pink); border-color: var(--accent-neon-pink); color: #fff; box-shadow: 0 0 10px rgba(0, 240, 255, 0.6); }
+
+  /* --- 検索・フィルターセクション --- */
+  .filter-section { width: 92%; max-width: 600px; margin: 0 auto 20px; background: var(--card-bg); padding: 14px; border-radius: 16px; border: 1px solid var(--border); box-sizing: border-box; }
+  .search-input { width: 100%; padding: 10px 16px; border-radius: 25px; border: 1px solid var(--border); background: #0b0b10; color: var(--text-main); font-size: 0.82rem; box-sizing: border-box; outline: none; font-family: inherit; }
+  .search-input:focus { border-color: var(--accent-neon-blue); box-shadow: 0 0 8px rgba(255, 42, 141, 0.4); }
+
+  .tag-filter { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag-btn { background: #0b0b10; color: var(--text-sub); border: 1px solid var(--border); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; transition: all 0.2s; user-select: none; font-family: inherit; }
+  .tag-btn.active { border-color: var(--accent-neon-pink); background: var(--accent-neon-pink); color: #ffffff; font-weight: bold; box-shadow: 0 0 8px rgba(0, 240, 255, 0.6); }
+
+  /* --- ショップカード一覧 --- */
+  #shop-container { width: 92%; max-width: 600px; margin: 0 auto; }
+  .shop-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 15px; display: none; box-sizing: border-box; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  .shop-card.show { display: block; }
+  .shop-card-inner { padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .shop-info { flex: 1; min-width: 0; }
+  .shop-name { font-size: 1rem; font-weight: bold; margin-bottom: 6px; font-family: 'Noto Serif JP', serif; }
+  .shop-name a { color: var(--accent-neon-blue); text-decoration: none; text-shadow: 0 0 5px rgba(255, 42, 141, 0.3); }
+  .shop-name a:hover { text-decoration: underline; color: var(--accent-neon-pink); }
+  
+  .feature-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; font-size: 0.62rem; color: var(--text-sub); }
+  .feature-tags span { background: #0b0b10; border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; }
+
+  .btn-note { display: inline-block; padding: 8px 12px; text-align: center; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-radius: 8px; color: #ffffff; background: linear-gradient(135deg, var(--accent-neon-pink), var(--accent-neon-purple)); border: none; width: 100%; box-sizing: border-box; margin-top: 10px; box-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+  
+  a { text-decoration: none !important; color: inherit; -webkit-tap-highlight-color: transparent; }
+
+  /* --- フッター・免責事項 --- */
+  .footer-notice { width: 92%; max-width: 600px; margin: 30px auto 0; padding: 20px 15px; color: var(--text-sub); font-size: 0.72rem; border-top: 1px solid var(--border); box-sizing: border-box; line-height: 1.6; }
+  .footer-notice ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
+  .footer-notice li { margin-bottom: 6px; }
+
+  .footer-nav { max-width: 600px; margin: 20px auto 0; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; box-sizing: border-box; }
+  .nav-btn { padding: 12px 5px; border: 1.5px solid var(--accent-neon-blue); text-decoration: none; color: var(--accent-neon-blue); border-radius: 10px; font-weight: bold; font-size: 0.8rem; text-align: center; background: var(--card-bg); box-shadow: 0 0 8px rgba(255, 42, 141, 0.2); }
+  footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    margin: 20px 0;
+}
+/* --- Back to Top Button --- */
+#back-to-top {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 15px !important;
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg);
+    color: var(--accent-neon-pink);
+    border: 1px solid var(--accent-neon-pink);
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none !important;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+    z-index: 99999 !important;
+}
+
+#back-to-top:hover {
+    background-color: var(--accent-neon-pink);
+    color: #fff;
+    transform: translateY(-3px);
+}
+</style>
+</head>
+<body>
+
+<!-- ハンバーガーメニューボタン -->
+<button id="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- サイドバーメニュー本体 -->
+<div id="menu-overlay" onclick="toggleMenu()"></div>
+<nav id="side-menu">
+    <div class="menu-header">
+        <span>メニュー</span>
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+    </div>
+    <ul class="menu-list">
+        <li><a href="index.html">🏠 トップ・マップ</a></li>
+        <li><a href="tokyo.html">🏙️ 関東圏一覧（東京ほか）</a></li>
+        <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
+        <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
+        <li><a href="cinema.html">🎬 百合・映画特集</a></li>
+        <li><a href="yuri_guide.html">📜 百合の歴史と厳選100選</a></li>
+        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" onclick="gtag('event', 'click_external_link', {link_name: 'note_list'});">📝 店舗攻略note一覧</a></li>
+        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank" onclick="gtag('event', 'click_external_link', {link_name: 'buymeacoffee'});">☕ ご支援（Buy Me a Coffee）</a></li>
+    </ul>
+</nav>
+
+<!-- 言語切り替えドロップダウン -->
+<div class="lang-switcher" id="langSwitcher">
+    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="Select Language">
+        🌐 <span>日本語</span> ▼
+    </button>
+    <div class="lang-menu-content">
+        <a href="osaka.html" class="lang-item active">🇯🇵 日本語</a>
+        <a href="osaka_en.html" class="lang-item">🇺🇸 English</a>
+        <a href="osaka_ko.html" class="lang-item">🇰🇷 한국어</a>
+    </div>
+</div>
+
+<a href="#" id="back-to-top">▲</a>
+
+<header class="hero">
+  <h1>大阪・梅田・堂山・神山町のレズビアンバー・MIXバー一覧（京都・神戸対応）</h1>
+  <p>― 大阪（梅田・堂山・神山町）、京都、神戸など各エリアのレズビアンバー・女性向けMIXバー情報まとめ ―</p>
+</header>
+
+<section class="region-intro">
+  <h2>🐙 大阪・梅田・堂山・神山町および京都・神戸エリアの店舗一覧マップ</h2>
+  <p>大阪（梅田・堂山・神山町）、京都、神戸など関西各エリアにあるレズビアンバー、女性向けMIXバーの情報を掲載しています。地域の店舗数や特徴をチェックして、お出かけの参考にしてください。※なお、京都や神戸も含まれておりますが、西日本に混ぜると広範囲の為、大阪・梅田カテゴリに含めています。</p>
+</section>
+
+<!-- エリア件数カウントバッジ -->
+<div id="pref-count-area" class="pref-count-container"></div>
+
+<section class="filter-section">
+  <input type="text" id="search-input" class="search-input" placeholder="🔍 店名・エリア・タグで検索..." oninput="onSearchInput()">
+  <div id="filter-container" class="tag-filter">
+    <button class="tag-btn" data-tag="カフェ" onclick="handleTagClick('カフェ', this)">カフェ</button>
+    <button class="tag-btn" data-tag="外国人多い" onclick="handleTagClick('外国人多い', this)">外国人多い</button>
+    <button class="tag-btn" data-tag="ノーチャージ" onclick="handleTagClick('ノーチャージ', this)">ノーチャージ</button>
+    <button class="tag-btn" data-tag="英語対応" onclick="handleTagClick('英語対応', this)">英語対応</button>
+    <button class="tag-btn" data-tag="カラオケ" onclick="handleTagClick('カラオケ', this)">カラオケ</button>
+    <button class="tag-btn" data-tag="喫煙可" onclick="handleTagClick('喫煙可', this)">喫煙可</button>
+    <button class="tag-btn" data-tag="初心者向け" onclick="handleTagClick('初心者向け', this)">初心者向け</button>
+    <button class="tag-btn" data-tag="深夜営業" onclick="handleTagClick('深夜営業', this)">深夜営業</button>
+    <button class="tag-btn" data-tag="年齢層高め" onclick="handleTagClick('年齢層高め', this)">年齢層高め</button>
+    <button class="tag-btn" data-tag="穏やか" onclick="handleTagClick('穏やか', this)">穏やか</button>
+    <button class="tag-btn" data-tag="盛り上がる" onclick="handleTagClick('盛り上がる', this)">盛り上がる</button>
+    <button class="tag-btn" data-tag="お通し有" onclick="handleTagClick('お通し有', this)">お通し有</button>
+    <button class="tag-btn" data-tag="フード有" onclick="handleTagClick('フード有', this)">フード有</button>
+    <button class="tag-btn" data-tag="変わったリキュール有" onclick="handleTagClick('変わったリキュール有', this)">変わったリキュール有</button>
+    <button class="tag-btn" data-tag="イベント多い" onclick="handleTagClick('イベント多い', this)">イベント多い</button>
+    <button class="tag-btn" data-tag="ボトルキープ有" onclick="handleTagClick('ボトルキープ有', this)">ボトルキープ有</button>
+    <button class="tag-btn" data-tag="持ち込み食べ物可" onclick="handleTagClick('持ち込み食べ物可', this)">持ち込み食べ物可</button>
+    <button class="tag-btn" data-tag="間借り" onclick="handleTagClick('間借り', this)">間借り営業</button>
+    <button class="tag-btn" data-tag="不定期オープン" onclick="handleTagClick('不定期（SNS確認）', this)">不定期（SNS確認）</button>
+  </div>
+</section>
+
+<div id="shop-container"></div>
+
+<footer class="footer-notice">
+  <strong>⚠ 免責事項・運営方針について</strong>
+  <ul>
+    <li>当サイトは、管理人が独自判断基準でリスト化・情報整理を行っている<strong>非公式の個人運営ウェブサイト</strong>です。特定の企業や店舗とは一切関係ありません。</li>
+    <li>掲載している情報はすべてインターネット上の公開情報や独自調査をもとに作成しております。</li>
+    <li>営業時間の詳細や正確な閉店時間が分からない店舗については「調査中」としており、正確な時間が担保できないため「深夜営業」などのタグをあえて付けていない場合もあります。最新情報は各店舗の公式SNS等をご確認ください。</li>
+    <li>情報の誤りや削除依頼などは、管理人X（@412357siki）のDMまでお願いいたします。</li>
+  </ul>
+</footer>
+
+<div class="footer-nav">
+  <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="nav-btn" onclick="gtag('event', 'click_portfolio', {site: 'aquarium'});">🐟 水族館巡りアーカイブ</a>
+  <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" class="nav-btn" onclick="gtag('event', 'click_portfolio', {site: 'craft'});">🏺 伝統的工芸品一覧</a>
+</div>
+
+<footer>&copy; 2026 愁マップ</footer>
+
+<script src="data.js"></script>
+<script src="yuri_data.js"></script>
+<script src="cinema-data.js"></script>
+<script>
+// ハンバーガーメニューの開閉
+function toggleMenu() {
+    document.getElementById('menu-toggle').classList.toggle('active');
+    document.getElementById('side-menu').classList.toggle('active');
+    document.getElementById('menu-overlay').classList.toggle('active');
+}
+
+// 言語メニューの開閉
+function toggleLangMenu() {
+    document.getElementById('langSwitcher').classList.toggle('open');
+}
+
+window.addEventListener('click', function(e) {
+    const switcher = document.getElementById('langSwitcher');
+    if (switcher && !switcher.contains(e.target)) {
+        switcher.classList.remove('open');
+    }
+});
+
+// タグの状態管理
+let activeTags = new Set();
+let currentSearchKeyword = "";
+let selectedRegionFilter = null;
+
+function handleTagClick(tag, btn) {
+    if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        btn.className = 'tag-btn';
+    } else {
+        activeTags.add(tag);
+        btn.className = 'tag-btn active';
+    }
+    displayShops();
+}
+
+function handleRegionClick(regionName) {
+    if (selectedRegionFilter === regionName) {
+        selectedRegionFilter = null;
+    } else {
+        selectedRegionFilter = regionName;
+    }
+    displayShops();
+}
+
+function onSearchInput() {
+    currentSearchKeyword = document.getElementById('search-input').value.trim().toLowerCase();
+    displayShops();
+}
+
+function displayShops() {
+    const container = document.getElementById('shop-container');
+    const prefCountArea = document.getElementById('pref-count-area');
+    if (!container || typeof shopDetails === 'undefined') return;
+    
+    container.innerHTML = ""; 
+
+    // ★修正箇所：データ側の shop.area （大阪、京都、神戸など）で直接データを取得・絞り込み
+    const osakaShops = shopDetails.filter(shop => {
+        return shop.area === "大阪";
+    });
+    const prefCounts = {
+    "大阪": 0,
+    "京都": 0,
+    "神戸": 0
+};
+
+osakaShops.forEach(shop => {
+    const address = shop.address_jp || "";
+
+    if (address.includes("大阪府")) {
+        prefCounts["大阪"]++;
+    } else if (address.includes("京都府")) {
+        prefCounts["京都"]++;
+    } else if (address.includes("神戸市")) {
+        prefCounts["神戸"]++;
+    }
+});
+
+    if (prefCountArea) {
+        prefCountArea.innerHTML = Object.entries(prefCounts).map(([pref, count]) => {
+            const isActive = selectedRegionFilter === pref ? ' active' : '';
+            return `<div class="pref-badge${isActive}" onclick="handleRegionClick('${pref}')">📍 ${pref}: ${count}件</div>`;
+        }).join('');
+    }
+    const filteredShops = osakaShops.filter(shop => {
+
+if (selectedRegionFilter) {
+    const address = shop.address_jp || "";
+
+    if (selectedRegionFilter === "大阪" && !address.includes("大阪府")) {
+        return false;
+    }
+
+    if (selectedRegionFilter === "京都" && !address.includes("京都府")) {
+        return false;
+    }
+
+    if (selectedRegionFilter === "神戸" && !address.includes("神戸市")) {
+        return false;
+    }
+}
+
+const shopTags = shop.tags || [];
+
+for (const tag of activeTags) {
+    if (!shopTags.includes(tag)) return false;
+}
+
+if (currentSearchKeyword) {
+    const name = (shop.name_jp || "").toLowerCase();
+    const address = (shop.address_jp || "").toLowerCase();
+    const tags = shopTags.join(" ").toLowerCase();
+    const desc = (shop.description_jp || "").toLowerCase();
+
+    return name.includes(currentSearchKeyword) ||
+           address.includes(currentSearchKeyword) ||
+           tags.includes(currentSearchKeyword) ||
+           desc.includes(currentSearchKeyword);
+}
+
+return true;
+});
+
+
+    filteredShops.forEach((shop, index) => {
+        if (index > 0 && index % 5 === 0) {
+            const cinemaList = (typeof worksData !== 'undefined' && Array.isArray(worksData)) ? worksData : [];
+            let mangaList = [];
+
+            if (typeof yuri_data !== 'undefined' && Array.isArray(yuri_data)) {
+                yuri_data.forEach(category => {
+                    if (category && Array.isArray(category.works)) {
+                        mangaList.push(...category.works);
+                    }
+                });
+            }
+            const shuffledManga = [...mangaList].sort(() => 0.5 - Math.random());
+            const manga1 = shuffledManga[0] || null;
+            const manga2 = shuffledManga[1] || null;
+            
+            const shuffledCinema = [...cinemaList].sort(() => 0.5 - Math.random());
+            const cinema1 = shuffledCinema[0] || null;
+
+            const createMangaCard = (item) => {
+                if (!item) return '';
+                const title = item.t || 'タイトル不明';
+                const author = item.a || '';
+                const hasAmz = item.amz && item.amz.trim() !== "" && item.amz !== "#";
+
+                return `
+                    <div style="background: rgba(255,255,255,0.95); padding: 10px; border-radius: 6px; border: 1px solid rgba(142,58,70,0.15); margin-bottom: 6px; text-align: center;">
+                        <div style="font-size: 0.75rem; font-weight: bold; color: #2c2c2c; margin-bottom: 2px;">📖 ${title}</div>
+                        ${author ? `<div style="font-size: 0.62rem; color: #666; margin-bottom: 4px;">著: ${author}</div>` : ''}
+                        ${hasAmz ? `<div><a href="${item.amz}" target="_blank" rel="nofollow" onclick="gtag('event', 'click_yuri_ad', {title: '${title}'});" style="display: block; width: 80%; margin: 6px auto 0; box-sizing: border-box; background: #232f3e; color: white; text-align: center; text-decoration: none; padding: 6px; border-radius: 5px; font-size: 0.68rem; font-weight: bold;">Amazonで見る</a></div>` : ''}
+                    </div>
+                `;
+            };
+
+            const createCinemaCard = (item) => {
+                if (!item) return '';
+                const title = item.titleJa || item.title || item.t || 'タイトル不明';
+                const cast = item.castJa || item.actor || item.cast || '';
+                const hasAmz = item.amz && item.amz.trim() !== "" && item.amz !== "#";
+
+                return `
+                    <div style="background: rgba(255,255,255,0.95); padding: 10px; border-radius: 6px; border: 1px solid rgba(142,58,70,0.15); margin-bottom: 6px; text-align: center;">
+                        <div style="font-size: 0.75rem; font-weight: bold; color: #2c2c2c; margin-bottom: 2px;">🎬 ${title}</div>
+                        ${cast ? `<div style="font-size: 0.62rem; color: #666; margin-bottom: 4px;">主演: ${cast}</div>` : ''}
+                        ${hasAmz ? `<div><a href="${item.amz}" target="_blank" rel="nofollow" onclick="gtag('event', 'click_cinema_ad', {title: '${title}'});" style="display: block; width: 80%; margin: 6px auto 0; box-sizing: border-box; background: #232f3e; color: white; text-align: center; text-decoration: none; padding: 6px; border-radius: 5px; font-size: 0.68rem; font-weight: bold;">Amazonで見る</a></div>` : ''}
+                    </div>
+                `;
+            };
+
+            const adHtml = `
+                <div style="margin: 20px 0; padding: 12px; border-radius: 12px; background: linear-gradient(135deg, #fffcf5 0%, #fdf2f4 100%); border: 1px solid #eecaca; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="text-align: center; margin-bottom: 8px;">
+                        <span style="color: #8e3a46; font-weight: bold; font-size: 0.72rem;">🌹 おすすめの百合作品（広告）</span>
+                    </div>
+                    <div>
+                        ${createMangaCard(manga1)}
+                        ${createMangaCard(manga2)}
+                        ${createCinemaCard(cinema1)}
+                    </div>
+                </div>`;
+            container.insertAdjacentHTML('beforeend', adHtml);
+        }
+ 
+        const card = document.createElement('div');
+        card.className = 'shop-card show';
+        const dName = shop.name_jp;
+        const dAddress = shop.address_jp || '住所不明';
+        const dDesc = shop.description_jp || '調査中';
+        const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(dName + ' ' + dAddress)}`;
+        const showNote = (shop.note && shop.note !== '#');
+        const dTags = (shop.tags || []).map(t => `<span>${t}</span>`).join('');
+
+        let finalIcon = '';
+        if (shop.icon === "website") {
+            finalIcon = `<div style="width:90px; height:90px; border-radius:12px; background:#1a2a4a; border:1px solid #3a4a6a; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00ffcc; flex-shrink:0;"><span style="font-size:28px;">🌐</span><span style="font-size:9px; font-weight:bold;">WEB SITE</span></div>`;
+        } else if (shop.icon === "instagram" || (shop.snsUrl && shop.snsUrl.includes('instagram.com'))) {
+            finalIcon = `<div style="width:90px; height:90px; border-radius:12px; background:linear-gradient(45deg, #f09433 0%, #bc1888 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; flex-shrink:0;"><span style="font-size:28px;">📸</span><span style="font-size:9px; font-weight:bold;">Instagram</span></div>`;
+        } else if (shop.icon && (shop.icon.includes('http') || shop.icon.includes('.png') || shop.icon.includes('.jpg'))) {
+            finalIcon = `<img src="${shop.icon}" style="width:90px; height:90px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/90?text=Shop'">`;
+        } else {
+            finalIcon = `<div style="width:90px; height:90px; border-radius:12px; background:#333; display:flex; align-items:center; justify-content:center; color:white; font-size:28px; flex-shrink:0;">🍸</div>`;
+        }
+
+        card.innerHTML = `
+            <div class="shop-card-inner">
+                ${finalIcon}
+                <div class="shop-info">
+                    <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" onclick="gtag('event', 'click_shop_sns', {shop_name: '${dName}'});">${dName} 🔗</a></div>
+                    <div style="font-size:0.72rem; color:var(--text-sub);"><a href="${googleMapUrl}" target="_blank" onclick="gtag('event', 'click_google_map', {shop_name: '${dName}'});">📍 ${dAddress}</a></div>
+                    <div style="font-size:0.72rem; color:var(--text-sub); margin-top:4px;">🕒 ${shop.time || '---'} | 🗓️ 定休日: ${shop.holiday || '不明'}</div>
+                    <div class="feature-tags">${dTags}</div>
+                    <div style="font-size:0.78rem; color:var(--text-main); margin-top:8px; line-height:1.6;">${dDesc}</div>
+                    <div>
+                        ${showNote ? `<a href="${shop.note}" class="btn-note" target="_blank" onclick="gtag('event', 'click_note_guide', {shop_name: '${dName}'});">📝 攻略記事を読む（note）</a>` : ``}
+                    </div>
+                </div>
+            </div>`;
+        container.appendChild(card);
+    });
+}
+
+function updateBackToTop() {
+    const backToTop = document.getElementById('back-to-top');
+    if (!backToTop) return;
+    if (window.scrollY > 100) {
+        backToTop.style.display = 'flex';
+    } else {
+        backToTop.style.display = 'none';
+    }
+}
+
+window.addEventListener('scroll', updateBackToTop);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        updateBackToTop();
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+    if (typeof shopDetails !== 'undefined') displayShops();
+});
+</script>
+</body>
+</html>

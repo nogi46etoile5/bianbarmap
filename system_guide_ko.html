@@ -11,7 +11,14 @@
     <link rel="alternate" hreflang="es" href="system_guide_es.html" />
     <link rel="alternate" hreflang="ko" href="system_guide_ko.html" />
     <link rel="alternate" hreflang="x-default" href="system_guide.html" />
-
+    <!-- GA4: Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BH32JQCYXR');
+    </script>
     <style>
         :root {
             --bg-color: #0a1428;
@@ -404,11 +411,13 @@
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 홈 / 매장 검색</a></li>
+        <li><a href="index_ko.html">🏠 홈 / 매장 검색</a></li>
+        <li><a href="tokyo_ko.html">🏙️ 관동 지역 리스트 (도쿄 및 기타 지역)</a></li>
+        <li><a href="osaka_ko.html">🐙 간사이 지역 리스트 (오사카·교토·고베)</a></li>
         <li><a href="system_guide_ko.html">❓ 처음 오신 분께 (시스템 안내)</a></li>
-        <li><a href="guide.html">🤝 초보자 동행 가이드</a></li>
-        <li><a href="cinema.html">🎬 백합 영화 특집</a></li>
-        <li><a href="yuri_manga.html">📖 백합 만화 특집</a></li>
+        <li><a href="guide_ko.html">🤝 초보자 동행 가이드</a></li>
+        <li><a href="cinema_ko.html">🎬 백합 영화 특집</a></li>
+        <li><a href="yuri_guide_ko.html">📖 백합 만화 특집</a></li>
         <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 술자리 미니게임 (Beta)</a></li>
         <li><a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">📝 note 해설 기사 (일어)</a></li>
         <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee (후원)</a></li>
@@ -425,7 +434,6 @@
     <div id="lang-menu" class="lang-menu-content">
         <a href="system_guide.html" class="lang-item">🇯🇵 日本語</a>
         <a href="system_guide_en.html" class="lang-item">🇺🇸 English</a>
-        <a href="system_guide_es.html" class="lang-item">🇪🇸 Español</a>
         <a href="system_guide_ko.html" class="lang-item active">🇰🇷 한국어</a>
     </div>
 </div>
@@ -627,5 +635,41 @@ window.addEventListener('scroll', () => {
     }
 });
 </script>
+<script>
+    // Track affiliate clicks and internal page navigation
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a');
+      if (!link || typeof gtag !== 'function') return;
+  
+      const url = new URL(link.href);
+      const linkText = link.innerText.trim();
+  
+      // 1. Rakuten affiliate clicks
+      if (url.hostname.endsWith('afl.rakuten.co.jp')) {
+        gtag('event', 'affiliate_click', {
+          link_url: link.href,
+          link_text: linkText,
+          page_location: window.location.href,
+          transport_type: 'beacon'
+        });
+        return;
+      }
+  
+      // 2. Navigation to another page on the same website
+      if (url.origin !== window.location.origin) return;
+      if (link.getAttribute('href').startsWith('#')) return;
+  
+      // Ignore links to the current page
+      if (url.pathname === window.location.pathname &&
+          url.search === window.location.search) return;
+  
+      gtag('event', 'page_navigation_click', {
+        link_url: link.href,
+        link_text: linkText,
+        page_location: window.location.href,
+        transport_type: 'beacon'
+      });
+    });
+  </script>
 </body>
 </html>

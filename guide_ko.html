@@ -11,6 +11,60 @@
     <link rel="alternate" hreflang="ko" href="guide_ko.html" />
     <link rel="alternate" hreflang="es" href="guide_es.html" />
 
+    <!-- GA4: Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BH32JQCYXR');
+    </script>
+
+    <!-- Structured Data: Korean Escort Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "#webpage",
+          "name": "레즈비언 바 동행·안내 서비스",
+          "description": "일본 신주쿠 니초메의 레즈비언 바 방문을 위한 동행 및 안내 서비스입니다.",
+          "inLanguage": "ko",
+          "mainEntity": {
+            "@id": "#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "#service",
+          "name": "레즈비언 바 동행 및 안내 서비스",
+          "serviceType": "레즈비언 바 동행 및 매장 안내",
+          "description": "이용자의 취향에 맞는 매장 선택, 입장 및 좌석 안내, 자연스러운 대화 시작을 지원합니다.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "가드 플랜 (2시간)",
+              "price": "3000",
+              "priceCurrency": "JPY"
+            },
+            {
+              "@type": "Offer",
+              "name": "매칭 플랜 (3시간)",
+              "price": "5000",
+              "priceCurrency": "JPY"
+            },
+            {
+              "@type": "Offer",
+              "name": "올나잇 플랜",
+              "price": "15000",
+              "priceCurrency": "JPY"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         /* --- 기본 설정 --- */
         body { 
@@ -265,11 +319,13 @@
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 홈 / 바 지도</a></li>
+        <li><a href="index_ko.html">🏠 홈 / 바 지도</a></li>
+        <li><a href="tokyo_ko.html">🏙️ 관동 지역 리스트 (도쿄 및 기타 지역)</a></li>
+        <li><a href="osaka_ko.html">🐙 간사이 지역 리스트 (오사카·교토·고베)</a></li>
         <li><a href="guide_ko.html">🤝 바 동행·가이드 신청</a></li>
-        <li><a href="system_guide.html">🔰 초보자용 시스템 가이드</a></li>
-        <li><a href="cinema.html">🎬 백합·영화 특집</a></li>
-        <li><a href="yuri_guide.html">📜 백合 역사와 엄선 100선</a></li>
+        <li><a href="system_guide_ko.html">🔰 초보자용 시스템 가이드</a></li>
+        <li><a href="cinema_ko.html">🎬 백합·영화 특집</a></li>
+        <li><a href="yuri_guide_ko.html">📜 백合 역사와 엄선 100선</a></li>
         <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 술자리 게임 (Beta)</a></li>
         <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 매장 공략 note 목록</a></li>
         <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ 후원하기 (Buy Me a Coffee)</a></li>
@@ -453,5 +509,22 @@ window.onscroll = function() {
     }
 };
 </script>
+
+<script>
+    // Track Google Forms clicks in GA4
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a');
+      if (!link) return;
+  
+      if (!link.href.startsWith('https://docs.google.com/forms/')) return;
+      if (typeof gtag !== 'function') return;
+  
+      gtag('event', 'google_form_click', {
+        link_url: link.href,
+        link_text: link.innerText.trim(),
+        page_location: window.location.href
+      });
+    });
+  </script>
 </body>
 </html>

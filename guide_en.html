@@ -11,6 +11,60 @@
     <link rel="alternate" hreflang="ko" href="guide_ko.html" />
     <link rel="alternate" hreflang="es" href="guide_es.html" />
 
+    <!-- GA4: Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BH32JQCYXR');
+    </script>
+
+    <!-- Structured Data: Escort Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "#webpage",
+          "name": "Bar Escort Service Details",
+          "description": "A guide and escort service for people visiting lesbian bars in Shinjuku Ni-chome, Japan.",
+          "inLanguage": "en",
+          "mainEntity": {
+            "@id": "#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "#service",
+          "name": "Lesbian Bar Escort & Guide",
+          "serviceType": "Lesbian bar escort and venue guidance",
+          "description": "Support with choosing suitable bars, entering venues, finding seating, and starting natural conversations.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Guard Plan (2 Hours)",
+              "price": "3000",
+              "priceCurrency": "JPY"
+            },
+            {
+              "@type": "Offer",
+              "name": "Matching Plan (3 Hours)",
+              "price": "5000",
+              "priceCurrency": "JPY"
+            },
+            {
+              "@type": "Offer",
+              "name": "Overnight Companion Plan",
+              "price": "15000",
+              "priceCurrency": "JPY"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
         /* --- Base Styles --- */
         body { 
@@ -265,11 +319,13 @@
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 Home & Bar Map</a></li>
+        <li><a href="index_en.html">🏠 Home & Bar Map</a></li>
+        <li><a href="osaka_en.html">🐙 Kansai Area List (Osaka, Kyoto & Kobe)</a></li>
+        <li><a href="tokyo_en.html">🏙️ Kanto Area List (Tokyo & Others)</a></li>
         <li><a href="guide_en.html">🤝 Bar Escort Service</a></li>
-        <li><a href="system_guide.html">🔰 Beginner's Bar Guide</a></li>
-        <li><a href="cinema.html">🎬 WLW Movies & Shows</a></li>
-        <li><a href="yuri_guide.html">📜 Top 100 Yuri Manga/Novels</a></li>
+        <li><a href="system_guide_en.html">🔰 Beginner's Bar Guide</a></li>
+        <li><a href="cinema_en.html">🎬 WLW Movies & Shows</a></li>
+        <li><a href="yuri_guide_en.html">📜 Top 100 Yuri Manga/Novels</a></li>
         <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 Party Games (Beta)</a></li>
         <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 Bar Review Notes</a></li>
         <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee</a></li>
@@ -400,6 +456,7 @@
         </ul>
     </div>
 
+ 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFImnEyesEpfDGiIKEKtAN0BDzaHj9LPaelxO8pa9IdrjdJg/viewform?usp=header" target="_blank" class="cta-btn">
         🟢 Open Application Form
     </a>
@@ -453,5 +510,21 @@ window.onscroll = function() {
     }
 };
 </script>
+<script>
+    // Track clicks on Google Forms links in GA4
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a');
+  
+      if (!link) return;
+      if (!link.href.startsWith('https://docs.google.com/forms/')) return;
+      if (typeof gtag !== 'function') return;
+  
+      gtag('event', 'google_form_click', {
+        link_url: link.href,
+        link_text: link.innerText.trim(),
+        page_location: window.location.href
+      });
+    });
+  </script>
 </body>
 </html>

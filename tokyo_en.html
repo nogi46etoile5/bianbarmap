@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tokyo Lesbian & Women's MIX Bar List in Japan (Yokohama, Shibuya, Ueno, Shinjuku Ni-chome, Ikebukuro) | Shu Map</title>
+<meta name="description" content="A comprehensive directory of lesbian bars and women's MIX bars across the Kanto region, including Yokohama, Shibuya, Ueno, Shinjuku Ni-chome, Ikebukuro, Machida, Tochigi, Akasaka, and Ginza. Thoroughly explained from an independent operator's perspective, featuring beginner systems, access, and late-night hours.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@0,400;0,700;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- 構造化データ (ItemList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Kanto Region Lesbian & Women's MIX Bar List",
+  "description": "Lesbian and women's MIX bar information for Yokohama, Shibuya, Ueno, Shinjuku Ni-chome, Ikebukuro, Machida, Tochigi, Akasaka, Ginza, and more.",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Yokohama Area" },
+    { "@type": "ListItem", "position": 2, "name": "Shibuya Area" },
+    { "@type": "ListItem", "position": 3, "name": "Ueno Area" },
+    { "@type": "ListItem", "position": 4, "name": "Shinjuku Ni-chome Area" },
+    { "@type": "ListItem", "position": 5, "name": "Ikebukuro Area" },
+    { "@type": "ListItem", "position": 6, "name": "Machida Area" },
+    { "@type": "ListItem", "position": 7, "name": "Tochigi Area" },
+    { "@type": "ListItem", "position": 8, "name": "Akasaka Area" },
+    { "@type": "ListItem", "position": 9, "name": "Ginza Area" }
+  ]
+}
+</script>
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
+
+<style>
+  :root {
+    --bg: #0b0b10;
+    --card-bg: #14141f;
+    --accent-neon-pink: #ff2a8d;
+    --accent-neon-blue: #00f0ff;
+    --accent-neon-purple: #b000ff;
+    --text-main: #f0f0f5;
+    --text-sub: #a0a0b5;
+    --border: #2c2c45;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { 
+    font-family: 'Noto Sans JP', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text-main); 
+    line-height: 1.8;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+  }
+
+  /* --- ハンバーガーメニュー --- */
+  #menu-toggle {
+    position: fixed; top: 12px; left: 15px;
+    width: 38px; height: 38px;
+    background: var(--card-bg); border: 1px solid var(--accent-neon-blue);
+    border-radius: 50%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 4px; cursor: pointer; z-index: 2000;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    transition: all 0.2s ease;
+  }
+  #menu-toggle span {
+    display: block; width: 16px; height: 2px;
+    background-color: var(--accent-neon-pink); border-radius: 2px;
+    box-shadow: 0 0 5px var(--accent-neon-pink);
+    transition: all 0.3s ease;
+  }
+  #menu-toggle.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  #menu-toggle.active span:nth-child(2) { opacity: 0; }
+  #menu-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  #menu-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(11, 11, 16, 0.7); backdrop-filter: blur(5px);
+    z-index: 2001; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  #menu-overlay.active { opacity: 1; pointer-events: auto; }
+
+  #side-menu {
+    position: fixed; top: 0; left: -260px; width: 260px; height: 100vh;
+    background: var(--card-bg); border-right: 1px solid var(--border); z-index: 2002;
+    transition: left 0.3s ease; box-shadow: 5px 0 20px rgba(0, 0, 0, 0.8);
+    display: flex; flex-direction: column; overflow-y: auto;
+  }
+  #side-menu.active { left: 0; }
+
+  .menu-header {
+    padding: 16px 18px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: bold; color: var(--accent-neon-pink); font-size: 1rem;
+    font-family: 'Noto Serif JP', serif;
+    text-shadow: 0 0 8px rgba(255, 42, 141, 0.5);
+  }
+  .menu-header .close-btn { background: none; border: none; color: var(--text-sub); font-size: 1.6rem; cursor: pointer; line-height: 1; }
+  .menu-list { list-style: none; padding: 0; margin: 0; }
+  .menu-list li { border-bottom: 1px solid rgba(44, 44, 69, 0.5); }
+  .menu-list a {
+    display: block; padding: 12px 18px; color: var(--text-main); font-size: 0.82rem;
+    text-decoration: none; transition: background 0.2s, color 0.2s;
+  }
+  .menu-list a:hover { background: rgba(0, 240, 255, 0.05); color: var(--accent-neon-blue); }
+
+  /* --- 言語切り替えドロップダウン --- */
+  .lang-switcher {
+    position: fixed; top: 12px; right: 15px; z-index: 2000;
+  }
+  .lang-dropdown-btn {
+    background: var(--card-bg); border: 1px solid var(--accent-neon-blue);
+    border-radius: 18px; padding: 6px 14px; font-size: 0.82rem;
+    font-weight: bold; color: var(--accent-neon-blue); cursor: pointer;
+    display: flex; align-items: center; gap: 4px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+  .lang-menu-content {
+    position: absolute; top: calc(100% + 6px); right: 0;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    list-style: none; padding: 6px 0; min-width: 130px;
+    display: none;
+  }
+  .lang-switcher.open .lang-menu-content { display: block; }
+  .lang-menu-content a {
+    display: block; padding: 8px 16px; font-size: 0.82rem;
+    color: var(--text-main); text-decoration: none;
+  }
+  .lang-menu-content a:hover, .lang-menu-content a.active {
+    background: rgba(255, 42, 141, 0.1); color: var(--accent-neon-pink); font-weight: bold;
+  }
+
+  /* --- Hero & Intro --- */
+  .hero { padding: 50px 15px 15px; text-align: center; }
+  .hero h1 { 
+    font-family: 'Noto Serif JP', serif; 
+    font-size: 1.3rem; 
+    color: var(--accent-neon-pink); 
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(255, 42, 141, 0.6), 0 0 20px rgba(255, 42, 141, 0.3);
+  }
+  .hero p { font-size: 0.8rem; color: var(--text-sub); }
+
+  .region-intro { width: 92%; max-width: 600px; margin: 0 auto 15px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-sizing: border-box; }
+  .region-intro h2 { font-size: 0.85rem; color: var(--accent-neon-blue); margin-bottom: 6px; font-family: 'Noto Serif JP', serif; text-shadow: 0 0 8px rgba(0, 240, 255, 0.4); }
+  .region-intro p { font-size: 0.78rem; color: var(--text-sub); line-height: 1.5; text-align: justify; }
+
+  /* エリア件数カウントバッジ */
+  .pref-count-container { width: 92%; max-width: 600px; margin: 0 auto 15px; display: flex; flex-wrap: wrap; gap: 6px; box-sizing: border-box; }
+  .pref-badge { background: var(--card-bg); border: 1px solid var(--accent-neon-purple); padding: 6px 10px; border-radius: 8px; font-size: 0.72rem; color: var(--accent-neon-blue); font-weight: bold; box-shadow: 0 0 8px rgba(176, 0, 255, 0.2); cursor: pointer; transition: all 0.2s; user-select: none; }
+  .pref-badge:hover { border-color: var(--accent-neon-pink); color: var(--accent-neon-pink); }
+  .pref-badge.active { background: var(--accent-neon-pink); border-color: var(--accent-neon-pink); color: #fff; box-shadow: 0 0 10px rgba(255, 42, 141, 0.6); }
+
+  /* --- 検索・フィルターセクション --- */
+  .filter-section { width: 92%; max-width: 600px; margin: 0 auto 20px; background: var(--card-bg); padding: 14px; border-radius: 16px; border: 1px solid var(--border); box-sizing: border-box; }
+  .search-input { width: 100%; padding: 10px 16px; border-radius: 25px; border: 1px solid var(--border); background: #0b0b10; color: var(--text-main); font-size: 0.82rem; box-sizing: border-box; outline: none; font-family: inherit; }
+  .search-input:focus { border-color: var(--accent-neon-blue); box-shadow: 0 0 8px rgba(0, 240, 255, 0.4); }
+
+  .tag-filter { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag-btn { background: #0b0b10; color: var(--text-sub); border: 1px solid var(--border); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; transition: all 0.2s; user-select: none; font-family: inherit; }
+  .tag-btn.active { border-color: var(--accent-neon-pink); background: var(--accent-neon-pink); color: #ffffff; font-weight: bold; box-shadow: 0 0 8px rgba(255, 42, 141, 0.6); }
+
+  /* --- ショップカード一覧 --- */
+  #shop-container { width: 92%; max-width: 600px; margin: 0 auto; }
+  .shop-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 15px; display: none; box-sizing: border-box; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  .shop-card.show { display: block; }
+  .shop-card-inner { padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .shop-info { flex: 1; min-width: 0; }
+  .shop-name { font-size: 1rem; font-weight: bold; margin-bottom: 6px; font-family: 'Noto Serif JP', serif; }
+  .shop-name a { color: var(--accent-neon-blue); text-decoration: none; text-shadow: 0 0 5px rgba(0, 240, 255, 0.3); }
+  .shop-name a:hover { text-decoration: underline; color: var(--accent-neon-pink); }
+  
+  .feature-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; font-size: 0.62rem; color: var(--text-sub); }
+  .feature-tags span { background: #0b0b10; border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; }
+
+  .btn-note { display: inline-block; padding: 8px 12px; text-align: center; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-radius: 8px; color: #ffffff; background: linear-gradient(135deg, var(--accent-neon-pink), var(--accent-neon-purple)); border: none; width: 100%; box-sizing: border-box; margin-top: 10px; box-shadow: 0 0 10px rgba(255, 42, 141, 0.4); }
+  
+  a { text-decoration: none !important; color: inherit; -webkit-tap-highlight-color: transparent; }
+
+  /* --- フッター・免責事項 --- */
+  .footer-notice { width: 92%; max-width: 600px; margin: 30px auto 0; padding: 20px 15px; color: var(--text-sub); font-size: 0.72rem; border-top: 1px solid var(--border); box-sizing: border-box; line-height: 1.6; }
+  .footer-notice ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
+  .footer-notice li { margin-bottom: 6px; }
+
+  .footer-nav { max-width: 600px; margin: 20px auto 0; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; box-sizing: border-box; }
+  .nav-btn { padding: 12px 5px; border: 1.5px solid var(--accent-neon-blue); text-decoration: none; color: var(--accent-neon-blue); border-radius: 10px; font-weight: bold; font-size: 0.8rem; text-align: center; background: var(--card-bg); box-shadow: 0 0 8px rgba(0, 240, 255, 0.2); }
+  footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    margin: 20px 0;
+}
+/* --- Back to Top Button --- */
+#back-to-top {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 15px !important;
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg);
+    color: var(--accent-neon-pink);
+    border: 1px solid var(--accent-neon-pink);
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none !important;
+    box-shadow: 0 0 10px rgba(255, 42, 141, 0.4);
+    z-index: 99999 !important;
+}
+
+#back-to-top:hover {
+    background-color: var(--accent-neon-pink);
+    color: #fff;
+    transform: translateY(-3px);
+}
+</style>
+</head>
+<body>
+
+<!-- ハンバーガーメニューボタン -->
+<button id="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- サイドバーメニュー本体 -->
+<div id="menu-overlay" onclick="toggleMenu()"></div>
+<nav id="side-menu">
+    <div class="menu-header">
+        <span>Menu</span>
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+    </div>
+    <ul class="menu-list">
+        <li><a href="index_en.html">🏠 Top / Map</a></li>
+        <li><a href="osaka_en.html">🐙 Kansai Area List (Osaka, Kyoto & Kobe)</a></li>
+        <li><a href="tokyo_en.html">🏙️ Kanto Area List (Tokyo & Others)</a></li>
+        <li><a href="guide_en.html">🤝 Escort & Guide Requests</a></li>
+        <li><a href="system_guide_en.html">🔰 Beginner's System Guide</a></li>
+        <li><a href="cinema_en.html">🎬 wlw & Movie Feature</a></li>
+        <li><a href="yuri_guide_en.html">📜 wlw History & Selected 100</a></li>
+        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" onclick="gtag('event', 'click_external_link', {link_name: 'note_list'});">📝 Bar Guide note List</a></li>
+        <li><a href="https://buymeacoffee.com/syu_412357" target="_blank" onclick="gtag('event', 'click_external_link', {link_name: 'buymeacoffee'});">☕ Support (Buy Me a Coffee)</a></li>
+    </ul>
+</nav>
+
+<!-- 言語切り替えドロップダウン -->
+<div class="lang-switcher" id="langSwitcher">
+    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="Select Language">
+        🌐 <span>English</span> ▼
+    </button>
+    <div class="lang-menu-content">
+        <a href="tokyo.html" class="lang-item">🇯🇵 日本語</a>
+        <a href="tokyo_en.html" class="lang-item active">🇺🇸 English</a>
+        <a href="tokyo_ko.html" class="lang-item">🇰🇷 한국어</a>
+    </div>
+</div>
+
+<a href="#" id="back-to-top">▲</a>
+
+<header class="hero">
+  <h1>Tokyo Lesbian & Women's MIX Bar List in Japan (Yokohama, Shibuya, Ueno, Shinjuku Ni-chome, Ikebukuro)</h1>
+  <p>― Summary of lesbian bars and women's MIX bars in Yokohama, Shibuya, Ueno, Shinjuku Ni-chome, Ikebukuro, Machida, Tochigi, Akasaka, Ginza, and other areas ―</p>
+</header>
+
+<section class="region-intro">
+  <h2>🗼 Kanto Area Bar List Map</h2>
+  <p>Explore lesbian bars and women's MIX bars across the Kanto region, including Yokohama, Shibuya, Ueno, Shinjuku Ni-chome, Ikebukuro, Machida, Tochigi, Akasaka, and Ginza. Check local shop counts and features to plan your visit.</p>
+</section>
+
+<!-- エリア件数カウントバッジ -->
+<div id="pref-count-area" class="pref-count-container"></div>
+
+<section class="filter-section">
+  <input type="text" id="search-input" class="search-input" placeholder="🔍 Search by name, area, tags..." oninput="onSearchInput()">
+  <div id="filter-container" class="tag-filter">
+    <button class="tag-btn" onclick="handleTagClick('カフェ', this)">#Cafe</button>
+    <button class="tag-btn" onclick="handleTagClick('外国人多い', this)">#PopularWithForeigners</button>
+    <button class="tag-btn" onclick="handleTagClick('ノーチャージ', this)">#NoCoverCharge</button>
+    <button class="tag-btn" onclick="handleTagClick('英語対応', this)">#EnglishFriendly</button>
+    <button class="tag-btn" onclick="handleTagClick('カラオケ', this)">#Karaoke</button>
+    <button class="tag-btn" onclick="handleTagClick('喫煙可', this)">#SmokingAllowed</button>
+    <button class="tag-btn" onclick="handleTagClick('初心者向け', this)">#BeginnerFriendly</button>
+    <button class="tag-btn" onclick="handleTagClick('深夜営業', this)">#LateNight</button>
+    <button class="tag-btn" onclick="handleTagClick('年齢層高め', this)">#MatureCrowd</button>
+    <button class="tag-btn" onclick="handleTagClick('穏やか', this)">#ChillAtmosphere</button>
+    <button class="tag-btn" onclick="handleTagClick('盛り上がる', this)">#Lively</button>
+    <button class="tag-btn" onclick="handleTagClick('お通し有', this)">#TableSnackServed</button>
+    <button class="tag-btn" onclick="handleTagClick('フード有', this)">#FoodMenu</button>
+    <button class="tag-btn" onclick="handleTagClick('変わったリキュール有', this)">#UniqueLiquors</button>
+    <button class="tag-btn" onclick="handleTagClick('イベント多い', this)">#FrequentEvents</button>
+    <button class="tag-btn" onclick="handleTagClick('ボトルキープ有', this)">#BottleKeepAvailable</button>
+    <button class="tag-btn" onclick="handleTagClick('持ち込み食べ物可', this)">#FoodBYOAllowed</button>
+    <button class="tag-btn" onclick="handleTagClick('間借り', this)">#PopUpLocation</button>
+    <button class="tag-btn" onclick="handleTagClick('不定期オープン', this)">#CheckSNSForHours</button>
+  </div>
+</section>
+
+<div id="shop-container"></div>
+
+<footer class="footer-notice">
+  <strong>⚠ Disclaimer & Operations Policy</strong>
+  <ul>
+    <li>This site is an <strong>unofficial, independently operated website</strong> curated based on the administrator's own criteria. It is not affiliated with any specific company or establishment.</li>
+    <li>All information posted is based on publicly available internet data and independent research.</li>
+    <li>For establishments where exact operating hours or closing details are unknown, they are marked as "Under Investigation." Due to the inability to guarantee exact hours, tags such as "Late Night" may be intentionally omitted. Please check each venue's official social media for the latest updates.</li>
+    <li>For corrections or deletion requests, please contact the administrator via X (Twitter) DM (@412357siki).</li>
+  </ul>
+</footer>
+
+<div class="footer-nav">
+  <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="nav-btn" onclick="gtag('event', 'click_portfolio', {site: 'aquarium'});">🐟 Aquarium Archive</a>
+  <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" class="nav-btn" onclick="gtag('event', 'click_portfolio', {site: 'craft'});">🏺 Traditional Crafts List</a>
+</div>
+
+<footer>&copy; 2026 Shu Map</footer>
+
+<script src="data.js"></script>
+<script src="yuri_data.js"></script>
+<script src="cinema-data.js"></script>
+<script>
+// ハンバーガーメニューの開閉
+function toggleMenu() {
+    document.getElementById('menu-toggle').classList.toggle('active');
+    document.getElementById('side-menu').classList.toggle('active');
+    document.getElementById('menu-overlay').classList.toggle('active');
+}
+
+// 言語メニューの開閉
+function toggleLangMenu() {
+    document.getElementById('langSwitcher').classList.toggle('open');
+}
+
+window.addEventListener('click', function(e) {
+    const switcher = document.getElementById('langSwitcher');
+    if (switcher && !switcher.contains(e.target)) {
+        switcher.classList.remove('open');
+    }
+});
+
+// 実データ表記（月曜, 火曜..., 不定休）に合わせた英語翻訳関数
+function translateHoliday(str) {
+    if (!str) return 'Open Daily';
+    
+    const dayMap = {
+        '月曜': 'Mon',
+        '火曜': 'Tue',
+        '水曜': 'Wed',
+        '木曜': 'Thu',
+        '金曜': 'Fri',
+        '土曜': 'Sat',
+        '日曜': 'Sun',
+        '不定休': 'Irregular',
+          '要確認（X参照）': 'Under Investigation (See X)',
+        '要確認': 'Under Investigation'
+    };
+    
+    let translated = str;
+    for (const [jp, en] of Object.entries(dayMap)) {
+        translated = translated.replaceAll(jp, en);
+    }
+    
+    // 万が一「曜」単体が残るのを防止するクリーンアップ
+    return translated.replace(/曜/g, "");
+}
+
+// タグの日本語→英語変換マップ
+const tagMap = {
+    'カフェ': 'Cafe',
+    '外国人多い': 'PopularWithForeigners',
+    'ノーチャージ': 'NoCoverCharge',
+    '英語対応': 'EnglishFriendly',
+    'カラオケ': 'Karaoke',
+    '喫煙可': 'SmokingAllowed',
+    '初心者向け': 'BeginnerFriendly',
+    '深夜営業': 'LateNight',
+    '年齢層高め': 'MatureCrowd',
+    '穏やか': 'ChillAtmosphere',
+    '盛り上がる': 'Lively',
+    'お通し有': 'TableSnackServed',
+    'フード有': 'FoodMenu',
+    '変わったリキュール有': 'UniqueLiquors',
+    'イベント多い': 'FrequentEvents',
+    'ボトルキープ有': 'BottleKeepAvailable',
+    '持ち込み食べ物可': 'FoodBYOAllowed',
+    '間借り': 'PopUpLocation',
+    '不定期オープン': 'CheckSNSForHours',
+};
+// タグの状態管理
+let activeTags = new Set();
+let currentSearchKeyword = "";
+let selectedRegionFilter = null;
+
+function handleTagClick(tag, btn) {
+    if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        btn.className = 'tag-btn';
+    } else {
+        activeTags.add(tag);
+        btn.className = 'tag-btn active';
+    }
+    displayShops();
+}
+
+function handleRegionClick(regionName) {
+    if (selectedRegionFilter === regionName) {
+        selectedRegionFilter = null;
+    } else {
+        selectedRegionFilter = regionName;
+    }
+    displayShops();
+}
+
+function onSearchInput() {
+    currentSearchKeyword = document.getElementById('search-input').value.trim().toLowerCase();
+    displayShops();
+}
+
+function displayShops() {
+    const container = document.getElementById('shop-container');
+    const prefCountArea = document.getElementById('pref-count-area');
+    if (!container || typeof shopDetails === 'undefined') return;
+    
+    container.innerHTML = ""; 
+
+    const kantoShops = shopDetails.filter(shop => {
+    return shop.area === '東京';
+});
+    const spotKeys = [
+        { jp: "横浜", en: "Yokohama" },
+        { jp: "渋谷", en: "Shibuya" },
+        { jp: "上野", en: "Ueno" },
+        { jp: "新宿二丁目", en: "Shinjuku Ni-chome" },
+        { jp: "池袋", en: "Ikebukuro" },
+        { jp: "町田", en: "Machida" },
+        { jp: "栃木", en: "Tochigi" },
+        { jp: "赤坂", en: "Akasaka" },
+        { jp: "銀座", en: "Ginza" }
+    ];
+    
+    function getShopRegion(shop) {
+    const address = shop.address_jp || shop.address_en || "";
+
+
+    if (address.includes("新宿二丁目")) return "Shinjuku Ni-chome";
+    if (address.includes("銀座")) return "Ginza";
+    if (address.includes("渋谷")) return "Shibuya";
+    if (address.includes("上野")) return "Ueno";
+    if (address.includes("池袋")) return "Ikebukuro";
+    if (address.includes("横浜")) return "Yokohama";
+    if (address.includes("町田")) return "Machida";
+    if (address.includes("栃木")) return "Tochigi";
+    if (address.includes("赤坂")) return "Akasaka";
+
+    return "Shinjuku Ni-chome";
+}
+    const prefCounts = {};
+    kantoShops.forEach(shop => {
+        const reg = getShopRegion(shop);
+        prefCounts[reg] = (prefCounts[reg] || 0) + 1;
+    });
+
+    if (prefCountArea) {
+        prefCountArea.innerHTML = Object.entries(prefCounts).map(([pref, count]) => {
+            const isActive = selectedRegionFilter === pref ? ' active' : '';
+            return `<div class="pref-badge${isActive}" onclick="handleRegionClick('${pref}')">📍 ${pref}: ${count} items</div>`;
+        }).join('');
+    }
+
+    const filteredShops = kantoShops.filter(shop => {
+        if (selectedRegionFilter && getShopRegion(shop) !== selectedRegionFilter) {
+            return false;
+        }
+
+        const shopTags = shop.tags || [];
+        for (const tag of activeTags) {
+            if (!shopTags.includes(tag)) return false;
+        }
+
+        if (currentSearchKeyword) {
+            const name = (shop.name_en || shop.name_jp || "").toLowerCase();
+            const address = (shop.address_en || shop.address_jp || "").toLowerCase();
+            const tags = shopTags.join(" ").toLowerCase();
+            const desc = (shop.description_en || shop.description_jp || "").toLowerCase();
+            return name.includes(currentSearchKeyword) || address.includes(currentSearchKeyword) || tags.includes(currentSearchKeyword) || desc.includes(currentSearchKeyword);
+        }
+
+        return true;
+    });
+
+    filteredShops.forEach((shop, index) => {
+        // 5件ごとに広告を挿入（漫画2冊 ＋ 映画1本）
+        if (index > 0 && index % 5 === 0) {
+            const cinemaList = (typeof worksData !== 'undefined' && Array.isArray(worksData)) ? worksData : [];
+            let mangaList = [];
+
+            if (typeof yuri_data !== 'undefined' && Array.isArray(yuri_data)) {
+                yuri_data.forEach(category => {
+                    if (category && Array.isArray(category.works)) {
+                        mangaList.push(...category.works);
+                    }
+                });
+            }
+            
+            const shuffledManga = [...mangaList].sort(() => 0.5 - Math.random());
+            const manga1 = shuffledManga[0] || null;
+            const manga2 = shuffledManga[1] || null;
+            
+            const shuffledCinema = [...cinemaList].sort(() => 0.5 - Math.random());
+            const cinema1 = shuffledCinema[0] || null;
+
+            const createMangaCard = (item) => {
+                if (!item) return '';
+
+                const title = item.en_t || item.t || 'Unknown Title';
+                const author = item.en_a || item.a || '';
+                const hasAmz = item.amz && item.amz.trim() !== "" && item.amz !== "#";
+
+                return `
+                    <div style="
+                        background: rgba(255,255,255,0.95);
+                        padding: 10px;
+                        border-radius: 6px;
+                        border: 1px solid rgba(142,58,70,0.15);
+                        margin-bottom: 6px;
+                        text-align: center;
+                    ">
+                        <div style="
+                            font-size: 0.75rem;
+                            font-weight: bold;
+                            color: #2c2c2c;
+                            margin-bottom: 2px;
+                        ">
+                            📖 ${title}
+                        </div>
+
+                        ${author ? `
+                            <div style="
+                                font-size: 0.62rem;
+                                color: #666;
+                                margin-bottom: 4px;
+                            ">
+                                Author: ${author}
+                            </div>
+                        ` : ''}
+
+                        ${hasAmz ? `
+                            <div>
+                                <a href="${item.amz}"
+                                   target="_blank"
+                                   rel="nofollow"
+                                   onclick="gtag('event', 'click_yuri_ad', {title: '${title}'});"
+                                   style="
+                                       display: block;
+                                       width: 80%;
+                                       margin: 6px auto 0;
+                                       box-sizing: border-box;
+                                       background: #232f3e;
+                                       color: white;
+                                       text-align: center;
+                                       text-decoration: none;
+                                       padding: 6px;
+                                       border-radius: 5px;
+                                       font-size: 0.68rem;
+                                       font-weight: bold;
+                                   ">
+                                    View on Amazon
+                                </a>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            };
+
+            const createCinemaCard = (item) => {
+                if (!item) return '';
+
+                const title = item.titleEn || item.titleJa || item.title || item.t || 'Unknown Title';
+                const cast = item.castEn || item.castJa || item.actor || item.cast || '';
+                const hasAmz = item.amz && item.amz.trim() !== "" && item.amz !== "#";
+
+                return `
+                    <div style="
+                        background: rgba(255,255,255,0.95);
+                        padding: 10px;
+                        border-radius: 6px;
+                        border: 1px solid rgba(142,58,70,0.15);
+                        margin-bottom: 6px;
+                        text-align: center;
+                    ">
+                        <div style="
+                            font-size: 0.75rem;
+                            font-weight: bold;
+                            color: #2c2c2c;
+                            margin-bottom: 2px;
+                        ">
+                            🎬 ${title}
+                        </div>
+
+                        ${cast ? `
+                            <div style="
+                                font-size: 0.62rem;
+                                color: #666;
+                                margin-bottom: 4px;
+                            ">
+                                Starring: ${cast}
+                            </div>
+                        ` : ''}
+
+                        ${hasAmz ? `
+                            <div>
+                                <a href="${item.amz}"
+                                   target="_blank"
+                                   rel="nofollow"
+                                   onclick="gtag('event', 'click_cinema_ad', {title: '${title}'});"
+                                   style="
+                                       display: block;
+                                       width: 80%;
+                                       margin: 6px auto 0;
+                                       box-sizing: border-box;
+                                       background: #232f3e;
+                                       color: white;
+                                       text-align: center;
+                                       text-decoration: none;
+                                       padding: 6px;
+                                       border-radius: 5px;
+                                       font-size: 0.68rem;
+                                       font-weight: bold;
+                                   ">
+                                    View on Amazon
+                                </a>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            };
+            
+            const adHtml = `
+                <div style="margin: 20px 0; padding: 12px; border-radius: 12px; background: linear-gradient(135deg, #fffcf5 0%, #fdf2f4 100%); border: 1px solid #eecaca; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="text-align: center; margin-bottom: 8px;">
+                        <span style="color: #8e3a46; font-weight: bold; font-size: 0.72rem;">🌹 Recommended wlw Works (Ad)</span>
+                    </div>
+                    <div>
+                        ${createMangaCard(manga1)}
+                        ${createMangaCard(manga2)}
+                        ${createCinemaCard(cinema1)}
+                    </div>
+                </div>`;
+            container.insertAdjacentHTML('beforeend', adHtml);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'shop-card show';
+        const dName = shop.name_en || shop.name_jp;
+        const searchNameForMap = shop.name_jp || shop.name_en;
+        const dAddress = shop.address_en || shop.address_jp || 'Address Unknown';
+        const dDesc = shop.description_en || shop.description_jp || 'Under Investigation';
+        const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchNameForMap + ' ' + dAddress)}`;
+        const showNote = (shop.note && shop.note !== '#');
+        
+        // tagMapを使ってショップカードのタグを英語に変換（辞書になければそのまま表示）
+        const dTags = (shop.tags || []).map(t => `<span>${tagMap[t] || t}</span>`).join('');
+
+        // 定休日をtranslateHoliday関数で英語変換して表示
+        const rawHoliday = shop.holiday_en || shop.holiday || '';
+        const translatedHoliday = translateHoliday(rawHoliday);
+
+        let finalIcon = '';
+        if (shop.icon === "website") {
+            finalIcon = `<div style="width:90px; height:90px; border-radius:12px; background:#1a2a4a; border:1px solid #3a4a6a; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00ffcc; flex-shrink:0;"><span style="font-size:28px;">🌐</span><span style="font-size:9px; font-weight:bold;">WEB SITE</span></div>`;
+        } else if (shop.icon === "instagram" || (shop.snsUrl && shop.snsUrl.includes('instagram.com'))) {
+            finalIcon = `<div style="width:90px; height:90px; border-radius:12px; background:linear-gradient(45deg, #f09433 0%, #bc1888 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; flex-shrink:0;"><span style="font-size:28px;">📸</span><span style="font-size:9px; font-weight:bold;">Instagram</span></div>`;
+        } else if (shop.icon && (shop.icon.includes('http') || shop.icon.includes('.png') || shop.icon.includes('.jpg'))) {
+            finalIcon = `<img src="${shop.icon}" style="width:90px; height:90px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/90?text=Shop'">`;
+        } else {
+            finalIcon = `<div style="width:90px; height:90px; border-radius:12px; background:#333; display:flex; align-items:center; justify-content:center; color:white; font-size:28px; flex-shrink:0;">🍸</div>`;
+        }
+
+        card.innerHTML = `
+            <div class="shop-card-inner">
+                ${finalIcon}
+                <div class="shop-info">
+                    <div class="shop-name"><a href="${shop.snsUrl}" target="_blank" onclick="gtag('event', 'click_shop_sns', {shop_name: '${dName}'});">${dName} 🔗</a></div>
+                    <div style="font-size:0.72rem; color:var(--text-sub);"><a href="${googleMapUrl}" target="_blank" onclick="gtag('event', 'click_google_map', {shop_name: '${dName}'});">📍 ${dAddress}</a></div>
+                    <div style="font-size:0.72rem; color:var(--text-sub); margin-top:4px;">🕒 ${shop.time || '---'} | 🗓️ Regular Holiday: ${translatedHoliday}</div>
+                    <div class="feature-tags">${dTags}</div>
+                    <div style="font-size:0.78rem; color:var(--text-main); margin-top:8px; line-height:1.6;">${dDesc}</div>
+                    <div>
+                        ${showNote ? `<a href="${shop.note}" class="btn-note" target="_blank" onclick="gtag('event', 'click_note_guide', {shop_name: '${dName}'});">📝 Read Guide Article (note)</a>` : ``}
+                    </div>
+                </div>
+            </div>`;
+        container.appendChild(card);
+    });
+}
+
+// ページトップへ戻るボタン
+function updateBackToTop() {
+    const backToTop = document.getElementById('back-to-top');
+    if (!backToTop) return;
+
+    if (window.scrollY > 100) {
+        backToTop.style.display = 'flex';
+    } else {
+        backToTop.style.display = 'none';
+    }
+}
+
+window.addEventListener('scroll', updateBackToTop);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('back-to-top');
+
+    if (backToTop) {
+        updateBackToTop();
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (typeof shopDetails !== 'undefined') displayShops();
+});
+</script>
+</body>
+</html>

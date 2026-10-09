@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesbian & MIX Bar Guide Map | Nationwide Lesbian Bar Experience Reports (SHU Map)</title>
-    <meta name="description" content="[Shinjuku Ni-chome & Beyond] A guide for first-timers to navigate and pick bars without getting stuck (Updated regularly)">
+    <title>Shū Map | Lesbian & MIX Bar Guide, Women's Culture, GL & Yuri Info</title>
+    <meta name="description" content="Shū Map featuring reports on lesbian bars and MIX bars, along with women's culture and GL/Yuri information.">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BH32JQCYXR');
+</script>
     <style>
         /* --- Base Settings --- */
-        body { background-color: #0a1428; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
+        body { background-color: #0a1428; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
         
         /* --- Language Switcher Dropdown --- */
         .lang-switcher { position: relative; width: 90%; max-width: 600px; margin: 15px 0; display: flex; justify-content: flex-end; }
@@ -17,18 +25,23 @@
         .lang-item { color: #ffffff; padding: 10px 15px; text-decoration: none; display: block; font-size: 0.8rem; font-weight: bold; transition: background 0.2s, color 0.2s; }
         .lang-item:hover { background-color: rgba(0, 255, 204, 0.1); color: #00ffcc; }
         .lang-item.active { background-color: #00ffcc; color: #0a1428; }
+        
+        .lang-en, .lang-en-block { display: none !important; }
+        body.en-mode .lang-jp { display: none !important; }
+        body.en-mode .lang-en { display: inline !important; }
+        body.en-mode .lang-en-block { display: block !important; }
 
         .site-header { text-align: center; padding: 40px 20px; width: 100%; }
         .site-header h1 { font-size: 1.8rem; font-weight: bold; background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
         .site-subtitle { font-size: 0.85rem; color: #ccd6f6; margin-top: 10px; display: block; }
 
-        .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; box-sizing: border-box; }
+        .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; }
         .guide-notes { font-size: 0.75rem; color: #ff4d4d; text-align: left; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-top: 15px; line-height: 1.6; border: 1px solid rgba(255, 77, 77, 0.3); }
 
         /* Google Map Pin Notice */
         .map-top-notice { width: 90%; max-width: 600px; background: rgba(255, 183, 77, 0.1); border: 1px solid #ffb74d; border-radius: 10px; padding: 12px 16px; margin-bottom: 20px; font-size: 0.75rem; color: #ffb74d; line-height: 1.5; text-align: left; box-sizing: border-box; }
 
-        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; box-sizing: border-box; }
+        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; }
 
         .qa-section { width: 90%; max-width: 600px; margin-bottom: 20px; }
         .qa-item { background: rgba(255,255,255,0.05); border: 1px solid #2a3a5a; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
@@ -38,7 +51,7 @@
         .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.2); }
         .qa-answer-inner { padding: 12px 15px; font-size: 0.8rem; color: #ccd6f6; line-height: 1.5; }
 
-        .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; box-sizing: border-box; }
+        .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .legend-box { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; border: 1px solid #2a3a5a; font-size: 0.7rem; }
         .legend-title { font-weight: bold; margin-bottom: 5px; color: #00ffcc; }
         .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
@@ -46,7 +59,7 @@
         .dot-r { width: 10px; height: 10px; border-radius: 2px; }
 
         /* Search & Filter Area */
-        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; box-sizing: border-box; }
+        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
         .search-box-container { margin-bottom: 15px; text-align: center; }
         .search-input { width: 100%; max-width: 100%; padding: 10px 14px; border-radius: 20px; border: 1px solid #00ffcc; background: #1a2a4a; color: #fff; font-size: 0.85rem; box-sizing: border-box; outline: none; }
         .search-input::placeholder { color: #8892b0; }
@@ -59,6 +72,14 @@
         .shop-card { background: #162440; border-radius: 12px; overflow: hidden; border: 1px solid #2a3a5a; margin-bottom: 25px; display: none; position: relative; padding-left: 14px; border-right: 10px solid #2a3a5a; }
         .shop-card.show { display: block; }
         .shop-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; }
+        .border-l-h::before { background: #00ff00; } 
+        .border-l-a::before { background: #ff8c00; }
+        .border-l-gf::before { background: #ffd700; }
+        .border-l-fune::before { background: #00ffff; }
+        .border-l-b-l::before { background: linear-gradient(to bottom, #9d00ff 50%, #0000ff 50%); }
+        .border-l-b-g::before { background: linear-gradient(to bottom, #9d00ff 50%, #ff0000 50%); }
+        .border-r-bian { border-right-color: #ff69b4 !important; }
+        .border-r-mix { border-right-color: #4bc0c0 !important; }
 
         .shop-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
         .feature-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.7rem; color: #8892b0; }
@@ -77,11 +98,11 @@
         a { text-decoration: none !important; color: inherit; -webkit-tap-highlight-color: transparent; }
         .action-buttons a:focus, .action-buttons a:active { outline: none !important; box-shadow: none !important; }
         
-        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; box-sizing: border-box; }
+        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; }
         .footer-notice ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
         .footer-notice li { margin-bottom: 8px; line-height: 1.4; }
         
-        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; box-sizing: border-box; }
+        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; }
         .portfolio-card { flex: 1; background: #1a2a4a; padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; font-size: 0.75rem; text-align: center; border: 1px solid #3a4a6a; }
 
         #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
@@ -127,6 +148,8 @@
     </div>
     <ul class="menu-list">
         <li><a href="index_en.html">🏠 Home / Map</a></li>
+        <li><a href="tokyo_en.html">🏙️ Kanto Area List (Tokyo & Others)</a></li>
+        <li><a href="osaka_en.html">🐙 Kansai Area List (Osaka, Kyoto & Kobe)</a></li>
         <li><a href="guide_en.html">🤝 Escort & Guide Service</a></li>
         <li><a href="system_guide_en.html">🔰 Beginner's Bar System Guide</a></li>
         <li><a href="cinema_en.html">🎬 Yuri & Cinema Highlights</a></li>
@@ -146,29 +169,41 @@
         <a href="index.html" class="lang-item">🇯🇵 日本語</a>
         <a href="index_en.html" class="lang-item active">🇺🇸 English</a>
         <a href="index_ko.html" class="lang-item">🇰🇷 한국어</a>
-      </div>
+       </div>
 </div>
 
 <header class="site-header">
-    <h1>Lesbian & MIX Bar Guide Map | SHU (愁) Map</h1>
-    <span class="site-subtitle">[Shinjuku Ni-chome & Beyond] A complete guide for first-timers to find the right bar with confidence (Updated regularly)</span>
+    <h1>Shū Map | Lesbian Bar Reports & GL/Yuri Info</h1>
+<span class="site-subtitle">
+    Featuring lesbian & MIX bar reports, women's culture, drinks, GL/Yuri, and more.
+</span>
+    <div style="margin-top:10px; font-size:0.8rem; color:#ccd6f6;">
+        Listed Venues: <strong style="color:#00ffcc;">104</strong>
+    </div>
 </header>
-
 <section class="guide-intro">
-    <h2>🤝 Eliminating the Fear of Walking in Alone</h2>
-    <p>Thinking about visiting Shinjuku Ni-chome or lesbian bars across Japan, but worried about sitting alone with no one to talk to? This guide is designed to solve that problem.</p>
-    <p>The creator personally visits each location to review the authentic atmosphere and local etiquette. Whether you want to break the ice easily on your first visit or find a quiet space to relax, we support your needs.</p>
+    <h2>🤝 Lesbian & MIX Bar Guide</h2>
+    <p>
+        From your first visit to pricing, atmosphere, and local etiquette,
+        we've put together everything you need based on real information.
+    </p>
+    <div style="display: flex; gap: 8px; margin-top: 10px;">
+        <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank"
+           style="flex:1; padding:10px; border:1px solid #00ffcc; text-align:center; color:#00ffcc; border-radius:8px; font-weight:bold; font-size:0.75rem; background:rgba(0,255,204,0.1);"
+           onclick="gtag('event', 'click_intro_note', {'event_category':'navigation'});">
+            📝 Bar Guides (note)
+        </a>
 
-    <div style="margin-top: 15px;">
-        <div style="display: flex; gap: 10px; margin-top: 15px;">
-            <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">📝 Bar Guide List (note)</a>
-            <a href="guide_en.html" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">🤝 Request a Local Guide</a>
-        </div>
+        <a href="guide_en.html"
+           style="flex:1; padding:10px; border:1px solid #00ffcc; text-align:center; color:#00ffcc; border-radius:8px; font-weight:bold; font-size:0.75rem; background:rgba(0,255,204,0.1);"
+           onclick="gtag('event', 'click_intro_guide', {'event_category':'navigation'});">
+            🤝 Escort & Guide
+        </a>
     </div>
 
     <div class="guide-notes">
         ⚠️ <strong>Important Notes</strong>:<br>
-        ・The venue info and visit reports on this site are unofficial content based on independent research. We are not affiliated with any specific companies or organizations. Please refrain from contacting the venues directly regarding the site content or reviews.<br>
+        ・The venue information and visit reports on this site are unofficial content based on independent research. We are not affiliated with any specific companies or organizations. Please refrain from contacting the venues directly regarding the site content or reviews.<br>
         ・Must be 20+ years old / Meetups strictly in public spaces / No romantic or sexual support<br>
         ・<strong>We are happy to help you make friends and explore the local community!</strong><br>
         ・No photography without permission / <strong>The client covers all transportation and food/drink expenses for the guide.</strong><br>
@@ -183,11 +218,11 @@
         ☕ Support Our Field Research (Buy Me a Coffee)
     </a>
     <p style="font-size: 0.75rem; color: #ccd6f6; margin-top: 8px; padding: 0 10px;">
-        Help support self-funded bar investigations and keep this guide active and up to date!
+        Support self-funded lesbian bar investigations (any support helps us keep going!)
     </p>
 </div>
 
-<!-- FAQ / Q&A Section -->
+<!-- Q&A Section -->
 <section class="qa-section">
     <div class="qa-item">
         <button class="qa-question" onclick="toggleQA(this)">❓ First-Time Visitors (System & Etiquette Guide)</button>
@@ -206,7 +241,7 @@
     </div>
 </section>
 
-<!-- Google Maps Notice -->
+<!-- Google Maps Pin Notice -->
 <div class="map-top-notice">
     📍 <strong>Notice Regarding Google Maps Pins</strong><br>
     Standard map links may slightly misalign depending on building floors or entrance locations. Precise floor numbers and detailed location info can be confirmed on our <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="color:#00ffcc; text-decoration:underline;">Lesbian Bar List Note (with Google My Maps)</a>.
@@ -230,7 +265,7 @@
 <!-- Search & Filter Area -->
 <section class="filter-section">
     <div class="search-box-container">
-        <input type="text" id="search-input" class="search-input" placeholder="🔍 Search by bar name or area (e.g., Osaka, Shinjuku)..." oninput="onSearchInput()">
+        <input type="text" id="search-input" class="search-input" placeholder="🔍 Search by bar name or location (e.g., Osaka, Shinjuku)..." oninput="onSearchInput()">
     </div>
 
     <div id="area-filter-container" class="area-filter">
@@ -249,7 +284,7 @@
         <button class="tag-btn" onclick="filterTag('カラオケ', this)">#Karaoke</button>
         <button class="tag-btn" onclick="filterTag('喫煙可', this)">#SmokingAllowed</button>
         <button class="tag-btn" onclick="filterTag('初心者向け', this)">#BeginnerFriendly</button>
-        <button class="tag-btn" onclick="filterTag('初心者多め', this)">#ManyBeginners</button>
+        <button class="tag-btn" onclick="filterTag('深夜営業', this)">#LateNight</button>
         <button class="tag-btn" onclick="filterTag('年齢層高め', this)">#MatureCrowd</button>
         <button class="tag-btn" onclick="filterTag('穏やか', this)">#ChillAtmosphere</button>
         <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#Lively</button>
@@ -276,7 +311,6 @@
         <li>We assume no responsibility for any trouble or damages resulting from the use of this site.</li>
     </ul>
 </footer>
-</footer>
 
 <div class="portfolio-section">
     <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="portfolio-card">🐟 Aquarium Directory</a>
@@ -285,294 +319,322 @@
 
 <script src="data.js"></script>
 <script src="yuri_data.js"></script>
+<script src="cinema-data.js"></script>
+
 <script>
-function toggleMenu() {
-    const toggleBtn = document.getElementById('menu-toggle');
-    const sideMenu = document.getElementById('side-menu');
-    const overlay = document.getElementById('menu-overlay');
+    (function(){
+        if(typeof shopDetails==='undefined'||!Array.isArray(shopDetails))return;
+        const lang=document.documentElement.lang||'en';
+        const itemListElement=shopDetails.map((shop,index)=>{
+            let shopName=shop.name_en||shop.name_jp||shop.name||'';
+            const item={"@type":"BarOrPub","name":shopName};
+            if(shop.address_en||shop.address_jp)item.address={"@type":"PostalAddress","streetAddress":shop.address_en||shop.address_jp};
+            return {"@type":"ListItem","position":index+1,"item":item};
+        });
+        const structuredData={
+            "@context":"https://schema.org",
+            "@type":"ItemList",
+            "name":"Lesbian & MIX Bar Guide | Shū Map",
+            "numberOfItems":itemListElement.length,
+            "itemListElement":itemListElement
+        };
+        const script=document.createElement('script');
+        script.type='application/ld+json';
+        script.textContent=JSON.stringify(structuredData);
+        document.head.appendChild(script);
+    })();
     
-    toggleBtn.classList.toggle('active');
-    sideMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
-}
-
-function toggleLangMenu() {
-    document.getElementById("lang-menu").classList.toggle("show");
-}
-
-window.addEventListener('click', function(e) {
-    const dropdown = document.querySelector('.lang-switcher');
-    if (dropdown && !dropdown.contains(e.target)) {
-        const langMenu = document.getElementById("lang-menu");
-        if (langMenu) langMenu.classList.remove("show");
+    (function(){
+        function getShopName(link){
+            const card=link.closest('.shop-card');
+            if(!card)return '';
+            const el=card.querySelector('.shop-name');
+            return el?(el.innerText||el.textContent||'').replace('🔗','').trim():'';
+        }
+    
+        function getAdInfo(link){
+            const ad=link.closest('[data-ga-ad-type]');
+            if(!ad)return {item_name:'',item_type:''};
+            const type=ad.dataset.gaAdType;
+            const el=ad.querySelector('div');
+            let name=el?(el.innerText||el.textContent||'').trim():'';
+            name=name.replace(/^📖\s*/,'').replace(/^🎬\s*/,'').trim();
+            return {item_name:name,item_type:type};
+        }
+    
+        function getClickType(link,href){
+            if(href.includes('x.com/')||href.includes('twitter.com/'))return 'x';
+            if(href.includes('google.com/maps')||href.includes('maps.google'))return 'google_map';
+            if(href.includes('note.com/'))return 'note';
+            if(href.includes('amazon.co.jp')||href.includes('amazon.com'))return 'amazon';
+            if(href.includes('docs.google.com/forms'))return 'google_form';
+            if(href.includes('buymeacoffee.com'))return 'support';
+            if(href.includes('guide_en.html')||href.includes('system_guide_en.html')||href.includes('cinema_en.html')||href.includes('yuri_guide_en.html')||href.includes('tokyo_en.html')||href.includes('osaka_en.html')||href.includes('index_en.html'))return 'internal_page';
+            if(link.target==='_blank'||(href.startsWith('http')&&!href.includes(location.hostname)))return 'external_link';
+            return 'other';
+        }
+    
+        document.addEventListener('click',function(e){
+            if(typeof gtag!=='function')return;
+            const link=e.target.closest('a');
+            if(!link)return;
+            const onclick=link.getAttribute('onclick')||'';
+            if(onclick.includes('gtag('))return;
+            const href=link.href||'';
+            const linkText=(link.innerText||link.textContent||'').trim();
+            const shopName=getShopName(link);
+            const adInfo=getAdInfo(link);
+            gtag('event','click_link',{
+                click_type:getClickType(link,href),
+                shop_name:shopName,
+                item_name:adInfo.item_name,
+                item_type:adInfo.item_type,
+                link_text:linkText.substring(0,100),
+                link_url:href.substring(0,500),
+                page_path:window.location.pathname,
+                page_title:document.title
+            });
+        });
+    })();
+    
+    function toggleMenu(){
+        const toggleBtn=document.getElementById('menu-toggle');
+        const sideMenu=document.getElementById('side-menu');
+        const overlay=document.getElementById('menu-overlay');
+        toggleBtn.classList.toggle('active');
+        sideMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
     }
-});
-
-const tagMap = {
-    'カフェ': 'Cafe',
-    '外国人多い': 'PopularWithForeigners',
-    'ノーチャージ': 'NoCoverCharge',
-    '英語対応': 'EnglishFriendly',
-    'カラオケ': 'Karaoke',
-    '喫煙可': 'SmokingAllowed',
-    '初心者向け': 'BeginnerFriendly',
-    '初心者多め': 'ManyBeginners',
-    '年齢層高め': 'MatureCrowd',
-    '穏やか': 'ChillAtmosphere',
-    '盛り上がる': 'Lively',
-    'お通し有': 'TableSnackServed',
-    'フード有': 'FoodMenu',
-    '変わったリキュール有': 'UniqueLiquors',
-    'イベント多い': 'FrequentEvents',
-    'ボトルキープ有': 'BottleKeepAvailable',
-    '持ち込み食べ物可': 'FoodBYOAllowed',
-    '間借り': 'PopUpLocation',
-    '不定期オープン': 'CheckSNSForHours'
-};
-
-// 実データ表記（月曜, 火曜..., 不定休）に合わせた英語翻訳関数
-function translateHoliday(str) {
-    if (!str) return 'Open Daily';
     
-    const dayMap = {
-        '月曜': 'Mon',
-        '火曜': 'Tue',
-        '水曜': 'Wed',
-        '木曜': 'Thu',
-        '金曜': 'Fri',
-        '土曜': 'Sat',
-        '日曜': 'Sun',
-        '不定休': 'Irregular'
+    function toggleLangMenu(){
+        document.getElementById("lang-menu").classList.toggle("show");
+    }
+    
+    window.addEventListener('click',function(e){
+        const dropdown=document.querySelector('.lang-switcher');
+        if(dropdown&&!dropdown.contains(e.target)){
+            const langMenu=document.getElementById("lang-menu");
+            if(langMenu)langMenu.classList.remove("show");
+        }
+    });
+    
+    const tagMap = {
+        'カフェ': 'Cafe',
+        '外国人多い': 'PopularWithForeigners',
+        'ノーチャージ': 'NoCoverCharge',
+        '英語対応': 'EnglishFriendly',
+        'カラオケ': 'Karaoke',
+        '喫煙可': 'SmokingAllowed',
+        '初心者向け': 'BeginnerFriendly',
+        '深夜営業': 'LateNight',
+        '年齢層高め': 'MatureCrowd',
+        '穏やか': 'ChillAtmosphere',
+        '盛り上がる': 'Lively',
+        'お通し有料': 'TableSnackServed',
+        'お通し有': 'TableSnackServed',
+        'フード有': 'FoodMenu',
+        '変わったリキュール有': 'UniqueLiquors',
+        'イベント多い': 'FrequentEvents',
+        'ボトルキープ有': 'BottleKeepAvailable',
+        '持ち込み食べ物可': 'FoodBYOAllowed',
+        '間借り': 'PopUpLocation',
+        '不定期オープン': 'CheckSNSForHours'
+    };
+
+    function translateHoliday(str) {
+        if (!str) return 'Open Daily';
+        const dayMap = {
+            '休業中（再開時期未定）': 'Temporarily Closed (Reopening date TBD)',
+            '要確認（X参照）': 'Under Investigation (See X)',
+            '不定休（X参照）': 'Irregular (See X)',
+            '不定休（要SNS確認）': 'Irregular (Check SNS)',
+            '休業中': 'Temporarily Closed',
+            '要確認': 'Under Investigation',
+            '月曜': 'Mon',
+            '火曜': 'Tue',
+            '水曜': 'Wed',
+            '木曜': 'Thu',
+            '金曜': 'Fri',
+            '土曜': 'Sat',
+            '日曜': 'Sun',
+            '不定休': 'Irregular'
+        };
+        let translated = str;
+        for (const [jp, en] of Object.entries(dayMap)) {
+            translated = translated.replaceAll(jp, en);
+        }
+        return translated.replace(/曜/g, "");
+    }
+    
+    let currentArea=null;
+    let currentTag=null;
+    let currentSearchKeyword="";
+    
+    function toggleQA(btn){
+        btn.classList.toggle('active');
+        const ans=btn.nextElementSibling;
+        ans.style.maxHeight=ans.style.maxHeight?null:ans.scrollHeight+"px";
+    }
+    
+    window.onscroll=function(){
+        const btn=document.getElementById('back-to-top');
+        if(btn){
+            if(document.documentElement.scrollTop>300)btn.classList.add('show');
+            else btn.classList.remove('show');
+        }
     };
     
-    let translated = str;
-    for (const [jp, en] of Object.entries(dayMap)) {
-        translated = translated.replaceAll(jp, en);
-    }
-    
-    // 万が一「曜」単体が残るのを防止するクリーンアップ
-    return translated.replace(/曜/g, "");
-}
-
-let currentArea = null;
-let currentTag = null;
-let currentSearchKeyword = "";
-
-function toggleQA(btn) {
-    btn.classList.toggle('active');
-    const ans = btn.nextElementSibling;
-    ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
-}
-
-window.onscroll = function() {
-    const btn = document.getElementById('back-to-top');
-    if (btn) {
-        if (document.documentElement.scrollTop > 300) btn.classList.add('show');
-        else btn.classList.remove('show');
-    }
-};
-
-function filterArea(area, btn) {
-    const btns = document.querySelectorAll('.area-btn');
-    if (currentArea === area) {
-        currentArea = null;
-        btn.classList.remove('active');
-    } else {
-        currentArea = area;
-        btns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    }
-    displayShops();
-}
-
-function filterTag(tag, btn) {
-    const btns = document.querySelectorAll('.tag-btn');
-    if (currentTag === tag) {
-        currentTag = null;
-        btn.classList.remove('active');
-    } else {
-        currentTag = tag;
-        btns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    }
-    displayShops();
-}
-
-function onSearchInput() {
-    const input = document.getElementById('search-input');
-    currentSearchKeyword = input ? input.value.trim().toLowerCase() : "";
-    displayShops();
-}
-
-function displayShops() {
-    const container = document.getElementById('shop-container');
-    if (!container || typeof shopDetails === 'undefined') return;
-    container.innerHTML = ""; 
-
-    let allYuriWorks = [];
-    if (typeof yuri_data !== 'undefined') {
-        allYuriWorks = yuri_data.flatMap(cat => cat.works || []);
-    }
-
-    const filteredShops = shopDetails.filter(shop => {
-        const matchArea = !currentArea || shop.area === currentArea;
-        const matchTag = !currentTag || (shop.tags || []).includes(currentTag);
-        
-        let matchKeyword = true;
-        if (currentSearchKeyword) {
-            const name = (shop.name_en || shop.name_jp || "").toLowerCase();
-            const address = (shop.address_en || shop.address_jp || "").toLowerCase();
-            const tags = (shop.tags || []).join(" ").toLowerCase();
-            matchKeyword = name.includes(currentSearchKeyword) || address.includes(currentSearchKeyword) || tags.includes(currentSearchKeyword);
+    function filterArea(area,btn){
+        const btns=document.querySelectorAll('.area-btn');
+        if(currentArea===area){
+            currentArea=null;
+            btn.classList.remove('active');
+        }else{
+            currentArea=area;
+            btns.forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
         }
-
-        return matchArea && matchTag && matchKeyword;
-    });
-
-    filteredShops.forEach((shop, index) => {
-        // 5件ごとに挿入される百合作品広告
-        if (index > 0 && index % 5 === 0 && allYuriWorks.length > 0) {
-            const shuffled = [...allYuriWorks].sort(() => 0.5 - Math.random());
-            const selected = shuffled.slice(0, 3);
-            const adHtml = `
-                <div style="margin: 20px 10px; padding: 18px; border-radius: 15px; background: linear-gradient(135deg, #fffcf5 0%, #fdf2f4 100%); border: 1px solid #eecaca; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <div style="text-align: center; margin-bottom: 12px;">
-                        <span style="color: #8e3a46; font-weight: bold; font-size: 0.85rem;">🌹 Featured Yuri Masterpieces</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        ${selected.map(work => {
-                            const title = work.en_t || work.t_en || work.t;
-                            const author = work.en_a || work.a_en || work.a;
-                            const amazonUrl = work.amz;
-                            return `
-                            <div style="background: rgba(255,255,255,0.85); padding: 12px; border-radius: 10px; border: 1px solid rgba(142,58,70,0.15);">
-                                <div style="font-size: 0.9rem; font-weight: bold; color: #2c2c2c; margin-bottom: 8px;">
-                                    ${title}
-                                    <span style="display:block; font-size:0.7rem; color:#8e3a46; font-weight:normal; margin-top:2px;">Author: ${author}</span>
-                                </div>
-                                <div style="display: flex; gap: 8px;">
-                                    <a href="${amazonUrl}" target="_blank" rel="nofollow" style="flex:1; background:#232f3e; color:white; text-decoration:none; padding:10px 0; border-radius:6px; font-size:0.75rem; font-weight:bold; text-align:center;">Buy on Amazon</a>
-                                </div>
-                            </div>
-                            `;
-                        }).join('')}
-                    </div>
-                    <div style="text-align: center; margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(142,58,70,0.2);">
-                        <a href="yuri_guide_en.html" style="font-size: 0.8rem; color: #8e3a46; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">
-                            <span>📜 Explore Yuri History & Top 100 Selections</span>
-                            <span style="font-size: 0.6rem;">▶</span>
-                        </a>
-                        <a href="cinema_en.html" style="font-size: 0.8rem; color: #3d4a6b; background: rgba(61, 74, 107, 0.06); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(61, 74, 107, 0.2); margin-top: 8px;">
-                            <span>🎬 Top 50 Live-Action Lesbian Movies & Dramas</span>
-                            <span style="font-size: 0.7rem;">▶</span>
-                        </a>
-                    </div>
-                </div>`;
-            container.insertAdjacentHTML('beforeend', adHtml);
-        }
-
-        const card = document.createElement('div');
-        card.className = 'shop-card show';
-        card.style.position = "relative";
-        card.style.overflow = "hidden";
-
-        if (shop.seriesMark === "B(G)" || shop.group === "BG" || shop.seriesMark === "B系(G)") {
-            card.style.borderLeft = "15px solid transparent";
-            card.style.background = "linear-gradient(to bottom, #9d00ff 50%, #ff0000 50%) no-repeat left / 15px 100%, #1a233d"; 
-        } else if (shop.seriesMark === "B(L)" || shop.group === "BL" || shop.seriesMark === "B系(L)") {
-            card.style.borderLeft = "15px solid transparent";
-            card.style.background = "linear-gradient(to bottom, #9d00ff 50%, #0000ff 50%) no-repeat left / 15px 100%, #1a233d"; 
-        } else if (shop.series === "H系列" || shop.series === "H系" || shop.group === "H" || shop.seriesMark === "H") {
-            card.style.borderLeft = "15px solid #00ff00";
-        } else if (shop.series === "A系列" || shop.series === "A系" || shop.group === "A" || shop.seriesMark === "A") {
-            card.style.borderLeft = "15px solid #ff8c00";
-        } else if (shop.series === "GF系列" || shop.series === "GF系" || shop.group === "GF" || shop.seriesMark === "☝️") {
-            card.style.borderLeft = "15px solid #ffd700";
-        } else if (shop.series === "船系列" || shop.series === "船系" || shop.group === "船" || shop.seriesMark === "🚢") {
-            card.style.borderLeft = "15px solid #00ffff";
-        }
-
-        const isLesbian = shop.type === "lesbian" || shop.type === "ビアン" || shop.type === "ビアン専用" || (shop.tags && shop.tags.includes("lesbian")) || (shop.tags && shop.tags.includes("ビアン専用"));
-        const isMix = shop.type === "mix" || shop.type === "MIX" || shop.type === "MIXバー" || shop.type === "ミックスバー" || (shop.tags && shop.tags.includes("mix")) || (shop.tags && shop.tags.includes("ミックスバー"));
-
-        if (isLesbian) {
-            card.style.borderRight = "15px solid #ff69b4";
-        } else if (isMix) {
-            card.style.borderRight = "15px solid #4bc0c0";
-        }
-      
-        const dName = shop.name_en || shop.name_jp;
-        const dAddress = shop.address_en || shop.address_jp || 'Address unavailable';
-        const dDesc = shop.description_en || shop.description_jp || 'Currently under research.';
-        
-        // 定休日（holiday_en優先、無ければtranslateHolidayを通す）
-        const dHoliday = shop.holiday_en ? shop.holiday_en : translateHoliday(shop.holiday);
-
-        const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((shop.name_jp || dName) + ' ' + (shop.address_jp || dAddress))}`;
-
-        let checkLabel = "";
-        if (shop.lastCheck && shop.checkLevel !== 'ongoing') {
-            const levelText = shop.checkLevel === 'thorough' ? '✅ Thoroughly Surveyed' : '💡 Visited';
-            const displayDate = shop.lastCheck.replace(/-/g, '/');
-            
-            checkLabel = `
-                <div style="margin-bottom: 10px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); display: inline-block;">
-                    <span style="color: #00ffcc; font-weight: bold; font-size: 0.7rem;">${levelText}</span>
-                    <span style="color: #ccd6f6; margin-left: 5px; font-size: 0.7rem;">(${displayDate})</span>
-                </div>`;
-        }
-
-        let finalIcon = '';
-        if (shop.icon === "website") {
-            finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#1a2a4a; border:1px solid #3a4a6a; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00ffcc; flex-shrink:0;"><span style="font-size:32px;">🌐</span><span style="font-size:10px; font-weight:bold;">WEB SITE</span></div>`;
-        } else if (shop.icon === "instagram" || (shop.snsUrl && shop.snsUrl.includes('instagram.com'))) {
-            finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:linear-gradient(45deg, #f09433 0%, #bc1888 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; flex-shrink:0;"><span style="font-size:32px;">📸</span><span style="font-size:10px; font-weight:bold;">Instagram</span></div>`;
-        } else if (shop.icon && (shop.icon.includes('http') || shop.icon.includes('.png') || shop.icon.includes('.jpg'))) {
-            finalIcon = `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/100?text=Shop'">`;
-        } else {
-            finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#333; display:flex; align-items:center; justify-content:center; color:white; font-size:32px; flex-shrink:0;">🍸</div>`;
-        }
-
-        const dTags = (shop.tags || []).map(t => {
-            const label = tagMap[t] || t;
-            return `<span>#${label}</span>`;
-        }).join('');
-
-        const showNote = (shop.note && shop.note !== '#');
-
-        card.innerHTML = `
-            <div style="padding:15px;">
-                <div style="display:flex; gap:15px; margin-bottom:12px;">
-                    ${finalIcon}
-                    <div style="flex:1;">
-                        <div class="shop-name" style="font-size:1.1rem; font-weight:bold; margin-bottom:4px;">
-                            <a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a>
-                        </div>
-                        <div style="font-size:0.75rem; color:#ccd6f6;">
-                            <a href="${googleMapUrl}" target="_blank" class="map-link" title="Open in Google Maps">📍 ${dAddress}</a>
-                        </div>
-                        <div style="font-size:0.7rem; color:#ccd6f6; margin-top:4px;">🕒 ${shop.time || '---'}</div>
-                        <div style="font-size:0.7rem; color:#ccd6f6;">🗓️ Closed: ${dHoliday}</div>
-                        <div class="feature-tags" style="margin-top:8px;">${dTags}</div>
-                    </div>
-                </div>
-                <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
-                    ${checkLabel}
-                    <div style="font-size:0.8rem; color:#ccd6f6; line-height:1.6; text-align:justify;">${dDesc}</div>
-                </div>
-                <div class="action-buttons">
-                    ${showNote ? `<a href="${shop.note}" class="btn btn-note" target="_blank">📝 Read Guide Article (note)</a>` : `<span class="btn btn-disabled">Guide Coming Soon</span>`}
-                </div>
-            </div>`;
-        container.appendChild(card);
-    });
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    if (typeof shopDetails !== 'undefined') {
         displayShops();
     }
-});
-</script>
+    
+    function filterTag(tag,btn){
+        const btns=document.querySelectorAll('.tag-btn');
+        if(currentTag===tag){
+            currentTag=null;
+            btn.classList.remove('active');
+        }else{
+            currentTag=tag;
+            btns.forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        displayShops();
+    }
+    
+    function onSearchInput(){
+        const input=document.getElementById('search-input');
+        currentSearchKeyword=input?input.value.trim().toLowerCase():"";
+        displayShops();
+    }
+    
+    function displayShops(){
+        const container=document.getElementById('shop-container');
+        if(!container||typeof shopDetails==='undefined')return;
+        container.innerHTML="";
+    
+        const filteredShops=shopDetails.filter(shop=>{
+            const matchArea=!currentArea||shop.area===currentArea;
+            const matchTag=!currentTag||(shop.tags||[]).includes(currentTag);
+            let matchKeyword=true;
+            if(currentSearchKeyword){
+                const name=(shop.name_en||shop.name_jp||'').toLowerCase();
+                const address=(shop.address_en||shop.address_jp||'').toLowerCase();
+                const tags=(shop.tags||[]).join(" ").toLowerCase();
+                matchKeyword=name.includes(currentSearchKeyword)||address.includes(currentSearchKeyword)||tags.includes(currentSearchKeyword);
+            }
+            return matchArea&&matchTag&&matchKeyword;
+        });
+    
+        filteredShops.forEach((shop,index)=>{
+            if(index>0&&index%5===0){
+                const cinemaList=(typeof cinema_data!=='undefined'&&Array.isArray(cinema_data))
+                    ?cinema_data.flatMap(cat=>cat.works||cat.movies||[])
+                    :(typeof worksData!=='undefined'&&Array.isArray(worksData)?worksData:[]);
+    
+                let mangaList=[];
+                if(typeof yuri_data!=='undefined'&&Array.isArray(yuri_data)){
+                    yuri_data.forEach(category=>{
+                        if(category&&Array.isArray(category.works))mangaList.push(...category.works);
+                    });
+                }
+    
+                const shuffledManga=[...mangaList].sort(()=>0.5-Math.random());
+                const manga1=shuffledManga[0]||null;
+                const manga2=shuffledManga[1]||null;
+                const shuffledCinema=[...cinemaList].sort(()=>0.5-Math.random());
+                const cinema1=shuffledCinema[0]||null;
+                const cinema2=shuffledCinema[1]||null;
+    
+                const createMangaCard=item=>{
+                    if(!item)return '';
+                    const title=item.en_t||item.t_en||item.t||'Unknown Title';
+                    const author=item.en_a||item.a_en||item.a||'';
+                    const hasAmz=item.amz&&item.amz.trim()!==""&&item.amz!=="#";
+                    return `<div data-ga-ad-type="manga" style="background:rgba(255,255,255,0.95);padding:10px;border-radius:6px;border:1px solid rgba(142,58,70,0.15);margin-bottom:6px;text-align:center;"><div style="font-size:0.75rem;font-weight:bold;color:#2c2c2c;margin-bottom:2px;">📖 ${title}</div>${author?`<div style="font-size:0.62rem;color:#666;margin-bottom:4px;">Author: ${author}</div>`:''}${hasAmz?`<div><a href="${item.amz}" target="_blank" rel="nofollow" style="display:block;width:80%;margin:6px auto 0;box-sizing:border-box;background:#232f3e;color:white;text-align:center;text-decoration:none;padding:6px;border-radius:5px;font-size:0.68rem;font-weight:bold;">Buy on Amazon</a></div>`:''}</div>`;
+                };
+    
+                const createCinemaCard=item=>{
+                    if(!item)return '';
+                    const title=item.titleEn||item.title||item.t||'Unknown Title';
+                    const cast=item.castEn||item.actor||item.cast||'';
+                    const hasAmz=item.amz&&item.amz.trim()!==""&&item.amz!=="#";
+                    return `<div data-ga-ad-type="cinema" style="background:rgba(255,255,255,0.95);padding:10px;border-radius:6px;border:1px solid rgba(142,58,70,0.15);margin-bottom:6px;text-align:center;"><div style="font-size:0.75rem;font-weight:bold;color:#2c2c2c;margin-bottom:2px;">🎬 ${title}</div>${cast?`<div style="font-size:0.62rem;color:#666;margin-bottom:4px;">Starring: ${cast}</div>`:''}${hasAmz?`<div><a href="${item.amz}" target="_blank" rel="nofollow" style="display:block;width:80%;margin:6px auto 0;box-sizing:border-box;background:#232f3e;color:white;text-align:center;text-decoration:none;padding:6px;border-radius:5px;font-size:0.68rem;font-weight:bold;">Buy on Amazon</a></div>`:''}</div>`;
+                };
+    
+                const adHtml=`<div style="margin:20px 0;padding:12px;border-radius:12px;background:linear-gradient(135deg,#fffcf5 0%,#fdf2f4 100%);border:1px solid #eecaca;box-shadow:0 4px 15px rgba(0,0,0,0.05);"><div style="text-align:center;margin-bottom:8px;"><span style="color:#8e3a46;font-weight:bold;font-size:0.72rem;">🌹 Featured Yuri Masterpieces (Ad)</span></div><div>${createMangaCard(manga1)}${createMangaCard(manga2)}${createCinemaCard(cinema1)}${createCinemaCard(cinema2)}</div></div>`;
+                container.insertAdjacentHTML('beforeend',adHtml);
+            }
+    
+            const card=document.createElement('div');
+            card.className='shop-card show';
+            card.style.position="relative";
+            card.style.overflow="hidden";
+    
+            if(shop.seriesMark==="B(G)"||shop.group==="BG"||shop.seriesMark==="B系(G)"){
+                card.style.borderLeft="15px solid transparent";
+                card.style.background="linear-gradient(to bottom,#9d00ff 50%,#ff0000 50%) no-repeat left / 15px 100%,#1a233d";
+            }else if(shop.seriesMark==="B(L)"||shop.group==="BL"||shop.seriesMark==="B系(L)"){
+                card.style.borderLeft="15px solid transparent";
+                card.style.background="linear-gradient(to bottom,#9d00ff 50%,#0000ff 50%) no-repeat left / 15px 100%,#1a233d";
+            }else if(shop.series==="H系列"||shop.series==="H系"||shop.group==="H"||shop.seriesMark==="H"){
+                card.style.borderLeft="15px solid #00ff00";
+            }else if(shop.series==="A系列"||shop.series==="A系"||shop.group==="A"||shop.seriesMark==="A"){
+                card.style.borderLeft="15px solid #ff8c00";
+            }else if(shop.series==="GF系列"||shop.series==="GF系"||shop.group==="GF"||shop.seriesMark==="☝️"){
+                card.style.borderLeft="15px solid #ffd700";
+            }else if(shop.series==="船系列"||shop.series==="船系"||shop.group==="船"||shop.seriesMark==="🚢"){
+                card.style.borderLeft="15px solid #00ffff";
+            }
+    
+            const isLesbian=shop.type==="lesbian"||shop.type==="ビアン"||shop.type==="ビアン専用"||(shop.tags&&shop.tags.includes("lesbian"))||(shop.tags&&shop.tags.includes("ビアン専用"));
+            const isMix=shop.type==="mix"||shop.type==="MIX"||shop.type==="MIXバー"||shop.type==="ミックスバー"||(shop.tags&&shop.tags.includes("mix"))||(shop.tags&&shop.tags.includes("ミックスバー"));
+            if(isLesbian)card.style.borderRight="15px solid #ff69b4";
+            else if(isMix)card.style.borderRight="15px solid #4bc0c0";
+    
+            const dName=shop.name_en||shop.name_jp;
+            const dAddress=shop.address_en||shop.address_jp||'Address unavailable';
+            const dDesc=shop.description_en||shop.description_jp||'Currently under research.';
+            const dHoliday = translateHoliday(shop.holiday_en || shop.holiday || '');
+            const googleMapUrl=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((shop.name_jp || dName)+' '+(shop.address_jp || dAddress))}`;
+    
+            let checkLabel="";
+            if(shop.lastCheck&&shop.checkLevel!=='ongoing'){
+                const levelText=shop.checkLevel==='thorough'?'✅ Thoroughly Surveyed':'💡 Visited';
+                const displayDate=shop.lastCheck.replace(/-/g,'/');
+                checkLabel=`<div style="margin-bottom:10px;padding:4px 8px;border-radius:4px;background:rgba(0,255,204,0.05);border:1px solid rgba(0,255,204,0.2);display:inline-block;"><span style="color:#00ffcc;font-weight:bold;font-size:0.7rem;">${levelText}</span><span style="color:#ccd6f6;margin-left:5px;font-size:0.7rem;">(${displayDate})</span></div>`;
+            }
+    
+            let finalIcon='';
+            if(shop.icon==="website"){
+                finalIcon=`<div style="width:100px;height:100px;border-radius:12px;background:#1a2a4a;border:1px solid #3a4a6a;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#00ffcc;flex-shrink:0;"><span style="font-size:32px;">🌐</span><span style="font-size:10px;font-weight:bold;">WEB SITE</span></div>`;
+            }else if(shop.icon==="instagram"||(shop.snsUrl&&shop.snsUrl.includes('instagram.com'))){
+                finalIcon=`<div style="width:100px;height:100px;border-radius:12px;background:linear-gradient(45deg,#f09433 0%,#bc1888 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;flex-shrink:0;"><span style="font-size:32px;">📸</span><span style="font-size:10px;font-weight:bold;">Instagram</span></div>`;
+            }else if(shop.icon&&(shop.icon.includes('http')||shop.icon.includes('.png')||shop.icon.includes('.jpg'))){
+                finalIcon=`<img src="${shop.icon}" style="width:100px;height:100px;border-radius:12px;object-fit:cover;flex-shrink:0;" onerror="this.src='https://via.placeholder.com/100?text=Shop'">`;
+            }else{
+                finalIcon=`<div style="width:100px;height:100px;border-radius:12px;background:#333;display:flex;align-items:center;justify-content:center;color:white;font-size:32px;flex-shrink:0;">🍸</div>`;
+            }
+    
+            const dTags=(shop.tags||[]).map(t=>`<span>#${tagMap[t]||t}</span>`).join('');
+            const showNote=shop.note&&shop.note!=='#';
+    
+            card.innerHTML=`<div style="padding:15px;"><div style="display:flex;gap:15px;margin-bottom:12px;">${finalIcon}<div style="flex:1;"><div class="shop-name" style="font-size:1.1rem;font-weight:bold;margin-bottom:4px;"><a href="${shop.snsUrl}" target="_blank" style="color:white;text-decoration:none;">${dName} 🔗</a></div><div style="font-size:0.75rem;color:#ccd6f6;"><a href="${googleMapUrl}" target="_blank" class="map-link" title="Open in Google Maps">📍 ${dAddress}</a></div><div style="font-size:0.7rem;color:#ccd6f6;margin-top:4px;">🕒 ${translateHoliday(shop.time||'---')}</div><div style="font-size:0.7rem;color:#ccd6f6;">🗓️ Closed: ${dHoliday}</div><div class="feature-tags" style="margin-top:8px;">${dTags}</div></div></div><div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:10px;">${checkLabel}<div style="font-size:0.8rem;color:#ccd6f6;line-height:1.6;text-align:justify;">${dDesc}</div></div><div class="action-buttons">${showNote?`<a href="${shop.note}" class="btn btn-note" target="_blank">📝 Read Guide Article (note)</a>`:`<span class="btn btn-disabled">Guide Coming Soon</span>`}</div></div>`;
+            container.appendChild(card);
+        });
+    }
+    
+    window.addEventListener('DOMContentLoaded',()=>{
+        if(typeof shopDetails!=='undefined')displayShops();
+    });
+    </script>
 </body>
 </html>

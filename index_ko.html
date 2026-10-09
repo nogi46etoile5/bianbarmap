@@ -2,13 +2,22 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레즈비언 & MIX 바 가이드 맵 | 전국 레즈비언 바 탐방 탐방기 (SHU Map)</title>
-    <meta name="description" content="[신주쿠 2초메 및 전국] 초심자도 헤매지 않고 자신에게 딱 맞는 바를 찾을 수 있는 안내 가이드 (수시 업데이트)">
+    <title>레즈비언 & MIX 바 가이드 맵 | 일본 전국 레즈비언 바 탐방 가이드 (SHU Map)</title>
+    <meta name="description" content="[신주쿠 2초메 및 일본 전국] 초심자도 헤매지 않고 자신에게 딱 맞는 바를 찾을 수 있는 안내 가이드 (수시 업데이트)">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BH32JQCYXR');
+</script>
+
     <style>
         /* --- Base Settings --- */
-        body { background-color: #0a1428; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
-        
+        body { background-color: #0a1428; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 0 0 80px 0; margin: 0; scroll-behavior: smooth; }
+
         /* --- Language Switcher Dropdown --- */
         .lang-switcher { position: relative; width: 90%; max-width: 600px; margin: 15px 0; display: flex; justify-content: flex-end; }
         .lang-dropdown-btn { background: #1a2a4a; border: 1px solid #00ffcc; color: #00ffcc; cursor: pointer; border-radius: 20px; padding: 6px 14px; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
@@ -18,17 +27,22 @@
         .lang-item:hover { background-color: rgba(0, 255, 204, 0.1); color: #00ffcc; }
         .lang-item.active { background-color: #00ffcc; color: #0a1428; }
 
+        .lang-en, .lang-en-block { display: none !important; }
+        body.en-mode .lang-jp { display: none !important; }
+        body.en-mode .lang-en { display: inline !important; }
+        body.en-mode .lang-en-block { display: block !important; }
+
         .site-header { text-align: center; padding: 40px 20px; width: 100%; }
         .site-header h1 { font-size: 1.8rem; font-weight: bold; background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
         .site-subtitle { font-size: 0.85rem; color: #ccd6f6; margin-top: 10px; display: block; }
 
-        .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; box-sizing: border-box; }
+        .guide-intro { width: 90%; max-width: 600px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 15px; padding: 20px; margin-bottom: 20px; text-align: center; }
         .guide-notes { font-size: 0.75rem; color: #ff4d4d; text-align: left; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-top: 15px; line-height: 1.6; border: 1px solid rgba(255, 77, 77, 0.3); }
 
         /* Google Map Pin Notice */
         .map-top-notice { width: 90%; max-width: 600px; background: rgba(255, 183, 77, 0.1); border: 1px solid #ffb74d; border-radius: 10px; padding: 12px 16px; margin-bottom: 20px; font-size: 0.75rem; color: #ffb74d; line-height: 1.5; text-align: left; box-sizing: border-box; }
 
-        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; box-sizing: border-box; }
+        .sub-form-btn { display: block; background: #1a2a4a; color: #ffffff; border: 1px solid #3a4a6a; padding: 10px; width: 90%; max-width: 600px; border-radius: 8px; text-decoration: none; font-size: 0.75rem; text-align: center; margin-bottom: 15px; }
 
         .qa-section { width: 90%; max-width: 600px; margin-bottom: 20px; }
         .qa-item { background: rgba(255,255,255,0.05); border: 1px solid #2a3a5a; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
@@ -38,7 +52,7 @@
         .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.2); }
         .qa-answer-inner { padding: 12px 15px; font-size: 0.8rem; color: #ccd6f6; line-height: 1.5; }
 
-        .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; box-sizing: border-box; }
+        .legend-section { width: 90%; max-width: 600px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .legend-box { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; border: 1px solid #2a3a5a; font-size: 0.7rem; }
         .legend-title { font-weight: bold; margin-bottom: 5px; color: #00ffcc; }
         .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
@@ -46,7 +60,7 @@
         .dot-r { width: 10px; height: 10px; border-radius: 2px; }
 
         /* Search & Filter Area */
-        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; box-sizing: border-box; }
+        .filter-section { width: 90%; max-width: 600px; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
         .search-box-container { margin-bottom: 15px; text-align: center; }
         .search-input { width: 100%; max-width: 100%; padding: 10px 14px; border-radius: 20px; border: 1px solid #00ffcc; background: #1a2a4a; color: #fff; font-size: 0.85rem; box-sizing: border-box; outline: none; }
         .search-input::placeholder { color: #8892b0; }
@@ -59,6 +73,14 @@
         .shop-card { background: #162440; border-radius: 12px; overflow: hidden; border: 1px solid #2a3a5a; margin-bottom: 25px; display: none; position: relative; padding-left: 14px; border-right: 10px solid #2a3a5a; }
         .shop-card.show { display: block; }
         .shop-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; }
+        .border-l-h::before { background: #00ff00; }
+        .border-l-a::before { background: #ff8c00; }
+        .border-l-gf::before { background: #ffd700; }
+        .border-l-fune::before { background: #00ffff; }
+        .border-l-b-l::before { background: linear-gradient(to bottom, #9d00ff 50%, #0000ff 50%); }
+        .border-l-b-g::before { background: linear-gradient(to bottom, #9d00ff 50%, #ff0000 50%); }
+        .border-r-bian { border-right-color: #ff69b4 !important; }
+        .border-r-mix { border-right-color: #4bc0c0 !important; }
 
         .shop-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
         .feature-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; font-size: 0.7rem; color: #8892b0; }
@@ -73,15 +95,15 @@
         .btn { flex: 1; padding: 12px; text-align: center; text-decoration: none; font-size: 0.85rem; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .btn-note { color: #ffffff; background: #233554; border: 1px solid #3a4a6a; }
         .btn-disabled { flex: 1; padding: 12px; text-align: center; background: #222; color: #555; font-size: 0.85rem; font-weight: bold; cursor: default; border-radius: 6px; }
-        
+
         a { text-decoration: none !important; color: inherit; -webkit-tap-highlight-color: transparent; }
         .action-buttons a:focus, .action-buttons a:active { outline: none !important; box-shadow: none !important; }
-        
-        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; box-sizing: border-box; }
+
+        .footer-notice { width: 90%; max-width: 600px; padding: 30px 20px; color: #8892b0; font-size: 0.75rem; border-top: 1px solid #2a3a5a; margin-top: 10px; }
         .footer-notice ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
         .footer-notice li { margin-bottom: 8px; line-height: 1.4; }
-        
-        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; box-sizing: border-box; }
+
+        .portfolio-section { width: 90%; max-width: 600px; margin-top: 15px; display: flex; gap: 10px; margin-bottom: 40px; }
         .portfolio-card { flex: 1; background: #1a2a4a; padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; font-size: 0.75rem; text-align: center; border: 1px solid #3a4a6a; }
 
         #back-to-top { position: fixed; bottom: 20px; right: 20px; background: #00ffcc; color: #0a1428; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
@@ -109,10 +131,11 @@
         .menu-list a:hover { background: rgba(0, 255, 204, 0.1); color: #00ffcc; }
     </style>
 </head>
+
 <body>
 
 <!-- Hamburger Menu Button -->
-<button id="menu-toggle" aria-label="메뉴 열기" onclick="toggleMenu()">
+<button id="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
@@ -120,117 +143,202 @@
 
 <!-- Side Menu Navigation -->
 <div id="menu-overlay" onclick="toggleMenu()"></div>
+
 <nav id="side-menu">
     <div class="menu-header">
         <span>메뉴</span>
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
+
     <ul class="menu-list">
-        <li><a href="index_ko.html">🏠 홈 / 지도로 보기</a></li>
-        <li><a href="guide_ko.html">🤝 동행 가이드 서비스 신청</a></li>
-        <li><a href="system_guide_ko.html">🔰 초심자용 바 시스템 가이드</a></li>
-        <li><a href="cinema_ko.html">🎬 백합 & 레즈비언 영화 픽업</a></li>
+        <li><a href="index_en.html">🏠 홈 / 지도</a></li>
+        <li><a href="tokyo_ko.html">🏙️ 관동 지역 목록 (도쿄 및 기타)</a></li>
+        <li><a href="osaka_ko.html">🐙 간사이 지역 목록 (오사카·교토·고베)</a></li>
+        <li><a href="guide_ko.html">🤝 동행 & 가이드 서비스</a></li>
+        <li><a href="system_guide_ko.html">🔰 초보자용 바 이용 시스템 가이드</a></li>
+        <li><a href="cinema_ko.html">🎬 백합 & 영화 하이라이트</a></li>
         <li><a href="yuri_guide_ko.html">📜 백합의 역사 & 추천 100선</a></li>
-        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 note 바 가이드 기사 목록</a></li>
+        <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 note 바 가이드</a></li>
         <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ 후원하기 (Buy Me a Coffee)</a></li>
     </ul>
 </nav>
+
 <a href="#" id="back-to-top">↑</a>
 
 <!-- Language Switcher Dropdown -->
 <div class="lang-switcher">
-    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="언어 선택">
+    <button class="lang-dropdown-btn" onclick="toggleLangMenu()" aria-label="Select Language">
         🌐 <span>한국어</span> ▼
     </button>
+
     <div id="lang-menu" class="lang-menu-content">
         <a href="index.html" class="lang-item">🇯🇵 日本語</a>
         <a href="index_en.html" class="lang-item">🇺🇸 English</a>
         <a href="index_ko.html" class="lang-item active">🇰🇷 한국어</a>
-       </div>
+    </div>
 </div>
 
 <header class="site-header">
-    <h1>레즈비언 & MIX 바 가이드 맵 | SHU (愁) Map</h1>
-    <span class="site-subtitle">[신주쿠 2초메 및 일본 전국] 초심자도 안심하고 자신에게 딱 맞는 바를 찾을 수 있는 탐방 가이드 (수시 업데이트)</span>
+    <h1>SHU Map | 레즈비언 바 탐방 & GL/백합 정보</h1>
+
+    <span class="site-subtitle">
+        레즈비언 & MIX 바 탐방기, 여성 문화, 술, GL/백합 정보 등을 소개합니다.
+    </span>
+
+    <div style="margin-top:10px; font-size:0.8rem; color:#ccd6f6;">
+        등록 매장: <strong style="color:#00ffcc;">104</strong>
+    </div>
 </header>
 
 <section class="guide-intro">
-    <h2>🤝 혼자 방문하는 불안함을 해소해 드립니다</h2>
-    <p>신주쿠 2초메나 일본 전국의 레즈비언 바에 가보고 싶지만, 혼자 가서 어색하거나 누구와도 대화하지 못할까 봐 걱정되시나요? 이 가이드는 그러한 고민을 해결하기 위해 만들어졌습니다.</p>
-    <p>작성자가 직접 각 매장을 방문하여 실제 분위기와 시스템을 조사했습니다. 첫 방문에서도 편안하게 어울리고 싶거나, 혼자 호젓하게 힐링할 수 있는 공간을 찾고 계신다면 언제든 참고해 주세요.</p>
+    <h2>🤝 레즈비언 & MIX 바 가이드</h2>
 
-    <div style="margin-top: 15px;">
-        <div style="display: flex; gap: 10px; margin-top: 15px;">
-            <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">📝 note 바 가이드 기사 목록</a>
-            <a href="guide_ko.html" style="flex: 1; padding: 12px; border: 1px solid #00ffcc; text-align: center; text-decoration: none; color: #00ffcc; border-radius: 8px; font-weight: bold; font-size: 0.85rem; background: rgba(0, 255, 204, 0.1);">🤝 동행 가이드 신청하기</a>
-        </div>
+    <p>
+        첫 방문부터 요금, 분위기, 지역별 이용 문화까지,
+        실제 조사 정보를 바탕으로 필요한 내용을 정리했습니다.
+    </p>
+
+    <div style="display: flex; gap: 8px; margin-top: 10px;">
+        <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank"
+           style="flex:1; padding:10px; border:1px solid #00ffcc; text-align:center; color:#00ffcc; border-radius:8px; font-weight:bold; font-size:0.75rem; background:rgba(0,255,204,0.1);"
+           onclick="gtag('event', 'click_intro_note', {'event_category':'navigation'});">
+            📝 바 가이드 (note)
+        </a>
+
+        <a href="guide_ko.html"
+           style="flex:1; padding:10px; border:1px solid #00ffcc; text-align:center; color:#00ffcc; border-radius:8px; font-weight:bold; font-size:0.75rem; background:rgba(0,255,204,0.1);"
+           onclick="gtag('event', 'click_intro_guide', {'event_category':'navigation'});">
+            🤝 동행 & 가이드
+        </a>
     </div>
 
     <div class="guide-notes">
-        ⚠️ <strong>주의사항</strong>:<br>
-        ・본 사이트의 매장 정보 및 후기는 관리자가 직접 조사한 비공식 정보입니다. 특정 기업·단체와는 관계가 없으며, 후기 내용이나 소감에 대해 매장에 직접 문의하는 것은 자제해 주시기 바랍니다.<br>
-        ・만 20세 미만 이용 불가 / 만남은 반드시 공공장소에서 진행 / 연애·성적 지원 불가<br>
-        ・<strong>친구 만들기 및 커뮤니티 탐방은 적극적으로 도와드립니다!</strong><br>
-        ・허가 없는 촬영 금지 / <strong>가이드의 교통비 및 음료·식사 비용은 의뢰인 부담</strong>입니다.<br>
-        ・기타 문의사항은 <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X (@412357siki) DM</a></strong>으로 보내주세요.
+        ⚠️ <strong>중요 안내</strong>:<br>
+        ・이 사이트의 매장 정보와 방문 조사는 독립적인 조사에 기반한 비공식 콘텐츠입니다. 특정 기업이나 단체와 제휴·소속 관계가 없습니다. 사이트 내용이나 리뷰에 관해 매장에 직접 문의하는 것은 삼가주세요.<br>
+        ・만 20세 이상 / 만남은 반드시 공개된 장소에서 진행 / 연애·성적인 지원은 하지 않습니다<br>
+        ・<strong>새로운 사람을 만나고 현지 커뮤니티를 알아가는 데 도움이 되길 바랍니다!</strong><br>
+        ・허가 없는 촬영 금지 / <strong>가이드의 교통비 및 식음료 비용은 의뢰인이 부담합니다.</strong><br>
+        ・기타 문의는 <strong><a href="https://x.com/412357siki" target="_blank" style="color:#ff4d4d;">X (@412357siki)</a></strong> DM으로 보내주세요.
     </div>
 </section>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">✨ 정보 제보 및 매장 게재 요청 (Google Form)</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqSVijh9lmLNHvjP1nOshrKn8JccVwurxPl-Y4CMDOnV_vA/viewform?usp=sf_link" target="_blank" class="sub-form-btn">
+    ✨ 협찬 & 매장 등록 요청 (Google Form)
+</a>
 
 <div style="margin: 20px 0; text-align: center;">
-    <a href="https://buymeacoffee.com/syu_412357" target="_blank" style="display: block; padding: 15px; background: #00ffcc; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
-        ☕ 현장 취재 활동 후원하기 (Buy Me a Coffee)
+    <a href="https://buymeacoffee.com/syu_412357" target="_blank"
+       style="display: block; padding: 15px; background: #00ffcc; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
+        ☕ 현장 조사 후원 (Buy Me a Coffee)
     </a>
+
     <p style="font-size: 0.75rem; color: #ccd6f6; margin-top: 8px; padding: 0 10px;">
-        사비로 진행되는 지속적인 현장 조사 및 최신 가이드 업데이트 유지를 위해 여러분의 따뜻한 후원을 기다립니다!
+        자비로 진행하는 레즈비언 바 현장 조사를 후원해주세요 (작은 후원도 큰 도움이 됩니다!)
     </p>
 </div>
 
-<!-- FAQ / Q&A Section -->
+<!-- Q&A Section -->
 <section class="qa-section">
+
     <div class="qa-item">
-        <button class="qa-question" onclick="toggleQA(this)">❓ 첫 방문자용 (바 시스템 & 이용 매너 가이드)</button>
-        <div class="qa-answer"><div class="qa-answer-inner">
-            평균 예산, 자릿세(Cover Charge), MIX 바와 레즈비언 바의 차이점, 복장 규정 및 기본 에티켓을 설명합니다.<br>
-            <a href="system_guide_ko.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">👉 초심자용 바 시스템 가이드 읽기</a>
-        </div></div>
+        <button class="qa-question" onclick="toggleQA(this)">
+            ❓ 첫 방문자를 위한 이용 시스템 & 매너 가이드
+        </button>
+
+        <div class="qa-answer">
+            <div class="qa-answer-inner">
+                평균적인 비용, 자릿세, MIX 바의 차이, 복장 및 기본적인 매너 등을 설명합니다.<br>
+                <a href="system_guide_ko.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">
+                    👉 초보자용 바 이용 시스템 가이드 보기
+                </a>
+            </div>
+        </div>
     </div>
 
     <div class="qa-item">
-        <button class="qa-question" onclick="toggleQA(this)">🤝 동행 에스코트 가이드 서비스 이용 안내</button>
-        <div class="qa-answer"><div class="qa-answer-inner">
-            혼자 가기 부담스러우신가요? 현지 가이드가 2초메 탐방을 동행하며 편안하게 즐기실 수 있도록 안내해 드립니다.<br>
-            <a href="guide_ko.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">👉 동행 가이드 상세 내용 & 신청 방법 보기</a>
-        </div></div>
+        <button class="qa-question" onclick="toggleQA(this)">
+            🤝 개인 동행 & 가이드 서비스 이용 방법
+        </button>
+
+        <div class="qa-answer">
+            <div class="qa-answer-inner">
+                혼자 가는 것이 긴장되시나요? 현지 가이드가 2초메 주변을 함께 이동하며 편하게 이용하실 수 있도록 도와드립니다.<br>
+                <a href="guide_ko.html" style="color: #00ffcc; font-weight: bold; text-decoration: underline;">
+                    👉 동행 서비스 상세 내용 & 신청 방법 보기
+                </a>
+            </div>
+        </div>
     </div>
+
 </section>
 
-<!-- Google Maps Notice -->
+<!-- Google Maps Pin Notice -->
 <div class="map-top-notice">
-    📍 <strong>구글 맵 핀 위치 관련 안내</strong><br>
-    일반 지도 링크는 건물의 층수나 입구 위치에 따라 약간의 오차가 발생할 수 있습니다. 정확한 층수 및 상세 위치 정보는 <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank" style="color:#00ffcc; text-decoration:underline;">레즈비언 바 목록 note (Google My Maps 포함)</a>에서 확인하실 수 있습니다.
+    📍 <strong>Google Maps 핀 관련 안내</strong><br>
+    건물 층수나 출입구 위치에 따라 일반 지도 링크가 약간 어긋날 수 있습니다.
+    정확한 층수와 상세 위치는
+    <a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank"
+       style="color:#00ffcc; text-decoration:underline;">
+        레즈비언 바 목록 Note (Google My Maps 포함)
+    </a>.
 </div>
 
 <!-- Legend Section -->
 <div class="legend-section">
+
     <div class="legend-box">
-        <div class="legend-title">왼쪽 띠: 계열 그룹</div>
-        <div class="legend-item"><div class="dot-l" style="background:#00ff00;"></div><span>H 계열 / A 계열 <div class="dot-l" style="background:#ff8c00; display:inline-block; margin-left:5px;"></div></span></div>
-        <div class="legend-item"><div class="dot-l" style="background:#ffd700;"></div><span>GF 계열 / 배(Fune) 계열 <div class="dot-l" style="background:#00ffff; display:inline-block; margin-left:5px;"></div></span></div>
-        <div class="legend-item"><div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #0000ff 50%);"></div><span>B 계열(L) / B 계열(G) <div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #ff0000 50%); display:inline-block; margin-left:5px;"></div></span></div>
+        <div class="legend-title">왼쪽 바: 그룹</div>
+
+        <div class="legend-item">
+            <div class="dot-l" style="background:#00ff00;"></div>
+            <span>
+                H 그룹 / A 그룹
+                <div class="dot-l" style="background:#ff8c00; display:inline-block; margin-left:5px;"></div>
+            </span>
+        </div>
+
+        <div class="legend-item">
+            <div class="dot-l" style="background:#ffd700;"></div>
+            <span>
+                GF 그룹 / Fune 그룹
+                <div class="dot-l" style="background:#00ffff; display:inline-block; margin-left:5px;"></div>
+            </span>
+        </div>
+
+        <div class="legend-item">
+            <div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #0000ff 50%);"></div>
+            <span>
+                B 그룹(L) / B 그룹(G)
+                <div class="dot-l" style="background:linear-gradient(#9d00ff 50%, #ff0000 50%); display:inline-block; margin-left:5px;"></div>
+            </span>
+        </div>
     </div>
+
     <div class="legend-box">
-        <div class="legend-title">오른쪽 띠: 매장 유형</div>
-        <div class="legend-item"><div class="dot-r" style="background:#ff69b4;"></div><span>레즈비언 전용</span></div>
-        <div class="legend-item"><div class="dot-r" style="background:#4bc0c0;"></div><span>MIX 바 (믹스 바)</span></div>
+        <div class="legend-title">오른쪽 바: 유형</div>
+
+        <div class="legend-item">
+            <div class="dot-r" style="background:#ff69b4;"></div>
+            <span>레즈비언 전용</span>
+        </div>
+
+        <div class="legend-item">
+            <div class="dot-r" style="background:#4bc0c0;"></div>
+            <span>MIX 바</span>
+        </div>
     </div>
+
 </div>
 
 <!-- Search & Filter Area -->
 <section class="filter-section">
+
     <div class="search-box-container">
-        <input type="text" id="search-input" class="search-input" placeholder="🔍 매장명 또는 지역 검색 (예: 오사카, 신주쿠)..." oninput="onSearchInput()">
+        <input type="text"
+               id="search-input"
+               class="search-input"
+               placeholder="🔍 바 이름 또는 지역 검색 (예: 오사카, 신주쿠)..."
+               oninput="onSearchInput()">
     </div>
 
     <div id="area-filter-container" class="area-filter">
@@ -246,10 +354,10 @@
         <button class="tag-btn" onclick="filterTag('外国人多い', this)">#외국인많음</button>
         <button class="tag-btn" onclick="filterTag('ノーチャージ', this)">#자릿세없음</button>
         <button class="tag-btn" onclick="filterTag('英語対応', this)">#영어가능</button>
-        <button class="tag-btn" onclick="filterTag('カラオ케', this)">#가라오케</button>
+        <button class="tag-btn" onclick="filterTag('カラオケ', this)">#가라오케</button>
         <button class="tag-btn" onclick="filterTag('喫煙可', this)">#흡연가능</button>
         <button class="tag-btn" onclick="filterTag('初心者向け', this)">#초심자추천</button>
-        <button class="tag-btn" onclick="filterTag('初心者多め', this)">#초심자많음</button>
+        <button class="tag-btn" onclick="filterTag('深夜営業', this)">#심야영업</button>
         <button class="tag-btn" onclick="filterTag('年齢層高め', this)">#연령대높음</button>
         <button class="tag-btn" onclick="filterTag('穏やか', this)">#차분한분위기</button>
         <button class="tag-btn" onclick="filterTag('盛り上がる', this)">#신나는분위기</button>
@@ -262,316 +370,874 @@
         <button class="tag-btn" onclick="filterTag('間借り', this)">#팝업/렌탈매장</button>
         <button class="tag-btn" onclick="filterTag('不定期オープン', this)">#SNS영업시간확인</button>
     </div>
+
 </section>
 
 <!-- Shop List Container -->
 <div id="shop-container"></div>
 
 <footer class="footer-notice">
-    <strong>면책사항</strong>
+    <strong>면책 안내</strong>
+
     <ul>
-        <li>본 사이트의 매장 정보 및 후기는 관리자가 직접 조사한 비공식 정보입니다. 특정 기업·단체와는 관계가 없으며, 후기 내용이나 소감에 대해 매장에 직접 문의하는 것은 자제해 주시기 바랍니다.</li>
-        <li>게재된 정보는 안내인의 실체험 및 조사 시점 기준입니다. 최신 정보는 각 매장의 공식 SNS 등에서 확인해 주시기 바랍니다.</li>
-        <li>정보의 오류나 삭제 요청은 <a href="https://x.com/412357siki" target="_blank" rel="noopener">X (@412357siki) DM</a>으로 연락 부탁드립니다.</li>
-        <li>본 사이트 이용으로 인해 발생한 트러블에 대해서는 일절 책임을 지지 않습니다.</li>
+        <li>
+            이 사이트의 매장 정보와 방문 조사는 독립적인 조사에 기반한 비공식 콘텐츠입니다.
+            특정 기업이나 단체와 제휴·소속 관계가 없습니다.
+            사이트 내용이나 리뷰에 관해 매장에 직접 문의하는 것은 삼가주세요.
+        </li>
+
+        <li>
+            정보는 게시 시점의 가이드 개인 경험과 조사에 기반합니다.
+            최신 정보는 각 매장의 공식 SNS를 확인해주세요.
+        </li>
+
+        <li>
+            수정 또는 삭제 요청은
+            <a href="https://x.com/412357siki" target="_blank" rel="noopener">
+                X (@412357siki) DM
+            </a>으로 연락해주세요.
+        </li>
+
+        <li>
+            이 사이트 이용으로 발생하는 문제나 손해에 대해 책임을 지지 않습니다.
+        </li>
     </ul>
-</footer>
 </footer>
 
 <div class="portfolio-section">
-    <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="portfolio-card">🐟 수족관·동물원 도감</a>
-    <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" class="portfolio-card">🏺 전통공예품 도감</a>
+    <a href="https://nogi46etoile5.github.io/aquazoo5etoile/" target="_blank" class="portfolio-card">
+        🐟 수족관·동물원 디렉터리
+    </a>
+
+    <a href="https://nogi46etoile5.github.io/etoile5craft/" target="_blank" class="portfolio-card">
+        🏺 전통 공예 디렉터리
+    </a>
 </div>
 
 <script src="data.js"></script>
 <script src="yuri_data.js"></script>
+<script src="cinema-data.js"></script>
+
 <script>
-function toggleMenu() {
-    const toggleBtn = document.getElementById('menu-toggle');
-    const sideMenu = document.getElementById('side-menu');
-    const overlay = document.getElementById('menu-overlay');
-    
-    toggleBtn.classList.toggle('active');
-    sideMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
-}
+    (function(){
+        if(typeof shopDetails==='undefined'||!Array.isArray(shopDetails))return;
 
-function toggleLangMenu() {
-    document.getElementById("lang-menu").classList.toggle("show");
-}
+        const lang=document.documentElement.lang||'ko';
 
-window.addEventListener('click', function(e) {
-    const dropdown = document.querySelector('.lang-switcher');
-    if (dropdown && !dropdown.contains(e.target)) {
-        const langMenu = document.getElementById("lang-menu");
-        if (langMenu) langMenu.classList.remove("show");
+        const itemListElement=shopDetails.map((shop,index)=>{
+            let shopName=shop.name_ko||shop.name_jp||shop.name_en||shop.name||'';
+
+            const item={
+                "@type":"BarOrPub",
+                "name":shopName
+            };
+
+            if(shop.address_ko||shop.address_jp||shop.address_en){
+                item.address={
+                    "@type":"PostalAddress",
+                    "streetAddress":shop.address_ko||shop.address_jp||shop.address_en
+                };
+            }
+
+            return {
+                "@type":"ListItem",
+                "position":index+1,
+                "item":item
+            };
+        });
+
+        const structuredData={
+            "@context":"https://schema.org",
+            "@type":"ItemList",
+            "name":"Lesbian & MIX 바 Guide | SHU Map",
+            "numberOfItems":itemListElement.length,
+            "itemListElement":itemListElement
+        };
+
+        const script=document.createElement('script');
+        script.type='application/ld+json';
+        script.textContent=JSON.stringify(structuredData);
+        document.head.appendChild(script);
+    })();
+
+    (function(){
+
+        function getShopName(link){
+            const card=link.closest('.shop-card');
+            if(!card)return '';
+
+            const el=card.querySelector('.shop-name');
+
+            return el
+                ?(el.innerText||el.textContent||'').replace('🔗','').trim()
+                :'';
+        }
+
+        function getAdInfo(link){
+            const ad=link.closest('[data-ga-ad-type]');
+
+            if(!ad){
+                return {
+                    item_name:'',
+                    item_type:''
+                };
+            }
+
+            const type=ad.dataset.gaAdType;
+            const el=ad.querySelector('div');
+
+            let name=el
+                ?(el.innerText||el.textContent||'').trim()
+                :'';
+
+            name=name
+                .replace(/^📖\s*/,'')
+                .replace(/^🎬\s*/,'')
+                .trim();
+
+            return {
+                item_name:name,
+                item_type:type
+            };
+        }
+
+        function getClickType(link,href){
+            if(href.includes('x.com/')||href.includes('twitter.com/'))return 'x';
+            if(href.includes('google.com/maps')||href.includes('maps.google'))return 'google_map';
+            if(href.includes('note.com/'))return 'note';
+            if(href.includes('amazon.co.jp')||href.includes('amazon.com'))return 'amazon';
+            if(href.includes('docs.google.com/forms'))return 'google_form';
+            if(href.includes('buymeacoffee.com'))return 'support';
+
+            if(
+                href.includes('guide_ko.html')||
+                href.includes('system_guide_ko.html')||
+                href.includes('cinema_ko.html')||
+                href.includes('yuri_guide_ko.html')||
+                href.includes('tokyo_ko.html')||
+                href.includes('osaka_ko.html')||
+                href.includes('index_en.html')
+            ){
+                return 'internal_page';
+            }
+
+            if(
+                link.target==='_blank'||
+                (href.startsWith('http')&&!href.includes(location.hostname))
+            ){
+                return 'external_link';
+            }
+
+            return 'other';
+        }
+
+        document.addEventListener('click',function(e){
+            if(typeof gtag!=='function')return;
+
+            const link=e.target.closest('a');
+            if(!link)return;
+
+            const onclick=link.getAttribute('onclick')||'';
+
+            if(onclick.includes('gtag('))return;
+
+            const href=link.href||'';
+            const linkText=(link.innerText||link.textContent||'').trim();
+            const shopName=getShopName(link);
+            const adInfo=getAdInfo(link);
+
+            gtag('event','click_link',{
+                click_type:getClickType(link,href),
+                shop_name:shopName,
+                item_name:adInfo.item_name,
+                item_type:adInfo.item_type,
+                link_text:linkText.substring(0,100),
+                link_url:href.substring(0,500),
+                page_path:window.location.pathname,
+                page_title:document.title
+            });
+        });
+    })();
+
+    function toggleMenu(){
+        const toggleBtn=document.getElementById('menu-toggle');
+        const sideMenu=document.getElementById('side-menu');
+        const overlay=document.getElementById('menu-overlay');
+
+        toggleBtn.classList.toggle('active');
+        sideMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
     }
-});
 
-const tagMap = {
-    'カフェ': '카페',
-    '外国人多い': '외국인많음',
-    'ノーチャージ': '자릿세없음',
-    '英語対応': '영어가능',
-    'カラオケ': '가라오케',
-    '喫煙可': '흡연가능',
-    '初心者向け': '초심자추천',
-    '初心者多め': '초심자많음',
-    '年齢層高め': '연령대높음',
-    '穏やか': '차분한분위기',
-    '盛り上がる': '신나는분위기',
-    'お通し有': '기본안주제공',
-    'フード有': '식사메뉴있음',
-    '変わったリキュール有': '이색리큐르보유',
-    'イベント多い': '이벤트잦음',
-    'ボトルキープ有': '보틀키프가능',
-    '持ち込み食べ物可': '외부음식반입가능',
-    '間借り': '팝업/렌탈매장',
-    '不定期オープン': 'SNS영업시간확인'
-};
+    function toggleLangMenu(){
+        document.getElementById("lang-menu").classList.toggle("show");
+    }
 
-function translateHoliday(str) {
-    if (!str) return '연중무휴';
-    
-    const dayMap = {
-        '月曜': '월',
-        '火曜': '화',
-        '水曜': '수',
-        '木曜': '목',
-        '金曜': '금',
-        '土曜': '토',
-        '日曜': '일',
-        '不定休': '비정기 휴무'
+    window.addEventListener('click',function(e){
+        const dropdown=document.querySelector('.lang-switcher');
+
+        if(dropdown&&!dropdown.contains(e.target)){
+            const langMenu=document.getElementById("lang-menu");
+
+            if(langMenu)langMenu.classList.remove("show");
+        }
+    });
+
+    const tagMap = {
+        'カフェ': '카페',
+        '外国人多い': '외국인많음',
+        'ノーチャージ': '자릿세없음',
+        '英語対応': '영어가능',
+        'カラオケ': '가라오케',
+        '喫煙可': '흡연가능',
+        '初心者向け': '초심자추천',
+        '深夜営業': '심야영업',
+        '年齢層高め': '연령대높음',
+        '穏やか': '차분한분위기',
+        '盛り上がる': '신나는분위기',
+        'お通し有料': '기본안주제공',
+        'お通し有': '기본안주제공',
+        'フード有': '식사메뉴있음',
+        '変わったリキュール有': '이색리큐르보유',
+        'イベント多い': '이벤트잦음',
+        'ボトルキープ有': '보틀키프가능',
+        '持ち込み食べ物可': '외부음식반입가능',
+        '間借り': '팝업/렌탈매장',
+        '不定期オープン': 'SNS영업시간확인'
     };
-    
-    let translated = str;
-    for (const [jp, ko] of Object.entries(dayMap)) {
-        translated = translated.replaceAll(jp, ko);
-    }
-    
-    return translated.replace(/曜/g, "");
-}
 
-let currentArea = null;
-let currentTag = null;
-let currentSearchKeyword = "";
+    function translateHoliday(str){
+        if(!str)return '매일 영업';
 
-function toggleQA(btn) {
-    btn.classList.toggle('active');
-    const ans = btn.nextElementSibling;
-    ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
-}
+        const dayMap={
+            '休業中（再開時期未定）':'휴업 중 (재개 시기 미정)',
+            '要確認（X参照）':'확인 필요 (X 참조)',
+            '要確認':'확인 필요',
+            '不定休（X参照）':'불규칙 휴무 (X 참조)',
+            '不定休（要SNS確認）':'불규칙 휴무 (SNS 확인)',
+            '休業中':'휴업 중',
+            '月〜金':'월~금',
+            '月-金':'월~금',
+            '月〜土':'월~토',
+            '月-土':'월~토',
+            '月〜日':'월~일',
+            '月-日':'월~일',
+            '月曜':'월요일',
+            '火曜':'화요일',
+            '水曜':'수요일',
+            '木曜':'목요일',
+            '金曜':'금요일',
+            '土曜':'토요일',
+            '日曜':'일요일',
+            '不定休':'불규칙 휴무'
+        };
 
-window.onscroll = function() {
-    const btn = document.getElementById('back-to-top');
-    if (btn) {
-        if (document.documentElement.scrollTop > 300) btn.classList.add('show');
-        else btn.classList.remove('show');
-    }
-};
+        let translated=str;
 
-function filterArea(area, btn) {
-    const btns = document.querySelectorAll('.area-btn');
-    if (currentArea === area) {
-        currentArea = null;
-        btn.classList.remove('active');
-    } else {
-        currentArea = area;
-        btns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    }
-    displayShops();
-}
+        for(const [jp,ko] of Object.entries(dayMap)){
+            translated=translated.replaceAll(jp,ko);
+        }
 
-function filterTag(tag, btn) {
-    const btns = document.querySelectorAll('.tag-btn');
-    if (currentTag === tag) {
-        currentTag = null;
-        btn.classList.remove('active');
-    } else {
-        currentTag = tag;
-        btns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    }
-    displayShops();
-}
-
-function onSearchInput() {
-    const input = document.getElementById('search-input');
-    currentSearchKeyword = input ? input.value.trim().toLowerCase() : "";
-    displayShops();
-}
-
-function displayShops() {
-    const container = document.getElementById('shop-container');
-    if (!container || typeof shopDetails === 'undefined') return;
-    container.innerHTML = ""; 
-
-    let allYuriWorks = [];
-    if (typeof yuri_data !== 'undefined') {
-        allYuriWorks = yuri_data.flatMap(cat => cat.works || []);
+        return translated.replace(/曜/g,"");
     }
 
-    const filteredShops = shopDetails.filter(shop => {
-        const matchArea = !currentArea || shop.area === currentArea;
-        const matchTag = !currentTag || (shop.tags || []).includes(currentTag);
-        
-        let matchKeyword = true;
-        if (currentSearchKeyword) {
-            const name = (shop.name_ko || shop.name_jp || shop.name_en || "").toLowerCase();
-            const address = (shop.address_ko || shop.address_jp || shop.address_en || "").toLowerCase();
-            const tags = (shop.tags || []).join(" ").toLowerCase();
-            matchKeyword = name.includes(currentSearchKeyword) || address.includes(currentSearchKeyword) || tags.includes(currentSearchKeyword);
+    let currentArea=null;
+    let currentTag=null;
+    let currentSearchKeyword="";
+
+    function toggleQA(btn){
+        btn.classList.toggle('active');
+
+        const ans=btn.nextElementSibling;
+
+        ans.style.maxHeight=ans.style.maxHeight
+            ?null
+            :ans.scrollHeight+"px";
+    }
+
+    window.onscroll=function(){
+        const btn=document.getElementById('back-to-top');
+
+        if(btn){
+            if(document.documentElement.scrollTop>300){
+                btn.classList.add('show');
+            }else{
+                btn.classList.remove('show');
+            }
+        }
+    };
+
+    function filterArea(area,btn){
+        const btns=document.querySelectorAll('.area-btn');
+
+        if(currentArea===area){
+            currentArea=null;
+            btn.classList.remove('active');
+        }else{
+            currentArea=area;
+
+            btns.forEach(b=>b.classList.remove('active'));
+
+            btn.classList.add('active');
         }
 
-        return matchArea && matchTag && matchKeyword;
-    });
-
-    filteredShops.forEach((shop, index) => {
-        if (index > 0 && index % 5 === 0 && allYuriWorks.length > 0) {
-            const shuffled = [...allYuriWorks].sort(() => 0.5 - Math.random());
-            const selected = shuffled.slice(0, 3);
-            const adHtml = `
-                <div style="margin: 20px 10px; padding: 18px; border-radius: 15px; background: linear-gradient(135deg, #fffcf5 0%, #fdf2f4 100%); border: 1px solid #eecaca; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <div style="text-align: center; margin-bottom: 12px;">
-                        <span style="color: #8e3a46; font-weight: bold; font-size: 0.85rem;">🌹 추천 백합 명작 코너</span>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        ${selected.map(work => {
-                            const title = work.ko_t || work.t_ko || work.t;
-                            const author = work.ko_a || work.a_ko || work.a;
-                            const amazonUrl = work.amz;
-                            return `
-                            <div style="background: rgba(255,255,255,0.85); padding: 12px; border-radius: 10px; border: 1px solid rgba(142,58,70,0.15);">
-                                <div style="font-size: 0.9rem; font-weight: bold; color: #2c2c2c; margin-bottom: 8px;">
-                                    ${title}
-                                    <span style="display:block; font-size:0.7rem; color:#8e3a46; font-weight:normal; margin-top:2px;">작가: ${author}</span>
-                                </div>
-                                <div style="display: flex; gap: 8px;">
-                                    <a href="${amazonUrl}" target="_blank" rel="nofollow" style="flex:1; background:#232f3e; color:white; text-decoration:none; padding:10px 0; border-radius:6px; font-size:0.75rem; font-weight:bold; text-align:center;">Amazon에서 구매하기</a>
-                                </div>
-                            </div>
-                            `;
-                        }).join('')}
-                    </div>
-                    <div style="text-align: center; margin-top: 15px; padding-top: 12px; border-top: 1px dashed rgba(142,58,70,0.2);">
-                        <a href="yuri_guide_ko.html" style="font-size: 0.8rem; color: #8e3a46; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;">
-                            <span>📜 백합의 역사 & 명작 100선 둘러보기</span>
-                            <span style="font-size: 0.6rem;">▶</span>
-                        </a>
-                        <a href="cinema_ko.html" style="font-size: 0.8rem; color: #3d4a6b; background: rgba(61, 74, 107, 0.06); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(61, 74, 107, 0.2); margin-top: 8px;">
-                            <span>🎬 실사 레즈비언 영화·드라마 TOP 50</span>
-                            <span style="font-size: 0.7rem;">▶</span>
-                        </a>
-                    </div>
-                </div>`;
-            container.insertAdjacentHTML('beforeend', adHtml);
-        }
-
-        const card = document.createElement('div');
-        card.className = 'shop-card show';
-        card.style.position = "relative";
-        card.style.overflow = "hidden";
-
-        if (shop.seriesMark === "B(G)" || shop.group === "BG" || shop.seriesMark === "B系(G)") {
-            card.style.borderLeft = "15px solid transparent";
-            card.style.background = "linear-gradient(to bottom, #9d00ff 50%, #ff0000 50%) no-repeat left / 15px 100%, #1a233d"; 
-        } else if (shop.seriesMark === "B(L)" || shop.group === "BL" || shop.seriesMark === "B系(L)") {
-            card.style.borderLeft = "15px solid transparent";
-            card.style.background = "linear-gradient(to bottom, #9d00ff 50%, #0000ff 50%) no-repeat left / 15px 100%, #1a233d"; 
-        } else if (shop.series === "H系列" || shop.series === "H系" || shop.group === "H" || shop.seriesMark === "H") {
-            card.style.borderLeft = "15px solid #00ff00";
-        } else if (shop.series === "A系列" || shop.series === "A系" || shop.group === "A" || shop.seriesMark === "A") {
-            card.style.borderLeft = "15px solid #ff8c00";
-        } else if (shop.series === "GF系列" || shop.series === "GF系" || shop.group === "GF" || shop.seriesMark === "☝️") {
-            card.style.borderLeft = "15px solid #ffd700";
-        } else if (shop.series === "船系列" || shop.series === "船系" || shop.group === "船" || shop.seriesMark === "🚢") {
-            card.style.borderLeft = "15px solid #00ffff";
-        }
-
-        const isLesbian = shop.type === "lesbian" || shop.type === "ビアン" || shop.type === "ビアン専用" || (shop.tags && shop.tags.includes("lesbian")) || (shop.tags && shop.tags.includes("ビアン専用"));
-        const isMix = shop.type === "mix" || shop.type === "MIX" || shop.type === "MIXバー" || shop.type === "ミックスバー" || (shop.tags && shop.tags.includes("mix")) || (shop.tags && shop.tags.includes("ミックスバー"));
-
-        if (isLesbian) {
-            card.style.borderRight = "15px solid #ff69b4";
-        } else if (isMix) {
-            card.style.borderRight = "15px solid #4bc0c0";
-        }
-      
-        const dName = shop.name_ko || shop.name_jp || shop.name_en;
-        const dAddress = shop.address_ko || shop.address_jp || shop.address_en || '주소 정보 없음';
-        const dDesc = shop.description_ko || shop.description_jp || shop.description_en || '현재 취재 진행 중입니다.';
-        
-        const dHoliday = shop.holiday_ko ? shop.holiday_ko : translateHoliday(shop.holiday);
-
-        const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((shop.name_jp || dName) + ' ' + (shop.address_jp || dAddress))}`;
-
-        /* --- 訪問タグの修正箇所 --- */
-        let checkLabel = "";
-        if (shop.lastCheck && shop.checkLevel !== 'ongoing') {
-            // 直訳による誤訳を防ぐため "현장 방문 조사 완료" (現場訪問調査完了) に変更
-            const levelText = shop.checkLevel === 'thorough' ? '✅ 현장 방문 조사 완료' : '💡 방문 확인';
-            const displayDate = shop.lastCheck.replace(/-/g, '/');
-            
-            checkLabel = `
-                <div style="margin-bottom: 10px; padding: 4px 8px; border-radius: 4px; background: rgba(0, 255, 204, 0.05); border: 1px solid rgba(0, 255, 204, 0.2); display: inline-block;">
-                    <span style="color: #00ffcc; font-weight: bold; font-size: 0.7rem;">${levelText}</span>
-                    <span style="color: #ccd6f6; margin-left: 5px; font-size: 0.7rem;">(${displayDate})</span>
-                </div>`;
-        }
-
-        let finalIcon = '';
-        if (shop.icon === "website") {
-            finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#1a2a4a; border:1px solid #3a4a6a; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#00ffcc; flex-shrink:0;"><span style="font-size:32px;">🌐</span><span style="font-size:10px; font-weight:bold;">WEB SITE</span></div>`;
-        } else if (shop.icon === "instagram" || (shop.snsUrl && shop.snsUrl.includes('instagram.com'))) {
-            finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:linear-gradient(45deg, #f09433 0%, #bc1888 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; flex-shrink:0;"><span style="font-size:32px;">📸</span><span style="font-size:10px; font-weight:bold;">Instagram</span></div>`;
-        } else if (shop.icon && (shop.icon.includes('http') || shop.icon.includes('.png') || shop.icon.includes('.jpg'))) {
-            finalIcon = `<img src="${shop.icon}" style="width:100px; height:100px; border-radius:12px; object-fit:cover; flex-shrink:0;" onerror="this.src='https://via.placeholder.com/100?text=Shop'">`;
-        } else {
-            finalIcon = `<div style="width:100px; height:100px; border-radius:12px; background:#333; display:flex; align-items:center; justify-content:center; color:white; font-size:32px; flex-shrink:0;">🍸</div>`;
-        }
-
-        const dTags = (shop.tags || []).map(t => {
-            const label = tagMap[t] || t;
-            return `<span>#${label}</span>`;
-        }).join('');
-
-        const showNote = (shop.note && shop.note !== '#');
-
-        /* --- noteボタンの日本語ニュアンス補正 --- */
-        card.innerHTML = `
-            <div style="padding:15px;">
-                <div style="display:flex; gap:15px; margin-bottom:12px;">
-                    ${finalIcon}
-                    <div style="flex:1;">
-                        <div class="shop-name" style="font-size:1.1rem; font-weight:bold; margin-bottom:4px;">
-                            <a href="${shop.snsUrl}" target="_blank" style="color:white; text-decoration:none;">${dName} 🔗</a>
-                        </div>
-                        <div style="font-size:0.75rem; color:#ccd6f6;">
-                            <a href="${googleMapUrl}" target="_blank" class="map-link" title="구글 맵에서 보기">📍 ${dAddress}</a>
-                        </div>
-                        <div style="font-size:0.7rem; color:#ccd6f6; margin-top:4px;">🕒 ${shop.time || '---'}</div>
-                        <div style="font-size:0.7rem; color:#ccd6f6;">🗓️ 휴무일: ${dHoliday}</div>
-                        <div class="feature-tags" style="margin-top:8px;">${dTags}</div>
-                    </div>
-                </div>
-                <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
-                    ${checkLabel}
-                    <div style="font-size:0.8rem; color:#ccd6f6; line-height:1.6; text-align:justify;">${dDesc}</div>
-                </div>
-                <div class="action-buttons">
-                    ${showNote ? `<a href="${shop.note}" class="btn btn-note" target="_blank">📝 note 상세 가이드 보기</a>` : `<span class="btn btn-disabled">가이드 기사 준비 중</span>`}
-                </div>
-            </div>`;
-        container.appendChild(card);
-    });
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    if (typeof shopDetails !== 'undefined') {
         displayShops();
     }
-});
+
+    function filterTag(tag,btn){
+        const btns=document.querySelectorAll('.tag-btn');
+
+        if(currentTag===tag){
+            currentTag=null;
+            btn.classList.remove('active');
+        }else{
+            currentTag=tag;
+
+            btns.forEach(b=>b.classList.remove('active'));
+
+            btn.classList.add('active');
+        }
+
+        displayShops();
+    }
+
+    function onSearchInput(){
+        const input=document.getElementById('search-input');
+
+        currentSearchKeyword=input
+            ?input.value.trim().toLowerCase()
+            :"";
+
+        displayShops();
+    }
+
+    function displayShops(){
+        const container=document.getElementById('shop-container');
+
+        if(!container||typeof shopDetails==='undefined')return;
+
+        container.innerHTML="";
+
+        const filteredShops=shopDetails.filter(shop=>{
+
+            const matchArea=!currentArea||shop.area===currentArea;
+            const matchTag=!currentTag||(shop.tags||[]).includes(currentTag);
+
+            let matchKeyword=true;
+
+            if(currentSearchKeyword){
+
+                const name=(
+                    shop.name_ko||
+                    shop.name_jp||
+                    shop.name_en||
+                    ''
+                ).toLowerCase();
+
+                const address=(
+                    shop.address_ko||
+                    shop.address_jp||
+                    shop.address_en||
+                    ''
+                ).toLowerCase();
+
+                const tags=(shop.tags||[])
+                    .join(" ")
+                    .toLowerCase();
+
+                matchKeyword=
+                    name.includes(currentSearchKeyword)||
+                    address.includes(currentSearchKeyword)||
+                    tags.includes(currentSearchKeyword);
+            }
+
+            return matchArea&&matchTag&&matchKeyword;
+        });
+
+        filteredShops.forEach((shop,index)=>{
+
+            if(index>0&&index%5===0){
+
+                const cinemaList=(
+                    typeof cinema_data!=='undefined'&&
+                    Array.isArray(cinema_data)
+                )
+                ?cinema_data.flatMap(cat=>cat.works||cat.movies||[])
+                :(typeof worksData!=='undefined'&&
+                  Array.isArray(worksData)
+                  ?worksData
+                  :[]);
+
+                let mangaList=[];
+
+                if(
+                    typeof yuri_data!=='undefined'&&
+                    Array.isArray(yuri_data)
+                ){
+                    yuri_data.forEach(category=>{
+                        if(
+                            category&&
+                            Array.isArray(category.works)
+                        ){
+                            mangaList.push(...category.works);
+                        }
+                    });
+                }
+
+                const shuffledManga=[...mangaList]
+                    .sort(()=>0.5-Math.random());
+
+                const manga1=shuffledManga[0]||null;
+                const manga2=shuffledManga[1]||null;
+
+                const shuffledCinema=[...cinemaList]
+                    .sort(()=>0.5-Math.random());
+
+                const cinema1=shuffledCinema[0]||null;
+                const cinema2=shuffledCinema[1]||null;
+
+                const createMangaCard=item=>{
+
+                    if(!item)return '';
+
+                    const title=
+                        item.ko_t||
+                        item.t_ko||
+                        item.en_t||
+                        item.t_en||
+                        item.t||
+                        '제목 정보 없음';
+
+                    const author=
+                        item.ko_a||
+                        item.a_ko||
+                        item.en_a||
+                        item.a_en||
+                        item.a||
+                        '';
+
+                    const hasAmz=
+                        item.amz&&
+                        item.amz.trim()!==""&&
+                        item.amz!=="#";
+
+                    return `
+                        <div data-ga-ad-type="manga"
+                             style="background:rgba(255,255,255,0.95);padding:10px;border-radius:6px;border:1px solid rgba(142,58,70,0.15);margin-bottom:6px;text-align:center;">
+
+                            <div style="font-size:0.75rem;font-weight:bold;color:#2c2c2c;margin-bottom:2px;">
+                                📖 ${title}
+                            </div>
+
+                            ${author?`
+                                <div style="font-size:0.62rem;color:#666;margin-bottom:4px;">
+                                    작가: ${author}
+                                </div>
+                            `:''}
+
+                            ${hasAmz?`
+                                <div>
+                                    <a href="${item.amz}"
+                                       target="_blank"
+                                       rel="nofollow"
+                                       style="display:block;width:80%;margin:6px auto 0;box-sizing:border-box;background:#232f3e;color:white;text-align:center;text-decoration:none;padding:6px;border-radius:5px;font-size:0.68rem;font-weight:bold;">
+                                        Amazon에서 보기
+                                    </a>
+                                </div>
+                            `:''}
+
+                        </div>
+                    `;
+                };
+
+                const createCinemaCard=item=>{
+
+                    if(!item)return '';
+
+                    const title=
+                        item.titleKo||
+                        item.title_ko||
+                        item.titleEn||
+                        item.title||
+                        item.t||
+                        '제목 정보 없음';
+
+                    const cast=
+                        item.castKo||
+                        item.cast_ko||
+                        item.castEn||
+                        item.actor||
+                        item.cast||
+                        '';
+
+                    const hasAmz=
+                        item.amz&&
+                        item.amz.trim()!==""&&
+                        item.amz!=="#";
+
+                    return `
+                        <div data-ga-ad-type="cinema"
+                             style="background:rgba(255,255,255,0.95);padding:10px;border-radius:6px;border:1px solid rgba(142,58,70,0.15);margin-bottom:6px;text-align:center;">
+
+                            <div style="font-size:0.75rem;font-weight:bold;color:#2c2c2c;margin-bottom:2px;">
+                                🎬 ${title}
+                            </div>
+
+                            ${cast?`
+                                <div style="font-size:0.62rem;color:#666;margin-bottom:4px;">
+                                    출연: ${cast}
+                                </div>
+                            `:''}
+
+                            ${hasAmz?`
+                                <div>
+                                    <a href="${item.amz}"
+                                       target="_blank"
+                                       rel="nofollow"
+                                       style="display:block;width:80%;margin:6px auto 0;box-sizing:border-box;background:#232f3e;color:white;text-align:center;text-decoration:none;padding:6px;border-radius:5px;font-size:0.68rem;font-weight:bold;">
+                                        Amazon에서 보기
+                                    </a>
+                                </div>
+                            `:''}
+
+                        </div>
+                    `;
+                };
+
+                const adHtml=`
+                    <div style="margin:20px 0;padding:12px;border-radius:12px;background:linear-gradient(135deg,#fffcf5 0%,#fdf2f4 100%);border:1px solid #eecaca;box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+
+                        <div style="text-align:center;margin-bottom:8px;">
+
+                            <span style="color:#8e3a46;font-weight:bold;font-size:0.72rem;">
+                                🌹 추천 백합 명작 코너
+                            </span>
+
+                            <div style="margin-top:8px;padding:7px 10px;border-radius:6px;background:rgba(142,58,70,0.06);border:1px solid rgba(142,58,70,0.12);">
+
+                                <span style="font-size:0.68rem;color:#6f5a5f;line-height:1.5;">
+                                    ※ 현재 한국 Amazon 판매 페이지는 준비 중입니다.<br>
+                                    아래 링크에서는 일본 Amazon 페이지가 표시됩니다.<br>
+                                    향후 네이버 등 한국에서 이용하기 편한 구매 링크로 변경할 예정입니다.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            ${createMangaCard(manga1)}
+                            ${createMangaCard(manga2)}
+                            ${createCinemaCard(cinema1)}
+                            ${createCinemaCard(cinema2)}
+                        </div>
+
+                    </div>
+                `;
+
+                container.insertAdjacentHTML(
+                    'beforeend',
+                    adHtml
+                );
+            }
+
+            const card=document.createElement('div');
+
+            card.className='shop-card show';
+            card.style.position="relative";
+            card.style.overflow="hidden";
+
+            if(
+                shop.seriesMark==="B(G)"||
+                shop.group==="BG"||
+                shop.seriesMark==="B系(G)"
+            ){
+
+                card.style.borderLeft="15px solid transparent";
+
+                card.style.background=
+                    "linear-gradient(to bottom,#9d00ff 50%,#ff0000 50%) no-repeat left / 15px 100%,#1a233d";
+
+            }else if(
+                shop.seriesMark==="B(L)"||
+                shop.group==="BL"||
+                shop.seriesMark==="B系(L)"
+            ){
+
+                card.style.borderLeft="15px solid transparent";
+
+                card.style.background=
+                    "linear-gradient(to bottom,#9d00ff 50%,#0000ff 50%) no-repeat left / 15px 100%,#1a233d";
+
+            }else if(
+                shop.series==="H系列"||
+                shop.series==="H系"||
+                shop.group==="H"||
+                shop.seriesMark==="H"
+            ){
+
+                card.style.borderLeft="15px solid #00ff00";
+
+            }else if(
+                shop.series==="A系列"||
+                shop.series==="A系"||
+                shop.group==="A"||
+                shop.seriesMark==="A"
+            ){
+
+                card.style.borderLeft="15px solid #ff8c00";
+
+            }else if(
+                shop.series==="GF系列"||
+                shop.series==="GF系"||
+                shop.group==="GF"||
+                shop.seriesMark==="☝️"
+            ){
+
+                card.style.borderLeft="15px solid #ffd700";
+
+            }else if(
+                shop.series==="船系列"||
+                shop.series==="船系"||
+                shop.group==="船"||
+                shop.seriesMark==="🚢"
+            ){
+
+                card.style.borderLeft="15px solid #00ffff";
+            }
+
+            const isLesbian=
+                shop.type==="lesbian"||
+                shop.type==="ビアン"||
+                shop.type==="ビアン専用"||
+                (shop.tags&&shop.tags.includes("lesbian"))||
+                (shop.tags&&shop.tags.includes("ビアン専用"));
+
+            const isMix=
+                shop.type==="mix"||
+                shop.type==="MIX"||
+                shop.type==="MIXバー"||
+                shop.type==="ミックスバー"||
+                (shop.tags&&shop.tags.includes("mix"))||
+                (shop.tags&&shop.tags.includes("ミックスバー"));
+
+            if(isLesbian){
+                card.style.borderRight="15px solid #ff69b4";
+            }else if(isMix){
+                card.style.borderRight="15px solid #4bc0c0";
+            }
+
+            const dName=
+                shop.name_ko||
+                shop.name_jp||
+                shop.name_en;
+
+            const dAddress=
+                shop.address_ko||
+                shop.address_jp||
+                shop.address_en||
+                '주소 정보 없음';
+
+            const dDesc=
+                shop.description_ko||
+                shop.description_jp||
+                shop.description_en||
+                '현재 취재 진행 중입니다.';
+
+            const dHoliday=
+                shop.holiday_ko
+                ?shop.holiday_ko
+                :translateHoliday(shop.holiday);
+
+            const googleMapUrl=
+                `https://www.google.com/maps/search/?api=1&query=${
+                    encodeURIComponent(
+                        (shop.name_jp||dName)+
+                        ' '+
+                        (shop.address_jp||dAddress)
+                    )
+                }`;
+
+            let checkLabel="";
+
+            if(
+                shop.lastCheck&&
+                shop.checkLevel!=='ongoing'
+            ){
+
+                const levelText=
+                    shop.checkLevel==='thorough'
+                    ?'✅ 현장 방문 조사 완료'
+                    :'💡 방문 확인';
+
+                const displayDate=
+                    shop.lastCheck.replace(/-/g,'/');
+
+                checkLabel=`
+                    <div style="margin-bottom:10px;padding:4px 8px;border-radius:4px;background:rgba(0,255,204,0.05);border:1px solid rgba(0,255,204,0.2);display:inline-block;">
+
+                        <span style="color:#00ffcc;font-weight:bold;font-size:0.7rem;">
+                            ${levelText}
+                        </span>
+
+                        <span style="color:#ccd6f6;margin-left:5px;font-size:0.7rem;">
+                            (${displayDate})
+                        </span>
+
+                    </div>
+                `;
+            }
+
+            let finalIcon='';
+
+            if(shop.icon==="website"){
+
+                finalIcon=`
+                    <div style="width:100px;height:100px;border-radius:12px;background:#1a2a4a;border:1px solid #3a4a6a;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#00ffcc;flex-shrink:0;">
+                        <span style="font-size:32px;">🌐</span>
+                        <span style="font-size:10px;font-weight:bold;">웹사이트</span>
+                    </div>
+                `;
+
+            }else if(
+                shop.icon==="instagram"||
+                (shop.snsUrl&&shop.snsUrl.includes('instagram.com'))
+            ){
+
+                finalIcon=`
+                    <div style="width:100px;height:100px;border-radius:12px;background:linear-gradient(45deg,#f09433 0%,#bc1888 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;flex-shrink:0;">
+                        <span style="font-size:32px;">📸</span>
+                        <span style="font-size:10px;font-weight:bold;">Instagram</span>
+                    </div>
+                `;
+
+            }else if(
+                shop.icon&&
+                (
+                    shop.icon.includes('http')||
+                    shop.icon.includes('.png')||
+                    shop.icon.includes('.jpg')
+                )
+            ){
+
+                finalIcon=`
+                    <img src="${shop.icon}"
+                         style="width:100px;height:100px;border-radius:12px;object-fit:cover;flex-shrink:0;"
+                         onerror="this.src='https://via.placeholder.com/100?text=Shop'">
+                `;
+
+            }else{
+
+                finalIcon=`
+                    <div style="width:100px;height:100px;border-radius:12px;background:#333;display:flex;align-items:center;justify-content:center;color:white;font-size:32px;flex-shrink:0;">
+                        🍸
+                    </div>
+                `;
+            }
+
+            const dTags=
+                (shop.tags||[])
+                .map(t=>`<span>#${tagMap[t]||t}</span>`)
+                .join('');
+
+            const showNote=
+                shop.note&&shop.note!=='#';
+
+            card.innerHTML=`
+                <div style="padding:15px;">
+
+                    <div style="display:flex;gap:15px;margin-bottom:12px;">
+
+                        ${finalIcon}
+
+                        <div style="flex:1;">
+
+                            <div class="shop-name"
+                                 style="font-size:1.1rem;font-weight:bold;margin-bottom:4px;">
+
+                                <a href="${shop.snsUrl}"
+                                   target="_blank"
+                                   style="color:white;text-decoration:none;">
+
+                                    ${dName} 🔗
+
+                                </a>
+
+                            </div>
+
+                            <div style="font-size:0.75rem;color:#ccd6f6;">
+
+                                <a href="${googleMapUrl}"
+                                   target="_blank"
+                                   class="map-link"
+                                   title="Google Maps에서 열기">
+
+                                    📍 ${dAddress}
+
+                                </a>
+
+                            </div>
+
+                            <div style="font-size:0.7rem;color:#ccd6f6;margin-top:4px;">
+                                🕒 ${translateHoliday(shop.time||'---')}
+                            </div>
+
+                            <div style="font-size:0.7rem;color:#ccd6f6;">
+                                🗓️ 휴무일: ${dHoliday}
+                            </div>
+
+                            <div class="feature-tags" style="margin-top:8px;">
+                                ${dTags}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:10px;">
+
+                        ${checkLabel}
+
+                        <div style="font-size:0.8rem;color:#ccd6f6;line-height:1.6;text-align:justify;">
+                            ${dDesc}
+                        </div>
+
+                    </div>
+
+                    <div class="action-buttons">
+
+                        ${
+                            showNote
+                            ?`
+                                <a href="${shop.note}"
+                                   class="btn btn-note"
+                                   target="_blank">
+                                    📝 가이드 기사 보기 (note)
+                                </a>
+                            `
+                            :`
+                                <span class="btn btn-disabled">
+                                    가이드 기사 준비 중
+                                </span>
+                            `
+                        }
+
+                    </div>
+
+                </div>
+            `;
+
+            container.appendChild(card);
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded',()=>{
+        if(typeof shopDetails!=='undefined'){
+            displayShops();
+        }
+    });
+
 </script>
+
 </body>
 </html>

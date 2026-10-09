@@ -11,7 +11,14 @@
     <link rel="alternate" hreflang="es" href="system_guide_es.html" />
     <link rel="alternate" hreflang="ko" href="system_guide_ko.html" />
     <link rel="alternate" hreflang="x-default" href="system_guide.html" />
-
+<!-- GA4: Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
     <style>
         :root {
             --bg-color: #0a1428;
@@ -405,10 +412,12 @@
     </div>
     <ul class="menu-list">
         <li><a href="index.html">🏠 トップ・店舗検索</a></li>
+        <li><a href="tokyo.html">🏙️ 関東エリア一覧（東京ほか）</a></li>
+        <li><a href="osaka.html">🐙 関西エリア一覧（大阪・京都・神戸）</a></li>
         <li><a href="system_guide.html">❓ 初めての方へ（システム案内）</a></li>
         <li><a href="guide.html">🤝 初心者同行ガイド</a></li>
         <li><a href="cinema.html">🎬 百合映画特集</a></li>
-        <li><a href="yuri_manga.html">📖 百合漫画特集</a></li>
+        <li><a href="yuri_guide.html">📖 百合漫画特集</a></li>
         <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 飲み会ミニゲーム (Beta)</a></li>
         <li><a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">📝 note解説記事</a></li>
         <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee (応援)</a></li>
@@ -624,5 +633,40 @@ window.addEventListener('scroll', () => {
     }
 });
 </script>
+<script>
+    // 楽天アフィリエイトとサイト内ページ移動を計測
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a');
+      if (!link || typeof gtag !== 'function') return;
+  
+      const url = new URL(link.href);
+      const linkText = link.innerText.trim();
+  
+      // 1. 楽天アフィリエイトのクリック
+      if (url.hostname.endsWith('afl.rakuten.co.jp')) {
+        gtag('event', 'affiliate_click', {
+          link_url: link.href,
+          link_text: linkText,
+          page_location: window.location.href,
+          transport_type: 'beacon'
+        });
+        return;
+      }
+     // 2. サイト内の別ページへの移動
+     if (url.origin !== window.location.origin) return;
+    if (link.getAttribute('href').startsWith('#')) return;
+
+    // 同じページへのリンクは除外
+    if (url.pathname === window.location.pathname &&
+        url.search === window.location.search) return;
+
+    gtag('event', 'page_navigation_click', {
+      link_url: link.href,
+      link_text: linkText,
+      page_location: window.location.href,
+      transport_type: 'beacon'
+      });
+    });
+  </script>
 </body>
 </html>

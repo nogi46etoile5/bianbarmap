@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>百合漫画・GLアニメおすすめ100選 | 百合の庭園</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- GA4: Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
+
 <style>
   :root {
     --bg: #faf7f4;
@@ -300,6 +309,8 @@
   </div>
   <ul class="menu-list">
       <li><a href="index.html">🏠 トップ・マップ</a></li>
+      <li><a href="tokyo.html">🏙️ 関東エリア一覧（東京ほか）</a></li>
+      <li><a href="osaka.html">🐙 関西エリア一覧（大阪・京都・神戸）</a></li>
       <li><a href="guide.html">🤝 付き添い・ガイド依頼</a></li>
       <li><a href="system_guide.html">🔰 初心者向けシステムガイド</a></li>
       <li><a href="cinema.html">🎬 百合・映画特集</a></li>
@@ -535,5 +546,152 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+<script>
+  (function () {
+    // 計測済み作品・説明文の重複を防ぐ
+    const viewedWorks = new WeakSet();
+    const viewedDescriptions = new WeakSet();
+  
+    function sendEvent(name, params) {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params);
+      }
+    }
+  
+    // 作品名・著者名・カテゴリー名を取得
+    function getWorkInfo(element) {
+      const work = element.closest('.work-item');
+      if (!work) return {};
+  
+      const categoryBox = work.closest('.expand-box');
+      const title = work.querySelector('.work-info h3');
+      const author = work.querySelector('.work-info span');
+      const category = categoryBox && categoryBox.querySelector('h2');
+  
+      return {
+        work_title: title ? title.textContent.trim() : '',
+        work_author: author
+          ? author.textContent.replace(/^著者・制作:\s*/, '').trim()
+          : '',
+        work_category: category ? category.textContent.trim() : ''
+      };
+    }
+  
+    // 作品・説明文が画面に表示されたら計測
+    const visibilityObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+  
+        const element = entry.target;
+  
+        if (element.matches('.work-item') && !viewedWorks.has(element)) {
+          viewedWorks.add(element);
+          sendEvent('work_view', getWorkInfo(element));
+        }
+  
+        if (
+          element.matches('.work-info p') &&
+          !viewedDescriptions.has(element)
+        ) {
+          viewedDescriptions.add(element);
+          sendEvent('work_description_view', getWorkInfo(element));
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+  
+    function observeWorks() {
+      document.querySelectorAll('#yuri-list-container .work-item')
+        .forEach(function (element) {
+          visibilityObserver.observe(element);
+          const description = element.querySelector('.work-info p');
+          if (description) visibilityObserver.observe(description);
+        });
+    }
+  
+    // 検索などで作品一覧が再生成された場合も対応
+    const listRoot = document.getElementById('yuri-list-container');
+  
+    if (listRoot) {
+      new MutationObserver(observeWorks).observe(listRoot, {
+        childList: true,
+        subtree: true
+      });
+      observeWorks();
+    }
+  
+    // クリック計測
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a');
+      const trigger = event.target.closest('.expand-trigger');
+  
+      // カテゴリーを開いた回数
+      if (trigger) {
+        const box = trigger.closest('.expand-box');
+        const heading = box && box.querySelector('h2');
+  
+        if (heading) {
+          sendEvent('category_expand', {
+            work_category: heading.textContent.trim(),
+            action: box.classList.contains('open') ? 'close' : 'open'
+          });
+        }
+      }
+  
+      if (!link) return;
+  
+      const url = new URL(link.href);
+      const linkText = link.innerText.trim();
+      const workInfo = getWorkInfo(link);
+  
+      // 作品ごとの購入リンク
+      if (link.matches('.work-item a.btn-shop')) {
+        sendEvent('affiliate_click', {
+          ...workInfo,
+          link_url: link.href,
+          link_text: linkText,
+          affiliate_type: 'amazon'
+        });
+        return;
+      }
+  
+      // A8.netなど、作品一覧以外の広告リンク
+      const host = url.hostname;
+      const isAffiliate =
+        host === 'px.a8.net' ||
+        host.endsWith('.a8.net') ||
+        host === 'hb.afl.rakuten.co.jp' ||
+        host === 'amzn.to' ||
+        host === 'amazon.co.jp' ||
+        host.endsWith('.amazon.co.jp');
+  
+      if (isAffiliate) {
+        sendEvent('affiliate_click', {
+          link_url: link.href,
+          link_text: linkText,
+          page_location: window.location.href,
+          affiliate_type: host
+        });
+        return;
+      }
+  
+      // サイト内の別ページへの移動
+      if (url.origin !== window.location.origin) return;
+      if (link.getAttribute('href').startsWith('#')) return;
+  
+      if (
+        url.pathname === window.location.pathname &&
+        url.search === window.location.search
+      ) return;
+  
+      sendEvent('page_navigation_click', {
+        link_url: link.href,
+        link_text: linkText,
+        page_location: window.location.href
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

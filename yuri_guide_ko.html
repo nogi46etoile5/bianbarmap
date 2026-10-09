@@ -7,6 +7,17 @@
 <meta name="keywords" content="백합, GL, WLW, Sapphic, Girls Love, 백합 만화 추천, 백합 애니 추천, 백합 웹툰, GL 추천, Yuri Recommendations">
 <meta name="description" content="엄선된 백합 & GL (WLW / Sapphic) 명작 만화, 애니메이션, 라이트노벨 100선. 테마별 추천 작품과 역사적 background를 확인해보세요.">
 <title>백합 & GL (WLW) 명작 100선 | 백합 / Sapphic 추천 가이드 | Yuri Garden</title>
+```html
+<!-- GA4: Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
+```
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -302,10 +313,12 @@
       <button class="close-btn" onclick="toggleMenu()">&times;</button>
   </div>
   <ul class="menu-list">
-      <li><a href="index.html">🏠 홈 / 맵 목록</a></li>
-      <li><a href="guide.html">🤝 에스코트 & 가이드 신청</a></li>
-      <li><a href="system_guide.html">🔰 초보자 시스템 가이드</a></li>
-      <li><a href="cinema.html">🎬 퀴어/백합 영화 특집</a></li>
+      <li><a href="index_ko.html">🏠 홈 / 맵 목록</a></li>
+      <li><a href="tokyo_ko.html">🏙️ 관동 지역 리스트 (도쿄 및 기타 지역)</a></li>
+      <li><a href="osaka_ko.html">🐙 간사이 지역 리스트 (오사카·교토·고베)</a></li>
+      <li><a href="guide_ko.html">🤝 에스코트 & 가이드 신청</a></li>
+      <li><a href="system_guide_ko.html">🔰 초보자 시스템 가이드</a></li>
+      <li><a href="cinema_ko.html">🎬 퀴어/백합 영화 특집</a></li>
       <li><a href="yuri_guide_ko.html">📜 백합 역사 & 명작 100선</a></li>
       <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 술자리 파티 게임 (Beta)</a></li>
       <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 매장 이용 전략 노트</a></li>
@@ -552,5 +565,149 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
+<script>
+(function () {
+  const viewedWorks = new WeakSet();
+  const viewedDescriptions = new WeakSet();
+
+  function sendEvent(name, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, params);
+    }
+  }
+
+  function getWorkInfo(element) {
+    const work = element.closest('.work-item');
+    if (!work) return {};
+
+    const categoryBox = work.closest('.expand-box');
+    const title = work.querySelector('.work-info h3');
+    const author = work.querySelector('.work-info span');
+    const category = categoryBox && categoryBox.querySelector('h2');
+
+    return {
+      work_title: title ? title.textContent.trim() : '',
+      work_author: author
+        ? author.textContent.replace(/^작가\/제작:\s*/, '').trim()
+        : '',
+      work_category: category ? category.textContent.trim() : ''
+    };
+  }
+
+  // 작품과 설명이 화면에 표시되었을 때 기록
+  const visibilityObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+
+      const element = entry.target;
+
+      if (element.matches('.work-item') && !viewedWorks.has(element)) {
+        viewedWorks.add(element);
+        sendEvent('work_view', getWorkInfo(element));
+      }
+
+      if (
+        element.matches('.work-info p') &&
+        !viewedDescriptions.has(element)
+      ) {
+        viewedDescriptions.add(element);
+        sendEvent('work_description_view', getWorkInfo(element));
+      }
+    });
+  }, { threshold: 0.5 });
+
+  function observeWorks() {
+    document.querySelectorAll('#yuri-list-container .work-item')
+      .forEach(function (element) {
+        visibilityObserver.observe(element);
+
+        const description = element.querySelector('.work-info p');
+        if (description) visibilityObserver.observe(description);
+      });
+  }
+
+  const listRoot = document.getElementById('yuri-list-container');
+
+  if (listRoot) {
+    new MutationObserver(observeWorks).observe(listRoot, {
+      childList: true,
+      subtree: true
+    });
+    observeWorks();
+  }
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a');
+    const trigger = event.target.closest('.expand-trigger');
+
+    // 카테고리 열기 / 닫기 기록
+    if (trigger) {
+      const box = trigger.closest('.expand-box');
+      const heading = box && box.querySelector('h2');
+
+      if (heading) {
+        sendEvent('category_expand', {
+          work_category: heading.textContent.trim(),
+          action: box.classList.contains('open') ? 'close' : 'open'
+        });
+      }
+    }
+
+    if (!link) return;
+
+    const url = new URL(link.href);
+    const linkText = link.innerText.trim();
+    const workInfo = getWorkInfo(link);
+
+    // 작품별 Amazon 링크 클릭
+    if (link.matches('.work-item a.btn-shop')) {
+      sendEvent('affiliate_click', {
+        ...workInfo,
+        link_url: link.href,
+        link_text: linkText,
+        affiliate_type: 'amazon'
+      });
+      return;
+    }
+
+    // 기타 제휴 링크 클릭 (A8.net 등)
+    const host = url.hostname;
+    const isAffiliate =
+      host === 'px.a8.net' ||
+      host.endsWith('.a8.net') ||
+      host === 'hb.afl.rakuten.co.jp' ||
+      host === 'amzn.to' ||
+      host === 'amazon.co.jp' ||
+      host.endsWith('.amazon.co.jp');
+
+    if (isAffiliate) {
+      sendEvent('affiliate_click', {
+        link_url: link.href,
+        link_text: linkText,
+        page_location: window.location.href,
+        affiliate_type: host
+      });
+      return;
+    }
+
+    // 사이트 내부 페이지 이동 기록
+    if (url.origin !== window.location.origin) return;
+    if (link.getAttribute('href').startsWith('#')) return;
+
+    if (
+      url.pathname === window.location.pathname &&
+      url.search === window.location.search
+    ) return;
+
+    sendEvent('page_navigation_click', {
+      link_url: link.href,
+      link_text: linkText,
+      page_location: window.location.href
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

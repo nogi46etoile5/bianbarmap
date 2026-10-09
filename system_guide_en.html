@@ -11,7 +11,14 @@
     <link rel="alternate" hreflang="es" href="system_guide_es.html" />
     <link rel="alternate" hreflang="ko" href="system_guide_ko.html" />
     <link rel="alternate" hreflang="x-default" href="system_guide.html" />
-
+<!-- GA4: Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
     <style>
         :root {
             --bg-color: #0a1428;
@@ -404,11 +411,13 @@
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
     </div>
     <ul class="menu-list">
-        <li><a href="index.html">🏠 Home / Bar Search</a></li>
+        <li><a href="index_en.html">🏠 Home / Bar Search</a></li>
+        <li><a href="osaka_en.html">🐙 Kansai Area List (Osaka, Kyoto & Kobe)</a></li>
+        <li><a href="tokyo_en.html">🏙️ Kanto Area List (Tokyo & Others)</a></li>
         <li><a href="system_guide_en.html">❓ First-Time Guide (System & Etiquette)</a></li>
-        <li><a href="guide.html">🤝 Beginner's Companion Guide</a></li>
-        <li><a href="cinema.html">🎬 Yuri Movies Feature</a></li>
-        <li><a href="yuri_manga.html">📖 Yuri Manga Feature</a></li>
+        <li><a href="guide_en.html">🤝 Beginner's Companion Guide</a></li>
+        <li><a href="cinema_en.html">🎬 Yuri Movies Feature</a></li>
+        <li><a href="yuri_guide_en.html">📖 Yuri Manga Feature</a></li>
         <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 Party Mini-Games (Beta)</a></li>
         <li><a href="https://note.com/412357siki/n/n8d5ba903413a" target="_blank">📝 note Article (Japanese)</a></li>
         <li><a href="https://buymeacoffee.com/syu_412357" target="_blank">☕ Buy Me a Coffee (Support)</a></li>
@@ -624,5 +633,41 @@ window.addEventListener('scroll', () => {
     }
 });
 </script>
+<script>
+    // Track affiliate clicks and internal page navigation
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a');
+      if (!link || typeof gtag !== 'function') return;
+  
+      const url = new URL(link.href);
+      const linkText = link.innerText.trim();
+  
+      // 1. Rakuten affiliate clicks
+      if (url.hostname.endsWith('afl.rakuten.co.jp')) {
+        gtag('event', 'affiliate_click', {
+          link_url: link.href,
+          link_text: linkText,
+          page_location: window.location.href,
+          transport_type: 'beacon'
+        });
+        return;
+      }
+  
+      // 2. Navigation to another page on the same website
+      if (url.origin !== window.location.origin) return;
+      if (link.getAttribute('href').startsWith('#')) return;
+  
+      // Ignore links to the current page
+      if (url.pathname === window.location.pathname &&
+          url.search === window.location.search) return;
+  
+      gtag('event', 'page_navigation_click', {
+        link_url: link.href,
+        link_text: linkText,
+        page_location: window.location.href,
+        transport_type: 'beacon'
+      });
+    });
+  </script>
 </body>
 </html>

@@ -7,7 +7,17 @@
 <meta name="keywords" content="Yuri, GL, WLW, Sapphic, Girls Love, Lesbian Manga, Lesbian Anime, Yuri Recommendation, GL Webtoon, Girls Love Recommendations">
 <meta name="description" content="Discover top 100 recommended Yuri & GL (WLW / Sapphic) manga, anime, and light novels. Explore the best Girls' Love titles categorized by themes.">
 <title>100 Recommended Yuri & GL Manga/Anime | WLW & Sapphic Recommendations | Yuri Garden</title>
+<!-- GA4: Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH32JQCYXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BH32JQCYXR');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+
 <style>
   :root {
     --bg: #faf7f4;
@@ -302,10 +312,12 @@
       <button class="close-btn" onclick="toggleMenu()">&times;</button>
   </div>
   <ul class="menu-list">
-      <li><a href="index.html">🏠 Home / Map</a></li>
-      <li><a href="guide.html">🤝 Escort & Guide Request</a></li>
-      <li><a href="system_guide.html">🔰 Beginner's System Guide</a></li>
-      <li><a href="cinema.html">🎬 Yuri Cinema Feature</a></li>
+      <li><a href="index_en.html">🏠 Home / Map</a></li>
+      <li><a href="osaka_en.html">🐙 Kansai Area List (Osaka, Kyoto & Kobe)</a></li>
+      <li><a href="tokyo_en.html">🏙️ Kanto Area List (Tokyo & Others)</a></li>
+      <li><a href="guide\en.html">🤝 Escort & Guide Request</a></li>
+      <li><a href="system_guide_en.html">🔰 Beginner's System Guide</a></li>
+      <li><a href="cinema_en.html">🎬 Yuri Cinema Feature</a></li>
       <li><a href="yuri_guide_en.html">📜 History & 100 Selections</a></li>
       <li><a href="https://nogi46etoile5.github.io/nomigame/" target="_blank">🎲 Party Games (Beta)</a></li>
       <li><a href="https://note.com/412357siki/n/n771b0098a2e3" target="_blank">📝 Store Strategy Notes</a></li>
@@ -554,5 +566,147 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+<script>
+  (function () {
+    const viewedWorks = new WeakSet();
+    const viewedDescriptions = new WeakSet();
+  
+    function sendEvent(name, params) {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params);
+      }
+    }
+  
+    function getWorkInfo(element) {
+      const work = element.closest('.work-item');
+      if (!work) return {};
+  
+      const categoryBox = work.closest('.expand-box');
+      const title = work.querySelector('.work-info h3');
+      const author = work.querySelector('.work-info span');
+      const category = categoryBox && categoryBox.querySelector('h2');
+  
+      return {
+        work_title: title ? title.textContent.trim() : '',
+        work_author: author
+          ? author.textContent.replace(/^Author\/Studio:\s*/, '').trim()
+          : '',
+        work_category: category ? category.textContent.trim() : ''
+      };
+    }
+  
+    // Track works and descriptions when they appear on screen
+    const visibilityObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+  
+        const element = entry.target;
+  
+        if (element.matches('.work-item') && !viewedWorks.has(element)) {
+          viewedWorks.add(element);
+          sendEvent('work_view', getWorkInfo(element));
+        }
+  
+        if (
+          element.matches('.work-info p') &&
+          !viewedDescriptions.has(element)
+        ) {
+          viewedDescriptions.add(element);
+          sendEvent('work_description_view', getWorkInfo(element));
+        }
+      });
+    }, { threshold: 0.5 });
+  
+    function observeWorks() {
+      document.querySelectorAll('#yuri-list-container .work-item')
+        .forEach(function (element) {
+          visibilityObserver.observe(element);
+  
+          const description = element.querySelector('.work-info p');
+          if (description) visibilityObserver.observe(description);
+        });
+    }
+  
+    const listRoot = document.getElementById('yuri-list-container');
+  
+    if (listRoot) {
+      new MutationObserver(observeWorks).observe(listRoot, {
+        childList: true,
+        subtree: true
+      });
+      observeWorks();
+    }
+  
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a');
+      const trigger = event.target.closest('.expand-trigger');
+  
+      // Track category expand/collapse
+      if (trigger) {
+        const box = trigger.closest('.expand-box');
+        const heading = box && box.querySelector('h2');
+  
+        if (heading) {
+          sendEvent('category_expand', {
+            work_category: heading.textContent.trim(),
+            action: box.classList.contains('open') ? 'close' : 'open'
+          });
+        }
+      }
+  
+      if (!link) return;
+  
+      const url = new URL(link.href);
+      const linkText = link.innerText.trim();
+      const workInfo = getWorkInfo(link);
+  
+      // Track each work's Amazon link
+      if (link.matches('.work-item a.btn-shop')) {
+        sendEvent('affiliate_click', {
+          ...workInfo,
+          link_url: link.href,
+          link_text: linkText,
+          affiliate_type: 'amazon'
+        });
+        return;
+      }
+  
+      // Track other affiliate links, including A8.net
+      const host = url.hostname;
+      const isAffiliate =
+        host === 'px.a8.net' ||
+        host.endsWith('.a8.net') ||
+        host === 'hb.afl.rakuten.co.jp' ||
+        host === 'amzn.to' ||
+        host === 'amazon.co.jp' ||
+        host.endsWith('.amazon.co.jp');
+  
+      if (isAffiliate) {
+        sendEvent('affiliate_click', {
+          link_url: link.href,
+          link_text: linkText,
+          page_location: window.location.href,
+          affiliate_type: host
+        });
+        return;
+      }
+  
+      // Track navigation to another page on this site
+      if (url.origin !== window.location.origin) return;
+      if (link.getAttribute('href').startsWith('#')) return;
+  
+      if (
+        url.pathname === window.location.pathname &&
+        url.search === window.location.search
+      ) return;
+  
+      sendEvent('page_navigation_click', {
+        link_url: link.href,
+        link_text: linkText,
+        page_location: window.location.href
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
